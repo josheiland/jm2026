@@ -19,7 +19,8 @@ export default function HappeningNow() {
   useEffect(() => {
     const compute = () => {
       const t = Date.now()
-      const windowStart = new Date(EVENTS[0].start).getTime() - 12 * 3600_000
+      // Opens a day early — people fly in Friday and want to see what's next.
+      const windowStart = new Date(EVENTS[0].start).getTime() - 24 * 3600_000
       const windowEnd = new Date(EVENTS[EVENTS.length - 1].end).getTime() + 3 * 3600_000
       if (t < windowStart || t > windowEnd) return setState(null)
 

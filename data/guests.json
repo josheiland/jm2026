@@ -4,13 +4,17 @@
     "invites": "Invite list (1).csv (Jul 19 2026)"
   },
   "totalSeated": 151,
+  "uniquePeople": 150,
+  "duplicateNames": [
+    "Bill Blankemeier"
+  ],
   "tableCount": 17,
   "inferredCount": 17,
   "groups": [
     {
       "label": "Mary's Family",
       "blurb": "The Blankemeiers, Ryans, Savaianos and everyone who chanted \"Josh! Josh! Josh!\" at Thanksgiving.",
-      "count": 28,
+      "count": 27,
       "members": [
         {
           "name": "Amanda Ryan",
@@ -134,13 +138,6 @@
         {
           "name": "Magdalene Ryan",
           "table": 2,
-          "group": "Mary's Family",
-          "groupKey": "mary-family",
-          "inferred": false
-        },
-        {
-          "name": "Mary Davis",
-          "table": 1,
           "group": "Mary's Family",
           "groupKey": "mary-family",
           "inferred": false
@@ -1140,6 +1137,20 @@
           "inferred": false
         }
       ]
+    },
+    {
+      "label": "Officiant",
+      "blurb": "Marrying us.",
+      "count": 1,
+      "members": [
+        {
+          "name": "Mary Davis",
+          "table": 1,
+          "group": "Officiant",
+          "groupKey": "role",
+          "inferred": false
+        }
+      ]
     }
   ],
   "guests": [
@@ -1832,8 +1843,8 @@
     {
       "name": "Mary Davis",
       "table": 1,
-      "group": "Mary's Family",
-      "groupKey": "mary-family",
+      "group": "Officiant",
+      "groupKey": "role",
       "inferred": false
     },
     {

@@ -5,14 +5,14 @@ import data from '@/data/guests.json'
 
 export const metadata: Metadata = {
   title: 'Who’s Coming',
-  description: 'All 151 guests, and how each of them knows us.',
+  description: 'Everyone coming, and how each of them knows us.',
 }
 
 export default function GuestsPage() {
   return (
     <>
       <PageHeader
-        eyebrow={`${data.totalSeated} people · ${data.tableCount} tables`}
+        eyebrow={`${data.uniquePeople} people · ${data.tableCount} tables`}
         title="Who’s Coming"
         lede="Every person in this list changed the shape of our lives somewhere along the way. Here they all are in one place, which we have never actually seen before and find quite moving."
       />
@@ -26,7 +26,9 @@ export default function GuestsPage() {
 
         <p className="mt-20 pt-8 border-t border-wine/10 text-sm text-ink/45 max-w-2xl">
           Seating is drawn from our chart as of August 1 and may shift slightly before the day.
-          Contact details are deliberately not published here.
+          Contact details are deliberately not published here. If we have your name wrong, or you
+          are missing entirely, tell us — we would much rather fix it than have you find out at
+          the table.
         </p>
       </div>
     </>

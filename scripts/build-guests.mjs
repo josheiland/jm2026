@@ -70,6 +70,11 @@ const GROUPS = [
 
 const byMatch = new Map(GROUPS.map((g) => [g.match, g]))
 
+// People whose relationship the spreadsheet can't express. Keyed by normalised name.
+const ROLE_OVERRIDES = {
+  'mary davis': { label: 'Officiant', note: 'Marrying us.' },
+}
+
 // ---- read sources -------------------------------------------------------------------
 
 const inviteRows = parseCsv(readFileSync(INVITES, 'utf8')).slice(1)
@@ -107,6 +112,10 @@ for (const t of new Set(seated.map((g) => g.table))) {
 
 let inferredCount = 0
 const guests = seated.map((g) => {
+  const override = ROLE_OVERRIDES[norm(g.name)]
+  if (override) {
+    return { name: g.name, table: g.table, group: override.label, groupKey: 'role', inferred: false }
+  }
   const inferred = !g.match
   const match = g.match ?? dominantByTable.get(g.table) ?? 'Boston friends'
   if (inferred) inferredCount++
@@ -114,23 +123,38 @@ const guests = seated.map((g) => {
   return { name: g.name, table: g.table, group: group.label, groupKey: group.key, inferred }
 })
 
+// The seating chart is hand-maintained, so the same name can legitimately appear
+// twice (two generations sharing a name) or by mistake. Surface it rather than
+// silently collapsing or silently double-counting.
+const nameCounts = new Map()
+for (const g of guests) nameCounts.set(g.name, (nameCounts.get(g.name) ?? 0) + 1)
+const duplicateNames = [...nameCounts.entries()].filter(([, n]) => n > 1).map(([n]) => n)
+
 // ---- collapse to display groups (several source types share one label) ---------------
 
 const order = []
 for (const g of GROUPS) if (!order.includes(g.label)) order.push(g.label)
+for (const o of Object.values(ROLE_OVERRIDES)) if (!order.includes(o.label)) order.push(o.label)
 
 const groups = order
   .map((label) => {
-    const source = GROUPS.find((g) => g.label === label && g.blurb) ?? GROUPS.find((g) => g.label === label)
+    const source =
+      GROUPS.find((g) => g.label === label && g.blurb) ??
+      GROUPS.find((g) => g.label === label) ??
+      Object.values(ROLE_OVERRIDES).find((o) => o.label === label)
     const members = guests.filter((x) => x.group === label)
       .sort((a, b) => a.name.localeCompare(b.name, 'en'))
-    return { label, blurb: source.blurb, count: members.length, members }
+    return { label, blurb: source.blurb ?? source.note ?? '', count: members.length, members }
   })
   .filter((g) => g.count > 0)
 
 const out = {
   generatedFrom: { seating: 'Seating chart sign.csv (Aug 1 2026)', invites: 'Invite list (1).csv (Jul 19 2026)' },
+  /** Rows on the seating chart. */
   totalSeated: guests.length,
+  /** Distinct human beings, as best we can tell. */
+  uniquePeople: nameCounts.size,
+  duplicateNames,
   tableCount: new Set(guests.map((g) => g.table)).size,
   inferredCount,
   groups,
@@ -140,5 +164,5 @@ const out = {
 mkdirSync(join(ROOT, 'data'), { recursive: true })
 writeFileSync(join(ROOT, 'data', 'guests.json'), JSON.stringify(out, null, 2) + '\n')
 
-console.log(`${out.totalSeated} guests · ${out.tableCount} tables · ${inferredCount} inferred`)
+console.log(`${out.totalSeated} seats · ${out.uniquePeople} unique · ${out.tableCount} tables · ${inferredCount} inferred`)
 for (const g of groups) console.log(`  ${String(g.count).padStart(3)}  ${g.label}`)

@@ -5,6 +5,7 @@ import Ridgeline from '@/components/Ridgeline'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import { DAYS, EVENTS, eventsForDay } from '@/lib/events'
 import { STORY_CLOSER, STORY_PARAGRAPHS } from '@/lib/content'
+import guestData from '@/data/guests.json'
 
 const QUICK_LINKS = [
   {
@@ -25,7 +26,7 @@ const QUICK_LINKS = [
   {
     href: '/guests',
     label: 'Who’s Coming',
-    desc: 'All 151 of you, and how each of you found your way to us.',
+    desc: 'Everyone who said yes, and how each of you found your way to us.',
   },
 ]
 
@@ -206,7 +207,8 @@ export default function HomePage() {
           &amp;
         </p>
         <p className="display text-3xl md:text-4xl mt-4 max-w-2xl mx-auto leading-snug">
-          {EVENTS.length} events, {151} of our favourite people, one very long-awaited weekend.
+          {EVENTS.filter((e) => e.kind !== 'shuttle').length} gatherings,{' '}
+          {guestData.uniquePeople} of our favourite people, one very long-awaited weekend.
         </p>
         <Link
           href="/thank-you"

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { THANK_YOU } from '@/lib/content'
+import data from '@/data/guests.json'
 
 export const metadata: Metadata = {
   title: 'Thank You',
@@ -31,7 +32,7 @@ export default function ThankYouPage() {
                 : undefined
             }
           >
-            {p}
+            {p.replace('{count}', String(data.uniquePeople))}
           </p>
         ))}
       </div>

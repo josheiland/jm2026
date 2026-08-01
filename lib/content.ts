@@ -309,7 +309,8 @@ export const THANK_YOU = {
   heading: 'Thank you',
   body: [
     'A wedding is a strange and wonderful thing to ask of people. We asked you to look at a date eighteen months out, and then take days off work, and book flights, and drive over a mountain, and stand in a field in Virginia in the September humidity — all so you could watch us say a few sentences to each other.',
-    'And you said yes. One hundred and fifty-one of you said yes.',
+    // {count} is filled from data/guests.json so the number can never drift from the chart.
+    'And you said yes. All {count} of you said yes.',
     'Some of you have known one of us since before we knew each other. Some of you met us at nineteen on a Lawn we have not stopped talking about since. Some of you found us in Boston, or at Stanford, or somewhere along a dirt road in Rwanda with a few hundred kids running around. You are, collectively, the entire proof that the last decade happened.',
     'We are not going to get enough time with each of you this weekend. That is the one guaranteed failure of a wedding, and we have made our peace with it. So if we only get ninety seconds with you at the bar — know that we noticed you came, we know what it took, and we are keeping it.',
     'Take pictures. Put them on this site. Eat a Bodo’s bagel. Stay for the late bus.',

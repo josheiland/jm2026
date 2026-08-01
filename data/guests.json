@@ -1,0 +1,2204 @@
+{
+  "generatedFrom": {
+    "seating": "Seating chart sign.csv (Aug 1 2026)",
+    "invites": "Invite list (1).csv (Jul 19 2026)"
+  },
+  "totalSeated": 151,
+  "tableCount": 17,
+  "inferredCount": 17,
+  "groups": [
+    {
+      "label": "Mary's Family",
+      "blurb": "The Blankemeiers, Ryans, Savaianos and everyone who chanted \"Josh! Josh! Josh!\" at Thanksgiving.",
+      "count": 28,
+      "members": [
+        {
+          "name": "Amanda Ryan",
+          "table": 2,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Becky Blankemeier",
+          "table": 2,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Bill Blankemeier",
+          "table": 1,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Bill Blankemeier",
+          "table": 2,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Catherine Horrilleno",
+          "table": 4,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Chase Bahr",
+          "table": 3,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": true
+        },
+        {
+          "name": "Claire Schutte",
+          "table": 4,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Dom Savaiano",
+          "table": 3,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Doug Ryan",
+          "table": 3,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Griff Ryan",
+          "table": 3,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Helen Savaiano",
+          "table": 3,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Hope Savaiano",
+          "table": 3,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Jack Ryan",
+          "table": 2,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Jacqueline Ryan",
+          "table": 2,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "John Blankemeier",
+          "table": 4,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Julie Blankemeier",
+          "table": 1,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Kaitlin Schnepf",
+          "table": 4,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Magdalene Ryan",
+          "table": 2,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Mary Davis",
+          "table": 1,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Maverick Ryan",
+          "table": 2,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Maya Davis",
+          "table": 4,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Ryan Schnepf",
+          "table": 4,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Ryan Schutte",
+          "table": 4,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Stef Ryan",
+          "table": 3,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Taite Ryan",
+          "table": 3,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Tara LaRusso",
+          "table": 3,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": true
+        },
+        {
+          "name": "Tom Blankemeier",
+          "table": 4,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": false
+        },
+        {
+          "name": "Tom Stathakes",
+          "table": 2,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "label": "Josh's Family",
+      "blurb": "The Eilands and Carrons.",
+      "count": 20,
+      "members": [
+        {
+          "name": "Anna Carron",
+          "table": 1,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "inferred": false
+        },
+        {
+          "name": "Anna Rodenberg",
+          "table": 5,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "inferred": true
+        },
+        {
+          "name": "Aria Lancaster",
+          "table": 5,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "inferred": false
+        },
+        {
+          "name": "Avery Lancaster",
+          "table": 5,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "inferred": false
+        },
+        {
+          "name": "Blaklie Mitchell",
+          "table": 6,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "inferred": true
+        },
+        {
+          "name": "Brent Eiland",
+          "table": 1,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "inferred": false
+        },
+        {
+          "name": "Chris Carron",
+          "table": 5,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "inferred": false
+        },
+        {
+          "name": "Cole Rodenberg",
+          "table": 5,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "inferred": false
+        },
+        {
+          "name": "Haydn Lancaster",
+          "table": 5,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "inferred": false
+        },
+        {
+          "name": "Ian Evans",
+          "table": 6,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "inferred": false
+        },
+        {
+          "name": "Jamie Evans",
+          "table": 6,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "inferred": false
+        },
+        {
+          "name": "Lance Eiland",
+          "table": 1,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "inferred": false
+        },
+        {
+          "name": "Levi Evans",
+          "table": 6,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "inferred": false
+        },
+        {
+          "name": "Mike Carron",
+          "table": 5,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "inferred": false
+        },
+        {
+          "name": "Monica Gonzalez",
+          "table": 6,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "inferred": true
+        },
+        {
+          "name": "Phyfa Eiland",
+          "table": 1,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "inferred": false
+        },
+        {
+          "name": "Sarah Stuart",
+          "table": 5,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "inferred": true
+        },
+        {
+          "name": "Stephanie Evans",
+          "table": 6,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "inferred": false
+        },
+        {
+          "name": "Susan Carron",
+          "table": 5,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "inferred": false
+        },
+        {
+          "name": "Virginia Eiland",
+          "table": 1,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "inferred": false
+        }
+      ]
+    },
+    {
+      "label": "Family Friends",
+      "blurb": "The people who have been around so long they are basically family.",
+      "count": 30,
+      "members": [
+        {
+          "name": "Becky McMinn",
+          "table": 6,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Benjamin O’Brien",
+          "table": 7,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": true
+        },
+        {
+          "name": "Beth Sibert",
+          "table": 1,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Brandon Bell",
+          "table": 8,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Carly Appel",
+          "table": 7,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Elliot Larson",
+          "table": 7,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": true
+        },
+        {
+          "name": "Gary McMinn",
+          "table": 6,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "George Wray",
+          "table": 7,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Glenn Bell",
+          "table": 8,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Jack Kulp",
+          "table": 7,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Jack Raisch",
+          "table": 2,
+          "group": "Family Friends",
+          "groupKey": "mary-family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Julia Sibert",
+          "table": 7,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Kate Bondeson",
+          "table": 8,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Kate Kulp",
+          "table": 7,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Kathy Roberts",
+          "table": 6,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Kayla Bell",
+          "table": 8,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Ken Raisch",
+          "table": 2,
+          "group": "Family Friends",
+          "groupKey": "mary-family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Kyra Warnock",
+          "table": 8,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Madeleine Sibert",
+          "table": 7,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Mark Crumpler",
+          "table": 10,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Marnie Crumpler",
+          "table": 10,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Shanon Bell",
+          "table": 8,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Susie Raisch",
+          "table": 2,
+          "group": "Family Friends",
+          "groupKey": "mary-family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Suzann Moore",
+          "table": 8,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Terry Moore IV",
+          "table": 8,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": true
+        },
+        {
+          "name": "Terry Moore V",
+          "table": 8,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Tiffany Wray",
+          "table": 7,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Tom Roberts",
+          "table": 6,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Tony Sibert",
+          "table": 1,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        },
+        {
+          "name": "Will Wray",
+          "table": 7,
+          "group": "Family Friends",
+          "groupKey": "family-friends",
+          "inferred": false
+        }
+      ]
+    },
+    {
+      "label": "Boston",
+      "blurb": "The chapter right after graduation — the crew that made a new city feel like home.",
+      "count": 28,
+      "members": [
+        {
+          "name": "Alvaro Calleja",
+          "table": 14,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Amy Zhang",
+          "table": 12,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Animesh Koratana",
+          "table": 14,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Bella Gribov",
+          "table": 14,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Cal Newlon",
+          "table": 13,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Catherine Irons",
+          "table": 10,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Colette Fritsche",
+          "table": 12,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Connor Mieth",
+          "table": 14,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": true
+        },
+        {
+          "name": "Dan Palleiko",
+          "table": 12,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "David Powell",
+          "table": 13,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Emily Niu",
+          "table": 12,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Eric Yushao",
+          "table": 12,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Fatima Bassir",
+          "table": 14,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": true
+        },
+        {
+          "name": "Haley Bruns",
+          "table": 13,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Hannah Norowitz",
+          "table": 14,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Madeleine Conroy",
+          "table": 13,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Max Curlin",
+          "table": 15,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Mike Zhu",
+          "table": 13,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Nathan Abraham",
+          "table": 13,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Nick Esemplare",
+          "table": 13,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Phil McGloin",
+          "table": 14,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Rahim Kanji",
+          "table": 12,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": true
+        },
+        {
+          "name": "Rais Aoudou",
+          "table": 14,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Safiya Rajwani",
+          "table": 12,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Sally Pan",
+          "table": 14,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Sav Abramenko",
+          "table": 15,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Tobi Abramenko",
+          "table": 15,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        },
+        {
+          "name": "Wei Chee Chen",
+          "table": 12,
+          "group": "Boston",
+          "groupKey": "boston",
+          "inferred": false
+        }
+      ]
+    },
+    {
+      "label": "UVA — Mary",
+      "blurb": "Wahoos. Lawn residents. Study-session enablers.",
+      "count": 8,
+      "members": [
+        {
+          "name": "Aaron James",
+          "table": 9,
+          "group": "UVA — Mary",
+          "groupKey": "uva-mary",
+          "inferred": false
+        },
+        {
+          "name": "Beau Bradley",
+          "table": 9,
+          "group": "UVA — Mary",
+          "groupKey": "uva-mary",
+          "inferred": false
+        },
+        {
+          "name": "Cabrel Happi",
+          "table": 9,
+          "group": "UVA — Mary",
+          "groupKey": "uva-mary",
+          "inferred": false
+        },
+        {
+          "name": "John Stacey",
+          "table": 10,
+          "group": "UVA — Mary",
+          "groupKey": "uva-mary",
+          "inferred": false
+        },
+        {
+          "name": "Mia Bailey",
+          "table": 9,
+          "group": "UVA — Mary",
+          "groupKey": "uva-mary",
+          "inferred": true
+        },
+        {
+          "name": "Sarah Rambo",
+          "table": 9,
+          "group": "UVA — Mary",
+          "groupKey": "uva-mary",
+          "inferred": false
+        },
+        {
+          "name": "Savana Bradley",
+          "table": 9,
+          "group": "UVA — Mary",
+          "groupKey": "uva-mary",
+          "inferred": false
+        },
+        {
+          "name": "Shannon Cason",
+          "table": 9,
+          "group": "UVA — Mary",
+          "groupKey": "uva-mary",
+          "inferred": false
+        }
+      ]
+    },
+    {
+      "label": "UVA — Josh",
+      "blurb": "Wahoos. Lawn residents. Study-session enablers.",
+      "count": 7,
+      "members": [
+        {
+          "name": "Belen Grimaldi",
+          "table": 11,
+          "group": "UVA — Josh",
+          "groupKey": "uva-josh",
+          "inferred": false
+        },
+        {
+          "name": "Elle Ondeck",
+          "table": 11,
+          "group": "UVA — Josh",
+          "groupKey": "uva-josh",
+          "inferred": true
+        },
+        {
+          "name": "Jack Larkin",
+          "table": 11,
+          "group": "UVA — Josh",
+          "groupKey": "uva-josh",
+          "inferred": false
+        },
+        {
+          "name": "Jonathan Brownbill",
+          "table": 11,
+          "group": "UVA — Josh",
+          "groupKey": "uva-josh",
+          "inferred": false
+        },
+        {
+          "name": "Lydia McVeigh",
+          "table": 11,
+          "group": "UVA — Josh",
+          "groupKey": "uva-josh",
+          "inferred": false
+        },
+        {
+          "name": "Peter Xu",
+          "table": 11,
+          "group": "UVA — Josh",
+          "groupKey": "uva-josh",
+          "inferred": false
+        },
+        {
+          "name": "Zach Zamoff",
+          "table": 11,
+          "group": "UVA — Josh",
+          "groupKey": "uva-josh",
+          "inferred": false
+        }
+      ]
+    },
+    {
+      "label": "UVA",
+      "blurb": "",
+      "count": 1,
+      "members": [
+        {
+          "name": "Nano Masters",
+          "table": 9,
+          "group": "UVA",
+          "groupKey": "uva",
+          "inferred": false
+        }
+      ]
+    },
+    {
+      "label": "Stanford",
+      "blurb": "The current chapter — GSB and the Farm.",
+      "count": 16,
+      "members": [
+        {
+          "name": "AK Cates",
+          "table": 17,
+          "group": "Stanford",
+          "groupKey": "stanford",
+          "inferred": false
+        },
+        {
+          "name": "AK Khullar",
+          "table": 16,
+          "group": "Stanford",
+          "groupKey": "stanford",
+          "inferred": false
+        },
+        {
+          "name": "Alexandria Clarke",
+          "table": 17,
+          "group": "Stanford",
+          "groupKey": "stanford",
+          "inferred": false
+        },
+        {
+          "name": "Braiden Childs",
+          "table": 16,
+          "group": "Stanford",
+          "groupKey": "stanford",
+          "inferred": false
+        },
+        {
+          "name": "Federico Verrastro",
+          "table": 16,
+          "group": "Stanford",
+          "groupKey": "stanford",
+          "inferred": false
+        },
+        {
+          "name": "Jack Mandel",
+          "table": 17,
+          "group": "Stanford",
+          "groupKey": "stanford",
+          "inferred": false
+        },
+        {
+          "name": "Jonathan Holland",
+          "table": 17,
+          "group": "Stanford",
+          "groupKey": "stanford",
+          "inferred": false
+        },
+        {
+          "name": "Jordan Lee",
+          "table": 17,
+          "group": "Stanford",
+          "groupKey": "stanford",
+          "inferred": false
+        },
+        {
+          "name": "Kamaria Wilson",
+          "table": 17,
+          "group": "Stanford",
+          "groupKey": "stanford",
+          "inferred": false
+        },
+        {
+          "name": "Katherine Boggs",
+          "table": 16,
+          "group": "Stanford",
+          "groupKey": "stanford",
+          "inferred": false
+        },
+        {
+          "name": "Kevin Ifiora",
+          "table": 16,
+          "group": "Stanford",
+          "groupKey": "stanford",
+          "inferred": false
+        },
+        {
+          "name": "Luciana Migliano",
+          "table": 16,
+          "group": "Stanford",
+          "groupKey": "stanford",
+          "inferred": false
+        },
+        {
+          "name": "Matt Williams",
+          "table": 17,
+          "group": "Stanford",
+          "groupKey": "stanford",
+          "inferred": false
+        },
+        {
+          "name": "Nick Low",
+          "table": 16,
+          "group": "Stanford",
+          "groupKey": "stanford",
+          "inferred": false
+        },
+        {
+          "name": "Spencer Ma",
+          "table": 16,
+          "group": "Stanford",
+          "groupKey": "stanford",
+          "inferred": false
+        },
+        {
+          "name": "Tatiana Bouri",
+          "table": 17,
+          "group": "Stanford",
+          "groupKey": "stanford",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "label": "The Bay",
+      "blurb": "",
+      "count": 3,
+      "members": [
+        {
+          "name": "Aparna Dutta",
+          "table": 11,
+          "group": "The Bay",
+          "groupKey": "sf",
+          "inferred": false
+        },
+        {
+          "name": "Arjun Athreya",
+          "table": 11,
+          "group": "The Bay",
+          "groupKey": "sf",
+          "inferred": false
+        },
+        {
+          "name": "Ava van Natta",
+          "table": 12,
+          "group": "The Bay",
+          "groupKey": "sf",
+          "inferred": false
+        }
+      ]
+    },
+    {
+      "label": "Run Your City",
+      "blurb": "75+ chapters, 10,000+ kids, and the running camps in Rwanda that started it.",
+      "count": 6,
+      "members": [
+        {
+          "name": "Callie Tucker",
+          "table": 10,
+          "group": "Run Your City",
+          "groupKey": "ryc",
+          "inferred": false
+        },
+        {
+          "name": "Cayla Weiss",
+          "table": 15,
+          "group": "Run Your City",
+          "groupKey": "ryc",
+          "inferred": false
+        },
+        {
+          "name": "Manuel Paz",
+          "table": 15,
+          "group": "Run Your City",
+          "groupKey": "ryc",
+          "inferred": false
+        },
+        {
+          "name": "Neharika Singh",
+          "table": 10,
+          "group": "Run Your City",
+          "groupKey": "ryc",
+          "inferred": true
+        },
+        {
+          "name": "Owayne Owens",
+          "table": 10,
+          "group": "Run Your City",
+          "groupKey": "ryc",
+          "inferred": false
+        },
+        {
+          "name": "Tyler Yen",
+          "table": 15,
+          "group": "Run Your City",
+          "groupKey": "ryc",
+          "inferred": false
+        }
+      ]
+    },
+    {
+      "label": "Mary's Hometown",
+      "blurb": "Since before any of this.",
+      "count": 4,
+      "members": [
+        {
+          "name": "Christine Levy",
+          "table": 3,
+          "group": "Mary's Hometown",
+          "groupKey": "mary-hs",
+          "inferred": false
+        },
+        {
+          "name": "Hallie Voss",
+          "table": 15,
+          "group": "Mary's Hometown",
+          "groupKey": "mary-hs",
+          "inferred": false
+        },
+        {
+          "name": "Luke Nelson",
+          "table": 15,
+          "group": "Mary's Hometown",
+          "groupKey": "mary-hs",
+          "inferred": false
+        },
+        {
+          "name": "Nkabi Mwakyoma",
+          "table": 15,
+          "group": "Mary's Hometown",
+          "groupKey": "mary-hs",
+          "inferred": false
+        }
+      ]
+    }
+  ],
+  "guests": [
+    {
+      "name": "Aaron James",
+      "table": 9,
+      "group": "UVA — Mary",
+      "groupKey": "uva-mary",
+      "inferred": false
+    },
+    {
+      "name": "AK Cates",
+      "table": 17,
+      "group": "Stanford",
+      "groupKey": "stanford",
+      "inferred": false
+    },
+    {
+      "name": "AK Khullar",
+      "table": 16,
+      "group": "Stanford",
+      "groupKey": "stanford",
+      "inferred": false
+    },
+    {
+      "name": "Alexandria Clarke",
+      "table": 17,
+      "group": "Stanford",
+      "groupKey": "stanford",
+      "inferred": false
+    },
+    {
+      "name": "Alvaro Calleja",
+      "table": 14,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Amanda Ryan",
+      "table": 2,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Amy Zhang",
+      "table": 12,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Animesh Koratana",
+      "table": 14,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Anna Carron",
+      "table": 1,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "inferred": false
+    },
+    {
+      "name": "Anna Rodenberg",
+      "table": 5,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "inferred": true
+    },
+    {
+      "name": "Aparna Dutta",
+      "table": 11,
+      "group": "The Bay",
+      "groupKey": "sf",
+      "inferred": false
+    },
+    {
+      "name": "Aria Lancaster",
+      "table": 5,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "inferred": false
+    },
+    {
+      "name": "Arjun Athreya",
+      "table": 11,
+      "group": "The Bay",
+      "groupKey": "sf",
+      "inferred": false
+    },
+    {
+      "name": "Ava van Natta",
+      "table": 12,
+      "group": "The Bay",
+      "groupKey": "sf",
+      "inferred": false
+    },
+    {
+      "name": "Avery Lancaster",
+      "table": 5,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "inferred": false
+    },
+    {
+      "name": "Beau Bradley",
+      "table": 9,
+      "group": "UVA — Mary",
+      "groupKey": "uva-mary",
+      "inferred": false
+    },
+    {
+      "name": "Becky Blankemeier",
+      "table": 2,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Becky McMinn",
+      "table": 6,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Belen Grimaldi",
+      "table": 11,
+      "group": "UVA — Josh",
+      "groupKey": "uva-josh",
+      "inferred": false
+    },
+    {
+      "name": "Bella Gribov",
+      "table": 14,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Benjamin O’Brien",
+      "table": 7,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": true
+    },
+    {
+      "name": "Beth Sibert",
+      "table": 1,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Bill Blankemeier",
+      "table": 1,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Bill Blankemeier",
+      "table": 2,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Blaklie Mitchell",
+      "table": 6,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "inferred": true
+    },
+    {
+      "name": "Braiden Childs",
+      "table": 16,
+      "group": "Stanford",
+      "groupKey": "stanford",
+      "inferred": false
+    },
+    {
+      "name": "Brandon Bell",
+      "table": 8,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Brent Eiland",
+      "table": 1,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "inferred": false
+    },
+    {
+      "name": "Cabrel Happi",
+      "table": 9,
+      "group": "UVA — Mary",
+      "groupKey": "uva-mary",
+      "inferred": false
+    },
+    {
+      "name": "Cal Newlon",
+      "table": 13,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Callie Tucker",
+      "table": 10,
+      "group": "Run Your City",
+      "groupKey": "ryc",
+      "inferred": false
+    },
+    {
+      "name": "Carly Appel",
+      "table": 7,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Catherine Horrilleno",
+      "table": 4,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Catherine Irons",
+      "table": 10,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Cayla Weiss",
+      "table": 15,
+      "group": "Run Your City",
+      "groupKey": "ryc",
+      "inferred": false
+    },
+    {
+      "name": "Chase Bahr",
+      "table": 3,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": true
+    },
+    {
+      "name": "Chris Carron",
+      "table": 5,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "inferred": false
+    },
+    {
+      "name": "Christine Levy",
+      "table": 3,
+      "group": "Mary's Hometown",
+      "groupKey": "mary-hs",
+      "inferred": false
+    },
+    {
+      "name": "Claire Schutte",
+      "table": 4,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Cole Rodenberg",
+      "table": 5,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "inferred": false
+    },
+    {
+      "name": "Colette Fritsche",
+      "table": 12,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Connor Mieth",
+      "table": 14,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": true
+    },
+    {
+      "name": "Dan Palleiko",
+      "table": 12,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "David Powell",
+      "table": 13,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Dom Savaiano",
+      "table": 3,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Doug Ryan",
+      "table": 3,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Elle Ondeck",
+      "table": 11,
+      "group": "UVA — Josh",
+      "groupKey": "uva-josh",
+      "inferred": true
+    },
+    {
+      "name": "Elliot Larson",
+      "table": 7,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": true
+    },
+    {
+      "name": "Emily Niu",
+      "table": 12,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Eric Yushao",
+      "table": 12,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Fatima Bassir",
+      "table": 14,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": true
+    },
+    {
+      "name": "Federico Verrastro",
+      "table": 16,
+      "group": "Stanford",
+      "groupKey": "stanford",
+      "inferred": false
+    },
+    {
+      "name": "Gary McMinn",
+      "table": 6,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "George Wray",
+      "table": 7,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Glenn Bell",
+      "table": 8,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Griff Ryan",
+      "table": 3,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Haley Bruns",
+      "table": 13,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Hallie Voss",
+      "table": 15,
+      "group": "Mary's Hometown",
+      "groupKey": "mary-hs",
+      "inferred": false
+    },
+    {
+      "name": "Hannah Norowitz",
+      "table": 14,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Haydn Lancaster",
+      "table": 5,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "inferred": false
+    },
+    {
+      "name": "Helen Savaiano",
+      "table": 3,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Hope Savaiano",
+      "table": 3,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Ian Evans",
+      "table": 6,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "inferred": false
+    },
+    {
+      "name": "Jack Kulp",
+      "table": 7,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Jack Larkin",
+      "table": 11,
+      "group": "UVA — Josh",
+      "groupKey": "uva-josh",
+      "inferred": false
+    },
+    {
+      "name": "Jack Mandel",
+      "table": 17,
+      "group": "Stanford",
+      "groupKey": "stanford",
+      "inferred": false
+    },
+    {
+      "name": "Jack Raisch",
+      "table": 2,
+      "group": "Family Friends",
+      "groupKey": "mary-family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Jack Ryan",
+      "table": 2,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Jacqueline Ryan",
+      "table": 2,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Jamie Evans",
+      "table": 6,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "inferred": false
+    },
+    {
+      "name": "John Blankemeier",
+      "table": 4,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "John Stacey",
+      "table": 10,
+      "group": "UVA — Mary",
+      "groupKey": "uva-mary",
+      "inferred": false
+    },
+    {
+      "name": "Jonathan Brownbill",
+      "table": 11,
+      "group": "UVA — Josh",
+      "groupKey": "uva-josh",
+      "inferred": false
+    },
+    {
+      "name": "Jonathan Holland",
+      "table": 17,
+      "group": "Stanford",
+      "groupKey": "stanford",
+      "inferred": false
+    },
+    {
+      "name": "Jordan Lee",
+      "table": 17,
+      "group": "Stanford",
+      "groupKey": "stanford",
+      "inferred": false
+    },
+    {
+      "name": "Julia Sibert",
+      "table": 7,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Julie Blankemeier",
+      "table": 1,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Kaitlin Schnepf",
+      "table": 4,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Kamaria Wilson",
+      "table": 17,
+      "group": "Stanford",
+      "groupKey": "stanford",
+      "inferred": false
+    },
+    {
+      "name": "Kate Bondeson",
+      "table": 8,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Kate Kulp",
+      "table": 7,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Katherine Boggs",
+      "table": 16,
+      "group": "Stanford",
+      "groupKey": "stanford",
+      "inferred": false
+    },
+    {
+      "name": "Kathy Roberts",
+      "table": 6,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Kayla Bell",
+      "table": 8,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Ken Raisch",
+      "table": 2,
+      "group": "Family Friends",
+      "groupKey": "mary-family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Kevin Ifiora",
+      "table": 16,
+      "group": "Stanford",
+      "groupKey": "stanford",
+      "inferred": false
+    },
+    {
+      "name": "Kyra Warnock",
+      "table": 8,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Lance Eiland",
+      "table": 1,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "inferred": false
+    },
+    {
+      "name": "Levi Evans",
+      "table": 6,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "inferred": false
+    },
+    {
+      "name": "Luciana Migliano",
+      "table": 16,
+      "group": "Stanford",
+      "groupKey": "stanford",
+      "inferred": false
+    },
+    {
+      "name": "Luke Nelson",
+      "table": 15,
+      "group": "Mary's Hometown",
+      "groupKey": "mary-hs",
+      "inferred": false
+    },
+    {
+      "name": "Lydia McVeigh",
+      "table": 11,
+      "group": "UVA — Josh",
+      "groupKey": "uva-josh",
+      "inferred": false
+    },
+    {
+      "name": "Madeleine Conroy",
+      "table": 13,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Madeleine Sibert",
+      "table": 7,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Magdalene Ryan",
+      "table": 2,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Manuel Paz",
+      "table": 15,
+      "group": "Run Your City",
+      "groupKey": "ryc",
+      "inferred": false
+    },
+    {
+      "name": "Mark Crumpler",
+      "table": 10,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Marnie Crumpler",
+      "table": 10,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Mary Davis",
+      "table": 1,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Matt Williams",
+      "table": 17,
+      "group": "Stanford",
+      "groupKey": "stanford",
+      "inferred": false
+    },
+    {
+      "name": "Maverick Ryan",
+      "table": 2,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Max Curlin",
+      "table": 15,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Maya Davis",
+      "table": 4,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Mia Bailey",
+      "table": 9,
+      "group": "UVA — Mary",
+      "groupKey": "uva-mary",
+      "inferred": true
+    },
+    {
+      "name": "Mike Carron",
+      "table": 5,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "inferred": false
+    },
+    {
+      "name": "Mike Zhu",
+      "table": 13,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Monica Gonzalez",
+      "table": 6,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "inferred": true
+    },
+    {
+      "name": "Nano Masters",
+      "table": 9,
+      "group": "UVA",
+      "groupKey": "uva",
+      "inferred": false
+    },
+    {
+      "name": "Nathan Abraham",
+      "table": 13,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Neharika Singh",
+      "table": 10,
+      "group": "Run Your City",
+      "groupKey": "ryc",
+      "inferred": true
+    },
+    {
+      "name": "Nick Esemplare",
+      "table": 13,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Nick Low",
+      "table": 16,
+      "group": "Stanford",
+      "groupKey": "stanford",
+      "inferred": false
+    },
+    {
+      "name": "Nkabi Mwakyoma",
+      "table": 15,
+      "group": "Mary's Hometown",
+      "groupKey": "mary-hs",
+      "inferred": false
+    },
+    {
+      "name": "Owayne Owens",
+      "table": 10,
+      "group": "Run Your City",
+      "groupKey": "ryc",
+      "inferred": false
+    },
+    {
+      "name": "Peter Xu",
+      "table": 11,
+      "group": "UVA — Josh",
+      "groupKey": "uva-josh",
+      "inferred": false
+    },
+    {
+      "name": "Phil McGloin",
+      "table": 14,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Phyfa Eiland",
+      "table": 1,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "inferred": false
+    },
+    {
+      "name": "Rahim Kanji",
+      "table": 12,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": true
+    },
+    {
+      "name": "Rais Aoudou",
+      "table": 14,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Ryan Schnepf",
+      "table": 4,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Ryan Schutte",
+      "table": 4,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Safiya Rajwani",
+      "table": 12,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Sally Pan",
+      "table": 14,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Sarah Rambo",
+      "table": 9,
+      "group": "UVA — Mary",
+      "groupKey": "uva-mary",
+      "inferred": false
+    },
+    {
+      "name": "Sarah Stuart",
+      "table": 5,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "inferred": true
+    },
+    {
+      "name": "Sav Abramenko",
+      "table": 15,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Savana Bradley",
+      "table": 9,
+      "group": "UVA — Mary",
+      "groupKey": "uva-mary",
+      "inferred": false
+    },
+    {
+      "name": "Shannon Cason",
+      "table": 9,
+      "group": "UVA — Mary",
+      "groupKey": "uva-mary",
+      "inferred": false
+    },
+    {
+      "name": "Shanon Bell",
+      "table": 8,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Spencer Ma",
+      "table": 16,
+      "group": "Stanford",
+      "groupKey": "stanford",
+      "inferred": false
+    },
+    {
+      "name": "Stef Ryan",
+      "table": 3,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Stephanie Evans",
+      "table": 6,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "inferred": false
+    },
+    {
+      "name": "Susan Carron",
+      "table": 5,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "inferred": false
+    },
+    {
+      "name": "Susie Raisch",
+      "table": 2,
+      "group": "Family Friends",
+      "groupKey": "mary-family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Suzann Moore",
+      "table": 8,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Taite Ryan",
+      "table": 3,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Tara LaRusso",
+      "table": 3,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": true
+    },
+    {
+      "name": "Tatiana Bouri",
+      "table": 17,
+      "group": "Stanford",
+      "groupKey": "stanford",
+      "inferred": true
+    },
+    {
+      "name": "Terry Moore IV",
+      "table": 8,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": true
+    },
+    {
+      "name": "Terry Moore V",
+      "table": 8,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Tiffany Wray",
+      "table": 7,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Tobi Abramenko",
+      "table": 15,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Tom Blankemeier",
+      "table": 4,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": false
+    },
+    {
+      "name": "Tom Roberts",
+      "table": 6,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Tom Stathakes",
+      "table": 2,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "inferred": true
+    },
+    {
+      "name": "Tony Sibert",
+      "table": 1,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Tyler Yen",
+      "table": 15,
+      "group": "Run Your City",
+      "groupKey": "ryc",
+      "inferred": false
+    },
+    {
+      "name": "Virginia Eiland",
+      "table": 1,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "inferred": false
+    },
+    {
+      "name": "Wei Chee Chen",
+      "table": 12,
+      "group": "Boston",
+      "groupKey": "boston",
+      "inferred": false
+    },
+    {
+      "name": "Will Wray",
+      "table": 7,
+      "group": "Family Friends",
+      "groupKey": "family-friends",
+      "inferred": false
+    },
+    {
+      "name": "Zach Zamoff",
+      "table": 11,
+      "group": "UVA — Josh",
+      "groupKey": "uva-josh",
+      "inferred": false
+    }
+  ]
+}

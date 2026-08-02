@@ -62,8 +62,8 @@ export default function GuestList({
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Look yourself up. Everybody does it"
-            className="w-full bg-cream-soft border border-wine/15 pl-11 pr-4 py-3.5 text-ink placeholder:text-ink/35 focus:border-wine outline-none transition-colors"
+            placeholder="Look yourself up"
+            className="w-full bg-cream-soft border border-wine/15 pl-11 pr-4 py-3.5 text-base text-ink placeholder:text-ink/35 focus:border-wine outline-none transition-colors"
           />
           <svg
             className="absolute left-4 top-1/2 -translate-y-1/2 text-wine/40 pointer-events-none"
@@ -132,12 +132,14 @@ export default function GuestList({
         <div className="mt-14 space-y-16">
           {groups.map((group) => (
             <section key={group.label}>
-              <div className="flex flex-wrap items-baseline justify-between gap-4">
+              <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
                 <h2 className="display text-3xl md:text-4xl">{group.label}</h2>
                 <p className="eyebrow">{group.count} people</p>
               </div>
               {group.blurb && (
-                <p className="mt-2 text-ink/60 max-w-2xl">{group.blurb}</p>
+                <p className="mt-2 text-ink/60 max-w-2xl text-pretty [overflow-wrap:anywhere]">
+                  {group.blurb}
+                </p>
               )}
               <div className="rule mt-5" />
 
@@ -156,10 +158,7 @@ export default function GuestList({
       {/* table view */}
       {!matches && view === 'table' && (
         <div className="mt-14">
-          <p className="text-ink/60 max-w-2xl">
-            {tableCount} tables at the reception. Still being nudged around, so treat this as
-            very nearly final rather than final.
-          </p>
+          <p className="text-ink/60 max-w-2xl">{tableCount} tables at the reception</p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {byTable.map(([table, members]) => {
               const isHead = members[0].headTable

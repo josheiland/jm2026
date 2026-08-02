@@ -15,7 +15,7 @@ export default function FaqPage() {
       <PageHeader
         eyebrow="Ask us anything"
         title="FAQs"
-        lede="Everything we have been asked more than twice. If yours is not here, the group chat is faster than email and we do actually read it."
+        lede="Everything we have been asked more than twice. If yours is not here, the WhatsApp is faster than email and we do actually read it."
       />
       {/* Dress code, food and shuttle answers all live here rather than on a separate
           travel page, which was cut on the Aug 1 review as one tab too many. */}

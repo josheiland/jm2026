@@ -62,7 +62,7 @@ const norm = (s) =>
 const GROUPS = [
   { key: 'us',            match: 'Us :)',                 label: 'Us',               blurb: 'Hi' },
   { key: 'mary-family',   match: 'Mary family',           label: "Mary's Family",    blurb: 'Blankemeiers and Ryans. You will hear them before you see them' },
-  { key: 'josh-family',   match: 'Josh family',           label: "Josh's Family",    blurb: 'Eilands and Carrons. Quieter, but only just' },
+  { key: 'josh-family',   match: 'Josh family',           label: "Josh's Family",    blurb: 'Eilands and Carrons. Fewer of them, same volume' },
   { key: 'family-friends',match: 'Josh family friends',   label: 'Hometown Friends', blurb: 'Around long enough to own photographs we would rather they did not' },
   { key: 'mary-family-friends', match: 'Mary family friends', label: 'Hometown Friends', blurb: '' },
   { key: 'chicago',       match: 'Chicago family friends',label: 'Hometown Friends', blurb: '' },

@@ -136,26 +136,56 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
         try {
           let url = await mint()
           let offset = 0
+          let failure: Error | null = null
 
-          for (let attempt = 0; ; attempt++) {
+          /** Reconciling is itself a network call, and the network is why we are here. */
+          const reconcile = async (): Promise<RemoteState | null> => {
+            for (let i = 0; i < 3; i++) {
+              try {
+                return await queryStatus(url, item.file.size)
+              } catch {
+                await sleep(700 * (i + 1))
+              }
+            }
+            return null
+          }
+
+          for (let attempt = 0; attempt <= RETRIES; attempt++) {
+            failure = null
             try {
               const { done } = await putFrom(url, item.file, offset, onProgress)
               if (done) break
             } catch (err) {
-              if (attempt >= RETRIES) throw err
-              await sleep(Math.min(8000, 800 * 2 ** attempt))
+              failure = err as Error
             }
 
-            // Reached on both a 308 and a failed attempt: never resend blind.
-            const status = await queryStatus(url, item.file.size)
-            if (status.state === 'done') break
-            if (status.state === 'gone') {
+            // Reached after a 308 and after any failure. Never resend blind.
+            const status = await reconcile()
+            if (status?.state === 'done') {
+              failure = null
+              break
+            }
+            if (status?.state === 'gone') {
               url = await mint()
               offset = 0
-            } else {
+            } else if (status?.state === 'incomplete') {
               offset = status.offset
+              failure = null
             }
+            // status null: server unreachable. Keep the offset and back off.
+
+            if (attempt < RETRIES) await sleep(Math.min(8000, 800 * 2 ** attempt))
           }
+
+          // Last word before calling it failed. The bytes very often did arrive and it
+          // was only the response that got lost, and a phone in a field recovers slowly.
+          if (failure) {
+            await sleep(2500)
+            const final = await reconcile()
+            if (final?.state === 'done') failure = null
+          }
+
+          if (failure) throw failure
           update(item.id, { status: 'done', progress: 100 })
         } catch (err) {
           error = (err as Error).message

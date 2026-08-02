@@ -111,32 +111,42 @@ npm run typecheck
 
 ## Updating the guest list
 
-`data/guests.json` is generated, not hand-edited:
+`data/guests.json` is generated, not hand-edited. Edit the sheet, then:
 
 ```bash
-npm run guests   # reads the two CSVs in ~/Downloads
+npm run guests
 ```
 
-Sources:
+It reads the **"Invite list" tab** of the wedding spreadsheet live, so whatever is in the sheet is
+what ships. One row per person, carrying both the table and the category.
 
-| File | Role |
+| Table value | Meaning |
 |---|---|
-| `Josh + Mary wedding - Seating chart sign.csv` | Authoritative — who is seated and at which table |
-| `Josh + Mary wedding invites - Invite list (1).csv` | Supplies the "how do we know them" category |
+| `1`–`17` | Reception tables |
+| `H` | Head table — the wedding party, their significant others, and the couple |
+| `--` | Not attending; dropped |
 
-Plus-ones appear on the seating chart but not the invite list. Since tables are seated by
-affinity group, an unmatched guest inherits their table's dominant group and is flagged
-`inferred: true` in the JSON. 17 of the 151 are inferred this way.
+Current totals: **180 seated, 178 guests** (excluding Mary and Josh), **18 tables**, 29 at the
+head table.
 
-**Emails, phone numbers and home addresses are in the source spreadsheets and are deliberately
-never written to `guests.json`.** The site is public.
+Head-table members are marked with a ◆ inside their own affinity group rather than pulled into a
+separate section, so each group stays complete and nobody is listed twice. The by-table view
+leads with a full-width Head Table card.
+
+The sheet must stay shared as "anyone with the link can view" for the script to read it. If the
+`Table`/`Name`/`Type` columns are renamed the script fails loudly rather than silently producing
+a short list.
+
+**Privacy:** the source has `Email` and `Address` columns for all 236 people. Neither is read,
+and the raw CSV is never written to disk — only the sanitised JSON, which holds nothing but name,
+table and category.
 
 ### Duplicate names
 
-`Bill Blankemeier` appears twice on the chart, at Tables 1 and 2. Confirmed as two different
-people, so it is listed in `KNOWN_DISTINCT` in `build-guests.mjs` and both seats count — 151
-people. Any *other* repeated name is reported in `suspectDuplicates` and deducted from the total
-until someone confirms it, so a duplicated row can never silently inflate the count.
+`Bill Blankemeier` appears twice, at Tables 1 and 2. Confirmed as two different people, so he is
+in `KNOWN_DISTINCT` and both seats count. Any *other* repeated name lands in `suspectDuplicates`,
+is deducted from the total, and is printed as a warning — a duplicated row can never silently
+inflate the count.
 
 ---
 
@@ -195,7 +205,7 @@ app/
   page.tsx            hero, countdown, day-at-a-glance, story, quick links
   schedule/           three-day timeline + the full dinner menu
   travel/             shuttles, hotels, airports, parking
-  guests/             151 guests, searchable, by group or by table
+  guests/             178 guests, searchable, by group or by table
   photos/             the upload portal
   faq/                searchable accordion
   charlottesville/    their actual recommendations
@@ -209,7 +219,7 @@ lib/
   ics.ts              RFC 5545 generation
   photos.ts           generated image manifest with blur placeholders
 scripts/
-  build-guests.mjs    CSV -> data/guests.json
+  build-guests.mjs    live Google Sheet -> data/guests.json
   build-photos.py     Zola gallery -> public/photos + lib/photos.ts
   photos.json         the nine photos, pinned by UUID
   google-auth.mjs     one-time Drive setup + live test

@@ -17,18 +17,8 @@ interface Group {
   members: Guest[]
 }
 
-/** Marks the wedding party without duplicating them into a separate section. */
-function HeadTableMark() {
-  return (
-    <span
-      title="At the head table"
-      className="text-wine/50 text-[0.7rem] leading-none"
-      aria-label="at the head table"
-    >
-      ◆
-    </span>
-  )
-}
+// The head table used to be flagged with a diamond next to each name. It read as a
+// typo more than a marker, so the Head Table card in the by-table view carries it now.
 
 const fold = (s: string) =>
   s.normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase()
@@ -72,7 +62,7 @@ export default function GuestList({
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Find yourself, or someone you're hoping to sit near"
+            placeholder="Look yourself up. Everybody does it"
             className="w-full bg-cream-soft border border-wine/15 pl-11 pr-4 py-3.5 text-ink placeholder:text-ink/35 focus:border-wine outline-none transition-colors"
           />
           <svg
@@ -126,10 +116,7 @@ export default function GuestList({
                   key={`${g.name}-${g.table}`}
                   className="bg-cream-soft px-5 py-4 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1"
                 >
-                  <span className="display text-xl flex items-center gap-2">
-                    {g.name}
-                    {g.headTable && <HeadTableMark />}
-                  </span>
+                  <span className="display text-xl">{g.name}</span>
                   <span className="text-sm text-ink/55">
                     {g.group} · {g.tableLabel}
                   </span>
@@ -156,12 +143,8 @@ export default function GuestList({
 
               <ul className="mt-6 grid gap-x-8 gap-y-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {group.members.map((g) => (
-                  <li
-                    key={`${g.name}-${g.table}`}
-                    className="flex items-center gap-2 border-b border-wine/8 pb-2"
-                  >
+                  <li key={`${g.name}-${g.table}`} className="border-b border-wine/8 pb-2">
                     {g.name}
-                    {g.headTable && <HeadTableMark />}
                   </li>
                 ))}
               </ul>

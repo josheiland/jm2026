@@ -18,12 +18,12 @@ export default function WhatsAppButton({
 }) {
   if (!WHATSAPP_INVITE) {
     if (variant === 'footer') {
-      return <p className="text-xs text-cream/45">WhatsApp group link coming soon.</p>
+      return <p className="text-xs text-cream/45">WhatsApp link coming soon</p>
     }
     return (
       <span className="inline-flex items-center gap-2 text-sm text-ink/40 border border-wine/15 px-5 py-3">
         <WhatsAppMark />
-        Group chat link coming soon
+        WhatsApp link coming soon
       </span>
     )
   }
@@ -39,7 +39,7 @@ export default function WhatsAppButton({
   return (
     <a href={WHATSAPP_INVITE} target="_blank" rel="noopener noreferrer" className={`${base} ${styles}`}>
       <WhatsAppMark />
-      {variant === 'footer' ? 'Join the WhatsApp group' : 'Join the WhatsApp group'}
+      Join the WhatsApp
     </a>
   )
 }

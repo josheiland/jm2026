@@ -57,22 +57,23 @@ const norm = (s) =>
 
 // Groupings agreed on the Aug 1 review call: UVA merged into one, Stanford folded
 // together with the Bay, and family friends merged with the hometown crowd.
+// Blurbs are one line, dry, and never explain the obvious.
 const GROUPS = [
-  { key: 'us',            match: 'Us :)',                 label: 'Us',               blurb: 'Hi.' },
-  { key: 'mary-family',   match: 'Mary family',           label: "Mary's Family",    blurb: 'The Blankemeiers and the Ryans.' },
-  { key: 'josh-family',   match: 'Josh family',           label: "Josh's Family",    blurb: 'The Eilands and the Carrons.' },
-  { key: 'family-friends',match: 'Josh family friends',   label: 'Hometown Friends', blurb: 'Around so long they are effectively family.' },
+  { key: 'us',            match: 'Us :)',                 label: 'Us',               blurb: 'Hi' },
+  { key: 'mary-family',   match: 'Mary family',           label: "Mary's Family",    blurb: 'Blankemeiers and Ryans. You will hear them before you see them' },
+  { key: 'josh-family',   match: 'Josh family',           label: "Josh's Family",    blurb: 'Eilands and Carrons' },
+  { key: 'family-friends',match: 'Josh family friends',   label: 'Hometown Friends', blurb: 'Around long enough to own photographs we would rather they did not' },
   { key: 'mary-family-friends', match: 'Mary family friends', label: 'Hometown Friends', blurb: '' },
   { key: 'chicago',       match: 'Chicago family friends',label: 'Hometown Friends', blurb: '' },
   { key: 'mary-hs',       match: 'Mary HS friends',       label: 'Hometown Friends', blurb: '' },
   { key: 'josh-hs',       match: 'Josh HS friends',       label: 'Hometown Friends', blurb: '' },
-  { key: 'boston',        match: 'Boston friends',        label: 'Boston',           blurb: 'The chapter straight after graduation, and the people who made a new city feel like home.' },
-  { key: 'uva-mary',      match: 'Mary college friends',  label: 'UVA',              blurb: 'Wahoos.' },
+  { key: 'boston',        match: 'Boston friends',        label: 'Boston',           blurb: 'Our twenties, basically' },
+  { key: 'uva-mary',      match: 'Mary college friends',  label: 'UVA',              blurb: 'Wahoos' },
   { key: 'uva-josh',      match: 'Josh college friends',  label: 'UVA',              blurb: '' },
   { key: 'uva',           match: 'College friend',        label: 'UVA',              blurb: '' },
-  { key: 'stanford',      match: 'Stanford friends',      label: 'Stanford & the Bay', blurb: 'The current chapter. The GSB, the Farm, and everyone west of it.' },
+  { key: 'stanford',      match: 'Stanford friends',      label: 'Stanford & the Bay', blurb: 'The current chapter, and everyone west of it' },
   { key: 'sf',            match: 'SF friends',            label: 'Stanford & the Bay', blurb: '' },
-  { key: 'ryc',           match: 'RYC',                   label: 'Run Your City',    blurb: '75+ chapters, 10,000+ kids, and the running camps in Rwanda where a lot of this got its shape.' },
+  { key: 'ryc',           match: 'RYC',                   label: 'Run Your City',    blurb: 'Ten thousand kids, seventy-five chapters, and a running camp in Rwanda' },
 ]
 
 const byMatch = new Map(GROUPS.map((g) => [g.match, g]))

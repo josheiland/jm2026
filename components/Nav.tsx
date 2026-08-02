@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 
 const LINKS = [
   { href: '/schedule', label: 'Schedule' },
-  { href: '/photos', label: 'Photos' },
+  { href: '/photos', label: 'Your Photos' },
   { href: '/guests', label: 'Who’s Coming' },
   { href: '/charlottesville', label: 'Charlottesville' },
   { href: '/faq', label: 'FAQs' },
@@ -112,7 +112,7 @@ export default function Nav() {
           ))}
           <li className="pt-8">
             <Link
-              href="/thank-you"
+              href="/#thank-you"
               className="eyebrow hover:text-wine transition-colors"
             >
               A note from us →

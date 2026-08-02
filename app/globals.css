@@ -170,3 +170,66 @@
 @keyframes shimmer {
   100% { transform: translateX(100%); }
 }
+
+/* ---------------------------------------------------------------------------
+   Alternate type systems, previewed at /styles.
+   Each theme only overrides the font and rhythm tokens; every utility and
+   component class already reads from these variables, so the whole page
+   re-renders in the new voice without touching any markup.
+   --------------------------------------------------------------------------- */
+
+.theme-cormorant {
+  --font-display: var(--font-cormorant), Garamond, serif;
+  --font-body: var(--font-lato), ui-sans-serif, system-ui, sans-serif;
+}
+.theme-cormorant .display {
+  font-weight: 300;
+  letter-spacing: 0.005em;
+}
+.theme-cormorant .eyebrow {
+  letter-spacing: 0.3em;
+  text-indent: 0.3em;
+  font-weight: 400;
+}
+
+.theme-fraunces {
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-body: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+}
+.theme-fraunces .display {
+  font-weight: 400;
+  font-variation-settings: 'SOFT' 40, 'WONK' 1;
+  letter-spacing: -0.02em;
+}
+.theme-fraunces .eyebrow {
+  letter-spacing: 0.18em;
+  text-indent: 0.18em;
+}
+
+.theme-baskerville {
+  --font-display: var(--font-baskerville), Georgia, serif;
+  --font-body: var(--font-lato), ui-sans-serif, system-ui, sans-serif;
+}
+.theme-baskerville .display {
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+/* No serif at all. Everything is Jost, separated by weight and tracking. */
+.theme-modern {
+  --font-display: var(--font-jost), ui-sans-serif, sans-serif;
+  --font-body: var(--font-jost), ui-sans-serif, sans-serif;
+}
+.theme-modern .display {
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.theme-modern .eyebrow {
+  letter-spacing: 0.34em;
+  text-indent: 0.34em;
+}
+.theme-modern .amp {
+  font-style: normal;
+  font-weight: 200;
+}

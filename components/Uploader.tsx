@@ -353,7 +353,7 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
                 <div className="flex items-center gap-4">
                   <div className="min-w-0 flex-1">
                     <p className="truncate text-sm">{it.file.name}</p>
-                    <p className="text-xs text-ink/45">{prettyBytes(it.file.size)}</p>
+                    <p className="text-sm text-ink/50">{prettyBytes(it.file.size)}</p>
                   </div>
                   <div className="shrink-0 text-sm tabular-nums">
                     {it.status === 'done' && <span className="text-sage">✓</span>}
@@ -375,7 +375,7 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
                 )}
 
                 {it.status === 'error' && (
-                  <p className="mt-1.5 text-xs text-wine/80">{it.error}</p>
+                  <p className="mt-1.5 text-sm text-wine/80">{it.error}</p>
                 )}
               </li>
             ))}

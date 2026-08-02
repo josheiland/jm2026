@@ -71,7 +71,7 @@ export default function Footer() {
             </nav>
           </div>
 
-          <p className="mt-14 pt-6 border-t border-cream/12 text-xs text-cream/45">
+          <p className="mt-14 pt-6 border-t border-cream/12 text-sm text-cream/50">
             For all the days along the way.
           </p>
         </div>

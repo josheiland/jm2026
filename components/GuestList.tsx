@@ -174,7 +174,7 @@ export default function GuestList({
                     </p>
                   )}
                   <ul
-                    className={`mt-4 space-y-1.5 text-[0.95rem] text-ink/75 ${
+                    className={`mt-4 space-y-1.5 text-ink/75 ${
                       isHead ? 'sm:columns-2 lg:columns-3' : ''
                     }`}
                   >

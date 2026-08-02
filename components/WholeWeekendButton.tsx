@@ -23,7 +23,7 @@ export default function WholeWeekendButton() {
       >
         Add the whole weekend
       </a>
-      <p className="mt-2.5 text-xs text-ink/45">
+      <p className="mt-2.5 text-sm text-ink/50">
         {touch
           ? 'Every event with its reminders, straight into your calendar app'
           : 'One file, every event, reminders already set. Individual events have Apple and Google links below.'}

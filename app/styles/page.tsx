@@ -60,7 +60,7 @@ export default function StylesPage() {
             stay in <strong>Jost</strong>, because Cormorant at 11px with wide tracking is
             prettier than it is readable.
           </p>
-          <p className="mt-3 text-ink/65 text-[0.95rem]">
+          <p className="mt-3 text-ink/65">
             Sauvage is not on Adobe Fonts, so matching the Zola headings exactly is off the
             table. Below are the body options against the Cormorant heading.
           </p>
@@ -165,7 +165,7 @@ export default function StylesPage() {
                       →
                     </span>
                   </div>
-                  <p className="mt-2.5 text-ink/60 text-[0.95rem]">{desc}</p>
+                  <p className="mt-2.5 text-ink/60">{desc}</p>
                 </div>
               ))}
             </div>

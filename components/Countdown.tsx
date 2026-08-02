@@ -66,7 +66,7 @@ export default function Countdown() {
               String(value).padStart(2, '0')
             )}
           </div>
-          <div className="eyebrow mt-2 !text-[0.7rem] !tracking-[0.1em] !indent-[0.1em] sm:!text-xs sm:!tracking-[0.2em] sm:!indent-[0.2em]">
+          <div className="eyebrow mt-2 !text-[0.75rem] !tracking-[0.08em] !indent-[0.08em] sm:!text-xs sm:!tracking-[0.2em] sm:!indent-[0.2em]">
             <span className="sm:hidden">{short}</span>
             <span className="hidden sm:inline">{long}</span>
           </div>

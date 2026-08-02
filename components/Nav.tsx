@@ -57,7 +57,7 @@ export default function Nav() {
                 <Link
                   href={l.href}
                   aria-current={active ? 'page' : undefined}
-                  className={`text-[0.8rem] uppercase tracking-[0.14em] transition-colors ${
+                  className={`text-[0.85rem] uppercase tracking-[0.14em] transition-colors ${
                     active ? 'text-wine' : 'text-ink/60 hover:text-wine'
                   }`}
                 >

@@ -53,7 +53,7 @@ export default function PhotosPage() {
               <div key={s.n}>
                 <p className="display text-4xl text-wine/25">{s.n}</p>
                 <h3 className="display text-xl mt-3">{s.t}</h3>
-                <p className="mt-2 text-ink/60 text-[0.95rem]">{s.d}</p>
+                <p className="mt-2 text-ink/60">{s.d}</p>
               </div>
             ))}
           </div>

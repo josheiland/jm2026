@@ -87,7 +87,7 @@ export default function SchedulePage() {
       <PageHeader
         eyebrow="September 5 to 7, 2026"
         title="The Weekend"
-        lede="Three days in Charlottesville. Come to all of it or some of it. Every event is a full meal, so do not eat beforehand, and the bus on Sunday is the one thing that will leave without you."
+        lede="Three days in Charlottesville. Come to all of it or some of it. Every event is a full meal, so no need to eat beforehand, and the bus on Sunday is the one thing that will leave without you."
       />
 
       <div className="content pb-8">

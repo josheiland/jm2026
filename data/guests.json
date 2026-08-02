@@ -4,9 +4,7 @@
   "guestCount": 178,
   "headTableCount": 29,
   "tableCount": 18,
-  "duplicateNames": [
-    "Bill Blankemeier"
-  ],
+  "duplicateNames": [],
   "suspectDuplicates": [],
   "groups": [
     {
@@ -72,7 +70,7 @@
           "isCouple": false
         },
         {
-          "name": "Bill Blankemeier",
+          "name": "Billy Blankemeier",
           "table": "2",
           "tableLabel": "Table 2",
           "tableSort": 2,
@@ -395,7 +393,7 @@
     },
     {
       "label": "Josh's Family",
-      "blurb": "Eilands and Carrons",
+      "blurb": "Eilands and Carrons. Quieter, but only just",
       "count": 22,
       "members": [
         {
@@ -968,9 +966,326 @@
       ]
     },
     {
+      "label": "UVA",
+      "blurb": "Go Hoos",
+      "count": 31,
+      "members": [
+        {
+          "name": "Aaron James",
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Ashley Staggers",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Beau Bradley",
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Belen Grimaldi",
+          "table": "11",
+          "tableLabel": "Table 11",
+          "tableSort": 11,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Ben Kilpatrick",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Cabrel Happi",
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Callie Tucker",
+          "table": "10",
+          "tableLabel": "Table 10",
+          "tableSort": 10,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Chirag Kulkarni",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Colin Cool",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Eliza Fisher",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Elle Ondeck",
+          "table": "11",
+          "tableLabel": "Table 11",
+          "tableSort": 11,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Jack Larkin",
+          "table": "11",
+          "tableLabel": "Table 11",
+          "tableSort": 11,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "John Stacey",
+          "table": "10",
+          "tableLabel": "Table 10",
+          "tableSort": 10,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Jonathan Brownbill",
+          "table": "11",
+          "tableLabel": "Table 11",
+          "tableSort": 11,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Larry Minor",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Lydia McVeigh",
+          "table": "11",
+          "tableLabel": "Table 11",
+          "tableSort": 11,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Matt Otto",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Mia Bailey",
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Mia Price",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Nano Masters",
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
+          "group": "UVA",
+          "groupKey": "uva",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Neeve Graham",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Neharika Singh",
+          "table": "10",
+          "tableLabel": "Table 10",
+          "tableSort": 10,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Owayne Owens",
+          "table": "10",
+          "tableLabel": "Table 10",
+          "tableSort": 10,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Peter Xu",
+          "table": "11",
+          "tableLabel": "Table 11",
+          "tableSort": 11,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Priyanka Vijay",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Sarah Rambo",
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Sarita Mehta",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Savana Bradley",
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Sela Carrington",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Shannon Cason",
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Zach Zamoff",
+          "table": "11",
+          "tableLabel": "Table 11",
+          "tableSort": 11,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": false,
+          "isCouple": false
+        }
+      ]
+    },
+    {
       "label": "Boston",
-      "blurb": "Our twenties, basically",
-      "count": 33,
+      "blurb": "It's not giving corporate",
+      "count": 37,
       "members": [
         {
           "name": "Alvaro Calleja",
@@ -1017,6 +1332,26 @@
           "table": "13",
           "tableLabel": "Table 13",
           "tableSort": 13,
+          "group": "Boston",
+          "groupKey": "boston",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Catherine Irons",
+          "table": "10",
+          "tableLabel": "Table 10",
+          "tableSort": 10,
+          "group": "Boston",
+          "groupKey": "boston",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Cayla Weiss",
+          "table": "15",
+          "tableLabel": "Table 15",
+          "tableSort": 15,
           "group": "Boston",
           "groupKey": "boston",
           "headTable": false,
@@ -1137,6 +1472,16 @@
           "table": "13",
           "tableLabel": "Table 13",
           "tableSort": 13,
+          "group": "Boston",
+          "groupKey": "boston",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Manuel Paz",
+          "table": "15",
+          "tableLabel": "Table 15",
+          "tableSort": 15,
           "group": "Boston",
           "groupKey": "boston",
           "headTable": false,
@@ -1283,6 +1628,16 @@
           "isCouple": false
         },
         {
+          "name": "Tyler Yen",
+          "table": "15",
+          "tableLabel": "Table 15",
+          "tableSort": 15,
+          "group": "Boston",
+          "groupKey": "boston",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
           "name": "Wei Chee Chen",
           "table": "12",
           "tableLabel": "Table 12",
@@ -1305,285 +1660,8 @@
       ]
     },
     {
-      "label": "UVA",
-      "blurb": "Wahoos",
-      "count": 27,
-      "members": [
-        {
-          "name": "Aaron James",
-          "table": "9",
-          "tableLabel": "Table 9",
-          "tableSort": 9,
-          "group": "UVA",
-          "groupKey": "uva-mary",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Ashley Staggers",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "UVA",
-          "groupKey": "uva-mary",
-          "headTable": true,
-          "isCouple": false
-        },
-        {
-          "name": "Beau Bradley",
-          "table": "9",
-          "tableLabel": "Table 9",
-          "tableSort": 9,
-          "group": "UVA",
-          "groupKey": "uva-mary",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Belen Grimaldi",
-          "table": "11",
-          "tableLabel": "Table 11",
-          "tableSort": 11,
-          "group": "UVA",
-          "groupKey": "uva-josh",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Ben Kilpatrick",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "UVA",
-          "groupKey": "uva-josh",
-          "headTable": true,
-          "isCouple": false
-        },
-        {
-          "name": "Cabrel Happi",
-          "table": "9",
-          "tableLabel": "Table 9",
-          "tableSort": 9,
-          "group": "UVA",
-          "groupKey": "uva-mary",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Chirag Kulkarni",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "UVA",
-          "groupKey": "uva-josh",
-          "headTable": true,
-          "isCouple": false
-        },
-        {
-          "name": "Colin Cool",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "UVA",
-          "groupKey": "uva-josh",
-          "headTable": true,
-          "isCouple": false
-        },
-        {
-          "name": "Eliza Fisher",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "UVA",
-          "groupKey": "uva-josh",
-          "headTable": true,
-          "isCouple": false
-        },
-        {
-          "name": "Elle Ondeck",
-          "table": "11",
-          "tableLabel": "Table 11",
-          "tableSort": 11,
-          "group": "UVA",
-          "groupKey": "uva-josh",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Jack Larkin",
-          "table": "11",
-          "tableLabel": "Table 11",
-          "tableSort": 11,
-          "group": "UVA",
-          "groupKey": "uva-josh",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Jonathan Brownbill",
-          "table": "11",
-          "tableLabel": "Table 11",
-          "tableSort": 11,
-          "group": "UVA",
-          "groupKey": "uva-josh",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Larry Minor",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "UVA",
-          "groupKey": "uva-mary",
-          "headTable": true,
-          "isCouple": false
-        },
-        {
-          "name": "Lydia McVeigh",
-          "table": "11",
-          "tableLabel": "Table 11",
-          "tableSort": 11,
-          "group": "UVA",
-          "groupKey": "uva-josh",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Matt Otto",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "UVA",
-          "groupKey": "uva-josh",
-          "headTable": true,
-          "isCouple": false
-        },
-        {
-          "name": "Mia Bailey",
-          "table": "9",
-          "tableLabel": "Table 9",
-          "tableSort": 9,
-          "group": "UVA",
-          "groupKey": "uva-mary",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Mia Price",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "UVA",
-          "groupKey": "uva-josh",
-          "headTable": true,
-          "isCouple": false
-        },
-        {
-          "name": "Nano Masters",
-          "table": "9",
-          "tableLabel": "Table 9",
-          "tableSort": 9,
-          "group": "UVA",
-          "groupKey": "uva",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Neeve Graham",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "UVA",
-          "groupKey": "uva-mary",
-          "headTable": true,
-          "isCouple": false
-        },
-        {
-          "name": "Peter Xu",
-          "table": "11",
-          "tableLabel": "Table 11",
-          "tableSort": 11,
-          "group": "UVA",
-          "groupKey": "uva-josh",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Priyanka Vijay",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "UVA",
-          "groupKey": "uva-josh",
-          "headTable": true,
-          "isCouple": false
-        },
-        {
-          "name": "Sarah Rambo",
-          "table": "9",
-          "tableLabel": "Table 9",
-          "tableSort": 9,
-          "group": "UVA",
-          "groupKey": "uva-mary",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Sarita Mehta",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "UVA",
-          "groupKey": "uva-mary",
-          "headTable": true,
-          "isCouple": false
-        },
-        {
-          "name": "Savana Bradley",
-          "table": "9",
-          "tableLabel": "Table 9",
-          "tableSort": 9,
-          "group": "UVA",
-          "groupKey": "uva-mary",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Sela Carrington",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "UVA",
-          "groupKey": "uva-mary",
-          "headTable": true,
-          "isCouple": false
-        },
-        {
-          "name": "Shannon Cason",
-          "table": "9",
-          "tableLabel": "Table 9",
-          "tableSort": 9,
-          "group": "UVA",
-          "groupKey": "uva-mary",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Zach Zamoff",
-          "table": "11",
-          "tableLabel": "Table 11",
-          "tableSort": 11,
-          "group": "UVA",
-          "groupKey": "uva-josh",
-          "headTable": false,
-          "isCouple": false
-        }
-      ]
-    },
-    {
       "label": "Stanford & the Bay",
-      "blurb": "The current chapter, and everyone west of it",
+      "blurb": "The current chapter",
       "count": 19,
       "members": [
         {
@@ -1773,93 +1851,6 @@
           "tableSort": 17,
           "group": "Stanford & the Bay",
           "groupKey": "stanford",
-          "headTable": false,
-          "isCouple": false
-        }
-      ]
-    },
-    {
-      "label": "Run Your City",
-      "blurb": "Ten thousand kids, seventy-five chapters, and a running camp in Rwanda",
-      "count": 8,
-      "members": [
-        {
-          "name": "Callie Tucker",
-          "table": "10",
-          "tableLabel": "Table 10",
-          "tableSort": 10,
-          "group": "Run Your City",
-          "groupKey": "ryc",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Catherine Irons",
-          "table": "10",
-          "tableLabel": "Table 10",
-          "tableSort": 10,
-          "group": "Run Your City",
-          "groupKey": "ryc",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Cayla Weiss",
-          "table": "15",
-          "tableLabel": "Table 15",
-          "tableSort": 15,
-          "group": "Run Your City",
-          "groupKey": "ryc",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "John Stacey",
-          "table": "10",
-          "tableLabel": "Table 10",
-          "tableSort": 10,
-          "group": "Run Your City",
-          "groupKey": "ryc",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Manuel Paz",
-          "table": "15",
-          "tableLabel": "Table 15",
-          "tableSort": 15,
-          "group": "Run Your City",
-          "groupKey": "ryc",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Neharika Singh",
-          "table": "10",
-          "tableLabel": "Table 10",
-          "tableSort": 10,
-          "group": "Run Your City",
-          "groupKey": "ryc",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Owayne Owens",
-          "table": "10",
-          "tableLabel": "Table 10",
-          "tableSort": 10,
-          "group": "Run Your City",
-          "groupKey": "ryc",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Tyler Yen",
-          "table": "15",
-          "tableLabel": "Table 15",
-          "tableSort": 15,
-          "group": "Run Your City",
-          "groupKey": "ryc",
           "headTable": false,
           "isCouple": false
         }
@@ -2128,7 +2119,7 @@
       "isCouple": false
     },
     {
-      "name": "Bill Blankemeier",
+      "name": "Billy Blankemeier",
       "table": "2",
       "tableLabel": "Table 2",
       "tableSort": 2,
@@ -2202,8 +2193,8 @@
       "table": "10",
       "tableLabel": "Table 10",
       "tableSort": 10,
-      "group": "Run Your City",
-      "groupKey": "ryc",
+      "group": "UVA",
+      "groupKey": "uva-josh",
       "headTable": false,
       "isCouple": false
     },
@@ -2232,8 +2223,8 @@
       "table": "10",
       "tableLabel": "Table 10",
       "tableSort": 10,
-      "group": "Run Your City",
-      "groupKey": "ryc",
+      "group": "Boston",
+      "groupKey": "boston",
       "headTable": false,
       "isCouple": false
     },
@@ -2242,8 +2233,8 @@
       "table": "15",
       "tableLabel": "Table 15",
       "tableSort": 15,
-      "group": "Run Your City",
-      "groupKey": "ryc",
+      "group": "Boston",
+      "groupKey": "boston",
       "headTable": false,
       "isCouple": false
     },
@@ -2662,8 +2653,8 @@
       "table": "10",
       "tableLabel": "Table 10",
       "tableSort": 10,
-      "group": "Run Your City",
-      "groupKey": "ryc",
+      "group": "UVA",
+      "groupKey": "uva-josh",
       "headTable": false,
       "isCouple": false
     },
@@ -2982,8 +2973,8 @@
       "table": "15",
       "tableLabel": "Table 15",
       "tableSort": 15,
-      "group": "Run Your City",
-      "groupKey": "ryc",
+      "group": "Boston",
+      "groupKey": "boston",
       "headTable": false,
       "isCouple": false
     },
@@ -3172,8 +3163,8 @@
       "table": "10",
       "tableLabel": "Table 10",
       "tableSort": 10,
-      "group": "Run Your City",
-      "groupKey": "ryc",
+      "group": "UVA",
+      "groupKey": "uva-josh",
       "headTable": false,
       "isCouple": false
     },
@@ -3212,8 +3203,8 @@
       "table": "10",
       "tableLabel": "Table 10",
       "tableSort": 10,
-      "group": "Run Your City",
-      "groupKey": "ryc",
+      "group": "UVA",
+      "groupKey": "uva-josh",
       "headTable": false,
       "isCouple": false
     },
@@ -3612,8 +3603,8 @@
       "table": "15",
       "tableLabel": "Table 15",
       "tableSort": 15,
-      "group": "Run Your City",
-      "groupKey": "ryc",
+      "group": "Boston",
+      "groupKey": "boston",
       "headTable": false,
       "isCouple": false
     },

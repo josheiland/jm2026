@@ -11,7 +11,7 @@ type Key = 'photos' | 'whatsapp' | 'schedule'
 const LINKS: Record<Key, { href: string; label: string; desc: string; external?: boolean }> = {
   photos: {
     href: '/photos',
-    label: 'Your photos',
+    label: 'Share photos',
     desc: 'Straight into our album. No app, no login',
   },
   whatsapp: {

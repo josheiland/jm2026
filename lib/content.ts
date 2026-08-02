@@ -112,12 +112,12 @@ export const FAQS: Faq[] = [
   {
     topic: 'The day itself',
     q: 'What happens after the reception?',
-    a: 'The after party runs 11:30pm to 1:00am back on the Corner, a short walk from where the late bus drops. Then bagels on the Lawn at 10am Monday, in whatever you slept in.',
+    a: 'The after party runs 11:30pm to 1:00am back on the Corner, a short walk from where the late bus drops. Then bagels on the Lawn at 10am Monday, in whatever you slept in. Times are on [the schedule](/schedule).',
   },
   {
     topic: 'What to wear',
     q: 'What is the dress code?',
-    a: 'Saturday’s welcome party is elevated casual: relaxed, polished, festive. Sunday is summer formal, which in practice means long dresses and dark suits. Monday is groutfits, sweats and jammies.',
+    a: 'Saturday’s welcome party is elevated casual: relaxed, polished, festive. Sunday is summer formal, which in practice means long dresses and dark suits. Monday is groutfits, sweats and jammies. It is all on [the schedule](/schedule) too.',
   },
   {
     topic: 'What to wear',
@@ -132,22 +132,22 @@ export const FAQS: Faq[] = [
   {
     topic: 'Food & drink',
     q: 'I have a dietary restriction. Am I okay?',
-    a: 'Yes. There is a vegetarian main, one of the other mains is gluten-free, and the salad is vegan and gluten-free as served. If you have an allergy we should know about, message us in the group chat and we will get it to the kitchen.',
+    a: 'Yes. There is a vegetarian main, one of the other mains is gluten-free, and the salad is vegan and gluten-free as served. If you have an allergy we should know about, message us in [the WhatsApp](whatsapp) and we will get it to the kitchen.',
   },
   {
     topic: 'Everything else',
     q: 'Where do I put the photos I take?',
-    a: 'On the Photos page of this site. It takes photos and video, there is no app and no login, and it drops straight into our album. Please use it. One photographer cannot be at every table at once.',
+    a: 'On [the photos page](/photos). It takes photos and video, there is no app and no login, and it drops straight into our album. Please use it. One photographer cannot be at every table at once.',
     },
   {
     topic: 'Everything else',
     q: 'Is there a registry?',
-    a: 'There is, over on our Zola page. You being there is the actual thing, but the link is in the footer if you want it.',
+    a: 'There is, [over on Zola](https://www.zola.com/wedding/eilands2026/registry). You being there is the actual thing, but it is there if you want it.',
   },
   {
     topic: 'Everything else',
     q: 'Something has gone wrong. Who do I find?',
-    a: 'Not us, we will be busy. Paige coordinates the day from the Hazy Mountain side and her team is on site all Sunday. For anything before then, the group chat is the fastest way to reach a human.',
+    a: 'Not us, we will be busy. Paige coordinates the day from the Hazy Mountain side and her team is on site all Sunday. For anything before then, [the WhatsApp](whatsapp) is the fastest way to reach a human.',
   },
 ]
 
@@ -164,8 +164,8 @@ export const THANK_YOU = {
   body: [
     'A wedding is a strange thing to ask of people. We asked you to look at a date eighteen months out, then take days off work, book flights, drive over a mountain, and stand in a field in Virginia in September humidity, all so you could watch us say a few sentences to each other.',
     'And you said yes. All {count} of you said yes.',
-    'Some of you have known one of us since before we knew each other. Some of you met us at nineteen on a Lawn we have not stopped talking about since. Some of you found us in Boston, or at Stanford, or on a dirt road in Rwanda with a few hundred kids running around. You are, collectively, the entire proof that the last decade happened.',
-    'We are not going to get enough time with each of you. That is the one guaranteed failure of a wedding and we have made our peace with it. So if we only get ninety seconds with you at the bar, know that we clocked that you came, we know what it took, and we are keeping it.',
+    'Some of you have known one of us since before we knew each other. Some of you met us at nineteen on a Lawn we have not stopped talking about since. Some of you found us in Boston, or at Stanford, or somewhere in between. Between you, you were there for pretty much all of it.',
+    'We are not going to get enough time with each of you. That is the one guaranteed failure of a wedding and we have made our peace with it. So if we only get ninety seconds with you at the bar, know that we saw you come, and we know what it took to get here.',
     'Take pictures. Put them on this site. Eat a Bodo’s bagel. Stay for the late bus.',
   ],
   signoff: 'All our love,',

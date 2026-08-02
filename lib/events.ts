@@ -100,7 +100,7 @@ export const EVENTS: WeddingEvent[] = [
     venue: 'Hazy Mountain to The Draftsman',
     address: '240 Hazy Mountain Ln, Afton, VA 22920',
     mapQuery: 'Hazy Mountain Vineyards & Brewery, 240 Hazy Mountain Ln, Afton, VA 22920',
-    description: 'The sensible one. Straight back to The Draftsman on West Main.',
+    description: 'The lame one. Straight back to The Draftsman on West Main.',
   },
   {
     slug: 'shuttle-late',

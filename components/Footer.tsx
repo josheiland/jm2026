@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Ridgeline from './Ridgeline'
 import WhatsAppButton from './WhatsAppButton'
-import { REGISTRY_URL, ZOLA_URL } from '@/lib/content'
+import { ZOLA_URL } from '@/lib/content'
 
 export default function Footer() {
   return (
@@ -31,7 +31,7 @@ export default function Footer() {
               <ul className="mt-4 space-y-2.5 text-sm">
                 {[
                   ['/schedule', 'Schedule'],
-                  ['/photos', 'Your Photos'],
+                  ['/photos', 'Share Photos'],
                   ['/guests', 'Who’s Coming'],
                   ['/charlottesville', 'Charlottesville'],
                 ].map(([href, label]) => (
@@ -57,16 +57,6 @@ export default function Footer() {
                     </Link>
                   </li>
                 ))}
-                <li>
-                  <a
-                    href={REGISTRY_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="link-underline hover:text-cream"
-                  >
-                    Registry ↗
-                  </a>
-                </li>
                 <li>
                   <a
                     href={ZOLA_URL}

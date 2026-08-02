@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
+import RichText from './RichText'
 import type { Faq } from '@/lib/content'
 
 export default function FaqAccordion({ faqs }: { faqs: Faq[] }) {
@@ -51,8 +52,8 @@ export default function FaqAccordion({ faqs }: { faqs: Faq[] }) {
 
       {filtered.length === 0 && (
         <p className="mt-10 text-ink/60 max-w-lg">
-          Nothing matches that. Ask in the group chat and one of us will see it, probably
-          faster than you expect.
+          Nothing matches that. <RichText text="Ask in [the WhatsApp](whatsapp)" /> and one of
+          us will see it, probably faster than you expect.
         </p>
       )}
 
@@ -87,7 +88,9 @@ export default function FaqAccordion({ faqs }: { faqs: Faq[] }) {
                       </svg>
                     </span>
                   </summary>
-                  <p className="pb-6 pr-10 text-ink/70 leading-relaxed max-w-2xl">{f.a}</p>
+                  <p className="pb-6 pr-10 text-ink/70 leading-relaxed max-w-2xl">
+                    <RichText text={f.a} />
+                  </p>
                 </details>
               ))}
             </div>

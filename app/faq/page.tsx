@@ -26,8 +26,7 @@ export default function FaqPage() {
         <div className="mt-20 card p-8 md:p-10 text-center">
           <p className="display text-2xl">Still wondering something?</p>
           <p className="mt-3 text-ink/65 max-w-md mx-auto">
-            Ask. No question is too small. Several people have already asked about parking and
-            we were glad they did.
+            Ask. No question is too small.
           </p>
           <div className="mt-6 flex justify-center">
             <WhatsAppButton />

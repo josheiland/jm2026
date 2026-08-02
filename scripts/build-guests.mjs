@@ -57,23 +57,23 @@ const norm = (s) =>
 
 // Groupings agreed on the Aug 1 review call: UVA merged into one, Stanford folded
 // together with the Bay, and family friends merged with the hometown crowd.
+// Order is roughly chronological: family, hometown, UVA, Boston, now.
 // Blurbs are one line, dry, and never explain the obvious.
 const GROUPS = [
   { key: 'us',            match: 'Us :)',                 label: 'Us',               blurb: 'Hi' },
   { key: 'mary-family',   match: 'Mary family',           label: "Mary's Family",    blurb: 'Blankemeiers and Ryans. You will hear them before you see them' },
-  { key: 'josh-family',   match: 'Josh family',           label: "Josh's Family",    blurb: 'Eilands and Carrons' },
+  { key: 'josh-family',   match: 'Josh family',           label: "Josh's Family",    blurb: 'Eilands and Carrons. Quieter, but only just' },
   { key: 'family-friends',match: 'Josh family friends',   label: 'Hometown Friends', blurb: 'Around long enough to own photographs we would rather they did not' },
   { key: 'mary-family-friends', match: 'Mary family friends', label: 'Hometown Friends', blurb: '' },
   { key: 'chicago',       match: 'Chicago family friends',label: 'Hometown Friends', blurb: '' },
   { key: 'mary-hs',       match: 'Mary HS friends',       label: 'Hometown Friends', blurb: '' },
   { key: 'josh-hs',       match: 'Josh HS friends',       label: 'Hometown Friends', blurb: '' },
-  { key: 'boston',        match: 'Boston friends',        label: 'Boston',           blurb: 'Our twenties, basically' },
-  { key: 'uva-mary',      match: 'Mary college friends',  label: 'UVA',              blurb: 'Wahoos' },
+  { key: 'uva-mary',      match: 'Mary college friends',  label: 'UVA',              blurb: 'Go Hoos' },
   { key: 'uva-josh',      match: 'Josh college friends',  label: 'UVA',              blurb: '' },
   { key: 'uva',           match: 'College friend',        label: 'UVA',              blurb: '' },
-  { key: 'stanford',      match: 'Stanford friends',      label: 'Stanford & the Bay', blurb: 'The current chapter, and everyone west of it' },
+  { key: 'boston',        match: 'Boston friends',        label: 'Boston',           blurb: "It's not giving corporate" },
+  { key: 'stanford',      match: 'Stanford friends',      label: 'Stanford & the Bay', blurb: 'The current chapter' },
   { key: 'sf',            match: 'SF friends',            label: 'Stanford & the Bay', blurb: '' },
-  { key: 'ryc',           match: 'RYC',                   label: 'Run Your City',    blurb: 'Ten thousand kids, seventy-five chapters, and a running camp in Rwanda' },
 ]
 
 const byMatch = new Map(GROUPS.map((g) => [g.match, g]))
@@ -89,6 +89,25 @@ const TYPE_OVERRIDES = {
   'susie raisch': 'Mary family',
   'ken raisch': 'Mary family',
   'jack raisch': 'Mary family',
+  // RYC is a workplace, not a chapter of their life the way the others are, so the
+  // eight tagged with it are filed by where Josh and Mary actually know them from.
+  'john stacey': 'Josh college friends',
+  'owayne owens': 'Josh college friends',
+  'neharika singh': 'Josh college friends',
+  'callie tucker': 'Josh college friends',
+  'tyler yen': 'Boston friends',
+  'manuel paz': 'Boston friends',
+  'cayla weiss': 'Boston friends',
+  'catherine irons': 'Boston friends',
+}
+
+/**
+ * Two different Bill Blankemeiers. The one at table 1 sits with Julie and is Mary's
+ * dad; the other goes by Billy. Keyed "name|table" since the name alone is ambiguous,
+ * which is the entire problem.
+ */
+const NAME_OVERRIDES = {
+  'Bill Blankemeier|2': 'Billy Blankemeier',
 }
 
 /**
@@ -96,7 +115,7 @@ const TYPE_OVERRIDES = {
  * duplicated. Confirmed real pairs go here; anything else is reported as suspect.
  */
 const KNOWN_DISTINCT = new Set([
-  'Bill Blankemeier', // confirmed by Josh 2026-08-01: two people, tables 1 and 2
+  // Nothing here now: the second Bill is rendered as Billy, so no name repeats.
 ])
 
 const HEAD = 'H'
@@ -128,7 +147,8 @@ const guests = []
 
 for (const r of rows.slice(1)) {
   const table = (r[iTable] ?? '').trim()
-  const name = (r[iName] ?? '').trim()
+  const rawName = (r[iName] ?? '').trim()
+  const name = NAME_OVERRIDES[`${rawName}|${table}`] ?? rawName
   const type = (r[iType] ?? '').trim()
 
   if (!name || !table || table === NOT_ATTENDING) continue

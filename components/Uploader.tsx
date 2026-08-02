@@ -110,6 +110,11 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
         const onProgress = (frac: number) =>
           update(item.id, { progress: Math.min(100, Math.round(frac * 100)) })
 
+        // Every filename this file has been offered under. A retry that mints a new
+        // session gets a new name, and the copy that actually landed may be under
+        // any of them, so verification checks all of them.
+        const names: string[] = []
+
         const mint = async () => {
           const res = await fetch('/api/upload/session', {
             method: 'POST',
@@ -122,9 +127,39 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
               note: sessionStorage.getItem('mj-uploader-note') ?? '',
             }),
           })
-          const data = (await res.json()) as { uploadUrl?: string; error?: string }
+          const data = (await res.json()) as {
+            uploadUrl?: string
+            filename?: string
+            error?: string
+          }
           if (!res.ok || !data.uploadUrl) throw new Error(data.error ?? 'Could not start upload')
+          if (data.filename) names.push(data.filename)
           return data.uploadUrl
+        }
+
+        /**
+         * The authoritative answer. Asks our own server whether the file is in the
+         * album, which no amount of client-side network trouble can distort.
+         */
+        const verify = async () => {
+          if (!names.length) return false
+          for (let i = 0; i < 3; i++) {
+            try {
+              const res = await fetch('/api/upload/verify', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ names, size: item.file.size }),
+              })
+              if (res.ok) {
+                const { found } = (await res.json()) as { found: boolean }
+                if (found) return true
+              }
+            } catch {
+              /* fall through to the retry */
+            }
+            await sleep(1200 * (i + 1))
+          }
+          return false
         }
 
         /**
@@ -136,7 +171,8 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
         try {
           let url = await mint()
           let offset = 0
-          let failure: Error | null = null
+          let confirmed = false
+          let lastError: Error | null = null
 
           /** Reconciling is itself a network call, and the network is why we are here. */
           const reconcile = async (): Promise<RemoteState | null> => {
@@ -150,42 +186,48 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
             return null
           }
 
-          for (let attempt = 0; attempt <= RETRIES; attempt++) {
-            failure = null
+          for (let attempt = 0; attempt <= RETRIES && !confirmed; attempt++) {
             try {
               const { done } = await putFrom(url, item.file, offset, onProgress)
-              if (done) break
+              if (done) {
+                confirmed = true
+                break
+              }
             } catch (err) {
-              failure = err as Error
+              lastError = err as Error
             }
 
             // Reached after a 308 and after any failure. Never resend blind.
             const status = await reconcile()
             if (status?.state === 'done') {
-              failure = null
+              confirmed = true
               break
             }
             if (status?.state === 'gone') {
+              // Session consumed or expired. Before starting a second copy, check
+              // whether the first one is already sitting in the album.
+              if (await verify()) {
+                confirmed = true
+                break
+              }
               url = await mint()
               offset = 0
             } else if (status?.state === 'incomplete') {
               offset = status.offset
-              failure = null
             }
             // status null: server unreachable. Keep the offset and back off.
 
             if (attempt < RETRIES) await sleep(Math.min(8000, 800 * 2 ** attempt))
           }
 
-          // Last word before calling it failed. The bytes very often did arrive and it
-          // was only the response that got lost, and a phone in a field recovers slowly.
-          if (failure) {
-            await sleep(2500)
-            const final = await reconcile()
-            if (final?.state === 'done') failure = null
-          }
+          // Nothing is reported to the guest until Drive itself confirms the file is
+          // there. That makes "uploaded" mean uploaded, and stops a lost response from
+          // being shown as a failure.
+          if (!confirmed) confirmed = await verify()
 
-          if (failure) throw failure
+          if (!confirmed) {
+            throw lastError ?? new Error('Upload did not finish. Please try again.')
+          }
           update(item.id, { status: 'done', progress: 100 })
         } catch (err) {
           error = (err as Error).message
@@ -325,7 +367,7 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
             ref={inputRef}
             type="file"
             multiple
-            accept="image/*,video/*,.heic,.heif,.mov"
+            accept="image/*,video/*"
             className="sr-only"
             onChange={(e) => {
               if (e.target.files?.length) addFiles(e.target.files)
@@ -343,7 +385,9 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
               {done} of {items.length} uploaded
             </p>
             {!active && done > 0 && (
-              <p className="text-sm text-sage">Safely in the album. Thank you.</p>
+              <p className="text-sm text-sage font-medium">
+                {done === 1 ? 'Confirmed in the album' : `All ${done} confirmed in the album`}
+              </p>
             )}
           </div>
 
@@ -356,7 +400,9 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
                     <p className="text-sm text-ink/50">{prettyBytes(it.file.size)}</p>
                   </div>
                   <div className="shrink-0 text-sm tabular-nums">
-                    {it.status === 'done' && <span className="text-sage">✓</span>}
+                    {it.status === 'done' && (
+                      <span className="text-sage font-medium">✓ Uploaded</span>
+                    )}
                     {it.status === 'uploading' && (
                       <span className="text-wine">{it.progress}%</span>
                     )}

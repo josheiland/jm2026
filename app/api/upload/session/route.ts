@@ -54,15 +54,16 @@ export async function POST(request: Request) {
     .join('\n')
 
   try {
+    const filename = buildFilename(name, uploader ?? '')
     const uploadUrl = await createResumableSession(cfg, {
-      filename: buildFilename(name, uploader ?? ''),
+      filename,
       mimeType,
       size,
       description: description || undefined,
       uploader: uploader?.trim().slice(0, 80),
       note: note?.trim().slice(0, 400),
     })
-    return NextResponse.json({ uploadUrl })
+    return NextResponse.json({ uploadUrl, filename })
   } catch (err) {
     console.error('[upload/session]', err)
     return NextResponse.json(

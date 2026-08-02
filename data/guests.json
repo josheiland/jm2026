@@ -1,896 +1,1500 @@
 {
-  "generatedFrom": {
-    "seating": "Seating chart sign.csv (Aug 1 2026)",
-    "invites": "Invite list (1).csv (Jul 19 2026)"
-  },
-  "totalSeated": 151,
-  "uniquePeople": 151,
+  "source": "Google Sheet \"Invite list\" tab",
+  "totalSeated": 180,
+  "guestCount": 178,
+  "headTableCount": 29,
+  "tableCount": 18,
   "duplicateNames": [
     "Bill Blankemeier"
   ],
   "suspectDuplicates": [],
-  "tableCount": 17,
-  "inferredCount": 17,
   "groups": [
     {
+      "label": "Us",
+      "blurb": "Hi.",
+      "count": 2,
+      "members": [
+        {
+          "name": "Josh Eiland",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "Us",
+          "groupKey": "us",
+          "headTable": true,
+          "isCouple": true
+        },
+        {
+          "name": "Mary Blankemeier",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "Us",
+          "groupKey": "us",
+          "headTable": true,
+          "isCouple": true
+        }
+      ]
+    },
+    {
       "label": "Mary's Family",
-      "blurb": "The Blankemeiers, Ryans, Savaianos and everyone who chanted \"Josh! Josh! Josh!\" at Thanksgiving.",
-      "count": 27,
+      "blurb": "The Blankemeiers, Ryans and Savaianos — including everyone who started the \"Josh! Josh! Josh!\" chant at Thanksgiving.",
+      "count": 31,
       "members": [
         {
           "name": "Amanda Ryan",
-          "table": 2,
+          "table": "2",
+          "tableLabel": "Table 2",
+          "tableSort": 2,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Becky Blankemeier",
-          "table": 2,
+          "table": "2",
+          "tableLabel": "Table 2",
+          "tableSort": 2,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Bill Blankemeier",
-          "table": 1,
+          "table": "1",
+          "tableLabel": "Table 1",
+          "tableSort": 1,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Bill Blankemeier",
-          "table": 2,
+          "table": "2",
+          "tableLabel": "Table 2",
+          "tableSort": 2,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Catherine Horrilleno",
-          "table": 4,
+          "table": "4",
+          "tableLabel": "Table 4",
+          "tableSort": 4,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Chase Bahr",
-          "table": 3,
+          "table": "3",
+          "tableLabel": "Table 3",
+          "tableSort": 3,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": true
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Claire Schutte",
-          "table": 4,
+          "table": "4",
+          "tableLabel": "Table 4",
+          "tableSort": 4,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Dom Savaiano",
-          "table": 3,
+          "table": "3",
+          "tableLabel": "Table 3",
+          "tableSort": 3,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Doug Ryan",
-          "table": 3,
+          "table": "3",
+          "tableLabel": "Table 3",
+          "tableSort": 3,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Griff Ryan",
-          "table": 3,
+          "table": "3",
+          "tableLabel": "Table 3",
+          "tableSort": 3,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Hanna Blankemeier",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "headTable": true,
+          "isCouple": false
         },
         {
           "name": "Helen Savaiano",
-          "table": 3,
+          "table": "3",
+          "tableLabel": "Table 3",
+          "tableSort": 3,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Hope Savaiano",
-          "table": 3,
+          "table": "3",
+          "tableLabel": "Table 3",
+          "tableSort": 3,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Jack Ryan",
-          "table": 2,
+          "table": "2",
+          "tableLabel": "Table 2",
+          "tableSort": 2,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Jacqueline Ryan",
-          "table": 2,
+          "table": "2",
+          "tableLabel": "Table 2",
+          "tableSort": 2,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "John Blankemeier",
-          "table": 4,
+          "table": "4",
+          "tableLabel": "Table 4",
+          "tableSort": 4,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Julie Blankemeier",
-          "table": 1,
+          "table": "1",
+          "tableLabel": "Table 1",
+          "tableSort": 1,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Kaitlin Schnepf",
-          "table": 4,
+          "table": "4",
+          "tableLabel": "Table 4",
+          "tableSort": 4,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Louis Blankemeier",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Madison Sury",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "headTable": true,
+          "isCouple": false
         },
         {
           "name": "Magdalene Ryan",
-          "table": 2,
+          "table": "2",
+          "tableLabel": "Table 2",
+          "tableSort": 2,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Maverick Ryan",
-          "table": 2,
+          "table": "2",
+          "tableLabel": "Table 2",
+          "tableSort": 2,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Maya Davis",
-          "table": 4,
+          "table": "4",
+          "tableLabel": "Table 4",
+          "tableSort": 4,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Ryan Blankemeier",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "headTable": true,
+          "isCouple": false
         },
         {
           "name": "Ryan Schnepf",
-          "table": 4,
+          "table": "4",
+          "tableLabel": "Table 4",
+          "tableSort": 4,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Ryan Schutte",
-          "table": 4,
+          "table": "4",
+          "tableLabel": "Table 4",
+          "tableSort": 4,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Stef Ryan",
-          "table": 3,
+          "table": "3",
+          "tableLabel": "Table 3",
+          "tableSort": 3,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Taite Ryan",
-          "table": 3,
+          "table": "3",
+          "tableLabel": "Table 3",
+          "tableSort": 3,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Tara LaRusso",
-          "table": 3,
+          "table": "3",
+          "tableLabel": "Table 3",
+          "tableSort": 3,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": true
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Tom Blankemeier",
-          "table": 4,
+          "table": "4",
+          "tableLabel": "Table 4",
+          "tableSort": 4,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Tom Stathakes",
-          "table": 2,
+          "table": "2",
+          "tableLabel": "Table 2",
+          "tableSort": 2,
           "group": "Mary's Family",
           "groupKey": "mary-family",
-          "inferred": true
+          "headTable": false,
+          "isCouple": false
         }
       ]
     },
     {
       "label": "Josh's Family",
-      "blurb": "The Eilands and Carrons.",
-      "count": 20,
+      "blurb": "The Eilands and the Carrons.",
+      "count": 22,
       "members": [
         {
           "name": "Anna Carron",
-          "table": 1,
+          "table": "1",
+          "tableLabel": "Table 1",
+          "tableSort": 1,
           "group": "Josh's Family",
           "groupKey": "josh-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Anna Eiland",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "headTable": true,
+          "isCouple": false
         },
         {
           "name": "Anna Rodenberg",
-          "table": 5,
+          "table": "5",
+          "tableLabel": "Table 5",
+          "tableSort": 5,
           "group": "Josh's Family",
           "groupKey": "josh-family",
-          "inferred": true
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Aria Lancaster",
-          "table": 5,
+          "table": "5",
+          "tableLabel": "Table 5",
+          "tableSort": 5,
           "group": "Josh's Family",
           "groupKey": "josh-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Avery Lancaster",
-          "table": 5,
+          "table": "5",
+          "tableLabel": "Table 5",
+          "tableSort": 5,
           "group": "Josh's Family",
           "groupKey": "josh-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Blaklie Mitchell",
-          "table": 6,
+          "table": "6",
+          "tableLabel": "Table 6",
+          "tableSort": 6,
           "group": "Josh's Family",
           "groupKey": "josh-family",
-          "inferred": true
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Brent Eiland",
-          "table": 1,
+          "table": "1",
+          "tableLabel": "Table 1",
+          "tableSort": 1,
           "group": "Josh's Family",
           "groupKey": "josh-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Chris Carron",
-          "table": 5,
+          "table": "5",
+          "tableLabel": "Table 5",
+          "tableSort": 5,
           "group": "Josh's Family",
           "groupKey": "josh-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Cole Rodenberg",
-          "table": 5,
+          "table": "5",
+          "tableLabel": "Table 5",
+          "tableSort": 5,
           "group": "Josh's Family",
           "groupKey": "josh-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Haydn Lancaster",
-          "table": 5,
+          "table": "5",
+          "tableLabel": "Table 5",
+          "tableSort": 5,
           "group": "Josh's Family",
           "groupKey": "josh-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Ian Evans",
-          "table": 6,
+          "table": "6",
+          "tableLabel": "Table 6",
+          "tableSort": 6,
           "group": "Josh's Family",
           "groupKey": "josh-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Jamie Evans",
-          "table": 6,
+          "table": "6",
+          "tableLabel": "Table 6",
+          "tableSort": 6,
           "group": "Josh's Family",
           "groupKey": "josh-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Lance Eiland",
-          "table": 1,
+          "table": "1",
+          "tableLabel": "Table 1",
+          "tableSort": 1,
           "group": "Josh's Family",
           "groupKey": "josh-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Leah Eiland",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "Josh's Family",
+          "groupKey": "josh-family",
+          "headTable": true,
+          "isCouple": false
         },
         {
           "name": "Levi Evans",
-          "table": 6,
+          "table": "6",
+          "tableLabel": "Table 6",
+          "tableSort": 6,
           "group": "Josh's Family",
           "groupKey": "josh-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Mike Carron",
-          "table": 5,
+          "table": "5",
+          "tableLabel": "Table 5",
+          "tableSort": 5,
           "group": "Josh's Family",
           "groupKey": "josh-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Monica Gonzalez",
-          "table": 6,
+          "table": "6",
+          "tableLabel": "Table 6",
+          "tableSort": 6,
           "group": "Josh's Family",
           "groupKey": "josh-family",
-          "inferred": true
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Phyfa Eiland",
-          "table": 1,
+          "table": "1",
+          "tableLabel": "Table 1",
+          "tableSort": 1,
           "group": "Josh's Family",
           "groupKey": "josh-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Sarah Stuart",
-          "table": 5,
+          "table": "5",
+          "tableLabel": "Table 5",
+          "tableSort": 5,
           "group": "Josh's Family",
           "groupKey": "josh-family",
-          "inferred": true
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Stephanie Evans",
-          "table": 6,
+          "table": "6",
+          "tableLabel": "Table 6",
+          "tableSort": 6,
           "group": "Josh's Family",
           "groupKey": "josh-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Susan Carron",
-          "table": 5,
+          "table": "5",
+          "tableLabel": "Table 5",
+          "tableSort": 5,
           "group": "Josh's Family",
           "groupKey": "josh-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Virginia Eiland",
-          "table": 1,
+          "table": "1",
+          "tableLabel": "Table 1",
+          "tableSort": 1,
           "group": "Josh's Family",
           "groupKey": "josh-family",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         }
       ]
     },
     {
       "label": "Family Friends",
-      "blurb": "The people who have been around so long they are basically family.",
+      "blurb": "Around so long they are effectively family.",
       "count": 30,
       "members": [
         {
           "name": "Becky McMinn",
-          "table": 6,
+          "table": "6",
+          "tableLabel": "Table 6",
+          "tableSort": 6,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Benjamin O’Brien",
-          "table": 7,
+          "table": "7",
+          "tableLabel": "Table 7",
+          "tableSort": 7,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": true
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Beth Sibert",
-          "table": 1,
+          "table": "1",
+          "tableLabel": "Table 1",
+          "tableSort": 1,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Brandon Bell",
-          "table": 8,
+          "table": "8",
+          "tableLabel": "Table 8",
+          "tableSort": 8,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Carly Appel",
-          "table": 7,
+          "table": "7",
+          "tableLabel": "Table 7",
+          "tableSort": 7,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Elliot Larson",
-          "table": 7,
+          "table": "7",
+          "tableLabel": "Table 7",
+          "tableSort": 7,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": true
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Gary McMinn",
-          "table": 6,
+          "table": "6",
+          "tableLabel": "Table 6",
+          "tableSort": 6,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "George Wray",
-          "table": 7,
+          "table": "7",
+          "tableLabel": "Table 7",
+          "tableSort": 7,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Glenn Bell",
-          "table": 8,
+          "table": "8",
+          "tableLabel": "Table 8",
+          "tableSort": 8,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Jack Kulp",
-          "table": 7,
+          "table": "7",
+          "tableLabel": "Table 7",
+          "tableSort": 7,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Jack Raisch",
-          "table": 2,
+          "table": "2",
+          "tableLabel": "Table 2",
+          "tableSort": 2,
           "group": "Family Friends",
           "groupKey": "mary-family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Julia Sibert",
-          "table": 7,
+          "table": "7",
+          "tableLabel": "Table 7",
+          "tableSort": 7,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Kate Bondeson",
-          "table": 8,
+          "table": "8",
+          "tableLabel": "Table 8",
+          "tableSort": 8,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Kate Kulp",
-          "table": 7,
+          "table": "7",
+          "tableLabel": "Table 7",
+          "tableSort": 7,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Kathy Roberts",
-          "table": 6,
+          "table": "6",
+          "tableLabel": "Table 6",
+          "tableSort": 6,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Kayla Bell",
-          "table": 8,
+          "table": "8",
+          "tableLabel": "Table 8",
+          "tableSort": 8,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Ken Raisch",
-          "table": 2,
+          "table": "2",
+          "tableLabel": "Table 2",
+          "tableSort": 2,
           "group": "Family Friends",
           "groupKey": "mary-family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Kyra Warnock",
-          "table": 8,
+          "table": "8",
+          "tableLabel": "Table 8",
+          "tableSort": 8,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Madeleine Sibert",
-          "table": 7,
+          "table": "7",
+          "tableLabel": "Table 7",
+          "tableSort": 7,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Mark Crumpler",
-          "table": 10,
+          "table": "10",
+          "tableLabel": "Table 10",
+          "tableSort": 10,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Marnie Crumpler",
-          "table": 10,
+          "table": "10",
+          "tableLabel": "Table 10",
+          "tableSort": 10,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Shanon Bell",
-          "table": 8,
+          "table": "8",
+          "tableLabel": "Table 8",
+          "tableSort": 8,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Susie Raisch",
-          "table": 2,
+          "table": "2",
+          "tableLabel": "Table 2",
+          "tableSort": 2,
           "group": "Family Friends",
           "groupKey": "mary-family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Suzann Moore",
-          "table": 8,
+          "table": "8",
+          "tableLabel": "Table 8",
+          "tableSort": 8,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Terry Moore IV",
-          "table": 8,
+          "table": "8",
+          "tableLabel": "Table 8",
+          "tableSort": 8,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": true
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Terry Moore V",
-          "table": 8,
+          "table": "8",
+          "tableLabel": "Table 8",
+          "tableSort": 8,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Tiffany Wray",
-          "table": 7,
+          "table": "7",
+          "tableLabel": "Table 7",
+          "tableSort": 7,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Tom Roberts",
-          "table": 6,
+          "table": "6",
+          "tableLabel": "Table 6",
+          "tableSort": 6,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Tony Sibert",
-          "table": 1,
+          "table": "1",
+          "tableLabel": "Table 1",
+          "tableSort": 1,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Will Wray",
-          "table": 7,
+          "table": "7",
+          "tableLabel": "Table 7",
+          "tableSort": 7,
           "group": "Family Friends",
           "groupKey": "family-friends",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         }
       ]
     },
     {
       "label": "Boston",
-      "blurb": "The chapter right after graduation — the crew that made a new city feel like home.",
-      "count": 28,
+      "blurb": "The chapter straight after graduation — the people who made a new city feel like home.",
+      "count": 33,
       "members": [
         {
           "name": "Alvaro Calleja",
-          "table": 14,
+          "table": "14",
+          "tableLabel": "Table 14",
+          "tableSort": 14,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Amy Zhang",
-          "table": 12,
+          "table": "12",
+          "tableLabel": "Table 12",
+          "tableSort": 12,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Animesh Koratana",
-          "table": 14,
+          "table": "14",
+          "tableLabel": "Table 14",
+          "tableSort": 14,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Bella Gribov",
-          "table": 14,
+          "table": "14",
+          "tableLabel": "Table 14",
+          "tableSort": 14,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Cal Newlon",
-          "table": 13,
+          "table": "13",
+          "tableLabel": "Table 13",
+          "tableSort": 13,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
-          "name": "Catherine Irons",
-          "table": 10,
+          "name": "Chiaka Ibe",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": true,
+          "isCouple": false
         },
         {
           "name": "Colette Fritsche",
-          "table": 12,
+          "table": "12",
+          "tableLabel": "Table 12",
+          "tableSort": 12,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Connor Mieth",
-          "table": 14,
+          "table": "14",
+          "tableLabel": "Table 14",
+          "tableSort": 14,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": true
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Dan Palleiko",
-          "table": 12,
+          "table": "12",
+          "tableLabel": "Table 12",
+          "tableSort": 12,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "David Powell",
-          "table": 13,
+          "table": "13",
+          "tableLabel": "Table 13",
+          "tableSort": 13,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Emily Niu",
-          "table": 12,
+          "table": "12",
+          "tableLabel": "Table 12",
+          "tableSort": 12,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Eric Yushao",
-          "table": 12,
+          "table": "12",
+          "tableLabel": "Table 12",
+          "tableSort": 12,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Fatima Bassir",
-          "table": 14,
+          "table": "14",
+          "tableLabel": "Table 14",
+          "tableSort": 14,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": true
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Haley Bruns",
-          "table": 13,
+          "table": "13",
+          "tableLabel": "Table 13",
+          "tableSort": 13,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Hannah Norowitz",
-          "table": 14,
+          "table": "14",
+          "tableLabel": "Table 14",
+          "tableSort": 14,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Keshav Vellodi",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "Boston",
+          "groupKey": "boston",
+          "headTable": true,
+          "isCouple": false
         },
         {
           "name": "Madeleine Conroy",
-          "table": 13,
+          "table": "13",
+          "tableLabel": "Table 13",
+          "tableSort": 13,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Max Curlin",
-          "table": 15,
+          "table": "15",
+          "tableLabel": "Table 15",
+          "tableSort": 15,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Mike Zhu",
-          "table": 13,
+          "table": "13",
+          "tableLabel": "Table 13",
+          "tableSort": 13,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Miya Herman",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "Boston",
+          "groupKey": "boston",
+          "headTable": true,
+          "isCouple": false
         },
         {
           "name": "Nathan Abraham",
-          "table": 13,
+          "table": "13",
+          "tableLabel": "Table 13",
+          "tableSort": 13,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Nick Esemplare",
-          "table": 13,
+          "table": "13",
+          "tableLabel": "Table 13",
+          "tableSort": 13,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Phil McGloin",
-          "table": 14,
+          "table": "14",
+          "tableLabel": "Table 14",
+          "tableSort": 14,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Quang Nguyen",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "Boston",
+          "groupKey": "boston",
+          "headTable": true,
+          "isCouple": false
         },
         {
           "name": "Rahim Kanji",
-          "table": 12,
+          "table": "12",
+          "tableLabel": "Table 12",
+          "tableSort": 12,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": true
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Rais Aoudou",
-          "table": 14,
+          "table": "14",
+          "tableLabel": "Table 14",
+          "tableSort": 14,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Safiya Rajwani",
-          "table": 12,
+          "table": "12",
+          "tableLabel": "Table 12",
+          "tableSort": 12,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Sally Pan",
-          "table": 14,
+          "table": "14",
+          "tableLabel": "Table 14",
+          "tableSort": 14,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Sav Abramenko",
-          "table": 15,
+          "table": "15",
+          "tableLabel": "Table 15",
+          "tableSort": 15,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Sho Hatakeyama",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "Boston",
+          "groupKey": "boston",
+          "headTable": true,
+          "isCouple": false
         },
         {
           "name": "Tobi Abramenko",
-          "table": 15,
+          "table": "15",
+          "tableLabel": "Table 15",
+          "tableSort": 15,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Wei Chee Chen",
-          "table": 12,
+          "table": "12",
+          "tableLabel": "Table 12",
+          "tableSort": 12,
           "group": "Boston",
           "groupKey": "boston",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Zoë Chandra",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "Boston",
+          "groupKey": "boston",
+          "headTable": true,
+          "isCouple": false
         }
       ]
     },
     {
       "label": "UVA — Mary",
       "blurb": "Wahoos. Lawn residents. Study-session enablers.",
-      "count": 8,
+      "count": 12,
       "members": [
         {
           "name": "Aaron James",
-          "table": 9,
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
           "group": "UVA — Mary",
           "groupKey": "uva-mary",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Ashley Staggers",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA — Mary",
+          "groupKey": "uva-mary",
+          "headTable": true,
+          "isCouple": false
         },
         {
           "name": "Beau Bradley",
-          "table": 9,
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
           "group": "UVA — Mary",
           "groupKey": "uva-mary",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Cabrel Happi",
-          "table": 9,
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
           "group": "UVA — Mary",
           "groupKey": "uva-mary",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
-          "name": "John Stacey",
-          "table": 10,
+          "name": "Larry Minor",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
           "group": "UVA — Mary",
           "groupKey": "uva-mary",
-          "inferred": false
+          "headTable": true,
+          "isCouple": false
         },
         {
           "name": "Mia Bailey",
-          "table": 9,
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
           "group": "UVA — Mary",
           "groupKey": "uva-mary",
-          "inferred": true
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Neeve Graham",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA — Mary",
+          "groupKey": "uva-mary",
+          "headTable": true,
+          "isCouple": false
         },
         {
           "name": "Sarah Rambo",
-          "table": 9,
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
           "group": "UVA — Mary",
           "groupKey": "uva-mary",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Sarita Mehta",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA — Mary",
+          "groupKey": "uva-mary",
+          "headTable": true,
+          "isCouple": false
         },
         {
           "name": "Savana Bradley",
-          "table": 9,
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
           "group": "UVA — Mary",
           "groupKey": "uva-mary",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Sela Carrington",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA — Mary",
+          "groupKey": "uva-mary",
+          "headTable": true,
+          "isCouple": false
         },
         {
           "name": "Shannon Cason",
-          "table": 9,
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
           "group": "UVA — Mary",
           "groupKey": "uva-mary",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         }
       ]
     },
     {
       "label": "UVA — Josh",
       "blurb": "Wahoos. Lawn residents. Study-session enablers.",
-      "count": 7,
+      "count": 14,
       "members": [
         {
           "name": "Belen Grimaldi",
-          "table": 11,
+          "table": "11",
+          "tableLabel": "Table 11",
+          "tableSort": 11,
           "group": "UVA — Josh",
           "groupKey": "uva-josh",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Ben Kilpatrick",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA — Josh",
+          "groupKey": "uva-josh",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Chirag Kulkarni",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA — Josh",
+          "groupKey": "uva-josh",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Colin Cool",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA — Josh",
+          "groupKey": "uva-josh",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Eliza Fisher",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA — Josh",
+          "groupKey": "uva-josh",
+          "headTable": true,
+          "isCouple": false
         },
         {
           "name": "Elle Ondeck",
-          "table": 11,
+          "table": "11",
+          "tableLabel": "Table 11",
+          "tableSort": 11,
           "group": "UVA — Josh",
           "groupKey": "uva-josh",
-          "inferred": true
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Jack Larkin",
-          "table": 11,
+          "table": "11",
+          "tableLabel": "Table 11",
+          "tableSort": 11,
           "group": "UVA — Josh",
           "groupKey": "uva-josh",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Jonathan Brownbill",
-          "table": 11,
+          "table": "11",
+          "tableLabel": "Table 11",
+          "tableSort": 11,
           "group": "UVA — Josh",
           "groupKey": "uva-josh",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Lydia McVeigh",
-          "table": 11,
+          "table": "11",
+          "tableLabel": "Table 11",
+          "tableSort": 11,
           "group": "UVA — Josh",
           "groupKey": "uva-josh",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Matt Otto",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA — Josh",
+          "groupKey": "uva-josh",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Mia Price",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA — Josh",
+          "groupKey": "uva-josh",
+          "headTable": true,
+          "isCouple": false
         },
         {
           "name": "Peter Xu",
-          "table": 11,
+          "table": "11",
+          "tableLabel": "Table 11",
+          "tableSort": 11,
           "group": "UVA — Josh",
           "groupKey": "uva-josh",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Priyanka Vijay",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA — Josh",
+          "groupKey": "uva-josh",
+          "headTable": true,
+          "isCouple": false
         },
         {
           "name": "Zach Zamoff",
-          "table": 11,
+          "table": "11",
+          "tableLabel": "Table 11",
+          "tableSort": 11,
           "group": "UVA — Josh",
           "groupKey": "uva-josh",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         }
       ]
     },
@@ -901,129 +1505,180 @@
       "members": [
         {
           "name": "Nano Masters",
-          "table": 9,
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
           "group": "UVA",
           "groupKey": "uva",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         }
       ]
     },
     {
       "label": "Stanford",
-      "blurb": "The current chapter — GSB and the Farm.",
+      "blurb": "The current chapter — the GSB and the Farm.",
       "count": 16,
       "members": [
         {
           "name": "AK Cates",
-          "table": 17,
+          "table": "17",
+          "tableLabel": "Table 17",
+          "tableSort": 17,
           "group": "Stanford",
           "groupKey": "stanford",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "AK Khullar",
-          "table": 16,
+          "table": "16",
+          "tableLabel": "Table 16",
+          "tableSort": 16,
           "group": "Stanford",
           "groupKey": "stanford",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Alexandria Clarke",
-          "table": 17,
+          "table": "17",
+          "tableLabel": "Table 17",
+          "tableSort": 17,
           "group": "Stanford",
           "groupKey": "stanford",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Braiden Childs",
-          "table": 16,
+          "table": "16",
+          "tableLabel": "Table 16",
+          "tableSort": 16,
           "group": "Stanford",
           "groupKey": "stanford",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Federico Verrastro",
-          "table": 16,
+          "table": "16",
+          "tableLabel": "Table 16",
+          "tableSort": 16,
           "group": "Stanford",
           "groupKey": "stanford",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Jack Mandel",
-          "table": 17,
+          "table": "17",
+          "tableLabel": "Table 17",
+          "tableSort": 17,
           "group": "Stanford",
           "groupKey": "stanford",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Jonathan Holland",
-          "table": 17,
+          "table": "17",
+          "tableLabel": "Table 17",
+          "tableSort": 17,
           "group": "Stanford",
           "groupKey": "stanford",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Jordan Lee",
-          "table": 17,
+          "table": "17",
+          "tableLabel": "Table 17",
+          "tableSort": 17,
           "group": "Stanford",
           "groupKey": "stanford",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Kamaria Wilson",
-          "table": 17,
+          "table": "17",
+          "tableLabel": "Table 17",
+          "tableSort": 17,
           "group": "Stanford",
           "groupKey": "stanford",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Katherine Boggs",
-          "table": 16,
+          "table": "16",
+          "tableLabel": "Table 16",
+          "tableSort": 16,
           "group": "Stanford",
           "groupKey": "stanford",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Kevin Ifiora",
-          "table": 16,
+          "table": "16",
+          "tableLabel": "Table 16",
+          "tableSort": 16,
           "group": "Stanford",
           "groupKey": "stanford",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Luciana Migliano",
-          "table": 16,
+          "table": "16",
+          "tableLabel": "Table 16",
+          "tableSort": 16,
           "group": "Stanford",
           "groupKey": "stanford",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Matt Williams",
-          "table": 17,
+          "table": "17",
+          "tableLabel": "Table 17",
+          "tableSort": 17,
           "group": "Stanford",
           "groupKey": "stanford",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Nick Low",
-          "table": 16,
+          "table": "16",
+          "tableLabel": "Table 16",
+          "tableSort": 16,
           "group": "Stanford",
           "groupKey": "stanford",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Spencer Ma",
-          "table": 16,
+          "table": "16",
+          "tableLabel": "Table 16",
+          "tableSort": 16,
           "group": "Stanford",
           "groupKey": "stanford",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Tatiana Bouri",
-          "table": 17,
+          "table": "17",
+          "tableLabel": "Table 17",
+          "tableSort": 17,
           "group": "Stanford",
           "groupKey": "stanford",
-          "inferred": true
+          "headTable": false,
+          "isCouple": false
         }
       ]
     },
@@ -1034,108 +1689,197 @@
       "members": [
         {
           "name": "Aparna Dutta",
-          "table": 11,
+          "table": "11",
+          "tableLabel": "Table 11",
+          "tableSort": 11,
           "group": "The Bay",
           "groupKey": "sf",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Arjun Athreya",
-          "table": 11,
+          "table": "11",
+          "tableLabel": "Table 11",
+          "tableSort": 11,
           "group": "The Bay",
           "groupKey": "sf",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Ava van Natta",
-          "table": 12,
+          "table": "12",
+          "tableLabel": "Table 12",
+          "tableSort": 12,
           "group": "The Bay",
           "groupKey": "sf",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         }
       ]
     },
     {
       "label": "Run Your City",
-      "blurb": "75+ chapters, 10,000+ kids, and the running camps in Rwanda that started it.",
-      "count": 6,
+      "blurb": "75+ chapters, 10,000+ kids, and the running camps in Rwanda where a lot of this got its shape.",
+      "count": 8,
       "members": [
         {
           "name": "Callie Tucker",
-          "table": 10,
+          "table": "10",
+          "tableLabel": "Table 10",
+          "tableSort": 10,
           "group": "Run Your City",
           "groupKey": "ryc",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Catherine Irons",
+          "table": "10",
+          "tableLabel": "Table 10",
+          "tableSort": 10,
+          "group": "Run Your City",
+          "groupKey": "ryc",
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Cayla Weiss",
-          "table": 15,
+          "table": "15",
+          "tableLabel": "Table 15",
+          "tableSort": 15,
           "group": "Run Your City",
           "groupKey": "ryc",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "John Stacey",
+          "table": "10",
+          "tableLabel": "Table 10",
+          "tableSort": 10,
+          "group": "Run Your City",
+          "groupKey": "ryc",
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Manuel Paz",
-          "table": 15,
+          "table": "15",
+          "tableLabel": "Table 15",
+          "tableSort": 15,
           "group": "Run Your City",
           "groupKey": "ryc",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Neharika Singh",
-          "table": 10,
+          "table": "10",
+          "tableLabel": "Table 10",
+          "tableSort": 10,
           "group": "Run Your City",
           "groupKey": "ryc",
-          "inferred": true
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Owayne Owens",
-          "table": 10,
+          "table": "10",
+          "tableLabel": "Table 10",
+          "tableSort": 10,
           "group": "Run Your City",
           "groupKey": "ryc",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Tyler Yen",
-          "table": 15,
+          "table": "15",
+          "tableLabel": "Table 15",
+          "tableSort": 15,
           "group": "Run Your City",
           "groupKey": "ryc",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         }
       ]
     },
     {
       "label": "Mary's Hometown",
       "blurb": "Since before any of this.",
-      "count": 4,
+      "count": 7,
       "members": [
         {
           "name": "Christine Levy",
-          "table": 3,
+          "table": "3",
+          "tableLabel": "Table 3",
+          "tableSort": 3,
           "group": "Mary's Hometown",
           "groupKey": "mary-hs",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Hallie Voss",
-          "table": 15,
+          "table": "15",
+          "tableLabel": "Table 15",
+          "tableSort": 15,
           "group": "Mary's Hometown",
           "groupKey": "mary-hs",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Kassie Ogbodu",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "Mary's Hometown",
+          "groupKey": "mary-hs",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Lila Wine",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "Mary's Hometown",
+          "groupKey": "mary-hs",
+          "headTable": true,
+          "isCouple": false
         },
         {
           "name": "Luke Nelson",
-          "table": 15,
+          "table": "15",
+          "tableLabel": "Table 15",
+          "tableSort": 15,
           "group": "Mary's Hometown",
           "groupKey": "mary-hs",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         },
         {
           "name": "Nkabi Mwakyoma",
-          "table": 15,
+          "table": "15",
+          "tableLabel": "Table 15",
+          "tableSort": 15,
           "group": "Mary's Hometown",
           "groupKey": "mary-hs",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Shane Deshler",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "Mary's Hometown",
+          "groupKey": "mary-hs",
+          "headTable": true,
+          "isCouple": false
         }
       ]
     },
@@ -1146,10 +1890,13 @@
       "members": [
         {
           "name": "Mary Davis",
-          "table": 1,
+          "table": "1",
+          "tableLabel": "Table 1",
+          "tableSort": 1,
           "group": "Officiant",
           "groupKey": "role",
-          "inferred": false
+          "headTable": false,
+          "isCouple": false
         }
       ]
     }
@@ -1157,1060 +1904,1803 @@
   "guests": [
     {
       "name": "Aaron James",
-      "table": 9,
+      "table": "9",
+      "tableLabel": "Table 9",
+      "tableSort": 9,
       "group": "UVA — Mary",
       "groupKey": "uva-mary",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "AK Cates",
-      "table": 17,
+      "table": "17",
+      "tableLabel": "Table 17",
+      "tableSort": 17,
       "group": "Stanford",
       "groupKey": "stanford",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "AK Khullar",
-      "table": 16,
+      "table": "16",
+      "tableLabel": "Table 16",
+      "tableSort": 16,
       "group": "Stanford",
       "groupKey": "stanford",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Alexandria Clarke",
-      "table": 17,
+      "table": "17",
+      "tableLabel": "Table 17",
+      "tableSort": 17,
       "group": "Stanford",
       "groupKey": "stanford",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Alvaro Calleja",
-      "table": 14,
+      "table": "14",
+      "tableLabel": "Table 14",
+      "tableSort": 14,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Amanda Ryan",
-      "table": 2,
+      "table": "2",
+      "tableLabel": "Table 2",
+      "tableSort": 2,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Amy Zhang",
-      "table": 12,
+      "table": "12",
+      "tableLabel": "Table 12",
+      "tableSort": 12,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Animesh Koratana",
-      "table": 14,
+      "table": "14",
+      "tableLabel": "Table 14",
+      "tableSort": 14,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Anna Carron",
-      "table": 1,
+      "table": "1",
+      "tableLabel": "Table 1",
+      "tableSort": 1,
       "group": "Josh's Family",
       "groupKey": "josh-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Anna Eiland",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Anna Rodenberg",
-      "table": 5,
+      "table": "5",
+      "tableLabel": "Table 5",
+      "tableSort": 5,
       "group": "Josh's Family",
       "groupKey": "josh-family",
-      "inferred": true
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Aparna Dutta",
-      "table": 11,
+      "table": "11",
+      "tableLabel": "Table 11",
+      "tableSort": 11,
       "group": "The Bay",
       "groupKey": "sf",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Aria Lancaster",
-      "table": 5,
+      "table": "5",
+      "tableLabel": "Table 5",
+      "tableSort": 5,
       "group": "Josh's Family",
       "groupKey": "josh-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Arjun Athreya",
-      "table": 11,
+      "table": "11",
+      "tableLabel": "Table 11",
+      "tableSort": 11,
       "group": "The Bay",
       "groupKey": "sf",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Ashley Staggers",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "UVA — Mary",
+      "groupKey": "uva-mary",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Ava van Natta",
-      "table": 12,
+      "table": "12",
+      "tableLabel": "Table 12",
+      "tableSort": 12,
       "group": "The Bay",
       "groupKey": "sf",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Avery Lancaster",
-      "table": 5,
+      "table": "5",
+      "tableLabel": "Table 5",
+      "tableSort": 5,
       "group": "Josh's Family",
       "groupKey": "josh-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Beau Bradley",
-      "table": 9,
+      "table": "9",
+      "tableLabel": "Table 9",
+      "tableSort": 9,
       "group": "UVA — Mary",
       "groupKey": "uva-mary",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Becky Blankemeier",
-      "table": 2,
+      "table": "2",
+      "tableLabel": "Table 2",
+      "tableSort": 2,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Becky McMinn",
-      "table": 6,
+      "table": "6",
+      "tableLabel": "Table 6",
+      "tableSort": 6,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Belen Grimaldi",
-      "table": 11,
+      "table": "11",
+      "tableLabel": "Table 11",
+      "tableSort": 11,
       "group": "UVA — Josh",
       "groupKey": "uva-josh",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Bella Gribov",
-      "table": 14,
+      "table": "14",
+      "tableLabel": "Table 14",
+      "tableSort": 14,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Ben Kilpatrick",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "UVA — Josh",
+      "groupKey": "uva-josh",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Benjamin O’Brien",
-      "table": 7,
+      "table": "7",
+      "tableLabel": "Table 7",
+      "tableSort": 7,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": true
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Beth Sibert",
-      "table": 1,
+      "table": "1",
+      "tableLabel": "Table 1",
+      "tableSort": 1,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Bill Blankemeier",
-      "table": 1,
+      "table": "1",
+      "tableLabel": "Table 1",
+      "tableSort": 1,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Bill Blankemeier",
-      "table": 2,
+      "table": "2",
+      "tableLabel": "Table 2",
+      "tableSort": 2,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Blaklie Mitchell",
-      "table": 6,
+      "table": "6",
+      "tableLabel": "Table 6",
+      "tableSort": 6,
       "group": "Josh's Family",
       "groupKey": "josh-family",
-      "inferred": true
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Braiden Childs",
-      "table": 16,
+      "table": "16",
+      "tableLabel": "Table 16",
+      "tableSort": 16,
       "group": "Stanford",
       "groupKey": "stanford",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Brandon Bell",
-      "table": 8,
+      "table": "8",
+      "tableLabel": "Table 8",
+      "tableSort": 8,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Brent Eiland",
-      "table": 1,
+      "table": "1",
+      "tableLabel": "Table 1",
+      "tableSort": 1,
       "group": "Josh's Family",
       "groupKey": "josh-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Cabrel Happi",
-      "table": 9,
+      "table": "9",
+      "tableLabel": "Table 9",
+      "tableSort": 9,
       "group": "UVA — Mary",
       "groupKey": "uva-mary",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Cal Newlon",
-      "table": 13,
+      "table": "13",
+      "tableLabel": "Table 13",
+      "tableSort": 13,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Callie Tucker",
-      "table": 10,
+      "table": "10",
+      "tableLabel": "Table 10",
+      "tableSort": 10,
       "group": "Run Your City",
       "groupKey": "ryc",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Carly Appel",
-      "table": 7,
+      "table": "7",
+      "tableLabel": "Table 7",
+      "tableSort": 7,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Catherine Horrilleno",
-      "table": 4,
+      "table": "4",
+      "tableLabel": "Table 4",
+      "tableSort": 4,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Catherine Irons",
-      "table": 10,
-      "group": "Boston",
-      "groupKey": "boston",
-      "inferred": false
+      "table": "10",
+      "tableLabel": "Table 10",
+      "tableSort": 10,
+      "group": "Run Your City",
+      "groupKey": "ryc",
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Cayla Weiss",
-      "table": 15,
+      "table": "15",
+      "tableLabel": "Table 15",
+      "tableSort": 15,
       "group": "Run Your City",
       "groupKey": "ryc",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Chase Bahr",
-      "table": 3,
+      "table": "3",
+      "tableLabel": "Table 3",
+      "tableSort": 3,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": true
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Chiaka Ibe",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "Boston",
+      "groupKey": "boston",
+      "headTable": true,
+      "isCouple": false
+    },
+    {
+      "name": "Chirag Kulkarni",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "UVA — Josh",
+      "groupKey": "uva-josh",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Chris Carron",
-      "table": 5,
+      "table": "5",
+      "tableLabel": "Table 5",
+      "tableSort": 5,
       "group": "Josh's Family",
       "groupKey": "josh-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Christine Levy",
-      "table": 3,
+      "table": "3",
+      "tableLabel": "Table 3",
+      "tableSort": 3,
       "group": "Mary's Hometown",
       "groupKey": "mary-hs",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Claire Schutte",
-      "table": 4,
+      "table": "4",
+      "tableLabel": "Table 4",
+      "tableSort": 4,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Cole Rodenberg",
-      "table": 5,
+      "table": "5",
+      "tableLabel": "Table 5",
+      "tableSort": 5,
       "group": "Josh's Family",
       "groupKey": "josh-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Colette Fritsche",
-      "table": 12,
+      "table": "12",
+      "tableLabel": "Table 12",
+      "tableSort": 12,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Colin Cool",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "UVA — Josh",
+      "groupKey": "uva-josh",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Connor Mieth",
-      "table": 14,
+      "table": "14",
+      "tableLabel": "Table 14",
+      "tableSort": 14,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": true
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Dan Palleiko",
-      "table": 12,
+      "table": "12",
+      "tableLabel": "Table 12",
+      "tableSort": 12,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "David Powell",
-      "table": 13,
+      "table": "13",
+      "tableLabel": "Table 13",
+      "tableSort": 13,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Dom Savaiano",
-      "table": 3,
+      "table": "3",
+      "tableLabel": "Table 3",
+      "tableSort": 3,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Doug Ryan",
-      "table": 3,
+      "table": "3",
+      "tableLabel": "Table 3",
+      "tableSort": 3,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Eliza Fisher",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "UVA — Josh",
+      "groupKey": "uva-josh",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Elle Ondeck",
-      "table": 11,
+      "table": "11",
+      "tableLabel": "Table 11",
+      "tableSort": 11,
       "group": "UVA — Josh",
       "groupKey": "uva-josh",
-      "inferred": true
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Elliot Larson",
-      "table": 7,
+      "table": "7",
+      "tableLabel": "Table 7",
+      "tableSort": 7,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": true
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Emily Niu",
-      "table": 12,
+      "table": "12",
+      "tableLabel": "Table 12",
+      "tableSort": 12,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Eric Yushao",
-      "table": 12,
+      "table": "12",
+      "tableLabel": "Table 12",
+      "tableSort": 12,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Fatima Bassir",
-      "table": 14,
+      "table": "14",
+      "tableLabel": "Table 14",
+      "tableSort": 14,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": true
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Federico Verrastro",
-      "table": 16,
+      "table": "16",
+      "tableLabel": "Table 16",
+      "tableSort": 16,
       "group": "Stanford",
       "groupKey": "stanford",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Gary McMinn",
-      "table": 6,
+      "table": "6",
+      "tableLabel": "Table 6",
+      "tableSort": 6,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "George Wray",
-      "table": 7,
+      "table": "7",
+      "tableLabel": "Table 7",
+      "tableSort": 7,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Glenn Bell",
-      "table": 8,
+      "table": "8",
+      "tableLabel": "Table 8",
+      "tableSort": 8,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Griff Ryan",
-      "table": 3,
+      "table": "3",
+      "tableLabel": "Table 3",
+      "tableSort": 3,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Haley Bruns",
-      "table": 13,
+      "table": "13",
+      "tableLabel": "Table 13",
+      "tableSort": 13,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Hallie Voss",
-      "table": 15,
+      "table": "15",
+      "tableLabel": "Table 15",
+      "tableSort": 15,
       "group": "Mary's Hometown",
       "groupKey": "mary-hs",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Hanna Blankemeier",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Hannah Norowitz",
-      "table": 14,
+      "table": "14",
+      "tableLabel": "Table 14",
+      "tableSort": 14,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Haydn Lancaster",
-      "table": 5,
+      "table": "5",
+      "tableLabel": "Table 5",
+      "tableSort": 5,
       "group": "Josh's Family",
       "groupKey": "josh-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Helen Savaiano",
-      "table": 3,
+      "table": "3",
+      "tableLabel": "Table 3",
+      "tableSort": 3,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Hope Savaiano",
-      "table": 3,
+      "table": "3",
+      "tableLabel": "Table 3",
+      "tableSort": 3,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Ian Evans",
-      "table": 6,
+      "table": "6",
+      "tableLabel": "Table 6",
+      "tableSort": 6,
       "group": "Josh's Family",
       "groupKey": "josh-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Jack Kulp",
-      "table": 7,
+      "table": "7",
+      "tableLabel": "Table 7",
+      "tableSort": 7,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Jack Larkin",
-      "table": 11,
+      "table": "11",
+      "tableLabel": "Table 11",
+      "tableSort": 11,
       "group": "UVA — Josh",
       "groupKey": "uva-josh",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Jack Mandel",
-      "table": 17,
+      "table": "17",
+      "tableLabel": "Table 17",
+      "tableSort": 17,
       "group": "Stanford",
       "groupKey": "stanford",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Jack Raisch",
-      "table": 2,
+      "table": "2",
+      "tableLabel": "Table 2",
+      "tableSort": 2,
       "group": "Family Friends",
       "groupKey": "mary-family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Jack Ryan",
-      "table": 2,
+      "table": "2",
+      "tableLabel": "Table 2",
+      "tableSort": 2,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Jacqueline Ryan",
-      "table": 2,
+      "table": "2",
+      "tableLabel": "Table 2",
+      "tableSort": 2,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Jamie Evans",
-      "table": 6,
+      "table": "6",
+      "tableLabel": "Table 6",
+      "tableSort": 6,
       "group": "Josh's Family",
       "groupKey": "josh-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "John Blankemeier",
-      "table": 4,
+      "table": "4",
+      "tableLabel": "Table 4",
+      "tableSort": 4,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "John Stacey",
-      "table": 10,
-      "group": "UVA — Mary",
-      "groupKey": "uva-mary",
-      "inferred": false
+      "table": "10",
+      "tableLabel": "Table 10",
+      "tableSort": 10,
+      "group": "Run Your City",
+      "groupKey": "ryc",
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Jonathan Brownbill",
-      "table": 11,
+      "table": "11",
+      "tableLabel": "Table 11",
+      "tableSort": 11,
       "group": "UVA — Josh",
       "groupKey": "uva-josh",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Jonathan Holland",
-      "table": 17,
+      "table": "17",
+      "tableLabel": "Table 17",
+      "tableSort": 17,
       "group": "Stanford",
       "groupKey": "stanford",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Jordan Lee",
-      "table": 17,
+      "table": "17",
+      "tableLabel": "Table 17",
+      "tableSort": 17,
       "group": "Stanford",
       "groupKey": "stanford",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Josh Eiland",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "Us",
+      "groupKey": "us",
+      "headTable": true,
+      "isCouple": true
     },
     {
       "name": "Julia Sibert",
-      "table": 7,
+      "table": "7",
+      "tableLabel": "Table 7",
+      "tableSort": 7,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Julie Blankemeier",
-      "table": 1,
+      "table": "1",
+      "tableLabel": "Table 1",
+      "tableSort": 1,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Kaitlin Schnepf",
-      "table": 4,
+      "table": "4",
+      "tableLabel": "Table 4",
+      "tableSort": 4,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Kamaria Wilson",
-      "table": 17,
+      "table": "17",
+      "tableLabel": "Table 17",
+      "tableSort": 17,
       "group": "Stanford",
       "groupKey": "stanford",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Kassie Ogbodu",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "Mary's Hometown",
+      "groupKey": "mary-hs",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Kate Bondeson",
-      "table": 8,
+      "table": "8",
+      "tableLabel": "Table 8",
+      "tableSort": 8,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Kate Kulp",
-      "table": 7,
+      "table": "7",
+      "tableLabel": "Table 7",
+      "tableSort": 7,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Katherine Boggs",
-      "table": 16,
+      "table": "16",
+      "tableLabel": "Table 16",
+      "tableSort": 16,
       "group": "Stanford",
       "groupKey": "stanford",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Kathy Roberts",
-      "table": 6,
+      "table": "6",
+      "tableLabel": "Table 6",
+      "tableSort": 6,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Kayla Bell",
-      "table": 8,
+      "table": "8",
+      "tableLabel": "Table 8",
+      "tableSort": 8,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Ken Raisch",
-      "table": 2,
+      "table": "2",
+      "tableLabel": "Table 2",
+      "tableSort": 2,
       "group": "Family Friends",
       "groupKey": "mary-family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Keshav Vellodi",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "Boston",
+      "groupKey": "boston",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Kevin Ifiora",
-      "table": 16,
+      "table": "16",
+      "tableLabel": "Table 16",
+      "tableSort": 16,
       "group": "Stanford",
       "groupKey": "stanford",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Kyra Warnock",
-      "table": 8,
+      "table": "8",
+      "tableLabel": "Table 8",
+      "tableSort": 8,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Lance Eiland",
-      "table": 1,
+      "table": "1",
+      "tableLabel": "Table 1",
+      "tableSort": 1,
       "group": "Josh's Family",
       "groupKey": "josh-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Larry Minor",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "UVA — Mary",
+      "groupKey": "uva-mary",
+      "headTable": true,
+      "isCouple": false
+    },
+    {
+      "name": "Leah Eiland",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "Josh's Family",
+      "groupKey": "josh-family",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Levi Evans",
-      "table": 6,
+      "table": "6",
+      "tableLabel": "Table 6",
+      "tableSort": 6,
       "group": "Josh's Family",
       "groupKey": "josh-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Lila Wine",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "Mary's Hometown",
+      "groupKey": "mary-hs",
+      "headTable": true,
+      "isCouple": false
+    },
+    {
+      "name": "Louis Blankemeier",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Luciana Migliano",
-      "table": 16,
+      "table": "16",
+      "tableLabel": "Table 16",
+      "tableSort": 16,
       "group": "Stanford",
       "groupKey": "stanford",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Luke Nelson",
-      "table": 15,
+      "table": "15",
+      "tableLabel": "Table 15",
+      "tableSort": 15,
       "group": "Mary's Hometown",
       "groupKey": "mary-hs",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Lydia McVeigh",
-      "table": 11,
+      "table": "11",
+      "tableLabel": "Table 11",
+      "tableSort": 11,
       "group": "UVA — Josh",
       "groupKey": "uva-josh",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Madeleine Conroy",
-      "table": 13,
+      "table": "13",
+      "tableLabel": "Table 13",
+      "tableSort": 13,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Madeleine Sibert",
-      "table": 7,
+      "table": "7",
+      "tableLabel": "Table 7",
+      "tableSort": 7,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Madison Sury",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Magdalene Ryan",
-      "table": 2,
+      "table": "2",
+      "tableLabel": "Table 2",
+      "tableSort": 2,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Manuel Paz",
-      "table": 15,
+      "table": "15",
+      "tableLabel": "Table 15",
+      "tableSort": 15,
       "group": "Run Your City",
       "groupKey": "ryc",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Mark Crumpler",
-      "table": 10,
+      "table": "10",
+      "tableLabel": "Table 10",
+      "tableSort": 10,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Marnie Crumpler",
-      "table": 10,
+      "table": "10",
+      "tableLabel": "Table 10",
+      "tableSort": 10,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Mary Blankemeier",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "Us",
+      "groupKey": "us",
+      "headTable": true,
+      "isCouple": true
     },
     {
       "name": "Mary Davis",
-      "table": 1,
+      "table": "1",
+      "tableLabel": "Table 1",
+      "tableSort": 1,
       "group": "Officiant",
       "groupKey": "role",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Matt Otto",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "UVA — Josh",
+      "groupKey": "uva-josh",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Matt Williams",
-      "table": 17,
+      "table": "17",
+      "tableLabel": "Table 17",
+      "tableSort": 17,
       "group": "Stanford",
       "groupKey": "stanford",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Maverick Ryan",
-      "table": 2,
+      "table": "2",
+      "tableLabel": "Table 2",
+      "tableSort": 2,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Max Curlin",
-      "table": 15,
+      "table": "15",
+      "tableLabel": "Table 15",
+      "tableSort": 15,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Maya Davis",
-      "table": 4,
+      "table": "4",
+      "tableLabel": "Table 4",
+      "tableSort": 4,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Mia Bailey",
-      "table": 9,
+      "table": "9",
+      "tableLabel": "Table 9",
+      "tableSort": 9,
       "group": "UVA — Mary",
       "groupKey": "uva-mary",
-      "inferred": true
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Mia Price",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "UVA — Josh",
+      "groupKey": "uva-josh",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Mike Carron",
-      "table": 5,
+      "table": "5",
+      "tableLabel": "Table 5",
+      "tableSort": 5,
       "group": "Josh's Family",
       "groupKey": "josh-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Mike Zhu",
-      "table": 13,
+      "table": "13",
+      "tableLabel": "Table 13",
+      "tableSort": 13,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Miya Herman",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "Boston",
+      "groupKey": "boston",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Monica Gonzalez",
-      "table": 6,
+      "table": "6",
+      "tableLabel": "Table 6",
+      "tableSort": 6,
       "group": "Josh's Family",
       "groupKey": "josh-family",
-      "inferred": true
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Nano Masters",
-      "table": 9,
+      "table": "9",
+      "tableLabel": "Table 9",
+      "tableSort": 9,
       "group": "UVA",
       "groupKey": "uva",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Nathan Abraham",
-      "table": 13,
+      "table": "13",
+      "tableLabel": "Table 13",
+      "tableSort": 13,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Neeve Graham",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "UVA — Mary",
+      "groupKey": "uva-mary",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Neharika Singh",
-      "table": 10,
+      "table": "10",
+      "tableLabel": "Table 10",
+      "tableSort": 10,
       "group": "Run Your City",
       "groupKey": "ryc",
-      "inferred": true
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Nick Esemplare",
-      "table": 13,
+      "table": "13",
+      "tableLabel": "Table 13",
+      "tableSort": 13,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Nick Low",
-      "table": 16,
+      "table": "16",
+      "tableLabel": "Table 16",
+      "tableSort": 16,
       "group": "Stanford",
       "groupKey": "stanford",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Nkabi Mwakyoma",
-      "table": 15,
+      "table": "15",
+      "tableLabel": "Table 15",
+      "tableSort": 15,
       "group": "Mary's Hometown",
       "groupKey": "mary-hs",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Owayne Owens",
-      "table": 10,
+      "table": "10",
+      "tableLabel": "Table 10",
+      "tableSort": 10,
       "group": "Run Your City",
       "groupKey": "ryc",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Peter Xu",
-      "table": 11,
+      "table": "11",
+      "tableLabel": "Table 11",
+      "tableSort": 11,
       "group": "UVA — Josh",
       "groupKey": "uva-josh",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Phil McGloin",
-      "table": 14,
+      "table": "14",
+      "tableLabel": "Table 14",
+      "tableSort": 14,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Phyfa Eiland",
-      "table": 1,
+      "table": "1",
+      "tableLabel": "Table 1",
+      "tableSort": 1,
       "group": "Josh's Family",
       "groupKey": "josh-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Priyanka Vijay",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "UVA — Josh",
+      "groupKey": "uva-josh",
+      "headTable": true,
+      "isCouple": false
+    },
+    {
+      "name": "Quang Nguyen",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "Boston",
+      "groupKey": "boston",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Rahim Kanji",
-      "table": 12,
+      "table": "12",
+      "tableLabel": "Table 12",
+      "tableSort": 12,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": true
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Rais Aoudou",
-      "table": 14,
+      "table": "14",
+      "tableLabel": "Table 14",
+      "tableSort": 14,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Ryan Blankemeier",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Ryan Schnepf",
-      "table": 4,
+      "table": "4",
+      "tableLabel": "Table 4",
+      "tableSort": 4,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Ryan Schutte",
-      "table": 4,
+      "table": "4",
+      "tableLabel": "Table 4",
+      "tableSort": 4,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Safiya Rajwani",
-      "table": 12,
+      "table": "12",
+      "tableLabel": "Table 12",
+      "tableSort": 12,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Sally Pan",
-      "table": 14,
+      "table": "14",
+      "tableLabel": "Table 14",
+      "tableSort": 14,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Sarah Rambo",
-      "table": 9,
+      "table": "9",
+      "tableLabel": "Table 9",
+      "tableSort": 9,
       "group": "UVA — Mary",
       "groupKey": "uva-mary",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Sarah Stuart",
-      "table": 5,
+      "table": "5",
+      "tableLabel": "Table 5",
+      "tableSort": 5,
       "group": "Josh's Family",
       "groupKey": "josh-family",
-      "inferred": true
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Sarita Mehta",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "UVA — Mary",
+      "groupKey": "uva-mary",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Sav Abramenko",
-      "table": 15,
+      "table": "15",
+      "tableLabel": "Table 15",
+      "tableSort": 15,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Savana Bradley",
-      "table": 9,
+      "table": "9",
+      "tableLabel": "Table 9",
+      "tableSort": 9,
       "group": "UVA — Mary",
       "groupKey": "uva-mary",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Sela Carrington",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "UVA — Mary",
+      "groupKey": "uva-mary",
+      "headTable": true,
+      "isCouple": false
+    },
+    {
+      "name": "Shane Deshler",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "Mary's Hometown",
+      "groupKey": "mary-hs",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Shannon Cason",
-      "table": 9,
+      "table": "9",
+      "tableLabel": "Table 9",
+      "tableSort": 9,
       "group": "UVA — Mary",
       "groupKey": "uva-mary",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Shanon Bell",
-      "table": 8,
+      "table": "8",
+      "tableLabel": "Table 8",
+      "tableSort": 8,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Sho Hatakeyama",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "Boston",
+      "groupKey": "boston",
+      "headTable": true,
+      "isCouple": false
     },
     {
       "name": "Spencer Ma",
-      "table": 16,
+      "table": "16",
+      "tableLabel": "Table 16",
+      "tableSort": 16,
       "group": "Stanford",
       "groupKey": "stanford",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Stef Ryan",
-      "table": 3,
+      "table": "3",
+      "tableLabel": "Table 3",
+      "tableSort": 3,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Stephanie Evans",
-      "table": 6,
+      "table": "6",
+      "tableLabel": "Table 6",
+      "tableSort": 6,
       "group": "Josh's Family",
       "groupKey": "josh-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Susan Carron",
-      "table": 5,
+      "table": "5",
+      "tableLabel": "Table 5",
+      "tableSort": 5,
       "group": "Josh's Family",
       "groupKey": "josh-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Susie Raisch",
-      "table": 2,
+      "table": "2",
+      "tableLabel": "Table 2",
+      "tableSort": 2,
       "group": "Family Friends",
       "groupKey": "mary-family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Suzann Moore",
-      "table": 8,
+      "table": "8",
+      "tableLabel": "Table 8",
+      "tableSort": 8,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Taite Ryan",
-      "table": 3,
+      "table": "3",
+      "tableLabel": "Table 3",
+      "tableSort": 3,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Tara LaRusso",
-      "table": 3,
+      "table": "3",
+      "tableLabel": "Table 3",
+      "tableSort": 3,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": true
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Tatiana Bouri",
-      "table": 17,
+      "table": "17",
+      "tableLabel": "Table 17",
+      "tableSort": 17,
       "group": "Stanford",
       "groupKey": "stanford",
-      "inferred": true
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Terry Moore IV",
-      "table": 8,
+      "table": "8",
+      "tableLabel": "Table 8",
+      "tableSort": 8,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": true
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Terry Moore V",
-      "table": 8,
+      "table": "8",
+      "tableLabel": "Table 8",
+      "tableSort": 8,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Tiffany Wray",
-      "table": 7,
+      "table": "7",
+      "tableLabel": "Table 7",
+      "tableSort": 7,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Tobi Abramenko",
-      "table": 15,
+      "table": "15",
+      "tableLabel": "Table 15",
+      "tableSort": 15,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Tom Blankemeier",
-      "table": 4,
+      "table": "4",
+      "tableLabel": "Table 4",
+      "tableSort": 4,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Tom Roberts",
-      "table": 6,
+      "table": "6",
+      "tableLabel": "Table 6",
+      "tableSort": 6,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Tom Stathakes",
-      "table": 2,
+      "table": "2",
+      "tableLabel": "Table 2",
+      "tableSort": 2,
       "group": "Mary's Family",
       "groupKey": "mary-family",
-      "inferred": true
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Tony Sibert",
-      "table": 1,
+      "table": "1",
+      "tableLabel": "Table 1",
+      "tableSort": 1,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Tyler Yen",
-      "table": 15,
+      "table": "15",
+      "tableLabel": "Table 15",
+      "tableSort": 15,
       "group": "Run Your City",
       "groupKey": "ryc",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Virginia Eiland",
-      "table": 1,
+      "table": "1",
+      "tableLabel": "Table 1",
+      "tableSort": 1,
       "group": "Josh's Family",
       "groupKey": "josh-family",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Wei Chee Chen",
-      "table": 12,
+      "table": "12",
+      "tableLabel": "Table 12",
+      "tableSort": 12,
       "group": "Boston",
       "groupKey": "boston",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Will Wray",
-      "table": 7,
+      "table": "7",
+      "tableLabel": "Table 7",
+      "tableSort": 7,
       "group": "Family Friends",
       "groupKey": "family-friends",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
     },
     {
       "name": "Zach Zamoff",
-      "table": 11,
+      "table": "11",
+      "tableLabel": "Table 11",
+      "tableSort": 11,
       "group": "UVA — Josh",
       "groupKey": "uva-josh",
-      "inferred": false
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Zoë Chandra",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "Boston",
+      "groupKey": "boston",
+      "headTable": true,
+      "isCouple": false
     }
   ]
 }

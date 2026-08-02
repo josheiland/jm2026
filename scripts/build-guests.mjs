@@ -1,24 +1,29 @@
-// Builds data/guests.json from the two source spreadsheets.
+// Builds data/guests.json from the live "Invite list" tab of the wedding spreadsheet.
 //
-//   1. "Seating chart sign.csv"  (Aug 1) -> authoritative list of who is seated, and at which table
-//   2. "Invite list (1).csv"     (Jul 19) -> the "how do we know them" category
+//   npm run guests
 //
-// Plus-ones appear on the seating chart but not the invite list. Because tables are
-// seated by affinity group, an unmatched guest inherits their table's dominant group.
-// Those are flagged `inferred: true` so the site never claims more than it knows.
+// The sheet is the single source of truth: one row per person, with both the table
+// assignment and the "how do we know them" category. Table "H" is the head table —
+// the wedding party and their significant others, plus Mary and Josh. Table "--"
+// means not attending, and those rows are dropped.
 //
-// Emails, phone numbers and home addresses exist in the sources and are deliberately
-// never copied into the output — the site is public.
+// This replaced a join across two exported CSVs sitting in ~/Downloads. That version
+// had to *infer* a category for 17 plus-ones who appeared on the seating chart but
+// not the invite list. Every row in the sheet carries its own category, so nothing
+// is inferred any more, and edits to the sheet show up on the next run.
+//
+// PRIVACY: the source has an Email and Address column for all 236 people. Neither is
+// read here, and the raw CSV is never written to disk — only the sanitised JSON.
 
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
+import { writeFileSync, mkdirSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
-const DL = '/Users/je/Downloads'
 
-const SEATING = join(DL, 'Josh + Mary wedding - Seating chart sign.csv')
-const INVITES = join(DL, 'Josh + Mary wedding invites - Invite list (1).csv')
+const SHEET_ID = '1JWQOhhQe9qJm__DLf0nPMNUaIgYgNtT9K-jvLsSXaSQ'
+const INVITE_GID = '671993309' // "Invite list" tab
+const SOURCE = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${INVITE_GID}`
 
 /** Minimal RFC-4180 parser — the address column contains quoted commas and newlines. */
 function parseCsv(text) {
@@ -48,100 +53,108 @@ const norm = (s) =>
     .replace(/[‘’]/g, "'")
     .toLowerCase().replace(/[^a-z ]/g, '').replace(/\s+/g, ' ').trim()
 
-// ---- how-we-know-them labels, in the order they should appear on the page -----------
+// ---- how-we-know-them labels, in the order they appear on the page ------------------
 
 const GROUPS = [
-  { key: 'us',            match: 'Us :)',                 label: 'Us',                    blurb: 'The two of you. Hi.' },
-  { key: 'mary-family',   match: 'Mary family',           label: "Mary's Family",         blurb: 'The Blankemeiers, Ryans, Savaianos and everyone who chanted "Josh! Josh! Josh!" at Thanksgiving.' },
-  { key: 'josh-family',   match: 'Josh family',           label: "Josh's Family",         blurb: 'The Eilands and Carrons.' },
-  { key: 'family-friends',match: 'Josh family friends',   label: 'Family Friends',        blurb: 'The people who have been around so long they are basically family.' },
-  { key: 'mary-family-friends', match: 'Mary family friends', label: 'Family Friends',    blurb: '' },
-  { key: 'chicago',       match: 'Chicago family friends',label: 'Family Friends',        blurb: '' },
-  { key: 'boston',        match: 'Boston friends',        label: 'Boston',                blurb: 'The chapter right after graduation — the crew that made a new city feel like home.' },
-  { key: 'uva-mary',      match: 'Mary college friends',  label: 'UVA — Mary',            blurb: 'Wahoos. Lawn residents. Study-session enablers.' },
-  { key: 'uva-josh',      match: 'Josh college friends',  label: 'UVA — Josh',            blurb: 'Wahoos. Lawn residents. Study-session enablers.' },
-  { key: 'uva',           match: 'College friend',        label: 'UVA',                   blurb: '' },
-  { key: 'stanford',      match: 'Stanford friends',      label: 'Stanford',              blurb: 'The current chapter — GSB and the Farm.' },
-  { key: 'sf',            match: 'SF friends',            label: 'The Bay',               blurb: '' },
-  { key: 'ryc',           match: 'RYC',                   label: 'Run Your City',         blurb: '75+ chapters, 10,000+ kids, and the running camps in Rwanda that started it.' },
-  { key: 'mary-hs',       match: 'Mary HS friends',       label: "Mary's Hometown",       blurb: 'Since before any of this.' },
-  { key: 'josh-hs',       match: 'Josh HS friends',       label: "Josh's Hometown",       blurb: 'Since before any of this.' },
+  { key: 'us',            match: 'Us :)',                 label: 'Us',              blurb: 'Hi.' },
+  { key: 'mary-family',   match: 'Mary family',           label: "Mary's Family",   blurb: 'The Blankemeiers, Ryans and Savaianos — including everyone who started the "Josh! Josh! Josh!" chant at Thanksgiving.' },
+  { key: 'josh-family',   match: 'Josh family',           label: "Josh's Family",   blurb: 'The Eilands and the Carrons.' },
+  { key: 'family-friends',match: 'Josh family friends',   label: 'Family Friends',  blurb: 'Around so long they are effectively family.' },
+  { key: 'mary-family-friends', match: 'Mary family friends', label: 'Family Friends', blurb: '' },
+  { key: 'chicago',       match: 'Chicago family friends',label: 'Family Friends',  blurb: '' },
+  { key: 'boston',        match: 'Boston friends',        label: 'Boston',          blurb: 'The chapter straight after graduation — the people who made a new city feel like home.' },
+  { key: 'uva-mary',      match: 'Mary college friends',  label: 'UVA — Mary',      blurb: 'Wahoos. Lawn residents. Study-session enablers.' },
+  { key: 'uva-josh',      match: 'Josh college friends',  label: 'UVA — Josh',      blurb: 'Wahoos. Lawn residents. Study-session enablers.' },
+  { key: 'uva',           match: 'College friend',        label: 'UVA',             blurb: '' },
+  { key: 'stanford',      match: 'Stanford friends',      label: 'Stanford',        blurb: 'The current chapter — the GSB and the Farm.' },
+  { key: 'sf',            match: 'SF friends',            label: 'The Bay',         blurb: '' },
+  { key: 'ryc',           match: 'RYC',                   label: 'Run Your City',   blurb: '75+ chapters, 10,000+ kids, and the running camps in Rwanda where a lot of this got its shape.' },
+  { key: 'mary-hs',       match: 'Mary HS friends',       label: "Mary's Hometown", blurb: 'Since before any of this.' },
+  { key: 'josh-hs',       match: 'Josh HS friends',       label: "Josh's Hometown", blurb: 'Since before any of this.' },
 ]
 
 const byMatch = new Map(GROUPS.map((g) => [g.match, g]))
 
-// People whose relationship the spreadsheet can't express. Keyed by normalised name.
+/** Roles the Type column can't express. Keyed by normalised name. */
 const ROLE_OVERRIDES = {
-  'mary davis': { label: 'Officiant', note: 'Marrying us.' },
+  'mary davis': { label: 'Officiant', blurb: 'Marrying us.' },
 }
 
-// ---- read sources -------------------------------------------------------------------
-
-const inviteRows = parseCsv(readFileSync(INVITES, 'utf8')).slice(1)
-const typeByName = new Map()
-for (const r of inviteRows) {
-  const name = (r[0] || '').trim()
-  const type = (r[1] || '').trim()
-  if (name && type && byMatch.has(type)) typeByName.set(norm(name), type)
-}
-
-const seatRows = parseCsv(readFileSync(SEATING, 'utf8'))
-const seatHeader = seatRows[0].map((h) => h.trim())
-const iTable = seatHeader.indexOf('Table')
-const iName = seatHeader.indexOf('Name')
-
-const seated = []
-for (const r of seatRows.slice(1)) {
-  const name = (r[iName] || '').trim()
-  const table = parseInt((r[iTable] || '').trim(), 10)
-  if (!name || Number.isNaN(table)) continue
-  seated.push({ name, table, match: typeByName.get(norm(name)) ?? null })
-}
-
-// ---- infer plus-ones from their table's dominant group -------------------------------
-
-const dominantByTable = new Map()
-for (const t of new Set(seated.map((g) => g.table))) {
-  const counts = new Map()
-  for (const g of seated) {
-    if (g.table === t && g.match) counts.set(g.match, (counts.get(g.match) ?? 0) + 1)
-  }
-  const top = [...counts.entries()].sort((a, b) => b[1] - a[1])[0]
-  if (top) dominantByTable.set(t, top[0])
-}
-
-let inferredCount = 0
-const guests = seated.map((g) => {
-  const override = ROLE_OVERRIDES[norm(g.name)]
-  if (override) {
-    return { name: g.name, table: g.table, group: override.label, groupKey: 'role', inferred: false }
-  }
-  const inferred = !g.match
-  const match = g.match ?? dominantByTable.get(g.table) ?? 'Boston friends'
-  if (inferred) inferredCount++
-  const group = byMatch.get(match)
-  return { name: g.name, table: g.table, group: group.label, groupKey: group.key, inferred }
-})
-
-// The seating chart is hand-maintained, so the same name can appear twice either
-// because two people genuinely share it or because a row was duplicated. Confirmed
-// real pairs go here; anything else is reported as suspect rather than silently
-// collapsed or silently double-counted.
+/**
+ * The same name can appear twice because two people share it, or because a row was
+ * duplicated. Confirmed real pairs go here; anything else is reported as suspect.
+ */
 const KNOWN_DISTINCT = new Set([
-  'Bill Blankemeier', // confirmed by Josh 2026-08-01: two different people, tables 1 and 2
+  'Bill Blankemeier', // confirmed by Josh 2026-08-01: two people, tables 1 and 2
 ])
+
+const HEAD = 'H'
+const NOT_ATTENDING = '--'
+
+// ---- fetch --------------------------------------------------------------------------
+
+const res = await fetch(SOURCE)
+if (!res.ok) {
+  console.error(`Could not read the sheet (${res.status}).`)
+  console.error('It must be shared as "anyone with the link can view".')
+  process.exit(1)
+}
+const rows = parseCsv(await res.text())
+
+const header = rows[0].map((h) => h.trim())
+const iTable = header.indexOf('Table')
+const iName = header.indexOf('Name')
+const iType = header.indexOf('Type')
+if (iTable < 0 || iName < 0 || iType < 0) {
+  console.error(`Sheet columns changed — expected Table/Name/Type, got: ${header.slice(0, 6).join(', ')}`)
+  process.exit(1)
+}
+
+// ---- build --------------------------------------------------------------------------
+
+const problems = []
+const guests = []
+
+for (const r of rows.slice(1)) {
+  const table = (r[iTable] ?? '').trim()
+  const name = (r[iName] ?? '').trim()
+  const type = (r[iType] ?? '').trim()
+
+  if (!name || !table || table === NOT_ATTENDING) continue
+
+  const override = ROLE_OVERRIDES[norm(name)]
+  const group = override ?? byMatch.get(type)
+  if (!group) {
+    problems.push(`unrecognised Type ${JSON.stringify(type)} for ${name}`)
+    continue
+  }
+
+  const headTable = table === HEAD
+  guests.push({
+    name,
+    table,
+    tableLabel: headTable ? 'Head Table' : `Table ${table}`,
+    tableSort: headTable ? 0 : Number(table),
+    group: group.label,
+    groupKey: override ? 'role' : group.key,
+    headTable,
+    isCouple: type === 'Us :)',
+  })
+}
+
+// ---- integrity ----------------------------------------------------------------------
 
 const nameCounts = new Map()
 for (const g of guests) nameCounts.set(g.name, (nameCounts.get(g.name) ?? 0) + 1)
-
 const duplicateNames = [...nameCounts.entries()].filter(([, n]) => n > 1).map(([n]) => n)
 const suspectDuplicates = duplicateNames.filter((n) => !KNOWN_DISTINCT.has(n))
 
-// Every seat is a person unless a duplicate is unaccounted for.
-const uniquePeople =
+// A duplicated row must never silently inflate the total.
+const totalSeated =
   guests.length - suspectDuplicates.reduce((sum, n) => sum + (nameCounts.get(n) - 1), 0)
+const guestCount = totalSeated - guests.filter((g) => g.isCouple).length
 
-// ---- collapse to display groups (several source types share one label) ---------------
+// ---- group for display ---------------------------------------------------------------
 
 const order = []
 for (const g of GROUPS) if (!order.includes(g.label)) order.push(g.label)
@@ -153,22 +166,24 @@ const groups = order
       GROUPS.find((g) => g.label === label && g.blurb) ??
       GROUPS.find((g) => g.label === label) ??
       Object.values(ROLE_OVERRIDES).find((o) => o.label === label)
-    const members = guests.filter((x) => x.group === label)
+    const members = guests
+      .filter((x) => x.group === label)
       .sort((a, b) => a.name.localeCompare(b.name, 'en'))
-    return { label, blurb: source.blurb ?? source.note ?? '', count: members.length, members }
+    return { label, blurb: source.blurb ?? '', count: members.length, members }
   })
   .filter((g) => g.count > 0)
 
+const tables = [...new Set(guests.map((g) => g.table))]
+  .sort((a, b) => (a === HEAD ? -1 : b === HEAD ? 1 : Number(a) - Number(b)))
+
 const out = {
-  generatedFrom: { seating: 'Seating chart sign.csv (Aug 1 2026)', invites: 'Invite list (1).csv (Jul 19 2026)' },
-  /** Rows on the seating chart. */
-  totalSeated: guests.length,
-  /** Distinct human beings, as best we can tell. */
-  uniquePeople,
+  source: 'Google Sheet "Invite list" tab',
+  totalSeated,
+  guestCount,
+  headTableCount: guests.filter((g) => g.headTable).length,
+  tableCount: tables.length,
   duplicateNames,
   suspectDuplicates,
-  tableCount: new Set(guests.map((g) => g.table)).size,
-  inferredCount,
   groups,
   guests: guests.slice().sort((a, b) => a.name.localeCompare(b.name, 'en')),
 }
@@ -176,5 +191,9 @@ const out = {
 mkdirSync(join(ROOT, 'data'), { recursive: true })
 writeFileSync(join(ROOT, 'data', 'guests.json'), JSON.stringify(out, null, 2) + '\n')
 
-console.log(`${out.totalSeated} seats · ${out.uniquePeople} people · ${out.tableCount} tables · ${inferredCount} inferred`)
+console.log(
+  `${totalSeated} seated · ${guestCount} guests · ${out.headTableCount} at the head table · ${tables.length} tables`,
+)
 for (const g of groups) console.log(`  ${String(g.count).padStart(3)}  ${g.label}`)
+if (suspectDuplicates.length) console.log(`\n⚠ unconfirmed duplicate names: ${suspectDuplicates.join(', ')}`)
+if (problems.length) console.log(`\n⚠ ${problems.length} row(s) skipped:\n   ${problems.join('\n   ')}`)

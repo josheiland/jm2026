@@ -4,15 +4,30 @@ import { useMemo, useState } from 'react'
 
 interface Guest {
   name: string
-  table: number
+  table: string
+  tableLabel: string
+  tableSort: number
   group: string
-  inferred: boolean
+  headTable: boolean
 }
 interface Group {
   label: string
   blurb: string
   count: number
   members: Guest[]
+}
+
+/** Marks the wedding party without duplicating them into a separate section. */
+function HeadTableMark() {
+  return (
+    <span
+      title="At the head table"
+      className="text-wine/50 text-[0.7rem] leading-none"
+      aria-label="at the head table"
+    >
+      ◆
+    </span>
+  )
 }
 
 const fold = (s: string) =>
@@ -38,12 +53,13 @@ export default function GuestList({
   )
 
   const byTable = useMemo(() => {
-    const map = new Map<number, Guest[]>()
+    const map = new Map<string, Guest[]>()
     for (const g of guests) {
       if (!map.has(g.table)) map.set(g.table, [])
       map.get(g.table)!.push(g)
     }
-    return [...map.entries()].sort((a, b) => a[0] - b[0])
+    // Head table first, then 1 through 17.
+    return [...map.entries()].sort((a, b) => a[1][0].tableSort - b[1][0].tableSort)
   }, [guests])
 
   return (
@@ -110,9 +126,12 @@ export default function GuestList({
                   key={`${g.name}-${g.table}`}
                   className="bg-cream-soft px-5 py-4 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1"
                 >
-                  <span className="display text-xl">{g.name}</span>
+                  <span className="display text-xl flex items-center gap-2">
+                    {g.name}
+                    {g.headTable && <HeadTableMark />}
+                  </span>
                   <span className="text-sm text-ink/55">
-                    {g.group} · Table {g.table}
+                    {g.group} · {g.tableLabel}
                   </span>
                 </li>
               ))}
@@ -141,9 +160,12 @@ export default function GuestList({
                     key={`${g.name}-${g.table}`}
                     className="flex items-baseline justify-between gap-3 border-b border-wine/8 pb-2"
                   >
-                    <span>{g.name}</span>
+                    <span className="flex items-center gap-2">
+                      {g.name}
+                      {g.headTable && <HeadTableMark />}
+                    </span>
                     <span className="text-xs text-ink/40 tabular-nums shrink-0">
-                      T{g.table}
+                      {g.headTable ? 'Head' : `T${g.table}`}
                     </span>
                   </li>
                 ))}
@@ -161,22 +183,37 @@ export default function GuestList({
             this as very nearly final rather than final.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {byTable.map(([table, members]) => (
-              <div key={table} className="card p-6">
-                <div className="flex items-baseline justify-between">
-                  <p className="display text-2xl">Table {table}</p>
-                  <p className="eyebrow">{members.length}</p>
+            {byTable.map(([table, members]) => {
+              const isHead = members[0].headTable
+              return (
+                <div
+                  key={table}
+                  className={`card p-6 ${isHead ? '!bg-blush/25 !border-wine/25 sm:col-span-2 lg:col-span-3' : ''}`}
+                >
+                  <div className="flex items-baseline justify-between">
+                    <p className="display text-2xl">{members[0].tableLabel}</p>
+                    <p className="eyebrow">{members.length}</p>
+                  </div>
+                  {isHead && (
+                    <p className="mt-1.5 text-sm text-ink/55">
+                      The wedding party and their people, and the two of us.
+                    </p>
+                  )}
+                  <ul
+                    className={`mt-4 space-y-1.5 text-[0.95rem] text-ink/75 ${
+                      isHead ? 'sm:columns-2 lg:columns-3' : ''
+                    }`}
+                  >
+                    {members
+                      .slice()
+                      .sort((a, b) => a.name.localeCompare(b.name))
+                      .map((m) => (
+                        <li key={m.name}>{m.name}</li>
+                      ))}
+                  </ul>
                 </div>
-                <ul className="mt-4 space-y-1.5 text-[0.95rem] text-ink/75">
-                  {members
-                    .slice()
-                    .sort((a, b) => a.name.localeCompare(b.name))
-                    .map((m) => (
-                      <li key={m.name}>{m.name}</li>
-                    ))}
-                </ul>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       )}

@@ -247,7 +247,7 @@ export default function HomePage() {
         </p>
         <p className="display text-3xl md:text-4xl mt-4 max-w-2xl mx-auto leading-snug">
           {EVENTS.filter((e) => e.kind !== 'shuttle').length} gatherings,{' '}
-          {guestData.uniquePeople} of our favourite people, one very long-awaited weekend.
+          {guestData.guestCount} of our favourite people, one very long-awaited weekend.
         </p>
         <Link
           href="/thank-you"

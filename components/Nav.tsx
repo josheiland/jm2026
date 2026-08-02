@@ -34,13 +34,14 @@ export default function Nav() {
   }, [open])
 
   return (
-    <header
-      className={`sticky top-0 z-40 transition-all duration-300 ${
-        scrolled || open
-          ? 'bg-cream/95 backdrop-blur-md border-b border-wine/10'
-          : 'bg-transparent border-b border-transparent'
-      }`}
-    >
+    <>
+      <header
+        className={`sticky top-0 z-50 transition-all duration-300 ${
+          scrolled || open
+            ? 'bg-cream/95 backdrop-blur-md border-b border-wine/10'
+            : 'bg-transparent border-b border-transparent'
+        }`}
+      >
       <nav className="content flex items-center justify-between h-16 md:h-20" aria-label="Main">
         <Link href="/" className="group flex items-baseline gap-1.5 shrink-0" aria-label="Home">
           <span className="display text-xl md:text-2xl tracking-tight">M</span>
@@ -91,8 +92,13 @@ export default function Nav() {
           </svg>
         </button>
       </nav>
+      </header>
 
-      {/* Mobile drawer */}
+      {/*
+        Sibling of the header, not a child. The header uses backdrop-blur, and
+        backdrop-filter creates a containing block for fixed descendants, which would
+        collapse this to the height of the header.
+      */}
       <div
         id="mobile-menu"
         hidden={!open}
@@ -120,6 +126,6 @@ export default function Nav() {
           </li>
         </ul>
       </div>
-    </header>
+    </>
   )
 }

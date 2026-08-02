@@ -25,8 +25,8 @@ export default function WholeWeekendButton() {
       </a>
       <p className="mt-2.5 text-xs text-ink/45">
         {touch
-          ? 'Every event with its reminders, straight into your calendar app. Works with Apple Calendar, Outlook and Google.'
-          : 'One file, every event, reminders already set. Opens in Apple Calendar, Outlook or Google. Individual events have one-tap links below.'}
+          ? 'Every event with its reminders, straight into your calendar app'
+          : 'One file, every event, reminders already set. Individual events have Apple and Google links below.'}
       </p>
     </>
   )

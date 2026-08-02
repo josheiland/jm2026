@@ -1,17 +1,17 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { googleCalUrl, outlookCalUrl } from '@/lib/ics'
+import { googleCalUrl } from '@/lib/ics'
 import type { WeddingEvent } from '@/lib/events'
 
 /**
  * The closest thing to an automated reminder that actually reaches a guest's phone:
  * a calendar entry with the alarm already on it.
  *
- * Google and Outlook get named buttons rather than hiding behind a generic "add to
- * calendar", because most people know which of those they use and would not think to
- * look inside a menu. Apple and everything else takes the .ics, which also carries
- * the VALARM that Google and Outlook links cannot.
+ * Two named options, because everyone knows which of the two they use. Outlook is
+ * deliberately absent: its web link cannot open the Outlook app from a phone, and the
+ * .ics behind "Apple Calendar" is picked up by Outlook anyway wherever it is the
+ * registered handler. A third entry that misbehaves on mobile is worse than none.
  */
 
 const GoogleMark = () => (
@@ -23,13 +23,9 @@ const GoogleMark = () => (
   </svg>
 )
 
-const OutlookMark = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
-    <path fill="#0364B8" d="M23 6.5v11a1 1 0 0 1-1 1h-9v-13h9a1 1 0 0 1 1 1z" />
-    <path fill="#0F78D4" d="M13 8.5h10v4H13z" opacity=".6" />
-    <path fill="#28A8EA" d="M13 12.5h10v4H13z" opacity=".5" />
-    <path fill="#14447D" d="M1 4.2 12 2.2v19.6L1 19.8z" />
-    <ellipse cx="6.5" cy="12" rx="2.6" ry="3.2" fill="#fff" />
+const AppleMark = () => (
+  <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path d="M11.05 8.51c-.02-1.62 1.32-2.4 1.38-2.44-.75-1.1-1.92-1.25-2.34-1.27-1-.1-1.94.58-2.45.58-.5 0-1.28-.57-2.11-.55-1.08.02-2.08.63-2.64 1.6-1.12 1.96-.29 4.86.81 6.45.54.78 1.18 1.65 2.02 1.62.81-.03 1.12-.52 2.1-.52.98 0 1.26.52 2.11.51.87-.02 1.42-.79 1.95-1.58.61-.9.87-1.78.88-1.82-.02-.01-1.69-.65-1.71-2.58zM9.5 3.76c.45-.54.75-1.3.67-2.05-.64.03-1.42.43-1.88.97-.41.48-.77 1.25-.68 1.98.71.06 1.44-.36 1.89-.9z" />
   </svg>
 )
 
@@ -75,24 +71,10 @@ export default function AddToCalendar({
   // Inline on touch so iOS opens the calendar sheet instead of saving to Files.
   const ics = `/api/ics?e=${event.slug}${touch ? '&inline=1' : ''}`
 
-  /**
-   * On a phone the Outlook web links open a browser tab, not the Outlook app, which
-   * is not what anyone tapping "Outlook" wants. There is no reliable deep link that
-   * adds an event to the Outlook app, but a downloaded .ics hands off to whichever
-   * calendar app is installed, Outlook included. So touch devices lead with the file
-   * and drop the web-only Outlook entries; desktop keeps all of them.
-   */
-  const options = touch
-    ? [
-        { label: 'Apple, Outlook or other', href: ics, icon: <CalMark />, external: false },
-        { label: 'Google Calendar', href: googleCalUrl(event), icon: <GoogleMark />, external: true },
-      ]
-    : [
-        { label: 'Google Calendar', href: googleCalUrl(event), icon: <GoogleMark />, external: true },
-        { label: 'Outlook', href: outlookCalUrl(event, 'live'), icon: <OutlookMark />, external: true },
-        { label: 'Outlook (work)', href: outlookCalUrl(event, 'office'), icon: <OutlookMark />, external: true },
-        { label: 'Apple or download', href: ics, icon: <CalMark />, external: false },
-      ]
+  const options = [
+    { label: 'Apple Calendar', href: ics, icon: <AppleMark />, external: false },
+    { label: 'Google Calendar', href: googleCalUrl(event), icon: <GoogleMark />, external: true },
+  ]
 
   return (
     <div className={compact ? '' : 'mt-5'} ref={wrap}>

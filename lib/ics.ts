@@ -87,25 +87,5 @@ export function googleCalUrl(e: WeddingEvent) {
   return `https://calendar.google.com/calendar/render?${p}`
 }
 
-/**
- * Outlook deep link. Outlook.com and Microsoft 365 are separate hosts on the same
- * path, and sending a personal account to the work host silently fails, so both are
- * offered rather than guessed at.
- */
-export function outlookCalUrl(e: WeddingEvent, kind: 'live' | 'office' = 'live') {
-  const host =
-    kind === 'live' ? 'https://outlook.live.com' : 'https://outlook.office.com'
-  const p = new URLSearchParams({
-    path: '/calendar/action/compose',
-    rru: 'addevent',
-    subject: title(e),
-    startdt: new Date(e.start).toISOString(),
-    enddt: new Date(e.end).toISOString(),
-    location: `${e.venue}, ${e.address}`,
-    body: body(e),
-  })
-  return `${host}/calendar/0/action/compose?${p}`
-}
-
-/** Whole weekend, for each provider. Google and Outlook only take one event per link. */
+/** Whole weekend in one file. Google's link only takes a single event. */
 export const ICS_ALL = '/api/ics'

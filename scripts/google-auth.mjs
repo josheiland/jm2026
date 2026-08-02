@@ -22,12 +22,17 @@ import { createInterface } from 'node:readline/promises'
 import { stdin as input, stdout as output } from 'node:process'
 import { spawn } from 'node:child_process'
 
-const PORT = 4571
-// Loopback redirect for an installed ("Desktop app") client. Google accepts
-// http://127.0.0.1 on any port for this client type without it being registered
-// anywhere, which removes redirect_uri_mismatch as a possible failure entirely.
-// 127.0.0.1 rather than localhost is Google's documented preference.
-const REDIRECT = `http://127.0.0.1:${PORT}/callback`
+// Loopback redirect. For a "Desktop app" client Google accepts http://127.0.0.1 on
+// any port without it being registered anywhere, which removes redirect_uri_mismatch
+// as a possible failure. 127.0.0.1 rather than localhost is Google's documented
+// preference for installed apps.
+//
+// Using a Web application client instead? Override to whatever you registered:
+//   REDIRECT_URI=http://localhost:4571/callback npm run google-auth
+// Run `node scripts/diagnose-oauth.mjs <client-id>` first if you are unsure what
+// is actually registered — it asks Google rather than guessing.
+const REDIRECT = process.env.REDIRECT_URI ?? `http://127.0.0.1:4571/callback`
+const PORT = Number(new URL(REDIRECT).port || 4571)
 const SCOPE = 'https://www.googleapis.com/auth/drive.file'
 const FOLDER_NAME = 'Mary & Josh — Guest Photos'
 

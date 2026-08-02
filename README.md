@@ -26,6 +26,10 @@ does the consent flow in your browser, creates the album folder in
 `josheiland17@gmail.com`'s Drive, **performs a real test upload and deletes it**, then prints the
 four environment variables to paste into Vercel.
 
+> Pick **Desktop app** as the application type, not Web application. Desktop clients have
+> loopback redirects (`http://127.0.0.1:<port>`) accepted automatically, so there is no redirect
+> URI to register and `redirect_uri_mismatch` cannot happen.
+
 > ⚠️ On the OAuth consent screen, click **Publish app**. If the project is left in "Testing",
 > Google silently expires the refresh token after 7 days and the portal dies mid-weekend. The
 > scope used (`drive.file`) is non-sensitive, so publishing needs no review from Google.

@@ -23,7 +23,11 @@ import { stdin as input, stdout as output } from 'node:process'
 import { spawn } from 'node:child_process'
 
 const PORT = 4571
-const REDIRECT = `http://localhost:${PORT}/callback`
+// Loopback redirect for an installed ("Desktop app") client. Google accepts
+// http://127.0.0.1 on any port for this client type without it being registered
+// anywhere, which removes redirect_uri_mismatch as a possible failure entirely.
+// 127.0.0.1 rather than localhost is Google's documented preference.
+const REDIRECT = `http://127.0.0.1:${PORT}/callback`
 const SCOPE = 'https://www.googleapis.com/auth/drive.file'
 const FOLDER_NAME = 'Mary & Josh — Guest Photos'
 
@@ -55,10 +59,15 @@ Before you start, create an OAuth client. Takes about five minutes:
 
   5. Create the credentials:
      ${dim('APIs & Services → Credentials → Create credentials → OAuth client ID')}
-     Application type ${b('Web application')}.
-     Authorised redirect URI: ${b(REDIRECT)}
+     Application type ${b('Desktop app')}.
+
+     ${b('Choose "Desktop app", not "Web application".')} Desktop clients get
+     loopback redirects accepted automatically, so there is no redirect URI to
+     register and no way to get it wrong. If you already made a Web application
+     client, just create a second one as Desktop app — you can ignore the old one.
 
   6. Copy the Client ID and Client Secret and paste them below.
+     ${dim('Make sure they come from the Desktop client you just made, not an earlier one.')}
 `)
 
 const rl = createInterface({ input, output })
@@ -105,11 +114,25 @@ const code = await new Promise((resolve, reject) => {
     server.close()
     err ? reject(new Error(err)) : resolve(got)
   })
-  server.listen(PORT, () => {
+  server.on('error', reject)
+  server.listen(PORT, '127.0.0.1', () => {
     console.log(`\nOpening your browser. If it doesn't open, paste this in:\n\n${dim(authUrl)}\n`)
     const opener = process.platform === 'darwin' ? 'open' : process.platform === 'win32' ? 'start' : 'xdg-open'
     spawn(opener, [authUrl], { stdio: 'ignore', detached: true, shell: process.platform === 'win32' }).unref()
   })
+
+  // A redirect_uri_mismatch never reaches this server — Google refuses to redirect
+  // at all — so without this the script would just hang looking successful.
+  setTimeout(() => {
+    console.log(
+      dim(
+        `\nStill waiting for the browser…\n` +
+          `If you saw "Error 400: redirect_uri_mismatch", the client ID you pasted is a\n` +
+          `${b('Web application')} client. Create a ${b('Desktop app')} client instead and re-run —\n` +
+          `desktop clients accept ${REDIRECT} with nothing to register.\n`,
+      ),
+    )
+  }, 45_000).unref()
 })
 
 // ---------------------------------------------------------------- token exchange

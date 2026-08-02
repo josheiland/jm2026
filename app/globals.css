@@ -127,6 +127,16 @@
     color: var(--color-wine-deep);
   }
 
+  /* Cormorant's italic ampersand is a swash form. Lovely at hero size, an unreadable
+     squiggle in the 20px nav monogram, so small uses take the roman one. */
+  .amp-roman {
+    font-family: var(--font-amp);
+    font-style: normal;
+    font-weight: 400;
+    color: var(--color-wine);
+    line-height: 1;
+  }
+
   /* Cormorant's italic ampersand, which is the nicest glyph in the family. */
   .amp {
     font-family: var(--font-amp);

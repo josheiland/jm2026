@@ -37,36 +37,39 @@ export default function Countdown() {
     )
   }
 
-  const units: [string, number | null][] = [
-    ['days', left?.days ?? null],
-    ['hours', left?.hours ?? null],
-    ['minutes', left?.minutes ?? null],
-    ['seconds', left?.seconds ?? null],
+  // Short labels on phones. "minutes" and "seconds" at 0.24em tracking are what made
+  // the row overflow, not the numerals.
+  const units: [string, string, number | null][] = [
+    ['days', 'days', left?.days ?? null],
+    ['hours', 'hrs', left?.hours ?? null],
+    ['minutes', 'min', left?.minutes ?? null],
+    ['seconds', 'sec', left?.seconds ?? null],
   ]
 
   return (
     <div
-      className="flex items-start justify-center gap-6 sm:gap-10"
+      className="grid grid-cols-4 max-w-xs sm:max-w-md mx-auto"
       role="timer"
       aria-label="Countdown to the wedding"
     >
-      {units.map(([label, value], i) => (
-        <div key={label} className="flex items-start gap-6 sm:gap-10">
-          <div className="text-center min-w-[3ch]">
-            <div className="display text-4xl sm:text-5xl md:text-6xl tabular-nums text-wine-deep">
-              {value === null ? (
-                <span className="inline-block w-[2ch] h-[1em] bg-wine/8 rounded-sm align-middle" />
-              ) : (
-                String(value).padStart(2, '0')
-              )}
-            </div>
-            <div className="eyebrow mt-2">{label}</div>
+      {units.map(([long, short, value], i) => (
+        <div
+          key={long}
+          className={`text-center px-1 sm:px-2 ${
+            i > 0 ? 'border-l border-wine/12' : ''
+          }`}
+        >
+          <div className="display text-3xl sm:text-4xl md:text-5xl tabular-nums text-wine-deep">
+            {value === null ? (
+              <span className="inline-block w-[1.6ch] h-[0.8em] bg-wine/8 rounded-sm align-middle" />
+            ) : (
+              String(value).padStart(2, '0')
+            )}
           </div>
-          {i < units.length - 1 && (
-            <span className="display text-3xl sm:text-4xl text-wine/20 pt-1" aria-hidden="true">
-              ·
-            </span>
-          )}
+          <div className="eyebrow mt-1.5 !text-[0.6rem] !tracking-[0.12em] !indent-[0.12em] sm:!text-[0.6875rem] sm:!tracking-[0.24em] sm:!indent-[0.24em]">
+            <span className="sm:hidden">{short}</span>
+            <span className="hidden sm:inline">{long}</span>
+          </div>
         </div>
       ))}
     </div>

@@ -13,27 +13,69 @@ interface Item {
 }
 
 const MAX_PARALLEL = 2
-const RETRIES = 2
+const RETRIES = 4
 
 const prettyBytes = (n: number) =>
   n < 1024 * 1024 ? `${Math.round(n / 1024)} KB` : `${(n / 1024 / 1024).toFixed(1)} MB`
 
-/** Single PUT to the resumable session URI, with real progress via XHR. */
-function putFile(url: string, file: File, onProgress: (frac: number) => void) {
-  return new Promise<void>((resolve, reject) => {
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
+
+/**
+ * Upload state as Google sees it. On a phone the connection drops mid-transfer
+ * constantly, and the bytes often arrive fine while the *response* does not, so the
+ * only safe thing to do after any failure is ask rather than assume.
+ */
+type RemoteState = { state: 'done' } | { state: 'incomplete'; offset: number } | { state: 'gone' }
+
+/** "How much of this file do you already have?" Costs one request, saves a duplicate. */
+function queryStatus(url: string, size: number) {
+  return new Promise<RemoteState>((resolve, reject) => {
+    const xhr = new XMLHttpRequest()
+    xhr.open('PUT', url, true)
+    xhr.setRequestHeader('Content-Range', `bytes */${size}`)
+    xhr.onload = () => {
+      // 200/201 means the file is already fully stored. Sending it again is exactly
+      // what produced three copies of the same photo.
+      if (xhr.status === 200 || xhr.status === 201) return resolve({ state: 'done' })
+      if (xhr.status === 308) {
+        // "bytes=0-262143" -> resume at 262144. Absent means nothing landed yet.
+        const range = xhr.getResponseHeader('Range')
+        const end = range ? Number(range.split('-')[1]) : NaN
+        return resolve({ state: 'incomplete', offset: Number.isFinite(end) ? end + 1 : 0 })
+      }
+      if (xhr.status === 404 || xhr.status === 410) return resolve({ state: 'gone' })
+      reject(new Error(`Could not check upload (${xhr.status})`))
+    }
+    xhr.onerror = () => reject(new Error('Connection dropped'))
+    xhr.send()
+  })
+}
+
+/** Send from `offset` to the end. Resolves done:false if Google wants more. */
+function putFrom(
+  url: string,
+  file: File,
+  offset: number,
+  onProgress: (frac: number) => void,
+) {
+  return new Promise<{ done: boolean }>((resolve, reject) => {
     const xhr = new XMLHttpRequest()
     xhr.open('PUT', url, true)
     xhr.setRequestHeader('Content-Type', file.type || 'application/octet-stream')
-    xhr.upload.onprogress = (e) => {
-      if (e.lengthComputable) onProgress(e.loaded / e.total)
+    if (offset > 0) {
+      xhr.setRequestHeader('Content-Range', `bytes ${offset}-${file.size - 1}/${file.size}`)
     }
-    xhr.onload = () =>
-      xhr.status >= 200 && xhr.status < 300
-        ? resolve()
-        : reject(new Error(`Upload failed (${xhr.status})`))
-    xhr.onerror = () => reject(new Error('Network dropped mid-upload'))
+    xhr.upload.onprogress = (e) => {
+      if (e.lengthComputable) onProgress((offset + e.loaded) / file.size)
+    }
+    xhr.onload = () => {
+      if (xhr.status === 200 || xhr.status === 201) return resolve({ done: true })
+      if (xhr.status === 308) return resolve({ done: false })
+      reject(new Error(`Upload failed (${xhr.status})`))
+    }
+    xhr.onerror = () => reject(new Error('Connection dropped'))
     xhr.onabort = () => reject(new Error('Upload cancelled'))
-    xhr.send(file)
+    xhr.send(offset > 0 ? file.slice(offset) : file)
   })
 }
 
@@ -45,6 +87,7 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
   const inputRef = useRef<HTMLInputElement>(null)
   const running = useRef(0)
   const queue = useRef<Item[]>([])
+  const seen = useRef(new Set<string>())
 
   // Guests upload in several bursts over a weekend — don't make them retype their name.
   useEffect(() => {
@@ -64,35 +107,61 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
       running.current++
       void (async () => {
         update(item.id, { status: 'uploading', progress: 0 })
-        let lastErr = ''
-        for (let attempt = 0; attempt <= RETRIES; attempt++) {
-          try {
-            const res = await fetch('/api/upload/session', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                name: item.file.name,
-                mimeType: item.file.type || 'application/octet-stream',
-                size: item.file.size,
-                uploader: localStorage.getItem('mj-uploader-name') ?? '',
-                note: sessionStorage.getItem('mj-uploader-note') ?? '',
-              }),
-            })
-            const data = (await res.json()) as { uploadUrl?: string; error?: string }
-            if (!res.ok || !data.uploadUrl) throw new Error(data.error ?? 'Could not start upload')
+        const onProgress = (frac: number) =>
+          update(item.id, { progress: Math.min(100, Math.round(frac * 100)) })
 
-            await putFile(data.uploadUrl, item.file, (frac) =>
-              update(item.id, { progress: Math.round(frac * 100) }),
-            )
-            update(item.id, { status: 'done', progress: 100 })
-            lastErr = ''
-            break
-          } catch (err) {
-            lastErr = (err as Error).message
-            if (attempt < RETRIES) await new Promise((r) => setTimeout(r, 900 * (attempt + 1)))
-          }
+        const mint = async () => {
+          const res = await fetch('/api/upload/session', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: item.file.name,
+              mimeType: item.file.type || 'application/octet-stream',
+              size: item.file.size,
+              uploader: localStorage.getItem('mj-uploader-name') ?? '',
+              note: sessionStorage.getItem('mj-uploader-note') ?? '',
+            }),
+          })
+          const data = (await res.json()) as { uploadUrl?: string; error?: string }
+          if (!res.ok || !data.uploadUrl) throw new Error(data.error ?? 'Could not start upload')
+          return data.uploadUrl
         }
-        if (lastErr) update(item.id, { status: 'error', error: lastErr })
+
+        /**
+         * One session per file, reused across every retry. The previous version opened
+         * a fresh session each attempt, so a dropped response on a phone produced a
+         * second complete copy in Drive rather than a resumed upload.
+         */
+        let error = ''
+        try {
+          let url = await mint()
+          let offset = 0
+
+          for (let attempt = 0; ; attempt++) {
+            try {
+              const { done } = await putFrom(url, item.file, offset, onProgress)
+              if (done) break
+            } catch (err) {
+              if (attempt >= RETRIES) throw err
+              await sleep(Math.min(8000, 800 * 2 ** attempt))
+            }
+
+            // Reached on both a 308 and a failed attempt: never resend blind.
+            const status = await queryStatus(url, item.file.size)
+            if (status.state === 'done') break
+            if (status.state === 'gone') {
+              url = await mint()
+              offset = 0
+            } else {
+              offset = status.offset
+            }
+          }
+          update(item.id, { status: 'done', progress: 100 })
+        } catch (err) {
+          error = (err as Error).message
+        }
+
+        if (error) update(item.id, { status: 'error', error })
         running.current--
         void pump()
       })()
@@ -105,7 +174,12 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
       const rejected: Item[] = []
 
       for (const file of Array.from(files)) {
-        const id = `${file.name}-${file.size}-${file.lastModified}-${Math.random().toString(36).slice(2, 7)}`
+        const id = `${file.name}-${file.size}-${file.lastModified}`
+        // Picking the same photo twice is easy to do on a phone. Silently ignore it
+        // rather than sending it again.
+        if (seen.current.has(id)) continue
+        seen.current.add(id)
+
         const isMedia =
           /^(image|video)\//.test(file.type) || /\.(heic|heif|mov|mp4|jpe?g|png|gif|webp)$/i.test(file.name)
         if (!isMedia) {
@@ -115,6 +189,7 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
         }
       }
 
+      if (!accepted.length && !rejected.length) return
       setItems((prev) => [...prev, ...accepted, ...rejected])
       queue.current.push(...accepted)
       void pump()

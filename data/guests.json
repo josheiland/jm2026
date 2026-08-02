@@ -4,10 +4,11 @@
     "invites": "Invite list (1).csv (Jul 19 2026)"
   },
   "totalSeated": 151,
-  "uniquePeople": 150,
+  "uniquePeople": 151,
   "duplicateNames": [
     "Bill Blankemeier"
   ],
+  "suspectDuplicates": [],
   "tableCount": 17,
   "inferredCount": 17,
   "groups": [

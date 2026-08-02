@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import PageHeader from '@/components/PageHeader'
+import Photo from '@/components/Photo'
 import { POIS } from '@/lib/content'
 import { mapsUrl } from '@/lib/events'
 
@@ -49,16 +50,19 @@ export default function CharlottesvillePage() {
           )
         })}
 
-        <div className="mt-20 card p-8 md:p-12">
-          <p className="eyebrow">If you only do one thing</p>
-          <p className="display text-3xl md:text-4xl mt-3 max-w-2xl leading-snug">
-            Walk the Lawn at dusk, then get a bagel in the morning.
-          </p>
-          <p className="mt-4 text-ink/65 max-w-2xl">
-            Rooms 45 and 47 are ours — well, they were, for a year, and we fostered an
-            irresponsible number of puppies out of them. Monday morning we will all be back on
-            that same grass with Bodo's, so you may as well scout it Saturday.
-          </p>
+        <div className="mt-20 card p-8 md:p-12 grid gap-10 md:grid-cols-[1.15fr_1fr] md:items-center">
+          <div>
+            <p className="eyebrow">If you only do one thing</p>
+            <p className="display text-3xl md:text-4xl mt-3 leading-snug">
+              Walk the Lawn at dusk, then get a bagel in the morning.
+            </p>
+            <p className="mt-4 text-ink/65">
+              Rooms 45 and 47 are ours — well, they were, for a year, and we fostered an
+              irresponsible number of puppies out of them. Monday morning we will all be back on
+              that same grass with Bodo's, so you may as well scout it Saturday.
+            </p>
+          </div>
+          <Photo name="lawn-graduation" sizes="(max-width: 768px) 100vw, 24rem" />
         </div>
       </div>
     </>

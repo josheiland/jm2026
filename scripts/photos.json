@@ -1,0 +1,56 @@
+[
+  {
+    "uuid": "6db6ff9a-7a10-4ec0-8656-9783b23399fd",
+    "name": "hero-dock",
+    "width": 2000,
+    "alt": "Mary and Josh standing together at the end of a wooden dock on a still pond, bare winter treeline behind them"
+  },
+  {
+    "uuid": "ba3ae86c-8dda-48d7-8d81-5eea741e89b6",
+    "name": "joy-vineyard",
+    "width": 1600,
+    "alt": "Mary laughing with her head back, held by Josh, in a sunlit vineyard"
+  },
+  {
+    "uuid": "93e3bd08-1011-45ad-bec5-e9fbb2186d6f",
+    "name": "vineyard-kiss",
+    "width": 1600,
+    "alt": "Mary and Josh kissing in a vineyard with the Blue Ridge behind them"
+  },
+  {
+    "uuid": "122c9839-68eb-46d3-a452-19d624528c3a",
+    "name": "story-track",
+    "width": 1400,
+    "alt": "Mary and Josh in running kit on a track, both grinning at the camera"
+  },
+  {
+    "uuid": "76e00e93-4bee-4074-856c-b6ca8b09307c",
+    "name": "story-skydive",
+    "width": 1400,
+    "alt": "Mary and Josh strapped into skydiving harnesses inside a small aircraft"
+  },
+  {
+    "uuid": "1fde2724-c6bb-416d-bf4d-fb33382db7f7",
+    "name": "story-mountains",
+    "width": 1400,
+    "alt": "Mary and Josh on a mountain road above a deep green valley"
+  },
+  {
+    "uuid": "d682a217-6d7a-4786-85ab-5590b0f6ecb3",
+    "name": "story-proposal",
+    "width": 1600,
+    "alt": "Josh and Mary beside a lake with flowers and champagne set out on the rocks"
+  },
+  {
+    "uuid": "c1641c21-f0f5-4851-9760-51b29a351b3d",
+    "name": "story-ring",
+    "width": 1400,
+    "alt": "Mary showing her engagement ring to the camera, both of them mid-laugh"
+  },
+  {
+    "uuid": "a056fb65-7dd4-476a-a934-5ce8b774a726",
+    "name": "lawn-graduation",
+    "width": 1600,
+    "alt": "Mary and Josh in graduation robes on a white bench outside a brick UVA building"
+  }
+]

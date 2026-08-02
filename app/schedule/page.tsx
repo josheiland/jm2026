@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import PageHeader from '@/components/PageHeader'
 import AddToCalendar from '@/components/AddToCalendar'
+import Photo from '@/components/Photo'
 import { DAYS, SUNSET, eventsForDay, mapsUrl, type WeddingEvent } from '@/lib/events'
 import { MENU } from '@/lib/content'
 
@@ -141,6 +142,8 @@ export default function SchedulePage() {
       </div>
 
       {/* ------------------------------------------------------------ the menu */}
+      <Photo name="vineyard-kiss" sizes="100vw" imgClassName="max-h-[52vh]" />
+
       <section className="bg-cream-deep/40 py-20 md:py-24">
         <div className="content-narrow">
           <p className="eyebrow text-center">Sunday dinner</p>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Photo from '@/components/Photo'
 import { THANK_YOU } from '@/lib/content'
 import data from '@/data/guests.json'
 
@@ -19,6 +20,12 @@ export default function ThankYouPage() {
       >
         {THANK_YOU.heading}
       </h1>
+
+      <Photo
+        name="joy-vineyard"
+        sizes="(max-width: 768px) 100vw, 44rem"
+        className="mt-14"
+      />
 
       <div className="rule my-14" />
 

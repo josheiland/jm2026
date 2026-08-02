@@ -1,11 +1,20 @@
 import Link from 'next/link'
 import Countdown from '@/components/Countdown'
+import Photo from '@/components/Photo'
 import HappeningNow from '@/components/HappeningNow'
 import Ridgeline from '@/components/Ridgeline'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import { DAYS, EVENTS, eventsForDay } from '@/lib/events'
 import { STORY_CLOSER, STORY_PARAGRAPHS } from '@/lib/content'
 import guestData from '@/data/guests.json'
+
+// Keyed to the paragraph each photo follows in STORY_PARAGRAPHS.
+const STORY_PHOTOS: Record<number, { name: 'story-track' | 'story-skydive' | 'story-mountains' | 'story-proposal'; caption: string }> = {
+  1: { name: 'story-track', caption: 'The running started early and never really stopped.' },
+  2: { name: 'story-skydive', caption: 'Chicago. Still just friends, allegedly.' },
+  3: { name: 'story-mountains', caption: 'The first of many trips where the plan was mostly “go together”.' },
+  5: { name: 'story-proposal', caption: 'Georgia. She said yes faster this time.' },
+}
 
 const QUICK_LINKS = [
   {
@@ -95,6 +104,17 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Full-bleed band under the type. The only landscape frame they have, and it
+          carries the whole mood of the thing. */}
+      <div className="relative">
+        <Photo
+          name="hero-dock"
+          sizes="100vw"
+          priority
+          imgClassName="max-h-[68vh]"
+        />
+      </div>
+
       <HappeningNow />
 
       {/* --------------------------------------------------------- at a glance */}
@@ -141,19 +161,38 @@ export default function HomePage() {
           <p className="eyebrow text-center">How we got here</p>
           <h2 className="display text-4xl md:text-5xl mt-4 text-center">Our Story</h2>
 
+          {/* Photos land on the beat they belong to — the run, the skydive, the
+              trip, the proposal — rather than being pooled in a gallery. */}
           <div className="mt-12 space-y-6 text-ink/75 leading-[1.8]">
             {STORY_PARAGRAPHS.map((p, i) => (
-              <p key={i} className={i === 0 ? 'first-letter:display first-letter:text-5xl first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:leading-[0.85]' : ''}>
-                {p}
-              </p>
+              <div key={i} className="space-y-6">
+                <p
+                  className={
+                    i === 0
+                      ? 'first-letter:display first-letter:text-5xl first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:leading-[0.85]'
+                      : undefined
+                  }
+                >
+                  {p}
+                </p>
+                {STORY_PHOTOS[i] && (
+                  <Photo
+                    name={STORY_PHOTOS[i]!.name}
+                    caption={STORY_PHOTOS[i]!.caption}
+                    sizes="(max-width: 768px) 100vw, 44rem"
+                    className="!my-12"
+                  />
+                )}
+              </div>
             ))}
           </div>
 
           <div className="rule my-12" />
 
-          <p className="display text-2xl md:text-3xl text-center leading-snug">
-            {STORY_CLOSER}
-          </p>
+          <div className="grid gap-8 sm:grid-cols-[1fr_1.1fr] items-center">
+            <Photo name="story-ring" sizes="(max-width: 640px) 100vw, 22rem" />
+            <p className="display text-2xl md:text-3xl leading-snug">{STORY_CLOSER}</p>
+          </div>
         </div>
       </section>
 

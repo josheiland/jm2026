@@ -123,12 +123,23 @@ const guests = seated.map((g) => {
   return { name: g.name, table: g.table, group: group.label, groupKey: group.key, inferred }
 })
 
-// The seating chart is hand-maintained, so the same name can legitimately appear
-// twice (two generations sharing a name) or by mistake. Surface it rather than
-// silently collapsing or silently double-counting.
+// The seating chart is hand-maintained, so the same name can appear twice either
+// because two people genuinely share it or because a row was duplicated. Confirmed
+// real pairs go here; anything else is reported as suspect rather than silently
+// collapsed or silently double-counted.
+const KNOWN_DISTINCT = new Set([
+  'Bill Blankemeier', // confirmed by Josh 2026-08-01: two different people, tables 1 and 2
+])
+
 const nameCounts = new Map()
 for (const g of guests) nameCounts.set(g.name, (nameCounts.get(g.name) ?? 0) + 1)
+
 const duplicateNames = [...nameCounts.entries()].filter(([, n]) => n > 1).map(([n]) => n)
+const suspectDuplicates = duplicateNames.filter((n) => !KNOWN_DISTINCT.has(n))
+
+// Every seat is a person unless a duplicate is unaccounted for.
+const uniquePeople =
+  guests.length - suspectDuplicates.reduce((sum, n) => sum + (nameCounts.get(n) - 1), 0)
 
 // ---- collapse to display groups (several source types share one label) ---------------
 
@@ -153,8 +164,9 @@ const out = {
   /** Rows on the seating chart. */
   totalSeated: guests.length,
   /** Distinct human beings, as best we can tell. */
-  uniquePeople: nameCounts.size,
+  uniquePeople,
   duplicateNames,
+  suspectDuplicates,
   tableCount: new Set(guests.map((g) => g.table)).size,
   inferredCount,
   groups,
@@ -164,5 +176,5 @@ const out = {
 mkdirSync(join(ROOT, 'data'), { recursive: true })
 writeFileSync(join(ROOT, 'data', 'guests.json'), JSON.stringify(out, null, 2) + '\n')
 
-console.log(`${out.totalSeated} seats · ${out.uniquePeople} unique · ${out.tableCount} tables · ${inferredCount} inferred`)
+console.log(`${out.totalSeated} seats · ${out.uniquePeople} people · ${out.tableCount} tables · ${inferredCount} inferred`)
 for (const g of groups) console.log(`  ${String(g.count).padStart(3)}  ${g.label}`)

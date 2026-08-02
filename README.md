@@ -9,13 +9,24 @@ shuttle times, the photo drop, the guest list, and the FAQs.
 
 ---
 
-## The one thing that still needs you
+## Status
 
-**Photo uploads are switched off until Google Drive credentials exist.** Everything else on the
-site is live. The upload page currently shows a polite "nearly ready" state instead of a broken
-uploader.
+Everything is live and configured: Drive uploads, the WhatsApp group link, photos, guest list.
 
-To turn it on:
+Health check, worth running the week of the wedding:
+
+```bash
+curl https://eilands2026.vercel.app/api/upload/health
+# {"ok":true,"configured":true,"files":0}
+```
+
+If it ever returns `ok: false`, the refresh token has died — see below.
+
+---
+
+## Re-doing the Drive setup
+
+Only needed if the token is revoked or the album folder moves:
 
 ```bash
 npm run google-auth
@@ -34,21 +45,36 @@ four environment variables to paste into Vercel.
 > Google silently expires the refresh token after 7 days and the portal dies mid-weekend. The
 > scope used (`drive.file`) is non-sensitive, so publishing needs no review from Google.
 
-Then redeploy and confirm:
+Then redeploy — `vercel deploy --prod` — and re-check `/api/upload/health`.
+
+### Environment variables
+
+| Variable | Purpose |
+|---|---|
+| `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` | OAuth client for the Drive upload |
+| `GOOGLE_REFRESH_TOKEN` | Long-lived grant; dies after 7 days if the consent screen is in "Testing" |
+| `GOOGLE_DRIVE_FOLDER_ID` | The album folder photos land in |
+| `NEXT_PUBLIC_WHATSAPP_INVITE` | Group invite link |
+
+`NEXT_PUBLIC_*` values are inlined at **build** time, so changing one needs a redeploy, not just
+an env edit. The rest are read at request time.
+
+Every one is optional in the sense that the site degrades rather than breaks: no Google config
+gives a "nearly ready" upload page, no WhatsApp link gives a "coming soon" button.
+
+### Debugging OAuth
+
+`redirect_uri_mismatch` is the same error string for several unrelated causes, including one that
+is not your fault: Google's edge cache can take minutes to pick up a Console change, so a correct
+fix can keep failing for a while. To find out what Google actually has registered:
 
 ```bash
-curl https://eilands2026.vercel.app/api/upload/health
-# {"ok":true,"configured":true,"files":0}
+node scripts/diagnose-oauth.mjs <client-id>
 ```
 
-### The other env var
-
-```
-NEXT_PUBLIC_WHATSAPP_INVITE=https://chat.whatsapp.com/XXXXXXXXXXXX
-```
-
-Get it from WhatsApp → group → Invite via link. Until it is set, every WhatsApp button renders a
-"link coming soon" state rather than a dead link.
+It probes candidate redirect URIs against the `/authorize` endpoint — which validates before any
+sign-in and encodes the reason in a base64 `authError` param — and reports which are registered.
+Generic; works for any Google project.
 
 ---
 
@@ -105,14 +131,34 @@ affinity group, an unmatched guest inherits their table's dominant group and is 
 **Emails, phone numbers and home addresses are in the source spreadsheets and are deliberately
 never written to `guests.json`.** The site is public.
 
-### Known data issue
+### Duplicate names
 
-`Bill Blankemeier` appears twice on the seating chart — Table 1 and Table 2 — so the chart has
-151 seats but 150 distinct names. This may be two generations sharing a name (the chart does
-list `Terry Moore IV` and `Terry Moore V` at Table 8) or a duplicate row. The site reports
-**150 people** and lists both entries. If they are two different Bills, disambiguate them in the
-CSV and re-run `npm run guests`; the count corrects itself everywhere, including the thank-you
-note.
+`Bill Blankemeier` appears twice on the chart, at Tables 1 and 2. Confirmed as two different
+people, so it is listed in `KNOWN_DISTINCT` in `build-guests.mjs` and both seats count — 151
+people. Any *other* repeated name is reported in `suspectDuplicates` and deducted from the total
+until someone confirms it, so a duplicated row can never silently inflate the count.
+
+---
+
+## Photos
+
+`public/photos/` and `lib/photos.ts` are generated from the couple's own Zola gallery:
+
+```bash
+python3 scripts/build-photos.py          # rebuild the nine placed photos
+python3 scripts/build-photos.py --list   # print every image URL in the gallery
+```
+
+Zola renders its gallery client-side, but the image URLs are in the server HTML as
+`https://images.zola.com/<uuid>`; `?w=2000` returns the original (~1680px). `scripts/photos.json`
+pins the nine by UUID with a target width and alt text, so a re-run is reproducible even if the
+gallery is reordered.
+
+Each image is resized, compressed to quality 82 progressive JPEG, and given a 16px blurred
+placeholder inlined as a data URL — no layout shift, no grey boxes on hotel wifi. Nine photos,
+2.7 MB total.
+
+To swap one: run `--list`, pick a URL, update the UUID in `scripts/photos.json`, re-run.
 
 ---
 
@@ -161,9 +207,13 @@ lib/
   content.ts          travel, hotels, FAQs, menu, story, thank-you copy
   drive.ts            Google Drive, server half
   ics.ts              RFC 5545 generation
+  photos.ts           generated image manifest with blur placeholders
 scripts/
   build-guests.mjs    CSV -> data/guests.json
+  build-photos.py     Zola gallery -> public/photos + lib/photos.ts
+  photos.json         the nine photos, pinned by UUID
   google-auth.mjs     one-time Drive setup + live test
+  diagnose-oauth.mjs  works out which redirect URIs a client has registered
 ```
 
 ### Design
@@ -174,9 +224,9 @@ Bodoni Moda with Pinyon Script — is what the printed signage spec
 (`Family/wedding-signage/canva-build-spec.md`) already names as the web stand-ins for Perfectly
 Nineties and Antura Script, so the site matches the physical pieces at the venue.
 
-There are no photographs yet. The layout is built to take them: the hero, the story section, and
-the Charlottesville cards all have room. Drop images into `public/` and they can go in whenever
-you have them.
+Photos come from the Zola gallery — see the Photos section above. The hero band, story beats,
+Charlottesville card, schedule and thank-you page each carry one; the rest of the gallery is
+available via `--list` if you want more.
 
 ### Timezone
 

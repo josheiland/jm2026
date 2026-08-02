@@ -33,6 +33,12 @@ import { spawn } from 'node:child_process'
 // is actually registered — it asks Google rather than guessing.
 const REDIRECT = process.env.REDIRECT_URI ?? `http://127.0.0.1:4571/callback`
 const PORT = Number(new URL(REDIRECT).port || 4571)
+
+// Bind to the same host the redirect names. "localhost" is left unbound on purpose:
+// macOS resolves it to ::1 before 127.0.0.1, so pinning the server to one address
+// risks the browser arriving on the other and finding nothing listening.
+const HOSTNAME = new URL(REDIRECT).hostname
+const BIND = HOSTNAME === 'localhost' ? undefined : HOSTNAME
 const SCOPE = 'https://www.googleapis.com/auth/drive.file'
 const FOLDER_NAME = 'Mary & Josh — Guest Photos'
 
@@ -120,7 +126,7 @@ const code = await new Promise((resolve, reject) => {
     err ? reject(new Error(err)) : resolve(got)
   })
   server.on('error', reject)
-  server.listen(PORT, '127.0.0.1', () => {
+  server.listen(PORT, BIND, () => {
     console.log(`\nOpening your browser. If it doesn't open, paste this in:\n\n${dim(authUrl)}\n`)
     const opener = process.platform === 'darwin' ? 'open' : process.platform === 'win32' ? 'start' : 'xdg-open'
     spawn(opener, [authUrl], { stdio: 'ignore', detached: true, shell: process.platform === 'win32' }).unref()

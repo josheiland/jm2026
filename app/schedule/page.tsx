@@ -10,27 +10,31 @@ export const metadata: Metadata = {
   description: 'Everything happening between Saturday and Monday.',
 }
 
+/**
+ * The buses are the only thing all weekend that leaves without you, so this is set
+ * close to the size of a main event rather than as small print.
+ */
 function Shuttle({ event }: { event: WeddingEvent }) {
   return (
-    <li className="relative pl-8 md:pl-10 py-5">
+    <li className="relative pl-8 md:pl-10 py-6">
       <span
-        className="absolute left-0 top-[1.85rem] h-2 w-2 -translate-x-1/2 rounded-full bg-sage ring-4 ring-cream"
+        className="absolute left-0 top-[2.1rem] h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-sage ring-4 ring-cream"
         aria-hidden="true"
       />
       <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-        <p className="text-sm tabular-nums text-sage font-medium">{event.time}</p>
-        <p className="text-ink/75">{event.name}</p>
+        <p className="display text-2xl md:text-3xl tabular-nums !text-sage">{event.time}</p>
+        <p className="text-ink/80 text-lg">{event.name}</p>
       </div>
-      <p className="mt-1 text-sm text-ink/50">{event.venue}</p>
+      <p className="mt-1.5 text-ink/60">{event.venue}</p>
       {event.description && (
-        <p className="mt-2 text-sm text-ink/60 max-w-xl">{event.description}</p>
+        <p className="mt-3 text-ink/75 max-w-xl">{event.description}</p>
       )}
       {event.heads_up && (
-        <p className="mt-3 border-l-2 border-sage/50 pl-4 text-sm text-ink/70 max-w-xl">
+        <p className="mt-4 border-l-2 border-sage/60 pl-4 text-ink/80 max-w-xl">
           {event.heads_up}
         </p>
       )}
-      <div className="mt-3">
+      <div className="mt-4">
         <AddToCalendar event={event} compact />
       </div>
     </li>
@@ -53,7 +57,7 @@ function Major({ event }: { event: WeddingEvent }) {
           href={mapsUrl(event.mapQuery)}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block text-sm text-wine link-underline"
+          className="inline-block text-wine link-underline"
         >
           {event.address} ↗
         </a>
@@ -74,7 +78,7 @@ function Major({ event }: { event: WeddingEvent }) {
       )}
 
       {event.heads_up && (
-        <p className="mt-5 card px-5 py-4 text-sm text-ink/75 max-w-xl">{event.heads_up}</p>
+        <p className="mt-5 card px-5 py-4 text-ink/75 max-w-xl">{event.heads_up}</p>
       )}
 
       <AddToCalendar event={event} />
@@ -100,7 +104,7 @@ export default function SchedulePage() {
           <section key={day.key} className="pt-16 first:pt-8">
             <div className="flex flex-wrap items-baseline justify-between gap-4 pb-2">
               <h2 className="display text-4xl md:text-5xl">{day.long}</h2>
-              <p className="text-sm text-ink/45">Sunset {SUNSET[day.key]}</p>
+              <p className="text-ink/50">Sunset {SUNSET[day.key]}</p>
             </div>
             <div className="rule" />
 

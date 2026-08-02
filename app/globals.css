@@ -30,6 +30,17 @@
   --font-ui: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
   --font-amp: var(--font-cormorant), Garamond, serif;
 
+  /* Cormorant has a notably small x-height: at a given pixel size it reads roughly
+     three-quarters as large as a sans. Tailwind's default 12px/14px steps land around
+     9px/11px of apparent size, which is where the bus times ended up. The small end of
+     the scale is lifted so secondary text stays readable rather than decorative. */
+  --text-xs: 0.9375rem;
+  --text-xs--line-height: 1.55;
+  --text-sm: 1.0625rem;
+  --text-sm--line-height: 1.6;
+  --text-base: 1.1875rem;
+  --text-base--line-height: 1.65;
+
   --shadow-lift: 0 1px 2px rgb(67 48 47 / 0.04), 0 8px 24px -12px rgb(67 48 47 / 0.14);
   --shadow-lift-lg: 0 2px 4px rgb(67 48 47 / 0.05), 0 24px 48px -20px rgb(67 48 47 / 0.2);
 }
@@ -84,6 +95,9 @@
   nav a,
   summary {
     font-family: var(--font-ui);
+    /* The size lift above exists for Cormorant's small x-height. Jost does not have
+       that problem, so UI text would come out oversized at the same step. */
+    font-size: 0.9375rem;
   }
 
   :focus-visible {
@@ -98,13 +112,13 @@
   .eyebrow {
     font-family: var(--font-ui);
     text-transform: uppercase;
-    font-size: 0.6875rem;
+    font-size: 0.75rem;
     font-weight: 500;
-    letter-spacing: 0.24em;
+    letter-spacing: 0.2em;
     color: var(--color-wine-soft);
     /* Tracking is added after the final glyph, so centred text drifts left.
        Nudge it back by half the tracking. Same fix as the printed signs. */
-    text-indent: 0.24em;
+    text-indent: 0.2em;
   }
 
   /* Light weight and a hair of positive tracking. Cormorant is drawn small and

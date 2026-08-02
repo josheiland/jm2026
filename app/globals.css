@@ -21,16 +21,14 @@
   --color-sage: #79876f;
   --color-gold: #b0895b;
 
-  /* Three faces, each with a job.
-     Display: Bodoni Moda, the high-contrast serif, for names and headings.
-     Body:    Cormorant Garamond, for anything you actually read a sentence of.
-     UI:      Jost, for eyebrows, buttons, nav and inputs. Cormorant is lovely in a
-              paragraph and illegible at 11px with 0.24em tracking, so the small
-              wayfinding text stays in a sans. */
-  --font-display: var(--font-bodoni), 'Bodoni Moda', Didot, 'Times New Roman', serif;
+  /* Cormorant Garamond throughout, separated by weight and size rather than by
+     family: light at display sizes, regular in a paragraph. Jost is kept for the
+     small wayfinding text only, because Cormorant at 11px with 0.24em tracking is
+     prettier than it is legible, and that is the text people scan in a hurry. */
+  --font-display: var(--font-cormorant), Garamond, 'Times New Roman', serif;
   --font-body: var(--font-cormorant), Garamond, 'Times New Roman', serif;
   --font-ui: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
-  --font-amp: var(--font-bodoni), 'Bodoni Moda', Didot, serif;
+  --font-amp: var(--font-cormorant), Garamond, serif;
 
   --shadow-lift: 0 1px 2px rgb(67 48 47 / 0.04), 0 8px 24px -12px rgb(67 48 47 / 0.14);
   --shadow-lift-lg: 0 2px 4px rgb(67 48 47 / 0.05), 0 24px 48px -20px rgb(67 48 47 / 0.2);
@@ -109,24 +107,27 @@
     text-indent: 0.24em;
   }
 
+  /* Light weight and a hair of positive tracking. Cormorant is drawn small and
+     delicate, so at display size it wants air rather than the negative tracking a
+     Didone takes. */
   .display {
     font-family: var(--font-display);
-    font-weight: 400;
-    line-height: 1.04;
-    letter-spacing: -0.015em;
+    font-weight: 300;
+    line-height: 1.06;
+    letter-spacing: 0.005em;
     color: var(--color-wine-deep);
   }
 
   /* Display size, but for an actual sentence: looser leading so it breaks well. */
   .display-sentence {
     font-family: var(--font-display);
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.3;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.005em;
     color: var(--color-wine-deep);
   }
 
-  /* Bodoni's italic ampersand. */
+  /* Cormorant's italic ampersand, which is the nicest glyph in the family. */
   .amp {
     font-family: var(--font-amp);
     font-style: italic;

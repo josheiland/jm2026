@@ -5,8 +5,8 @@ import Countdown from '@/components/Countdown'
 import { DAYS, eventsForDay } from '@/lib/events'
 
 /**
- * Headings are settled on Bodoni Moda. What was open is the body font, so this shows
- * five candidates side by side with identical copy, then full-page with a switcher.
+ * Headings are Cormorant Garamond at light weight. This compares body faces beneath
+ * that: five candidates side by side with identical copy, then full-page.
  */
 
 const BODIES = [
@@ -14,7 +14,7 @@ const BODIES = [
     id: 'body-cormorant',
     name: 'Cormorant',
     tag: 'Live now',
-    why: 'The most traditionally bridal of the five. High contrast and delicate, and genuinely lovely in a paragraph. Set a size larger than the sans options because it runs small.',
+    why: 'Matches the heading, one weight down. The most traditionally bridal of the five, and set a size larger than the sans options because it runs small.',
   },
   {
     id: 'body-jost',
@@ -55,14 +55,14 @@ export default function StylesPage() {
         <h1 className="display text-4xl md:text-6xl mt-4">Pick a body font</h1>
         <div className="mt-6 card p-6 max-w-3xl">
           <p className="text-ink/75">
-            Headings are <strong>Bodoni Moda</strong>. Body copy is{' '}
-            <strong>Cormorant Garamond</strong>. Small labels, buttons and nav stay in{' '}
-            <strong>Jost</strong>, because Cormorant at 11px with wide tracking is prettier than
-            it is readable.
+            Headings and body are both <strong>Cormorant Garamond</strong>, separated by
+            weight: light at display size, regular in a paragraph. Small labels, buttons and nav
+            stay in <strong>Jost</strong>, because Cormorant at 11px with wide tracking is
+            prettier than it is readable.
           </p>
           <p className="mt-3 text-ink/65 text-[0.95rem]">
-            Sauvage is not available on Adobe Fonts, so matching the Zola headings exactly is off
-            the table. Below are the body options against the current heading.
+            Sauvage is not on Adobe Fonts, so matching the Zola headings exactly is off the
+            table. Below are the body options against the Cormorant heading.
           </p>
         </div>
       </header>
@@ -124,7 +124,7 @@ export default function StylesPage() {
                 {b.name}
               </button>
             ))}
-            <span className="text-sm text-ink/50 ml-2">Bodoni Moda + {active.name}</span>
+            <span className="text-sm text-ink/50 ml-2">Cormorant + {active.name}</span>
           </div>
         </div>
 

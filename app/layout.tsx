@@ -1,18 +1,10 @@
 import type { Metadata, Viewport } from 'next'
-import { Bodoni_Moda, Cormorant_Garamond, Jost } from 'next/font/google'
+import { Cormorant_Garamond, Jost } from 'next/font/google'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import './globals.css'
 
-// Headings and the ampersand.
-const bodoni = Bodoni_Moda({
-  subsets: ['latin'],
-  variable: '--font-bodoni',
-  display: 'swap',
-  axes: ['opsz'],
-})
-
-// Body copy.
+// Headings, body copy and the ampersand, separated by weight.
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600'],
@@ -47,7 +39,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${bodoni.variable} ${cormorant.variable} ${jost.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${jost.variable}`}>
       <body className="min-h-dvh flex flex-col">
         <a
           href="#main"

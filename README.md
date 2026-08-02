@@ -235,8 +235,8 @@ Three faces, each with a job:
 
 | Token | Face | Used for |
 |---|---|---|
-| `--font-display` | Bodoni Moda | Names and headings |
-| `--font-body` | Cormorant Garamond | Anything you read a sentence of |
+| `--font-display` | Cormorant Garamond, weight 300 | Names and headings |
+| `--font-body` | Cormorant Garamond, weight 400 | Anything you read a sentence of |
 | `--font-ui` | Jost | Eyebrows, buttons, nav, inputs |
 
 Cormorant is beautiful in a paragraph and unreadable at 11px with 0.24em tracking, so small
@@ -245,7 +245,7 @@ runs small, so the base size is 1.25rem rather than the 1.0625rem a sans would t
 
 Zola sets its headings in **Sauvage**, a commercial face served under their Adobe licence. It is
 not on Adobe Fonts and there is no free source, so matching it exactly is not possible and the
-site uses Bodoni Moda instead. Four alternative body fonts are previewed at `/styles`; switching
+site uses Cormorant Garamond instead. Four alternative body fonts are previewed at `/styles`; switching
 is one line in `globals.css`.
 
 `.display-sentence` is the display face with looser leading, for display-sized text that is an

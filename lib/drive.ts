@@ -95,7 +95,14 @@ export function buildFilename(original: string, uploader: string) {
 
 export async function createResumableSession(
   cfg: DriveConfig,
-  opts: { filename: string; mimeType: string; size: number; description?: string },
+  opts: {
+    filename: string
+    mimeType: string
+    size: number
+    description?: string
+    uploader?: string
+    note?: string
+  },
 ): Promise<string> {
   const token = await getAccessToken(cfg)
 
@@ -110,7 +117,14 @@ export async function createResumableSession(
     body: JSON.stringify({
       name: opts.filename,
       parents: [cfg.folderId],
+      // description is human-readable but writable by anything with access, and some
+      // uploads came back with Drive's own text in it. appProperties is private to
+      // this app, so attribution written here cannot be clobbered.
       description: opts.description,
+      appProperties: {
+        ...(opts.uploader ? { uploader: opts.uploader.slice(0, 120) } : {}),
+        ...(opts.note ? { note: opts.note.slice(0, 120) } : {}),
+      },
     }),
   })
 

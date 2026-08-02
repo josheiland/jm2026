@@ -59,6 +59,8 @@ export async function POST(request: Request) {
       mimeType,
       size,
       description: description || undefined,
+      uploader: uploader?.trim().slice(0, 80),
+      note: note?.trim().slice(0, 400),
     })
     return NextResponse.json({ uploadUrl })
   } catch (err) {

@@ -43,7 +43,7 @@ let pageToken
 do {
   const params = new URLSearchParams({
     q: `'${GOOGLE_DRIVE_FOLDER_ID}' in parents and trashed = false`,
-    fields: 'nextPageToken, files(id,name,size,mimeType,description,createdTime,webViewLink)',
+    fields: 'nextPageToken, files(id,name,size,mimeType,description,appProperties,createdTime,webViewLink)',
     orderBy: 'createdTime',
     pageSize: '1000',
     ...(pageToken ? { pageToken } : {}),
@@ -62,9 +62,12 @@ do {
 
 const rows = files.map((f) => {
   const desc = f.description ?? ''
+  const props = f.appProperties ?? {}
   return {
-    from: (desc.match(/^From: (.*)$/m)?.[1] ?? '').trim(),
-    note: (desc.match(/^Note: ([\s\S]*)$/m)?.[1] ?? '').trim(),
+    // appProperties is authoritative; description is the readable copy and older
+    // uploads only have that.
+    from: (props.uploader ?? desc.match(/^From: (.*)$/m)?.[1] ?? '').trim(),
+    note: (props.note ?? desc.match(/^Note: ([\s\S]*)$/m)?.[1] ?? '').trim(),
     name: f.name,
     when: f.createdTime.replace('T', ' ').slice(0, 16),
     mb: (Number(f.size ?? 0) / 1024 / 1024).toFixed(1),

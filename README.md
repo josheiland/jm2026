@@ -191,6 +191,32 @@ upload host (verified against this origin), so the direct `PUT` works with no cr
 attached. The OAuth scope is `drive.file`, which grants access only to files this app created —
 it cannot read anything else in the account.
 
+If duplicates ever appear anyway (same photo from two devices, or a guest coming back
+the next day and picking it again), `scripts/dedupe-album.mjs` finds byte-identical copies by
+md5 and trashes the extras, keeping the earliest:
+
+```bash
+vercel env pull .env.local
+node --env-file=.env.local scripts/dedupe-album.mjs           # dry run
+node --env-file=.env.local scripts/dedupe-album.mjs --apply
+```
+
+### Retries never duplicate
+
+A phone drops the connection constantly, and it is usually the *response* that is lost rather
+than the bytes. So one resumable session is created per file and reused for every attempt, and
+after any failure the client asks Google what it already holds before sending anything:
+
+| `PUT <session>` with `Content-Range: bytes */TOTAL` | Meaning |
+|---|---|
+| `200`/`201` | Already stored. Stop. |
+| `308` | Resume from the `Range` header |
+| `404`/`410` | Session expired, mint a new one |
+
+`Range` is in Google's `access-control-expose-headers`, so the browser can read the offset. The
+first version opened a fresh session per retry, which turned one flaky upload into three
+identical files in Drive.
+
 Uploads land in one folder, named
 `2026-09-06_1934__Jane-Doe__IMG_1234.jpg`, so the folder sorts chronologically and every file
 carries its sender. The uploader's name and optional note also go into the Drive file

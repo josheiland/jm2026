@@ -21,15 +21,16 @@
   --color-sage: #79876f;
   --color-gold: #b0895b;
 
-  /* Headings follow the Zola site, which sets 'Sauvage' at weight 400, uppercase,
-     line-height 1.5, in the wine colour. Sauvage is a commercial face Zola serves
-     through Adobe Typekit, so it is named first and will be picked up automatically
-     if a licensed copy is ever loaded (see NEXT_PUBLIC_ADOBE_KIT in the README).
-     Until then Tenor Sans stands in: the closest freely licensable match for an
-     elegant, slightly art-deco luxury sans at display size. */
-  --font-display: 'Sauvage', var(--font-tenor), 'Tenor Sans', 'Optima', sans-serif;
+  /* Three faces, each with a job.
+     Display: Bodoni Moda, the high-contrast serif, for names and headings.
+     Body:    Cormorant Garamond, for anything you actually read a sentence of.
+     UI:      Jost, for eyebrows, buttons, nav and inputs. Cormorant is lovely in a
+              paragraph and illegible at 11px with 0.24em tracking, so the small
+              wayfinding text stays in a sans. */
+  --font-display: var(--font-bodoni), 'Bodoni Moda', Didot, 'Times New Roman', serif;
+  --font-body: var(--font-cormorant), Garamond, 'Times New Roman', serif;
+  --font-ui: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
   --font-amp: var(--font-bodoni), 'Bodoni Moda', Didot, serif;
-  --font-body: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
 
   --shadow-lift: 0 1px 2px rgb(67 48 47 / 0.04), 0 8px 24px -12px rgb(67 48 47 / 0.14);
   --shadow-lift-lg: 0 2px 4px rgb(67 48 47 / 0.05), 0 24px 48px -20px rgb(67 48 47 / 0.2);
@@ -54,8 +55,8 @@
     background-color: var(--color-cream);
     color: var(--color-ink);
     font-family: var(--font-body);
-    font-size: 1.0625rem;
-    line-height: 1.7;
+    font-size: 1.25rem;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -76,6 +77,17 @@
     color: var(--color-cream);
   }
 
+  /* Wayfinding and controls stay in the sans: Cormorant at button and nav sizes is
+     too delicate to read quickly, which is exactly when people are reading it. */
+  button,
+  input,
+  select,
+  textarea,
+  nav a,
+  summary {
+    font-family: var(--font-ui);
+  }
+
   :focus-visible {
     outline: 2px solid var(--color-wine);
     outline-offset: 3px;
@@ -86,7 +98,7 @@
 @layer components {
   /* Letterspaced all-caps label — the signage spec's tracking-75-to-135 system. */
   .eyebrow {
-    font-family: var(--font-body);
+    font-family: var(--font-ui);
     text-transform: uppercase;
     font-size: 0.6875rem;
     font-weight: 500;
@@ -97,29 +109,24 @@
     text-indent: 0.24em;
   }
 
-  /* Headings, matching the Zola treatment: uppercase, regular weight, open leading. */
   .display {
     font-family: var(--font-display);
     font-weight: 400;
-    text-transform: uppercase;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
+    line-height: 1.04;
+    letter-spacing: -0.015em;
     color: var(--color-wine-deep);
   }
 
-  /* Same face, sentence case. For display-sized text that is an actual sentence,
-     where all caps would be shouting rather than styling. */
+  /* Display size, but for an actual sentence: looser leading so it breaks well. */
   .display-sentence {
     font-family: var(--font-display);
     font-weight: 400;
-    text-transform: none;
-    line-height: 1.35;
-    letter-spacing: 0;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
     color: var(--color-wine-deep);
   }
 
-  /* An italic serif ampersand against the sans caps. Sauvage has no italic and the
-     pairing is a standard one, so this stays Bodoni deliberately. */
+  /* Bodoni's italic ampersand. */
   .amp {
     font-family: var(--font-amp);
     font-style: italic;
@@ -195,12 +202,8 @@
    swap only --font-body. Every utility already reads from it.
    --------------------------------------------------------------------------- */
 
-.body-jost      { --font-body: var(--font-jost), ui-sans-serif, sans-serif; }
-.body-dmsans    { --font-body: var(--font-dmsans), ui-sans-serif, sans-serif; }
-.body-lato      { --font-body: var(--font-lato), ui-sans-serif, sans-serif; }
-.body-ebgaramond{ --font-body: var(--font-ebgaramond), Georgia, serif; }
-.body-cormorant { --font-body: var(--font-cormorant), Garamond, serif; }
-
-/* The two serif options need a touch more size to match the sans x-heights. */
-.body-ebgaramond, .body-cormorant { font-size: 1.125rem; }
-.body-cormorant { font-size: 1.1875rem; }
+.body-cormorant { --font-body: var(--font-cormorant), Garamond, serif; font-size: 1.25rem; }
+.body-ebgaramond{ --font-body: var(--font-ebgaramond), Georgia, serif;  font-size: 1.1875rem; }
+.body-jost      { --font-body: var(--font-jost), ui-sans-serif, sans-serif; font-size: 1.0625rem; }
+.body-dmsans    { --font-body: var(--font-dmsans), ui-sans-serif, sans-serif; font-size: 1.0625rem; }
+.body-lato      { --font-body: var(--font-lato), ui-sans-serif, sans-serif; font-size: 1.0625rem; }

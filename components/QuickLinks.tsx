@@ -28,7 +28,7 @@ const LINKS: Record<Key, { href: string; label: string; desc: string; external?:
 }
 
 export default function QuickLinks({
-  only = ['photos', 'whatsapp', 'schedule'],
+  only = ['schedule', 'whatsapp', 'photos'],
 }: {
   only?: Key[]
 }) {

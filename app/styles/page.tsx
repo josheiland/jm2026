@@ -5,17 +5,22 @@ import Countdown from '@/components/Countdown'
 import { DAYS, eventsForDay } from '@/lib/events'
 
 /**
- * The heading face is settled: Sauvage, matching the Zola site, standing in as Tenor
- * Sans until a licensed copy is loaded. What is still open is the body font, so this
- * page shows five candidates side by side and then full-page.
+ * Headings are settled on Bodoni Moda. What was open is the body font, so this shows
+ * five candidates side by side with identical copy, then full-page with a switcher.
  */
 
 const BODIES = [
   {
+    id: 'body-cormorant',
+    name: 'Cormorant',
+    tag: 'Live now',
+    why: 'The most traditionally bridal of the five. High contrast and delicate, and genuinely lovely in a paragraph. Set a size larger than the sans options because it runs small.',
+  },
+  {
     id: 'body-jost',
     name: 'Jost',
     tag: 'Closest to Zola',
-    why: 'Geometric sans in the Futura line, which is what Circular is. The truest match to your Zola page and the current default. Slightly cool and architectural.',
+    why: 'Geometric sans in the Futura line, which is what Circular is. The truest match to your Zola page. Slightly cool and architectural.',
   },
   {
     id: 'body-dmsans',
@@ -35,12 +40,6 @@ const BODIES = [
     tag: 'Warmest',
     why: 'A serif body under a sans heading, which is the classic inversion. Bookish and warm, and it makes the jokes land softer. The biggest personality shift.',
   },
-  {
-    id: 'body-cormorant',
-    name: 'Cormorant',
-    tag: 'Most formal',
-    why: 'The most traditionally bridal. High contrast and delicate, genuinely beautiful in a paragraph, but the thin strokes get faint on a phone in sunlight.',
-  },
 ]
 
 const SAMPLE =
@@ -56,15 +55,14 @@ export default function StylesPage() {
         <h1 className="display text-4xl md:text-6xl mt-4">Pick a body font</h1>
         <div className="mt-6 card p-6 max-w-3xl">
           <p className="text-ink/75">
-            Headings are now set the way your Zola page sets them: <strong>Sauvage</strong>,
-            uppercase, regular weight, in the same wine colour.
+            Headings are <strong>Bodoni Moda</strong>. Body copy is{' '}
+            <strong>Cormorant Garamond</strong>. Small labels, buttons and nav stay in{' '}
+            <strong>Jost</strong>, because Cormorant at 11px with wide tracking is prettier than
+            it is readable.
           </p>
           <p className="mt-3 text-ink/65 text-[0.95rem]">
-            One catch. Sauvage is a commercial typeface that Zola serves under their own Adobe
-            licence, so it cannot legally be copied onto this site. What you are looking at is{' '}
-            <strong>Tenor Sans</strong>, the closest freely licensable match. If you buy a web
-            licence or find it on your Creative Cloud plan, send me the kit and it drops in as a
-            one-line change with nothing else moving.
+            Sauvage is not available on Adobe Fonts, so matching the Zola headings exactly is off
+            the table. Below are the body options against the current heading.
           </p>
         </div>
       </header>
@@ -126,7 +124,7 @@ export default function StylesPage() {
                 {b.name}
               </button>
             ))}
-            <span className="text-sm text-ink/50 ml-2">Sauvage + {active.name}</span>
+            <span className="text-sm text-ink/50 ml-2">Bodoni Moda + {active.name}</span>
           </div>
         </div>
 
@@ -156,9 +154,9 @@ export default function StylesPage() {
           <section className="content pb-14">
             <div className="grid gap-px bg-wine/10 sm:grid-cols-3">
               {[
-                ['Share photos', 'Straight into our album. No app, no login'],
-                ['Join the WhatsApp', 'Where anything that changes gets posted first'],
                 ['See the schedule', 'Every start time, and the bus that leaves without you'],
+                ['Join the WhatsApp', 'Where anything that changes gets posted first'],
+                ['Share photos', 'Straight into our album. No app, no login'],
               ].map(([label, desc]) => (
                 <div key={label} className="bg-cream p-7 md:p-8">
                   <div className="flex items-start justify-between gap-4">
@@ -220,7 +218,7 @@ export default function StylesPage() {
 
       <div className="content py-16 text-center">
         <p className="text-ink/55 max-w-xl mx-auto">
-          Tell me which one and I will apply it everywhere. Currently live: Jost.
+          Tell me if you want a different one and I will swap it. Currently live: Cormorant.
         </p>
       </div>
     </>

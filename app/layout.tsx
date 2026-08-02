@@ -1,21 +1,23 @@
 import type { Metadata, Viewport } from 'next'
-import { Bodoni_Moda, Pinyon_Script, Jost } from 'next/font/google'
+import { Bodoni_Moda, Tenor_Sans, Jost } from 'next/font/google'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import './globals.css'
 
+// Stand-in for Sauvage, the commercial face the Zola site uses for headings.
+const tenor = Tenor_Sans({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-tenor',
+  display: 'swap',
+})
+
+// Kept only for the italic ampersand.
 const bodoni = Bodoni_Moda({
   subsets: ['latin'],
   variable: '--font-bodoni',
   display: 'swap',
   axes: ['opsz'],
-})
-
-const pinyon = Pinyon_Script({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-pinyon',
-  display: 'swap',
 })
 
 const jost = Jost({
@@ -44,7 +46,21 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${bodoni.variable} ${pinyon.variable} ${jost.variable}`}>
+    <html lang="en" className={`${tenor.variable} ${bodoni.variable} ${jost.variable}`}>
+      <head>
+        {/*
+          Sauvage is first in the --font-display stack but is a commercial face with
+          no free source. Set NEXT_PUBLIC_ADOBE_KIT to an Adobe Fonts web-project ID
+          that includes it (with this domain allowlisted) and it resolves everywhere
+          automatically, with Tenor Sans falling back until then.
+        */}
+        {process.env.NEXT_PUBLIC_ADOBE_KIT && (
+          <link
+            rel="stylesheet"
+            href={`https://use.typekit.net/${process.env.NEXT_PUBLIC_ADOBE_KIT}.css`}
+          />
+        )}
+      </head>
       <body className="min-h-dvh flex flex-col">
         <a
           href="#main"

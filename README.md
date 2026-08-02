@@ -54,7 +54,8 @@ Then redeploy — `vercel deploy --prod` — and re-check `/api/upload/health`.
 | `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` | OAuth client for the Drive upload |
 | `GOOGLE_REFRESH_TOKEN` | Long-lived grant; dies after 7 days if the consent screen is in "Testing" |
 | `GOOGLE_DRIVE_FOLDER_ID` | The album folder photos land in |
-| `NEXT_PUBLIC_WHATSAPP_INVITE` | Group invite link |
+| `NEXT_PUBLIC_WHATSAPP_INVITE` | WhatsApp group invite link |
+| `NEXT_PUBLIC_ADOBE_KIT` | Optional. Adobe Fonts web-project ID that includes Sauvage |
 
 `NEXT_PUBLIC_*` values are inlined at **build** time, so changing one needs a redeploy, not just
 an env edit. The rest are read at request time.
@@ -228,11 +229,22 @@ scripts/
 
 ### Design
 
-Palette and type are deliberately borrowed rather than invented. `#63494A` (wine) and `#F5EFE8`
-(cream) are lifted from the Zola site so the two feel like one family. The type pairing —
-Bodoni Moda with Pinyon Script — is what the printed signage spec
-(`Family/wedding-signage/canva-build-spec.md`) already names as the web stand-ins for Perfectly
-Nineties and Antura Script, so the site matches the physical pieces at the venue.
+Palette and type are borrowed from the Zola site rather than invented, so the two read as one
+family: `#63494A` wine on `#F5EFE8` cream.
+
+Headings follow how Zola actually renders them, which is **Sauvage at weight 400, uppercase**,
+in the wine colour. Sauvage is a commercial typeface Zola serves under their own Adobe licence,
+so it cannot be copied here. It is named first in `--font-display` with **Tenor Sans** behind it
+as the closest freely licensable match. Buy or find a licence, create an Adobe Fonts web project
+with this domain allowlisted, set `NEXT_PUBLIC_ADOBE_KIT` to the project ID, and Sauvage resolves
+everywhere with nothing else changing.
+
+Body text is **Jost**, the nearest free equivalent to Zola's Circular. Four alternatives are
+previewed side by side at `/styles`; switching one is a single line in `globals.css`.
+
+Two heading classes exist. `.display` is uppercase, matching Zola. `.display-sentence` is the
+same face in sentence case, for display-sized text that is an actual sentence and would be
+shouting in caps.
 
 Photos come from the Zola gallery — see the Photos section above. The hero band, story beats,
 Charlottesville card, schedule and thank-you page each carry one; the rest of the gallery is

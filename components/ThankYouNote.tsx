@@ -21,7 +21,7 @@ export default function ThankYouNote() {
               key={i}
               className={
                 i === 1
-                  ? 'display !text-3xl md:!text-4xl !leading-snug text-center py-4 !text-wine'
+                  ? 'display-sentence !text-3xl md:!text-4xl text-center py-4 !text-wine'
                   : undefined
               }
             >

@@ -13,7 +13,7 @@ export const REGISTRY_URL = 'https://www.zola.com/wedding/eilands2026/registry'
 export const DAY_OF_CONTACT = {
   name: 'Paige',
   role: 'Coordinator, Hazy Mountain',
-  phone: '', // not on file yet
+  phone: '850-212-3055',
 }
 
 // ---------------------------------------------------------------- Charlottesville
@@ -147,7 +147,7 @@ export const FAQS: Faq[] = [
   {
     topic: 'Everything else',
     q: 'Something has gone wrong. Who do I find?',
-    a: 'Not us, we will be busy. Paige coordinates the day from the Hazy Mountain side and her team is on site all Sunday. For anything before then, [the WhatsApp](whatsapp) is the fastest way to reach a human.',
+    a: 'Not us, we will be busy. Paige coordinates the day from the Hazy Mountain side and her team is on site all Sunday: [850-212-3055](tel:+18502123055). For anything before the day itself, [the WhatsApp](whatsapp) is the fastest way to reach a human.',
   },
 ]
 

@@ -53,7 +53,7 @@ export default function CharlottesvillePage() {
         <div className="mt-20 card p-8 md:p-12 grid gap-10 md:grid-cols-[1.15fr_1fr] md:items-center">
           <div>
             <p className="eyebrow">If you only do one thing</p>
-            <p className="display text-3xl md:text-4xl mt-3 leading-snug">
+            <p className="display-sentence text-3xl md:text-4xl mt-3">
               Walk the Lawn at dusk, then get a bagel in the morning.
             </p>
             <p className="mt-4 text-ink/65">

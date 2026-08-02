@@ -39,7 +39,7 @@ export default function ThankYouPage() {
                 : undefined
             }
           >
-            {p.replace('{count}', String(data.guestCount))}
+            {p.replace('{count}', String(data.totalSeated))}
           </p>
         ))}
       </div>

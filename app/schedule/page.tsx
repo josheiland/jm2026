@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import PageHeader from '@/components/PageHeader'
 import AddToCalendar from '@/components/AddToCalendar'
 import Photo from '@/components/Photo'
+import WholeWeekendButton from '@/components/WholeWeekendButton'
 import { DAYS, SUNSET, eventsForDay, mapsUrl, type WeddingEvent } from '@/lib/events'
 
 export const metadata: Metadata = {
@@ -91,17 +92,7 @@ export default function SchedulePage() {
       />
 
       <div className="content pb-8">
-        <a
-          href="/api/ics"
-          download
-          className="inline-flex items-center gap-2 border border-wine/25 text-wine px-6 py-3 text-sm uppercase tracking-[0.14em] hover:bg-wine hover:text-cream transition-colors"
-        >
-          Download the whole weekend
-        </a>
-        <p className="mt-2.5 text-xs text-ink/45">
-          One file, every event, reminders already set. Opens in Apple Calendar, Google Calendar
-          or Outlook. Individual events have one-tap Google and Outlook links below.
-        </p>
+        <WholeWeekendButton />
       </div>
 
       <div className="content pb-20">

@@ -48,7 +48,13 @@ export default function AddToCalendar({
   compact?: boolean
 }) {
   const [open, setOpen] = useState(false)
+  // Resolved after mount so the server and first client render agree.
+  const [touch, setTouch] = useState(false)
   const wrap = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    setTouch(window.matchMedia('(pointer: coarse)').matches)
+  }, [])
 
   useEffect(() => {
     if (!open) return
@@ -66,12 +72,27 @@ export default function AddToCalendar({
 
   const lead = event.kind === 'ceremony' ? '2 hours' : '1 hour'
 
-  const options = [
-    { label: 'Google Calendar', href: googleCalUrl(event), icon: <GoogleMark />, external: true },
-    { label: 'Outlook', href: outlookCalUrl(event, 'live'), icon: <OutlookMark />, external: true },
-    { label: 'Outlook (work)', href: outlookCalUrl(event, 'office'), icon: <OutlookMark />, external: true },
-    { label: 'Apple or download', href: `/api/ics?e=${event.slug}`, icon: <CalMark />, external: false },
-  ]
+  // Inline on touch so iOS opens the calendar sheet instead of saving to Files.
+  const ics = `/api/ics?e=${event.slug}${touch ? '&inline=1' : ''}`
+
+  /**
+   * On a phone the Outlook web links open a browser tab, not the Outlook app, which
+   * is not what anyone tapping "Outlook" wants. There is no reliable deep link that
+   * adds an event to the Outlook app, but a downloaded .ics hands off to whichever
+   * calendar app is installed, Outlook included. So touch devices lead with the file
+   * and drop the web-only Outlook entries; desktop keeps all of them.
+   */
+  const options = touch
+    ? [
+        { label: 'Apple, Outlook or other', href: ics, icon: <CalMark />, external: false },
+        { label: 'Google Calendar', href: googleCalUrl(event), icon: <GoogleMark />, external: true },
+      ]
+    : [
+        { label: 'Google Calendar', href: googleCalUrl(event), icon: <GoogleMark />, external: true },
+        { label: 'Outlook', href: outlookCalUrl(event, 'live'), icon: <OutlookMark />, external: true },
+        { label: 'Outlook (work)', href: outlookCalUrl(event, 'office'), icon: <OutlookMark />, external: true },
+        { label: 'Apple or download', href: ics, icon: <CalMark />, external: false },
+      ]
 
   return (
     <div className={compact ? '' : 'mt-5'} ref={wrap}>
@@ -104,7 +125,9 @@ export default function AddToCalendar({
                 role="menuitem"
                 {...(o.external
                   ? { target: '_blank', rel: 'noopener noreferrer' }
-                  : { download: true })}
+                  : touch
+                    ? {}
+                    : { download: true })}
                 onClick={() => setOpen(false)}
                 className="flex items-center gap-3 px-4 py-3 text-sm hover:bg-blush/30 transition-colors border-b border-wine/8 last:border-0"
               >
@@ -118,7 +141,9 @@ export default function AddToCalendar({
 
       {!compact && (
         <p className="mt-2 text-xs text-ink/40">
-          The download sets a reminder {lead} beforehand
+          {touch
+            ? `Opens in your calendar app, with a reminder ${lead} beforehand`
+            : `The download sets a reminder ${lead} beforehand`}
         </p>
       )}
     </div>

@@ -94,8 +94,6 @@ export default function HomePage() {
         </p>
       </section>
 
-      {/* The two that matter, again, for anyone who scrolled straight past the top */}
-      <QuickLinks only={['whatsapp', 'photos']} />
 
       <ThankYouNote />
     </>

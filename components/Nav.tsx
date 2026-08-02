@@ -36,15 +36,15 @@ export default function Nav() {
   return (
     <header
       className={`sticky top-0 z-40 transition-all duration-300 ${
-        scrolled
-          ? 'bg-cream/92 backdrop-blur-md border-b border-wine/10'
+        scrolled || open
+          ? 'bg-cream/95 backdrop-blur-md border-b border-wine/10'
           : 'bg-transparent border-b border-transparent'
       }`}
     >
       <nav className="content flex items-center justify-between h-16 md:h-20" aria-label="Main">
         <Link href="/" className="group flex items-baseline gap-1.5 shrink-0" aria-label="Home">
           <span className="display text-xl md:text-2xl tracking-tight">M</span>
-          <span className="amp-roman text-lg md:text-xl">&amp;</span>
+          <span className="amp text-lg md:text-xl">&amp;</span>
           <span className="display text-xl md:text-2xl tracking-tight">J</span>
         </Link>
 
@@ -96,7 +96,7 @@ export default function Nav() {
       <div
         id="mobile-menu"
         hidden={!open}
-        className="lg:hidden fixed inset-x-0 top-16 bottom-0 z-40 bg-cream/98 backdrop-blur-md border-t border-wine/10"
+        className="lg:hidden fixed inset-x-0 top-16 bottom-0 z-40 bg-cream border-t border-wine/10 overflow-y-auto"
       >
         <ul className="content py-6 flex flex-col">
           {LINKS.map((l, i) => (

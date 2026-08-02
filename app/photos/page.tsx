@@ -16,17 +16,17 @@ const STEPS = [
   {
     n: '01',
     t: 'Take the picture',
-    d: 'The one from your table, mid-toast, that no professional could have got.',
+    d: 'The one from your table, mid-toast, that no professional was ever going to get.',
   },
   {
     n: '02',
     t: 'Drop it here',
-    d: 'No app, no account, no login. It works on the phone in your hand right now.',
+    d: 'No app, no account, no login. Works on the phone in your hand right now.',
   },
   {
     n: '03',
     t: 'It lands in our album',
-    d: 'Straight into our Drive folder, tagged with your name so we know who to thank.',
+    d: 'Straight into our folder. Put your name on it and we will know who to thank.',
   },
 ]
 
@@ -38,7 +38,7 @@ export default function PhotosPage() {
       <PageHeader
         eyebrow="The guest album"
         title="Share Your Photos"
-        lede="Our photographer is extraordinary and will still only ever be in one place at a time. You will see things she won't. Please send them to us."
+        lede="Our photographer is extraordinary and can still only be in one place at a time. You will see things she won't. Send them to us."
       />
 
       <div className="content pb-16">
@@ -61,47 +61,14 @@ export default function PhotosPage() {
       </section>
 
       {/* ---------------------------------------------------------------- notes */}
-      <section className="content py-16">
-        <div className="grid gap-12 md:grid-cols-2">
-          <div>
-            <p className="eyebrow">The small print</p>
-            <ul className="mt-5 space-y-3 text-ink/70">
-              <li className="flex gap-3">
-                <span className="text-wine/40 shrink-0" aria-hidden="true">—</span>
-                Video is very welcome, and there is no practical size limit. A long clip on hotel
-                wifi will take a few minutes; leave the tab open.
-              </li>
-              <li className="flex gap-3">
-                <span className="text-wine/40 shrink-0" aria-hidden="true">—</span>
-                iPhone HEIC and Live Photos upload fine. So do screenshots of the group chat,
-                which we would genuinely also like.
-              </li>
-              <li className="flex gap-3">
-                <span className="text-wine/40 shrink-0" aria-hidden="true">—</span>
-                Nothing you upload is shown publicly on this site. It goes into our private
-                album and nowhere else.
-              </li>
-              <li className="flex gap-3">
-                <span className="text-wine/40 shrink-0" aria-hidden="true">—</span>
-                No deadline. Find something good in your camera roll in November? Still want it.
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <p className="eyebrow">If something goes wrong</p>
-            <p className="mt-5 text-ink/70">
-              Upload sticking on a big video? It is almost always the wifi. Switch to cellular,
-              or try again from the hotel later — nothing is lost by retrying, and duplicates are
-              a much smaller problem than missing photos.
-            </p>
-            <p className="mt-4 text-ink/70">
-              Still stuck, or would rather just send them to us directly?
-            </p>
-            <div className="mt-5">
-              <WhatsAppButton variant="inline" />
-            </div>
-          </div>
+      <section className="content py-16 text-center">
+        <p className="text-ink/70 max-w-xl mx-auto">
+          Video is welcome and there is no real size limit. Nothing you upload appears publicly.
+          If it will not go through, it is the wifi, and you should drop it in the group chat
+          instead or just text it to us.
+        </p>
+        <div className="mt-6 flex justify-center">
+          <WhatsAppButton variant="inline" />
         </div>
       </section>
     </>

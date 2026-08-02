@@ -40,14 +40,14 @@ function vevent(e: WeddingEvent, stamp: string) {
     `DTSTAMP:${stamp}`,
     `DTSTART:${utc(e.start)}`,
     `DTEND:${utc(e.end)}`,
-    fold(`SUMMARY:${esc(e.name)} — Mary & Josh`),
+    fold(`SUMMARY:${esc(e.name)} · Mary & Josh`),
     fold(`LOCATION:${esc(`${e.venue}, ${e.address}`)}`),
     desc ? fold(`DESCRIPTION:${esc(desc)}`) : null,
     'STATUS:CONFIRMED',
     'TRANSP:OPAQUE',
     'BEGIN:VALARM',
     'ACTION:DISPLAY',
-    fold(`DESCRIPTION:${esc(`${e.name} — ${e.venue}`)}`),
+    fold(`DESCRIPTION:${esc(`${e.name} · ${e.venue}`)}`),
     `TRIGGER:-PT${leadMinutes(e)}M`,
     'END:VALARM',
     'END:VEVENT',
@@ -65,21 +65,47 @@ export function buildIcs(slugs?: string[]) {
     'PRODID:-//Mary and Josh//Wedding 2026//EN',
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
-    'X-WR-CALNAME:Mary & Josh — September 2026',
+    'X-WR-CALNAME:Mary & Josh · September 2026',
     ...picked.map((e) => vevent(e, stamp)),
     'END:VCALENDAR',
     '',
   ].join('\r\n')
 }
 
-/** Google Calendar deep link, for people who live in a browser tab. */
+const title = (e: WeddingEvent) => `${e.name} · Mary & Josh`
+const body = (e: WeddingEvent) => [e.description, e.heads_up].filter(Boolean).join('\n\n')
+
+/** Google Calendar deep link. */
 export function googleCalUrl(e: WeddingEvent) {
   const p = new URLSearchParams({
     action: 'TEMPLATE',
-    text: `${e.name} — Mary & Josh`,
+    text: title(e),
     dates: `${utc(e.start)}/${utc(e.end)}`,
     location: `${e.venue}, ${e.address}`,
-    details: [e.description, e.heads_up].filter(Boolean).join('\n\n'),
+    details: body(e),
   })
   return `https://calendar.google.com/calendar/render?${p}`
 }
+
+/**
+ * Outlook deep link. Outlook.com and Microsoft 365 are separate hosts on the same
+ * path, and sending a personal account to the work host silently fails, so both are
+ * offered rather than guessed at.
+ */
+export function outlookCalUrl(e: WeddingEvent, kind: 'live' | 'office' = 'live') {
+  const host =
+    kind === 'live' ? 'https://outlook.live.com' : 'https://outlook.office.com'
+  const p = new URLSearchParams({
+    path: '/calendar/action/compose',
+    rru: 'addevent',
+    subject: title(e),
+    startdt: new Date(e.start).toISOString(),
+    enddt: new Date(e.end).toISOString(),
+    location: `${e.venue}, ${e.address}`,
+    body: body(e),
+  })
+  return `${host}/calendar/0/action/compose?${p}`
+}
+
+/** Whole weekend, for each provider. Google and Outlook only take one event per link. */
+export const ICS_ALL = '/api/ics'

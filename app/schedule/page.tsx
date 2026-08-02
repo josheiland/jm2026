@@ -3,18 +3,10 @@ import PageHeader from '@/components/PageHeader'
 import AddToCalendar from '@/components/AddToCalendar'
 import Photo from '@/components/Photo'
 import { DAYS, SUNSET, eventsForDay, mapsUrl, type WeddingEvent } from '@/lib/events'
-import { MENU } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Schedule',
   description: 'Everything happening between Saturday and Monday.',
-}
-
-const TAG_LABEL: Record<string, string> = {
-  veg: 'vegetarian',
-  vegan: 'vegan',
-  gf: 'gluten-free',
-  df: 'dairy-free',
 }
 
 function Shuttle({ event }: { event: WeddingEvent }) {
@@ -75,9 +67,7 @@ function Major({ event }: { event: WeddingEvent }) {
           <p className="eyebrow">Attire</p>
           <p className="mt-1.5 text-ink/80">
             {event.attire}
-            {event.attireNote && (
-              <span className="text-ink/55"> — {event.attireNote}</span>
-            )}
+            {event.attireNote && <span className="text-ink/55">. {event.attireNote}</span>}
           </p>
         </div>
       )}
@@ -95,9 +85,9 @@ export default function SchedulePage() {
   return (
     <>
       <PageHeader
-        eyebrow="September 5–7, 2026"
+        eyebrow="September 5 to 7, 2026"
         title="The Weekend"
-        lede="Three days in Charlottesville. Come to all of it, come to some of it — the only thing with a hard deadline is the bus on Sunday afternoon."
+        lede="Three days in Charlottesville. Come to all of it or some of it. Every event is a full meal, so do not eat beforehand, and the bus on Sunday is the one thing that will leave without you."
       />
 
       <div className="content pb-8">
@@ -106,77 +96,37 @@ export default function SchedulePage() {
           download
           className="inline-flex items-center gap-2 border border-wine/25 text-wine px-6 py-3 text-sm uppercase tracking-[0.14em] hover:bg-wine hover:text-cream transition-colors"
         >
-          Add the whole weekend to your calendar
+          Download the whole weekend
         </a>
         <p className="mt-2.5 text-xs text-ink/45">
-          Every event, each with a reminder already set — including an hour's warning before the
-          shuttle.
+          One file, every event, reminders already set. Opens in Apple Calendar, Google Calendar
+          or Outlook. Individual events have one-tap Google and Outlook links below.
         </p>
       </div>
 
-      <div className="content pb-16">
-        {DAYS.map((day) => {
-          const events = eventsForDay(day.key)
-          return (
-            <section key={day.key} className="pt-16 first:pt-8">
-              <div className="flex flex-wrap items-baseline justify-between gap-4 pb-2">
-                <h2 className="display text-4xl md:text-5xl">{day.long}</h2>
-                <p className="text-sm text-ink/45">
-                  Sunset {SUNSET[day.key]}
-                </p>
-              </div>
-              <div className="rule" />
+      <div className="content pb-20">
+        {DAYS.map((day) => (
+          <section key={day.key} className="pt-16 first:pt-8">
+            <div className="flex flex-wrap items-baseline justify-between gap-4 pb-2">
+              <h2 className="display text-4xl md:text-5xl">{day.long}</h2>
+              <p className="text-sm text-ink/45">Sunset {SUNSET[day.key]}</p>
+            </div>
+            <div className="rule" />
 
-              <ol className="mt-6 border-l border-wine/15 ml-1">
-                {events.map((e) =>
-                  e.kind === 'shuttle' ? (
-                    <Shuttle key={e.slug} event={e} />
-                  ) : (
-                    <Major key={e.slug} event={e} />
-                  ),
-                )}
-              </ol>
-            </section>
-          )
-        })}
+            <ol className="mt-6 border-l border-wine/15 ml-1">
+              {eventsForDay(day.key).map((e) =>
+                e.kind === 'shuttle' ? (
+                  <Shuttle key={e.slug} event={e} />
+                ) : (
+                  <Major key={e.slug} event={e} />
+                ),
+              )}
+            </ol>
+          </section>
+        ))}
       </div>
 
-      {/* ------------------------------------------------------------ the menu */}
       <Photo name="vineyard-kiss" sizes="100vw" imgClassName="max-h-[52vh]" />
-
-      <section className="bg-cream-deep/40 py-20 md:py-24">
-        <div className="content-narrow">
-          <p className="eyebrow text-center">Sunday dinner</p>
-          <h2 className="display text-4xl md:text-5xl mt-4 text-center">The Menu</h2>
-          <p className="mt-4 text-center text-ink/60 max-w-lg mx-auto">{MENU.note}</p>
-
-          <div className="mt-14 space-y-12">
-            {MENU.courses.map((course) => (
-              <div key={course.course}>
-                <p className="eyebrow text-center">{course.course}</p>
-                <ul className="mt-5 space-y-5">
-                  {course.items.map((item) => (
-                    <li key={item.name} className="text-center">
-                      <p className="display text-xl md:text-2xl">{item.name}</p>
-                      <p className="mt-1 text-ink/60 text-[0.95rem] max-w-lg mx-auto">
-                        {item.desc}
-                      </p>
-                      {item.tags.length > 0 && (
-                        <p className="mt-1.5 text-xs uppercase tracking-[0.18em] text-sage">
-                          {item.tags.map((t) => TAG_LABEL[t] ?? t).join(' · ')}
-                        </p>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          <div className="rule my-12" />
-          <p className="text-center text-ink/65 italic">{MENU.wine}</p>
-        </div>
-      </section>
     </>
   )
 }

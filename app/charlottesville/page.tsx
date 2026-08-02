@@ -6,7 +6,7 @@ import { mapsUrl } from '@/lib/events'
 
 export const metadata: Metadata = {
   title: 'Charlottesville',
-  description: 'Our Charlottesville — where we ate, ran, studied and fell in love.',
+  description: 'Our Charlottesville: where we ate, ran, studied and fell in love.',
 }
 
 const CATEGORIES = ['Eat', 'Coffee', 'See', 'Move'] as const
@@ -17,7 +17,7 @@ export default function CharlottesvillePage() {
       <PageHeader
         eyebrow="Our Charlottesville"
         title="Things To Do"
-        lede="We spent four years here and have opinions. This is not a tourist list — it is the actual set of places we kept going back to."
+        lede="We spent four years here and have opinions. Not a tourist list. The actual set of places we kept going back to."
       />
 
       <div className="content pb-20">
@@ -57,7 +57,7 @@ export default function CharlottesvillePage() {
               Walk the Lawn at dusk, then get a bagel in the morning.
             </p>
             <p className="mt-4 text-ink/65">
-              Rooms 45 and 47 are ours — well, they were, for a year, and we fostered an
+              Rooms 45 and 47 were ours for a year, and we fostered an
               irresponsible number of puppies out of them. Monday morning we will all be back on
               that same grass with Bodo's, so you may as well scout it Saturday.
             </p>

@@ -55,29 +55,39 @@ const norm = (s) =>
 
 // ---- how-we-know-them labels, in the order they appear on the page ------------------
 
+// Groupings agreed on the Aug 1 review call: UVA merged into one, Stanford folded
+// together with the Bay, and family friends merged with the hometown crowd.
 const GROUPS = [
-  { key: 'us',            match: 'Us :)',                 label: 'Us',              blurb: 'Hi.' },
-  { key: 'mary-family',   match: 'Mary family',           label: "Mary's Family",   blurb: 'The Blankemeiers, Ryans and Savaianos — including everyone who started the "Josh! Josh! Josh!" chant at Thanksgiving.' },
-  { key: 'josh-family',   match: 'Josh family',           label: "Josh's Family",   blurb: 'The Eilands and the Carrons.' },
-  { key: 'family-friends',match: 'Josh family friends',   label: 'Family Friends',  blurb: 'Around so long they are effectively family.' },
-  { key: 'mary-family-friends', match: 'Mary family friends', label: 'Family Friends', blurb: '' },
-  { key: 'chicago',       match: 'Chicago family friends',label: 'Family Friends',  blurb: '' },
-  { key: 'boston',        match: 'Boston friends',        label: 'Boston',          blurb: 'The chapter straight after graduation — the people who made a new city feel like home.' },
-  { key: 'uva-mary',      match: 'Mary college friends',  label: 'UVA — Mary',      blurb: 'Wahoos. Lawn residents. Study-session enablers.' },
-  { key: 'uva-josh',      match: 'Josh college friends',  label: 'UVA — Josh',      blurb: 'Wahoos. Lawn residents. Study-session enablers.' },
-  { key: 'uva',           match: 'College friend',        label: 'UVA',             blurb: '' },
-  { key: 'stanford',      match: 'Stanford friends',      label: 'Stanford',        blurb: 'The current chapter — the GSB and the Farm.' },
-  { key: 'sf',            match: 'SF friends',            label: 'The Bay',         blurb: '' },
-  { key: 'ryc',           match: 'RYC',                   label: 'Run Your City',   blurb: '75+ chapters, 10,000+ kids, and the running camps in Rwanda where a lot of this got its shape.' },
-  { key: 'mary-hs',       match: 'Mary HS friends',       label: "Mary's Hometown", blurb: 'Since before any of this.' },
-  { key: 'josh-hs',       match: 'Josh HS friends',       label: "Josh's Hometown", blurb: 'Since before any of this.' },
+  { key: 'us',            match: 'Us :)',                 label: 'Us',               blurb: 'Hi.' },
+  { key: 'mary-family',   match: 'Mary family',           label: "Mary's Family",    blurb: 'The Blankemeiers and the Ryans.' },
+  { key: 'josh-family',   match: 'Josh family',           label: "Josh's Family",    blurb: 'The Eilands and the Carrons.' },
+  { key: 'family-friends',match: 'Josh family friends',   label: 'Hometown Friends', blurb: 'Around so long they are effectively family.' },
+  { key: 'mary-family-friends', match: 'Mary family friends', label: 'Hometown Friends', blurb: '' },
+  { key: 'chicago',       match: 'Chicago family friends',label: 'Hometown Friends', blurb: '' },
+  { key: 'mary-hs',       match: 'Mary HS friends',       label: 'Hometown Friends', blurb: '' },
+  { key: 'josh-hs',       match: 'Josh HS friends',       label: 'Hometown Friends', blurb: '' },
+  { key: 'boston',        match: 'Boston friends',        label: 'Boston',           blurb: 'The chapter straight after graduation, and the people who made a new city feel like home.' },
+  { key: 'uva-mary',      match: 'Mary college friends',  label: 'UVA',              blurb: 'Wahoos.' },
+  { key: 'uva-josh',      match: 'Josh college friends',  label: 'UVA',              blurb: '' },
+  { key: 'uva',           match: 'College friend',        label: 'UVA',              blurb: '' },
+  { key: 'stanford',      match: 'Stanford friends',      label: 'Stanford & the Bay', blurb: 'The current chapter. The GSB, the Farm, and everyone west of it.' },
+  { key: 'sf',            match: 'SF friends',            label: 'Stanford & the Bay', blurb: '' },
+  { key: 'ryc',           match: 'RYC',                   label: 'Run Your City',    blurb: '75+ chapters, 10,000+ kids, and the running camps in Rwanda where a lot of this got its shape.' },
 ]
 
 const byMatch = new Map(GROUPS.map((g) => [g.match, g]))
 
-/** Roles the Type column can't express. Keyed by normalised name. */
-const ROLE_OVERRIDES = {
-  'mary davis': { label: 'Officiant', blurb: 'Marrying us.' },
+/**
+ * People the Type column files in the wrong place. Keyed by normalised name, valued
+ * with the Type they should be treated as.
+ */
+const TYPE_OVERRIDES = {
+  // Mary's aunt, and the officiant. Belongs with family, not in a group of her own.
+  'mary davis': 'Mary family',
+  // The Raisches are Mary's family, not family friends.
+  'susie raisch': 'Mary family',
+  'ken raisch': 'Mary family',
+  'jack raisch': 'Mary family',
 }
 
 /**
@@ -122,8 +132,8 @@ for (const r of rows.slice(1)) {
 
   if (!name || !table || table === NOT_ATTENDING) continue
 
-  const override = ROLE_OVERRIDES[norm(name)]
-  const group = override ?? byMatch.get(type)
+  const effectiveType = TYPE_OVERRIDES[norm(name)] ?? type
+  const group = byMatch.get(effectiveType)
   if (!group) {
     problems.push(`unrecognised Type ${JSON.stringify(type)} for ${name}`)
     continue
@@ -136,7 +146,7 @@ for (const r of rows.slice(1)) {
     tableLabel: headTable ? 'Head Table' : `Table ${table}`,
     tableSort: headTable ? 0 : Number(table),
     group: group.label,
-    groupKey: override ? 'role' : group.key,
+    groupKey: group.key,
     headTable,
     isCouple: type === 'Us :)',
   })
@@ -158,14 +168,12 @@ const guestCount = totalSeated - guests.filter((g) => g.isCouple).length
 
 const order = []
 for (const g of GROUPS) if (!order.includes(g.label)) order.push(g.label)
-for (const o of Object.values(ROLE_OVERRIDES)) if (!order.includes(o.label)) order.push(o.label)
 
 const groups = order
   .map((label) => {
     const source =
       GROUPS.find((g) => g.label === label && g.blurb) ??
-      GROUPS.find((g) => g.label === label) ??
-      Object.values(ROLE_OVERRIDES).find((o) => o.label === label)
+      GROUPS.find((g) => g.label === label)
     const members = guests
       .filter((x) => x.group === label)
       .sort((a, b) => a.name.localeCompare(b.name, 'en'))

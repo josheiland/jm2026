@@ -99,8 +99,8 @@ export default function HappeningNow() {
               urgent ? 'border-cream/20 text-cream/75' : 'border-wine/10 text-ink/55'
             }`}
           >
-            Next up — <Link href="/schedule" className="link-underline">{next.name}</Link> at{' '}
-            {next.time.split('–')[0].trim()}
+            Next up: <Link href="/schedule" className="link-underline">{next.name}</Link> at{' '}
+            {next.time}
             {next.kind === 'shuttle' && '. Do not miss this bus.'}
           </p>
         )}

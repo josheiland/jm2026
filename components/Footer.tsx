@@ -31,9 +31,9 @@ export default function Footer() {
               <ul className="mt-4 space-y-2.5 text-sm">
                 {[
                   ['/schedule', 'Schedule'],
-                  ['/travel', 'Travel & Stay'],
                   ['/photos', 'Share Photos'],
                   ['/guests', 'Who’s Coming'],
+                  ['/charlottesville', 'Charlottesville'],
                 ].map(([href, label]) => (
                   <li key={href}>
                     <Link href={href} className="link-underline hover:text-cream">
@@ -48,7 +48,6 @@ export default function Footer() {
               <p className="eyebrow !text-blush/70">More</p>
               <ul className="mt-4 space-y-2.5 text-sm">
                 {[
-                  ['/charlottesville', 'Charlottesville'],
                   ['/faq', 'FAQs'],
                   ['/thank-you', 'A note from us'],
                 ].map(([href, label]) => (

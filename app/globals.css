@@ -99,8 +99,12 @@
     color: var(--color-wine-deep);
   }
 
+  /* Bodoni's italic ampersand, not the script one. Pinyon Script renders "&" as a
+     very ornate swash that reads as a broken glyph at small sizes, especially in the
+     nav monogram. This is the classic editorial ampersand and always resolves. */
   .amp {
-    font-family: var(--font-script);
+    font-family: var(--font-display);
+    font-style: italic;
     font-weight: 400;
     color: var(--color-wine);
     line-height: 1;

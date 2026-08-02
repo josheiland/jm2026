@@ -116,8 +116,8 @@ export default function GuestList({
 
           {matches.length === 0 ? (
             <p className="mt-4 text-ink/60 max-w-lg">
-              Try a first name on its own. If you still cannot find yourself, we may have you
-              under a different spelling — send us a message and we will fix it.
+              Try just a first name. If you still cannot find yourself, we have probably spelled
+              it creatively, which is Mary's department. Tell us and we will fix it.
             </p>
           ) : (
             <ul className="mt-5 space-y-px bg-wine/10">
@@ -158,15 +158,10 @@ export default function GuestList({
                 {group.members.map((g) => (
                   <li
                     key={`${g.name}-${g.table}`}
-                    className="flex items-baseline justify-between gap-3 border-b border-wine/8 pb-2"
+                    className="flex items-center gap-2 border-b border-wine/8 pb-2"
                   >
-                    <span className="flex items-center gap-2">
-                      {g.name}
-                      {g.headTable && <HeadTableMark />}
-                    </span>
-                    <span className="text-xs text-ink/40 tabular-nums shrink-0">
-                      {g.headTable ? 'Head' : `T${g.table}`}
-                    </span>
+                    {g.name}
+                    {g.headTable && <HeadTableMark />}
                   </li>
                 ))}
               </ul>
@@ -179,8 +174,8 @@ export default function GuestList({
       {!matches && view === 'table' && (
         <div className="mt-14">
           <p className="text-ink/60 max-w-2xl">
-            {tableCount} tables at the reception. Seating is still being nudged around, so treat
-            this as very nearly final rather than final.
+            {tableCount} tables at the reception. Still being nudged around, so treat this as
+            very nearly final rather than final.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {byTable.map(([table, members]) => {
@@ -190,13 +185,10 @@ export default function GuestList({
                   key={table}
                   className={`card p-6 ${isHead ? '!bg-blush/25 !border-wine/25 sm:col-span-2 lg:col-span-3' : ''}`}
                 >
-                  <div className="flex items-baseline justify-between">
-                    <p className="display text-2xl">{members[0].tableLabel}</p>
-                    <p className="eyebrow">{members.length}</p>
-                  </div>
+                  <p className="display text-2xl">{members[0].tableLabel}</p>
                   {isHead && (
                     <p className="mt-1.5 text-sm text-ink/55">
-                      The wedding party and their people, and the two of us.
+                      The wedding party, their people, and the two of us.
                     </p>
                   )}
                   <ul

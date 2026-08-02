@@ -26,12 +26,12 @@ const jost = Jost({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Mary & Josh — September 6, 2026',
+    default: 'Mary & Josh · September 6, 2026',
     template: '%s · Mary & Josh',
   },
   description:
-    'Everything you need for the weekend of September 5–7, 2026 in Charlottesville, Virginia.',
-  // Public URL, but a 151-name guest list has no business in a search index.
+    'Everything you need for the weekend of September 5 to 7, 2026 in Charlottesville, Virginia.',
+  // Public URL, but the guest list has no business in a search index.
   robots: { index: false, follow: false },
   appleWebApp: { capable: true, title: 'Mary & Josh', statusBarStyle: 'default' },
 }

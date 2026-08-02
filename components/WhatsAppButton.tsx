@@ -23,7 +23,7 @@ export default function WhatsAppButton({
     return (
       <span className="inline-flex items-center gap-2 text-sm text-ink/40 border border-wine/15 px-5 py-3">
         <WhatsAppMark />
-        WhatsApp group — link coming soon
+        Group chat link coming soon
       </span>
     )
   }

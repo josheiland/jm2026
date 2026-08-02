@@ -135,7 +135,7 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
       <div className="card p-8 md:p-10 text-center">
         <p className="display text-2xl">Nearly ready</p>
         <p className="mt-3 text-ink/65 max-w-md mx-auto">
-          The photo drop is being switched on. It will be live here well before the weekend —
+          The photo drop is being switched on. It will be live well before the weekend, with
           nothing for you to install, and no account to make.
         </p>
       </div>
@@ -147,7 +147,7 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
       {/* Who is this from — asked before the files, so it's filled in by the time they land */}
       <div className="grid gap-4 sm:grid-cols-2 mb-6">
         <label className="block">
-          <span className="eyebrow">Your name</span>
+          <span className="eyebrow">Your name (optional)</span>
           <input
             type="text"
             value={uploader}
@@ -158,7 +158,7 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
           />
         </label>
         <label className="block">
-          <span className="eyebrow">A note (optional)</span>
+          <span className="eyebrow">A note (also optional)</span>
           <input
             type="text"
             value={note}

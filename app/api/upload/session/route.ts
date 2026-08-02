@@ -41,7 +41,7 @@ export async function POST(request: Request) {
   }
   if (size > MAX_UPLOAD_BYTES) {
     return NextResponse.json(
-      { error: 'That file is over 5 GB — bigger than we can take.' },
+      { error: 'That file is over 5 GB, which is bigger than we can take.' },
       { status: 413 },
     )
   }

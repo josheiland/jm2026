@@ -38,8 +38,8 @@
     },
     {
       "label": "Mary's Family",
-      "blurb": "The Blankemeiers, Ryans and Savaianos — including everyone who started the \"Josh! Josh! Josh!\" chant at Thanksgiving.",
-      "count": 31,
+      "blurb": "The Blankemeiers and the Ryans.",
+      "count": 35,
       "members": [
         {
           "name": "Amanda Ryan",
@@ -172,6 +172,16 @@
           "isCouple": false
         },
         {
+          "name": "Jack Raisch",
+          "table": "2",
+          "tableLabel": "Table 2",
+          "tableSort": 2,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
           "name": "Jack Ryan",
           "table": "2",
           "tableLabel": "Table 2",
@@ -222,6 +232,16 @@
           "isCouple": false
         },
         {
+          "name": "Ken Raisch",
+          "table": "2",
+          "tableLabel": "Table 2",
+          "tableSort": 2,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
           "name": "Louis Blankemeier",
           "table": "H",
           "tableLabel": "Head Table",
@@ -246,6 +266,16 @@
           "table": "2",
           "tableLabel": "Table 2",
           "tableSort": 2,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Mary Davis",
+          "table": "1",
+          "tableLabel": "Table 1",
+          "tableSort": 1,
           "group": "Mary's Family",
           "groupKey": "mary-family",
           "headTable": false,
@@ -306,6 +336,16 @@
           "table": "3",
           "tableLabel": "Table 3",
           "tableSort": 3,
+          "group": "Mary's Family",
+          "groupKey": "mary-family",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Susie Raisch",
+          "table": "2",
+          "tableLabel": "Table 2",
+          "tableSort": 2,
           "group": "Mary's Family",
           "groupKey": "mary-family",
           "headTable": false,
@@ -581,16 +621,16 @@
       ]
     },
     {
-      "label": "Family Friends",
+      "label": "Hometown Friends",
       "blurb": "Around so long they are effectively family.",
-      "count": 30,
+      "count": 34,
       "members": [
         {
           "name": "Becky McMinn",
           "table": "6",
           "tableLabel": "Table 6",
           "tableSort": 6,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
           "isCouple": false
@@ -600,7 +640,7 @@
           "table": "7",
           "tableLabel": "Table 7",
           "tableSort": 7,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
           "isCouple": false
@@ -610,7 +650,7 @@
           "table": "1",
           "tableLabel": "Table 1",
           "tableSort": 1,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
           "isCouple": false
@@ -620,7 +660,7 @@
           "table": "8",
           "tableLabel": "Table 8",
           "tableSort": 8,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
           "isCouple": false
@@ -630,8 +670,18 @@
           "table": "7",
           "tableLabel": "Table 7",
           "tableSort": 7,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Christine Levy",
+          "table": "3",
+          "tableLabel": "Table 3",
+          "tableSort": 3,
+          "group": "Hometown Friends",
+          "groupKey": "mary-hs",
           "headTable": false,
           "isCouple": false
         },
@@ -640,7 +690,7 @@
           "table": "7",
           "tableLabel": "Table 7",
           "tableSort": 7,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
           "isCouple": false
@@ -650,7 +700,7 @@
           "table": "6",
           "tableLabel": "Table 6",
           "tableSort": 6,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
           "isCouple": false
@@ -660,7 +710,7 @@
           "table": "7",
           "tableLabel": "Table 7",
           "tableSort": 7,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
           "isCouple": false
@@ -670,8 +720,18 @@
           "table": "8",
           "tableLabel": "Table 8",
           "tableSort": 8,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Hallie Voss",
+          "table": "15",
+          "tableLabel": "Table 15",
+          "tableSort": 15,
+          "group": "Hometown Friends",
+          "groupKey": "mary-hs",
           "headTable": false,
           "isCouple": false
         },
@@ -680,18 +740,8 @@
           "table": "7",
           "tableLabel": "Table 7",
           "tableSort": 7,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Jack Raisch",
-          "table": "2",
-          "tableLabel": "Table 2",
-          "tableSort": 2,
-          "group": "Family Friends",
-          "groupKey": "mary-family-friends",
           "headTable": false,
           "isCouple": false
         },
@@ -700,9 +750,19 @@
           "table": "7",
           "tableLabel": "Table 7",
           "tableSort": 7,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Kassie Ogbodu",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "Hometown Friends",
+          "groupKey": "mary-hs",
+          "headTable": true,
           "isCouple": false
         },
         {
@@ -710,7 +770,7 @@
           "table": "8",
           "tableLabel": "Table 8",
           "tableSort": 8,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
           "isCouple": false
@@ -720,7 +780,7 @@
           "table": "7",
           "tableLabel": "Table 7",
           "tableSort": 7,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
           "isCouple": false
@@ -730,7 +790,7 @@
           "table": "6",
           "tableLabel": "Table 6",
           "tableSort": 6,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
           "isCouple": false
@@ -740,18 +800,8 @@
           "table": "8",
           "tableLabel": "Table 8",
           "tableSort": 8,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Ken Raisch",
-          "table": "2",
-          "tableLabel": "Table 2",
-          "tableSort": 2,
-          "group": "Family Friends",
-          "groupKey": "mary-family-friends",
           "headTable": false,
           "isCouple": false
         },
@@ -760,8 +810,28 @@
           "table": "8",
           "tableLabel": "Table 8",
           "tableSort": 8,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Lila Wine",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "Hometown Friends",
+          "groupKey": "mary-hs",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Luke Nelson",
+          "table": "15",
+          "tableLabel": "Table 15",
+          "tableSort": 15,
+          "group": "Hometown Friends",
+          "groupKey": "mary-hs",
           "headTable": false,
           "isCouple": false
         },
@@ -770,7 +840,7 @@
           "table": "7",
           "tableLabel": "Table 7",
           "tableSort": 7,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
           "isCouple": false
@@ -780,7 +850,7 @@
           "table": "10",
           "tableLabel": "Table 10",
           "tableSort": 10,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
           "isCouple": false
@@ -790,9 +860,29 @@
           "table": "10",
           "tableLabel": "Table 10",
           "tableSort": 10,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Nkabi Mwakyoma",
+          "table": "15",
+          "tableLabel": "Table 15",
+          "tableSort": 15,
+          "group": "Hometown Friends",
+          "groupKey": "mary-hs",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Shane Deshler",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "Hometown Friends",
+          "groupKey": "mary-hs",
+          "headTable": true,
           "isCouple": false
         },
         {
@@ -800,18 +890,8 @@
           "table": "8",
           "tableLabel": "Table 8",
           "tableSort": 8,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Susie Raisch",
-          "table": "2",
-          "tableLabel": "Table 2",
-          "tableSort": 2,
-          "group": "Family Friends",
-          "groupKey": "mary-family-friends",
           "headTable": false,
           "isCouple": false
         },
@@ -820,7 +900,7 @@
           "table": "8",
           "tableLabel": "Table 8",
           "tableSort": 8,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
           "isCouple": false
@@ -830,7 +910,7 @@
           "table": "8",
           "tableLabel": "Table 8",
           "tableSort": 8,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
           "isCouple": false
@@ -840,7 +920,7 @@
           "table": "8",
           "tableLabel": "Table 8",
           "tableSort": 8,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
           "isCouple": false
@@ -850,7 +930,7 @@
           "table": "7",
           "tableLabel": "Table 7",
           "tableSort": 7,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
           "isCouple": false
@@ -860,7 +940,7 @@
           "table": "6",
           "tableLabel": "Table 6",
           "tableSort": 6,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
           "isCouple": false
@@ -870,7 +950,7 @@
           "table": "1",
           "tableLabel": "Table 1",
           "tableSort": 1,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
           "isCouple": false
@@ -880,7 +960,7 @@
           "table": "7",
           "tableLabel": "Table 7",
           "tableSort": 7,
-          "group": "Family Friends",
+          "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
           "isCouple": false
@@ -889,7 +969,7 @@
     },
     {
       "label": "Boston",
-      "blurb": "The chapter straight after graduation — the people who made a new city feel like home.",
+      "blurb": "The chapter straight after graduation, and the people who made a new city feel like home.",
       "count": 33,
       "members": [
         {
@@ -1225,16 +1305,16 @@
       ]
     },
     {
-      "label": "UVA — Mary",
-      "blurb": "Wahoos. Lawn residents. Study-session enablers.",
-      "count": 12,
+      "label": "UVA",
+      "blurb": "Wahoos.",
+      "count": 27,
       "members": [
         {
           "name": "Aaron James",
           "table": "9",
           "tableLabel": "Table 9",
           "tableSort": 9,
-          "group": "UVA — Mary",
+          "group": "UVA",
           "groupKey": "uva-mary",
           "headTable": false,
           "isCouple": false
@@ -1244,7 +1324,7 @@
           "table": "H",
           "tableLabel": "Head Table",
           "tableSort": 0,
-          "group": "UVA — Mary",
+          "group": "UVA",
           "groupKey": "uva-mary",
           "headTable": true,
           "isCouple": false
@@ -1254,114 +1334,17 @@
           "table": "9",
           "tableLabel": "Table 9",
           "tableSort": 9,
-          "group": "UVA — Mary",
+          "group": "UVA",
           "groupKey": "uva-mary",
           "headTable": false,
           "isCouple": false
         },
-        {
-          "name": "Cabrel Happi",
-          "table": "9",
-          "tableLabel": "Table 9",
-          "tableSort": 9,
-          "group": "UVA — Mary",
-          "groupKey": "uva-mary",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Larry Minor",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "UVA — Mary",
-          "groupKey": "uva-mary",
-          "headTable": true,
-          "isCouple": false
-        },
-        {
-          "name": "Mia Bailey",
-          "table": "9",
-          "tableLabel": "Table 9",
-          "tableSort": 9,
-          "group": "UVA — Mary",
-          "groupKey": "uva-mary",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Neeve Graham",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "UVA — Mary",
-          "groupKey": "uva-mary",
-          "headTable": true,
-          "isCouple": false
-        },
-        {
-          "name": "Sarah Rambo",
-          "table": "9",
-          "tableLabel": "Table 9",
-          "tableSort": 9,
-          "group": "UVA — Mary",
-          "groupKey": "uva-mary",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Sarita Mehta",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "UVA — Mary",
-          "groupKey": "uva-mary",
-          "headTable": true,
-          "isCouple": false
-        },
-        {
-          "name": "Savana Bradley",
-          "table": "9",
-          "tableLabel": "Table 9",
-          "tableSort": 9,
-          "group": "UVA — Mary",
-          "groupKey": "uva-mary",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Sela Carrington",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "UVA — Mary",
-          "groupKey": "uva-mary",
-          "headTable": true,
-          "isCouple": false
-        },
-        {
-          "name": "Shannon Cason",
-          "table": "9",
-          "tableLabel": "Table 9",
-          "tableSort": 9,
-          "group": "UVA — Mary",
-          "groupKey": "uva-mary",
-          "headTable": false,
-          "isCouple": false
-        }
-      ]
-    },
-    {
-      "label": "UVA — Josh",
-      "blurb": "Wahoos. Lawn residents. Study-session enablers.",
-      "count": 14,
-      "members": [
         {
           "name": "Belen Grimaldi",
           "table": "11",
           "tableLabel": "Table 11",
           "tableSort": 11,
-          "group": "UVA — Josh",
+          "group": "UVA",
           "groupKey": "uva-josh",
           "headTable": false,
           "isCouple": false
@@ -1371,9 +1354,19 @@
           "table": "H",
           "tableLabel": "Head Table",
           "tableSort": 0,
-          "group": "UVA — Josh",
+          "group": "UVA",
           "groupKey": "uva-josh",
           "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Cabrel Happi",
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": false,
           "isCouple": false
         },
         {
@@ -1381,7 +1374,7 @@
           "table": "H",
           "tableLabel": "Head Table",
           "tableSort": 0,
-          "group": "UVA — Josh",
+          "group": "UVA",
           "groupKey": "uva-josh",
           "headTable": true,
           "isCouple": false
@@ -1391,7 +1384,7 @@
           "table": "H",
           "tableLabel": "Head Table",
           "tableSort": 0,
-          "group": "UVA — Josh",
+          "group": "UVA",
           "groupKey": "uva-josh",
           "headTable": true,
           "isCouple": false
@@ -1401,7 +1394,7 @@
           "table": "H",
           "tableLabel": "Head Table",
           "tableSort": 0,
-          "group": "UVA — Josh",
+          "group": "UVA",
           "groupKey": "uva-josh",
           "headTable": true,
           "isCouple": false
@@ -1411,7 +1404,7 @@
           "table": "11",
           "tableLabel": "Table 11",
           "tableSort": 11,
-          "group": "UVA — Josh",
+          "group": "UVA",
           "groupKey": "uva-josh",
           "headTable": false,
           "isCouple": false
@@ -1421,7 +1414,7 @@
           "table": "11",
           "tableLabel": "Table 11",
           "tableSort": 11,
-          "group": "UVA — Josh",
+          "group": "UVA",
           "groupKey": "uva-josh",
           "headTable": false,
           "isCouple": false
@@ -1431,9 +1424,19 @@
           "table": "11",
           "tableLabel": "Table 11",
           "tableSort": 11,
-          "group": "UVA — Josh",
+          "group": "UVA",
           "groupKey": "uva-josh",
           "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Larry Minor",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": true,
           "isCouple": false
         },
         {
@@ -1441,7 +1444,7 @@
           "table": "11",
           "tableLabel": "Table 11",
           "tableSort": 11,
-          "group": "UVA — Josh",
+          "group": "UVA",
           "groupKey": "uva-josh",
           "headTable": false,
           "isCouple": false
@@ -1451,9 +1454,19 @@
           "table": "H",
           "tableLabel": "Head Table",
           "tableSort": 0,
-          "group": "UVA — Josh",
+          "group": "UVA",
           "groupKey": "uva-josh",
           "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Mia Bailey",
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": false,
           "isCouple": false
         },
         {
@@ -1461,48 +1474,11 @@
           "table": "H",
           "tableLabel": "Head Table",
           "tableSort": 0,
-          "group": "UVA — Josh",
+          "group": "UVA",
           "groupKey": "uva-josh",
           "headTable": true,
           "isCouple": false
         },
-        {
-          "name": "Peter Xu",
-          "table": "11",
-          "tableLabel": "Table 11",
-          "tableSort": 11,
-          "group": "UVA — Josh",
-          "groupKey": "uva-josh",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Priyanka Vijay",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "UVA — Josh",
-          "groupKey": "uva-josh",
-          "headTable": true,
-          "isCouple": false
-        },
-        {
-          "name": "Zach Zamoff",
-          "table": "11",
-          "tableLabel": "Table 11",
-          "tableSort": 11,
-          "group": "UVA — Josh",
-          "groupKey": "uva-josh",
-          "headTable": false,
-          "isCouple": false
-        }
-      ]
-    },
-    {
-      "label": "UVA",
-      "blurb": "",
-      "count": 1,
-      "members": [
         {
           "name": "Nano Masters",
           "table": "9",
@@ -1512,20 +1488,110 @@
           "groupKey": "uva",
           "headTable": false,
           "isCouple": false
+        },
+        {
+          "name": "Neeve Graham",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Peter Xu",
+          "table": "11",
+          "tableLabel": "Table 11",
+          "tableSort": 11,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Priyanka Vijay",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Sarah Rambo",
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Sarita Mehta",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Savana Bradley",
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Sela Carrington",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": true,
+          "isCouple": false
+        },
+        {
+          "name": "Shannon Cason",
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Zach Zamoff",
+          "table": "11",
+          "tableLabel": "Table 11",
+          "tableSort": 11,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": false,
+          "isCouple": false
         }
       ]
     },
     {
-      "label": "Stanford",
-      "blurb": "The current chapter — the GSB and the Farm.",
-      "count": 16,
+      "label": "Stanford & the Bay",
+      "blurb": "The current chapter. The GSB, the Farm, and everyone west of it.",
+      "count": 19,
       "members": [
         {
           "name": "AK Cates",
           "table": "17",
           "tableLabel": "Table 17",
           "tableSort": 17,
-          "group": "Stanford",
+          "group": "Stanford & the Bay",
           "groupKey": "stanford",
           "headTable": false,
           "isCouple": false
@@ -1535,7 +1601,7 @@
           "table": "16",
           "tableLabel": "Table 16",
           "tableSort": 16,
-          "group": "Stanford",
+          "group": "Stanford & the Bay",
           "groupKey": "stanford",
           "headTable": false,
           "isCouple": false
@@ -1545,154 +1611,17 @@
           "table": "17",
           "tableLabel": "Table 17",
           "tableSort": 17,
-          "group": "Stanford",
+          "group": "Stanford & the Bay",
           "groupKey": "stanford",
           "headTable": false,
           "isCouple": false
         },
-        {
-          "name": "Braiden Childs",
-          "table": "16",
-          "tableLabel": "Table 16",
-          "tableSort": 16,
-          "group": "Stanford",
-          "groupKey": "stanford",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Federico Verrastro",
-          "table": "16",
-          "tableLabel": "Table 16",
-          "tableSort": 16,
-          "group": "Stanford",
-          "groupKey": "stanford",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Jack Mandel",
-          "table": "17",
-          "tableLabel": "Table 17",
-          "tableSort": 17,
-          "group": "Stanford",
-          "groupKey": "stanford",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Jonathan Holland",
-          "table": "17",
-          "tableLabel": "Table 17",
-          "tableSort": 17,
-          "group": "Stanford",
-          "groupKey": "stanford",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Jordan Lee",
-          "table": "17",
-          "tableLabel": "Table 17",
-          "tableSort": 17,
-          "group": "Stanford",
-          "groupKey": "stanford",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Kamaria Wilson",
-          "table": "17",
-          "tableLabel": "Table 17",
-          "tableSort": 17,
-          "group": "Stanford",
-          "groupKey": "stanford",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Katherine Boggs",
-          "table": "16",
-          "tableLabel": "Table 16",
-          "tableSort": 16,
-          "group": "Stanford",
-          "groupKey": "stanford",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Kevin Ifiora",
-          "table": "16",
-          "tableLabel": "Table 16",
-          "tableSort": 16,
-          "group": "Stanford",
-          "groupKey": "stanford",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Luciana Migliano",
-          "table": "16",
-          "tableLabel": "Table 16",
-          "tableSort": 16,
-          "group": "Stanford",
-          "groupKey": "stanford",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Matt Williams",
-          "table": "17",
-          "tableLabel": "Table 17",
-          "tableSort": 17,
-          "group": "Stanford",
-          "groupKey": "stanford",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Nick Low",
-          "table": "16",
-          "tableLabel": "Table 16",
-          "tableSort": 16,
-          "group": "Stanford",
-          "groupKey": "stanford",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Spencer Ma",
-          "table": "16",
-          "tableLabel": "Table 16",
-          "tableSort": 16,
-          "group": "Stanford",
-          "groupKey": "stanford",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Tatiana Bouri",
-          "table": "17",
-          "tableLabel": "Table 17",
-          "tableSort": 17,
-          "group": "Stanford",
-          "groupKey": "stanford",
-          "headTable": false,
-          "isCouple": false
-        }
-      ]
-    },
-    {
-      "label": "The Bay",
-      "blurb": "",
-      "count": 3,
-      "members": [
         {
           "name": "Aparna Dutta",
           "table": "11",
           "tableLabel": "Table 11",
           "tableSort": 11,
-          "group": "The Bay",
+          "group": "Stanford & the Bay",
           "groupKey": "sf",
           "headTable": false,
           "isCouple": false
@@ -1702,7 +1631,7 @@
           "table": "11",
           "tableLabel": "Table 11",
           "tableSort": 11,
-          "group": "The Bay",
+          "group": "Stanford & the Bay",
           "groupKey": "sf",
           "headTable": false,
           "isCouple": false
@@ -1712,8 +1641,138 @@
           "table": "12",
           "tableLabel": "Table 12",
           "tableSort": 12,
-          "group": "The Bay",
+          "group": "Stanford & the Bay",
           "groupKey": "sf",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Braiden Childs",
+          "table": "16",
+          "tableLabel": "Table 16",
+          "tableSort": 16,
+          "group": "Stanford & the Bay",
+          "groupKey": "stanford",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Federico Verrastro",
+          "table": "16",
+          "tableLabel": "Table 16",
+          "tableSort": 16,
+          "group": "Stanford & the Bay",
+          "groupKey": "stanford",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Jack Mandel",
+          "table": "17",
+          "tableLabel": "Table 17",
+          "tableSort": 17,
+          "group": "Stanford & the Bay",
+          "groupKey": "stanford",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Jonathan Holland",
+          "table": "17",
+          "tableLabel": "Table 17",
+          "tableSort": 17,
+          "group": "Stanford & the Bay",
+          "groupKey": "stanford",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Jordan Lee",
+          "table": "17",
+          "tableLabel": "Table 17",
+          "tableSort": 17,
+          "group": "Stanford & the Bay",
+          "groupKey": "stanford",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Kamaria Wilson",
+          "table": "17",
+          "tableLabel": "Table 17",
+          "tableSort": 17,
+          "group": "Stanford & the Bay",
+          "groupKey": "stanford",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Katherine Boggs",
+          "table": "16",
+          "tableLabel": "Table 16",
+          "tableSort": 16,
+          "group": "Stanford & the Bay",
+          "groupKey": "stanford",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Kevin Ifiora",
+          "table": "16",
+          "tableLabel": "Table 16",
+          "tableSort": 16,
+          "group": "Stanford & the Bay",
+          "groupKey": "stanford",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Luciana Migliano",
+          "table": "16",
+          "tableLabel": "Table 16",
+          "tableSort": 16,
+          "group": "Stanford & the Bay",
+          "groupKey": "stanford",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Matt Williams",
+          "table": "17",
+          "tableLabel": "Table 17",
+          "tableSort": 17,
+          "group": "Stanford & the Bay",
+          "groupKey": "stanford",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Nick Low",
+          "table": "16",
+          "tableLabel": "Table 16",
+          "tableSort": 16,
+          "group": "Stanford & the Bay",
+          "groupKey": "stanford",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Spencer Ma",
+          "table": "16",
+          "tableLabel": "Table 16",
+          "tableSort": 16,
+          "group": "Stanford & the Bay",
+          "groupKey": "stanford",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Tatiana Bouri",
+          "table": "17",
+          "tableLabel": "Table 17",
+          "tableSort": 17,
+          "group": "Stanford & the Bay",
+          "groupKey": "stanford",
           "headTable": false,
           "isCouple": false
         }
@@ -1805,100 +1864,6 @@
           "isCouple": false
         }
       ]
-    },
-    {
-      "label": "Mary's Hometown",
-      "blurb": "Since before any of this.",
-      "count": 7,
-      "members": [
-        {
-          "name": "Christine Levy",
-          "table": "3",
-          "tableLabel": "Table 3",
-          "tableSort": 3,
-          "group": "Mary's Hometown",
-          "groupKey": "mary-hs",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Hallie Voss",
-          "table": "15",
-          "tableLabel": "Table 15",
-          "tableSort": 15,
-          "group": "Mary's Hometown",
-          "groupKey": "mary-hs",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Kassie Ogbodu",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "Mary's Hometown",
-          "groupKey": "mary-hs",
-          "headTable": true,
-          "isCouple": false
-        },
-        {
-          "name": "Lila Wine",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "Mary's Hometown",
-          "groupKey": "mary-hs",
-          "headTable": true,
-          "isCouple": false
-        },
-        {
-          "name": "Luke Nelson",
-          "table": "15",
-          "tableLabel": "Table 15",
-          "tableSort": 15,
-          "group": "Mary's Hometown",
-          "groupKey": "mary-hs",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Nkabi Mwakyoma",
-          "table": "15",
-          "tableLabel": "Table 15",
-          "tableSort": 15,
-          "group": "Mary's Hometown",
-          "groupKey": "mary-hs",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Shane Deshler",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "Mary's Hometown",
-          "groupKey": "mary-hs",
-          "headTable": true,
-          "isCouple": false
-        }
-      ]
-    },
-    {
-      "label": "Officiant",
-      "blurb": "Marrying us.",
-      "count": 1,
-      "members": [
-        {
-          "name": "Mary Davis",
-          "table": "1",
-          "tableLabel": "Table 1",
-          "tableSort": 1,
-          "group": "Officiant",
-          "groupKey": "role",
-          "headTable": false,
-          "isCouple": false
-        }
-      ]
     }
   ],
   "guests": [
@@ -1907,7 +1872,7 @@
       "table": "9",
       "tableLabel": "Table 9",
       "tableSort": 9,
-      "group": "UVA — Mary",
+      "group": "UVA",
       "groupKey": "uva-mary",
       "headTable": false,
       "isCouple": false
@@ -1917,7 +1882,7 @@
       "table": "17",
       "tableLabel": "Table 17",
       "tableSort": 17,
-      "group": "Stanford",
+      "group": "Stanford & the Bay",
       "groupKey": "stanford",
       "headTable": false,
       "isCouple": false
@@ -1927,7 +1892,7 @@
       "table": "16",
       "tableLabel": "Table 16",
       "tableSort": 16,
-      "group": "Stanford",
+      "group": "Stanford & the Bay",
       "groupKey": "stanford",
       "headTable": false,
       "isCouple": false
@@ -1937,7 +1902,7 @@
       "table": "17",
       "tableLabel": "Table 17",
       "tableSort": 17,
-      "group": "Stanford",
+      "group": "Stanford & the Bay",
       "groupKey": "stanford",
       "headTable": false,
       "isCouple": false
@@ -2017,7 +1982,7 @@
       "table": "11",
       "tableLabel": "Table 11",
       "tableSort": 11,
-      "group": "The Bay",
+      "group": "Stanford & the Bay",
       "groupKey": "sf",
       "headTable": false,
       "isCouple": false
@@ -2037,7 +2002,7 @@
       "table": "11",
       "tableLabel": "Table 11",
       "tableSort": 11,
-      "group": "The Bay",
+      "group": "Stanford & the Bay",
       "groupKey": "sf",
       "headTable": false,
       "isCouple": false
@@ -2047,7 +2012,7 @@
       "table": "H",
       "tableLabel": "Head Table",
       "tableSort": 0,
-      "group": "UVA — Mary",
+      "group": "UVA",
       "groupKey": "uva-mary",
       "headTable": true,
       "isCouple": false
@@ -2057,7 +2022,7 @@
       "table": "12",
       "tableLabel": "Table 12",
       "tableSort": 12,
-      "group": "The Bay",
+      "group": "Stanford & the Bay",
       "groupKey": "sf",
       "headTable": false,
       "isCouple": false
@@ -2077,7 +2042,7 @@
       "table": "9",
       "tableLabel": "Table 9",
       "tableSort": 9,
-      "group": "UVA — Mary",
+      "group": "UVA",
       "groupKey": "uva-mary",
       "headTable": false,
       "isCouple": false
@@ -2097,7 +2062,7 @@
       "table": "6",
       "tableLabel": "Table 6",
       "tableSort": 6,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -2107,7 +2072,7 @@
       "table": "11",
       "tableLabel": "Table 11",
       "tableSort": 11,
-      "group": "UVA — Josh",
+      "group": "UVA",
       "groupKey": "uva-josh",
       "headTable": false,
       "isCouple": false
@@ -2127,7 +2092,7 @@
       "table": "H",
       "tableLabel": "Head Table",
       "tableSort": 0,
-      "group": "UVA — Josh",
+      "group": "UVA",
       "groupKey": "uva-josh",
       "headTable": true,
       "isCouple": false
@@ -2137,7 +2102,7 @@
       "table": "7",
       "tableLabel": "Table 7",
       "tableSort": 7,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -2147,7 +2112,7 @@
       "table": "1",
       "tableLabel": "Table 1",
       "tableSort": 1,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -2187,7 +2152,7 @@
       "table": "16",
       "tableLabel": "Table 16",
       "tableSort": 16,
-      "group": "Stanford",
+      "group": "Stanford & the Bay",
       "groupKey": "stanford",
       "headTable": false,
       "isCouple": false
@@ -2197,7 +2162,7 @@
       "table": "8",
       "tableLabel": "Table 8",
       "tableSort": 8,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -2217,7 +2182,7 @@
       "table": "9",
       "tableLabel": "Table 9",
       "tableSort": 9,
-      "group": "UVA — Mary",
+      "group": "UVA",
       "groupKey": "uva-mary",
       "headTable": false,
       "isCouple": false
@@ -2247,7 +2212,7 @@
       "table": "7",
       "tableLabel": "Table 7",
       "tableSort": 7,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -2307,7 +2272,7 @@
       "table": "H",
       "tableLabel": "Head Table",
       "tableSort": 0,
-      "group": "UVA — Josh",
+      "group": "UVA",
       "groupKey": "uva-josh",
       "headTable": true,
       "isCouple": false
@@ -2327,7 +2292,7 @@
       "table": "3",
       "tableLabel": "Table 3",
       "tableSort": 3,
-      "group": "Mary's Hometown",
+      "group": "Hometown Friends",
       "groupKey": "mary-hs",
       "headTable": false,
       "isCouple": false
@@ -2367,7 +2332,7 @@
       "table": "H",
       "tableLabel": "Head Table",
       "tableSort": 0,
-      "group": "UVA — Josh",
+      "group": "UVA",
       "groupKey": "uva-josh",
       "headTable": true,
       "isCouple": false
@@ -2427,7 +2392,7 @@
       "table": "H",
       "tableLabel": "Head Table",
       "tableSort": 0,
-      "group": "UVA — Josh",
+      "group": "UVA",
       "groupKey": "uva-josh",
       "headTable": true,
       "isCouple": false
@@ -2437,7 +2402,7 @@
       "table": "11",
       "tableLabel": "Table 11",
       "tableSort": 11,
-      "group": "UVA — Josh",
+      "group": "UVA",
       "groupKey": "uva-josh",
       "headTable": false,
       "isCouple": false
@@ -2447,7 +2412,7 @@
       "table": "7",
       "tableLabel": "Table 7",
       "tableSort": 7,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -2487,7 +2452,7 @@
       "table": "16",
       "tableLabel": "Table 16",
       "tableSort": 16,
-      "group": "Stanford",
+      "group": "Stanford & the Bay",
       "groupKey": "stanford",
       "headTable": false,
       "isCouple": false
@@ -2497,7 +2462,7 @@
       "table": "6",
       "tableLabel": "Table 6",
       "tableSort": 6,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -2507,7 +2472,7 @@
       "table": "7",
       "tableLabel": "Table 7",
       "tableSort": 7,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -2517,7 +2482,7 @@
       "table": "8",
       "tableLabel": "Table 8",
       "tableSort": 8,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -2547,7 +2512,7 @@
       "table": "15",
       "tableLabel": "Table 15",
       "tableSort": 15,
-      "group": "Mary's Hometown",
+      "group": "Hometown Friends",
       "groupKey": "mary-hs",
       "headTable": false,
       "isCouple": false
@@ -2617,7 +2582,7 @@
       "table": "7",
       "tableLabel": "Table 7",
       "tableSort": 7,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -2627,7 +2592,7 @@
       "table": "11",
       "tableLabel": "Table 11",
       "tableSort": 11,
-      "group": "UVA — Josh",
+      "group": "UVA",
       "groupKey": "uva-josh",
       "headTable": false,
       "isCouple": false
@@ -2637,7 +2602,7 @@
       "table": "17",
       "tableLabel": "Table 17",
       "tableSort": 17,
-      "group": "Stanford",
+      "group": "Stanford & the Bay",
       "groupKey": "stanford",
       "headTable": false,
       "isCouple": false
@@ -2647,8 +2612,8 @@
       "table": "2",
       "tableLabel": "Table 2",
       "tableSort": 2,
-      "group": "Family Friends",
-      "groupKey": "mary-family-friends",
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
       "headTable": false,
       "isCouple": false
     },
@@ -2707,7 +2672,7 @@
       "table": "11",
       "tableLabel": "Table 11",
       "tableSort": 11,
-      "group": "UVA — Josh",
+      "group": "UVA",
       "groupKey": "uva-josh",
       "headTable": false,
       "isCouple": false
@@ -2717,7 +2682,7 @@
       "table": "17",
       "tableLabel": "Table 17",
       "tableSort": 17,
-      "group": "Stanford",
+      "group": "Stanford & the Bay",
       "groupKey": "stanford",
       "headTable": false,
       "isCouple": false
@@ -2727,7 +2692,7 @@
       "table": "17",
       "tableLabel": "Table 17",
       "tableSort": 17,
-      "group": "Stanford",
+      "group": "Stanford & the Bay",
       "groupKey": "stanford",
       "headTable": false,
       "isCouple": false
@@ -2747,7 +2712,7 @@
       "table": "7",
       "tableLabel": "Table 7",
       "tableSort": 7,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -2777,7 +2742,7 @@
       "table": "17",
       "tableLabel": "Table 17",
       "tableSort": 17,
-      "group": "Stanford",
+      "group": "Stanford & the Bay",
       "groupKey": "stanford",
       "headTable": false,
       "isCouple": false
@@ -2787,7 +2752,7 @@
       "table": "H",
       "tableLabel": "Head Table",
       "tableSort": 0,
-      "group": "Mary's Hometown",
+      "group": "Hometown Friends",
       "groupKey": "mary-hs",
       "headTable": true,
       "isCouple": false
@@ -2797,7 +2762,7 @@
       "table": "8",
       "tableLabel": "Table 8",
       "tableSort": 8,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -2807,7 +2772,7 @@
       "table": "7",
       "tableLabel": "Table 7",
       "tableSort": 7,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -2817,7 +2782,7 @@
       "table": "16",
       "tableLabel": "Table 16",
       "tableSort": 16,
-      "group": "Stanford",
+      "group": "Stanford & the Bay",
       "groupKey": "stanford",
       "headTable": false,
       "isCouple": false
@@ -2827,7 +2792,7 @@
       "table": "6",
       "tableLabel": "Table 6",
       "tableSort": 6,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -2837,7 +2802,7 @@
       "table": "8",
       "tableLabel": "Table 8",
       "tableSort": 8,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -2847,8 +2812,8 @@
       "table": "2",
       "tableLabel": "Table 2",
       "tableSort": 2,
-      "group": "Family Friends",
-      "groupKey": "mary-family-friends",
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
       "headTable": false,
       "isCouple": false
     },
@@ -2867,7 +2832,7 @@
       "table": "16",
       "tableLabel": "Table 16",
       "tableSort": 16,
-      "group": "Stanford",
+      "group": "Stanford & the Bay",
       "groupKey": "stanford",
       "headTable": false,
       "isCouple": false
@@ -2877,7 +2842,7 @@
       "table": "8",
       "tableLabel": "Table 8",
       "tableSort": 8,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -2897,7 +2862,7 @@
       "table": "H",
       "tableLabel": "Head Table",
       "tableSort": 0,
-      "group": "UVA — Mary",
+      "group": "UVA",
       "groupKey": "uva-mary",
       "headTable": true,
       "isCouple": false
@@ -2927,7 +2892,7 @@
       "table": "H",
       "tableLabel": "Head Table",
       "tableSort": 0,
-      "group": "Mary's Hometown",
+      "group": "Hometown Friends",
       "groupKey": "mary-hs",
       "headTable": true,
       "isCouple": false
@@ -2947,7 +2912,7 @@
       "table": "16",
       "tableLabel": "Table 16",
       "tableSort": 16,
-      "group": "Stanford",
+      "group": "Stanford & the Bay",
       "groupKey": "stanford",
       "headTable": false,
       "isCouple": false
@@ -2957,7 +2922,7 @@
       "table": "15",
       "tableLabel": "Table 15",
       "tableSort": 15,
-      "group": "Mary's Hometown",
+      "group": "Hometown Friends",
       "groupKey": "mary-hs",
       "headTable": false,
       "isCouple": false
@@ -2967,7 +2932,7 @@
       "table": "11",
       "tableLabel": "Table 11",
       "tableSort": 11,
-      "group": "UVA — Josh",
+      "group": "UVA",
       "groupKey": "uva-josh",
       "headTable": false,
       "isCouple": false
@@ -2987,7 +2952,7 @@
       "table": "7",
       "tableLabel": "Table 7",
       "tableSort": 7,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -3027,7 +2992,7 @@
       "table": "10",
       "tableLabel": "Table 10",
       "tableSort": 10,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -3037,7 +3002,7 @@
       "table": "10",
       "tableLabel": "Table 10",
       "tableSort": 10,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -3057,8 +3022,8 @@
       "table": "1",
       "tableLabel": "Table 1",
       "tableSort": 1,
-      "group": "Officiant",
-      "groupKey": "role",
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
       "headTable": false,
       "isCouple": false
     },
@@ -3067,7 +3032,7 @@
       "table": "H",
       "tableLabel": "Head Table",
       "tableSort": 0,
-      "group": "UVA — Josh",
+      "group": "UVA",
       "groupKey": "uva-josh",
       "headTable": true,
       "isCouple": false
@@ -3077,7 +3042,7 @@
       "table": "17",
       "tableLabel": "Table 17",
       "tableSort": 17,
-      "group": "Stanford",
+      "group": "Stanford & the Bay",
       "groupKey": "stanford",
       "headTable": false,
       "isCouple": false
@@ -3117,7 +3082,7 @@
       "table": "9",
       "tableLabel": "Table 9",
       "tableSort": 9,
-      "group": "UVA — Mary",
+      "group": "UVA",
       "groupKey": "uva-mary",
       "headTable": false,
       "isCouple": false
@@ -3127,7 +3092,7 @@
       "table": "H",
       "tableLabel": "Head Table",
       "tableSort": 0,
-      "group": "UVA — Josh",
+      "group": "UVA",
       "groupKey": "uva-josh",
       "headTable": true,
       "isCouple": false
@@ -3197,7 +3162,7 @@
       "table": "H",
       "tableLabel": "Head Table",
       "tableSort": 0,
-      "group": "UVA — Mary",
+      "group": "UVA",
       "groupKey": "uva-mary",
       "headTable": true,
       "isCouple": false
@@ -3227,7 +3192,7 @@
       "table": "16",
       "tableLabel": "Table 16",
       "tableSort": 16,
-      "group": "Stanford",
+      "group": "Stanford & the Bay",
       "groupKey": "stanford",
       "headTable": false,
       "isCouple": false
@@ -3237,7 +3202,7 @@
       "table": "15",
       "tableLabel": "Table 15",
       "tableSort": 15,
-      "group": "Mary's Hometown",
+      "group": "Hometown Friends",
       "groupKey": "mary-hs",
       "headTable": false,
       "isCouple": false
@@ -3257,7 +3222,7 @@
       "table": "11",
       "tableLabel": "Table 11",
       "tableSort": 11,
-      "group": "UVA — Josh",
+      "group": "UVA",
       "groupKey": "uva-josh",
       "headTable": false,
       "isCouple": false
@@ -3287,7 +3252,7 @@
       "table": "H",
       "tableLabel": "Head Table",
       "tableSort": 0,
-      "group": "UVA — Josh",
+      "group": "UVA",
       "groupKey": "uva-josh",
       "headTable": true,
       "isCouple": false
@@ -3377,7 +3342,7 @@
       "table": "9",
       "tableLabel": "Table 9",
       "tableSort": 9,
-      "group": "UVA — Mary",
+      "group": "UVA",
       "groupKey": "uva-mary",
       "headTable": false,
       "isCouple": false
@@ -3397,7 +3362,7 @@
       "table": "H",
       "tableLabel": "Head Table",
       "tableSort": 0,
-      "group": "UVA — Mary",
+      "group": "UVA",
       "groupKey": "uva-mary",
       "headTable": true,
       "isCouple": false
@@ -3417,7 +3382,7 @@
       "table": "9",
       "tableLabel": "Table 9",
       "tableSort": 9,
-      "group": "UVA — Mary",
+      "group": "UVA",
       "groupKey": "uva-mary",
       "headTable": false,
       "isCouple": false
@@ -3427,7 +3392,7 @@
       "table": "H",
       "tableLabel": "Head Table",
       "tableSort": 0,
-      "group": "UVA — Mary",
+      "group": "UVA",
       "groupKey": "uva-mary",
       "headTable": true,
       "isCouple": false
@@ -3437,7 +3402,7 @@
       "table": "H",
       "tableLabel": "Head Table",
       "tableSort": 0,
-      "group": "Mary's Hometown",
+      "group": "Hometown Friends",
       "groupKey": "mary-hs",
       "headTable": true,
       "isCouple": false
@@ -3447,7 +3412,7 @@
       "table": "9",
       "tableLabel": "Table 9",
       "tableSort": 9,
-      "group": "UVA — Mary",
+      "group": "UVA",
       "groupKey": "uva-mary",
       "headTable": false,
       "isCouple": false
@@ -3457,7 +3422,7 @@
       "table": "8",
       "tableLabel": "Table 8",
       "tableSort": 8,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -3477,7 +3442,7 @@
       "table": "16",
       "tableLabel": "Table 16",
       "tableSort": 16,
-      "group": "Stanford",
+      "group": "Stanford & the Bay",
       "groupKey": "stanford",
       "headTable": false,
       "isCouple": false
@@ -3517,8 +3482,8 @@
       "table": "2",
       "tableLabel": "Table 2",
       "tableSort": 2,
-      "group": "Family Friends",
-      "groupKey": "mary-family-friends",
+      "group": "Mary's Family",
+      "groupKey": "mary-family",
       "headTable": false,
       "isCouple": false
     },
@@ -3527,7 +3492,7 @@
       "table": "8",
       "tableLabel": "Table 8",
       "tableSort": 8,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -3557,7 +3522,7 @@
       "table": "17",
       "tableLabel": "Table 17",
       "tableSort": 17,
-      "group": "Stanford",
+      "group": "Stanford & the Bay",
       "groupKey": "stanford",
       "headTable": false,
       "isCouple": false
@@ -3567,7 +3532,7 @@
       "table": "8",
       "tableLabel": "Table 8",
       "tableSort": 8,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -3577,7 +3542,7 @@
       "table": "8",
       "tableLabel": "Table 8",
       "tableSort": 8,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -3587,7 +3552,7 @@
       "table": "7",
       "tableLabel": "Table 7",
       "tableSort": 7,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -3617,7 +3582,7 @@
       "table": "6",
       "tableLabel": "Table 6",
       "tableSort": 6,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -3637,7 +3602,7 @@
       "table": "1",
       "tableLabel": "Table 1",
       "tableSort": 1,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -3677,7 +3642,7 @@
       "table": "7",
       "tableLabel": "Table 7",
       "tableSort": 7,
-      "group": "Family Friends",
+      "group": "Hometown Friends",
       "groupKey": "family-friends",
       "headTable": false,
       "isCouple": false
@@ -3687,7 +3652,7 @@
       "table": "11",
       "tableLabel": "Table 11",
       "tableSort": 11,
-      "group": "UVA — Josh",
+      "group": "UVA",
       "groupKey": "uva-josh",
       "headTable": false,
       "isCouple": false

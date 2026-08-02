@@ -14,7 +14,7 @@ export default function FaqAccordion({ faqs }: { faqs: Faq[] }) {
 
   const topics = useMemo(() => {
     const order: Faq['topic'][] = [
-      'Getting here',
+      'Getting around',
       'The day itself',
       'What to wear',
       'Food & drink',
@@ -33,7 +33,7 @@ export default function FaqAccordion({ faqs }: { faqs: Faq[] }) {
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search — try “bus”, “kids”, “what do I wear”"
+          placeholder="Search. Try “bus”, “photos”, “what do I wear”"
           className="w-full bg-cream-soft border border-wine/15 pl-11 pr-4 py-3.5 placeholder:text-ink/35 focus:border-wine outline-none transition-colors"
         />
         <svg
@@ -51,7 +51,7 @@ export default function FaqAccordion({ faqs }: { faqs: Faq[] }) {
 
       {filtered.length === 0 && (
         <p className="mt-10 text-ink/60 max-w-lg">
-          Nothing matches that. Ask us in the WhatsApp group — one of us will see it, probably
+          Nothing matches that. Ask in the group chat and one of us will see it, probably
           faster than you expect.
         </p>
       )}

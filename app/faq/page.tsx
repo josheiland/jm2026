@@ -17,6 +17,8 @@ export default function FaqPage() {
         title="FAQs"
         lede="Everything we have been asked more than twice. If yours is not here, the group chat is faster than email and we do actually read it."
       />
+      {/* Dress code, food and shuttle answers all live here rather than on a separate
+          travel page, which was cut on the Aug 1 review as one tab too many. */}
 
       <div className="content pb-20">
         <FaqAccordion faqs={FAQS} />
@@ -24,8 +26,8 @@ export default function FaqPage() {
         <div className="mt-20 card p-8 md:p-10 text-center">
           <p className="display text-2xl">Still wondering something?</p>
           <p className="mt-3 text-ink/65 max-w-md mx-auto">
-            Genuinely, ask. There is no question too small — several people have already asked
-            about parking and we were glad they did.
+            Ask. No question is too small. Several people have already asked about parking and
+            we were glad they did.
           </p>
           <div className="mt-6 flex justify-center">
             <WhatsAppButton />

@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react'
 
 const LINKS = [
   { href: '/schedule', label: 'Schedule' },
-  { href: '/travel', label: 'Travel & Stay' },
   { href: '/photos', label: 'Photos' },
   { href: '/guests', label: 'Who’s Coming' },
   { href: '/charlottesville', label: 'Charlottesville' },
@@ -45,7 +44,7 @@ export default function Nav() {
       <nav className="content flex items-center justify-between h-16 md:h-20" aria-label="Main">
         <Link href="/" className="group flex items-baseline gap-1.5 shrink-0" aria-label="Home">
           <span className="display text-xl md:text-2xl tracking-tight">M</span>
-          <span className="amp text-2xl md:text-3xl relative -top-0.5">&</span>
+          <span className="amp text-xl md:text-2xl">&amp;</span>
           <span className="display text-xl md:text-2xl tracking-tight">J</span>
         </Link>
 

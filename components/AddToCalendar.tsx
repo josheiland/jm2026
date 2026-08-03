@@ -122,7 +122,7 @@ export default function AddToCalendar({
       </div>
 
       {!compact && (
-        <p className="mt-2 text-sm text-ink/50">
+        <p className="mt-2 text-sm text-ink/70">
           {touch
             ? `Opens in your calendar app, with a reminder ${lead} beforehand`
             : `The download sets a reminder ${lead} beforehand`}

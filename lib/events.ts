@@ -69,7 +69,7 @@ export const EVENTS: WeddingEvent[] = [
     address: '1105 West Main Street, Charlottesville, VA 22903',
     mapQuery: 'Stacey Hall, 1105 W Main St, Charlottesville, VA 22903',
     description:
-      'Every bus loads at Stacey Hall, directly across West Main from The Draftsman, and leaves at 4:15. Staying elsewhere on West Main? It is only a few minutes’ walk.',
+      'Buses load at Stacey Hall, directly across West Main from The Draftsman, and every one of them leaves at 4:15. Staying elsewhere on West Main? It is only a few minutes’ walk. They drop you back in the same spot at the end of the night.',
     heads_up:
       'They all leave at 4:15. Not 4:20, not 4:30. If you are anything like Mary, treat that as 3:45.',
   },
@@ -97,10 +97,10 @@ export const EVENTS: WeddingEvent[] = [
     start: `2026-09-06T21:30:00${ET}`,
     end: `2026-09-06T22:05:00${ET}`,
     day: 'sun',
-    venue: 'Hazy Mountain to West Main',
+    venue: 'Hazy Mountain to Stacey Hall',
     address: '240 Hazy Mountain Ln, Afton, VA 22920',
     mapQuery: 'Hazy Mountain Vineyards & Brewery, 240 Hazy Mountain Ln, Afton, VA 22920',
-    description: 'The lame one. Straight back to West Main, where you were picked up.',
+    description: 'The lame one. Straight back to where the bus picked you up.',
   },
   {
     slug: 'shuttle-late',
@@ -110,11 +110,11 @@ export const EVENTS: WeddingEvent[] = [
     start: `2026-09-06T23:00:00${ET}`,
     end: `2026-09-06T23:35:00${ET}`,
     day: 'sun',
-    venue: 'Hazy Mountain to West Main',
+    venue: 'Hazy Mountain to Stacey Hall',
     address: '240 Hazy Mountain Ln, Afton, VA 22920',
     mapQuery: 'Hazy Mountain Vineyards & Brewery, 240 Hazy Mountain Ln, Afton, VA 22920',
     description:
-      'Leaves when the reception ends and drops back on West Main, a short walk from the after party.',
+      'Leaves when the reception ends and drops where it picked you up, a short walk from the after party.',
   },
   {
     slug: 'after-party',

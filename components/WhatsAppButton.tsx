@@ -18,10 +18,10 @@ export default function WhatsAppButton({
 }) {
   if (!WHATSAPP_INVITE) {
     if (variant === 'footer') {
-      return <p className="text-sm text-cream/55">WhatsApp link coming soon</p>
+      return <p className="text-sm text-cream/75">WhatsApp link coming soon</p>
     }
     return (
-      <span className="inline-flex items-center gap-2 text-sm text-ink/40 border border-wine/15 px-5 py-3">
+      <span className="inline-flex items-center gap-2 text-sm text-ink/70 border border-wine/15 px-5 py-3">
         <WhatsAppMark />
         WhatsApp link coming soon
       </span>

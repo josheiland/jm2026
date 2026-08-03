@@ -31,7 +31,7 @@ export default function ThankYouNote() {
         </div>
 
         <div className="mt-14 text-center">
-          <p className="text-ink/60 italic">{THANK_YOU.signoff}</p>
+          <p className="text-ink/70 italic">{THANK_YOU.signoff}</p>
           <p className="display text-4xl md:text-5xl mt-3">{THANK_YOU.names}</p>
         </div>
       </div>

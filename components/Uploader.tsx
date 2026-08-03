@@ -355,7 +355,7 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
             onChange={(e) => setUploader(e.target.value)}
             placeholder="So we know who to thank"
             autoComplete="name"
-            className="mt-2 w-full bg-cream-soft border border-wine/15 px-4 py-3 text-ink placeholder:text-ink/35 focus:border-wine outline-none transition-colors"
+            className="mt-2 w-full bg-cream-soft border border-wine/15 px-4 py-3 text-ink placeholder:text-ink/55 focus:border-wine outline-none transition-colors"
           />
         </label>
         <label className="block">
@@ -365,7 +365,7 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
             value={note}
             onChange={(e) => setNote(e.target.value)}
             placeholder="“the first dance, from table 9”"
-            className="mt-2 w-full bg-cream-soft border border-wine/15 px-4 py-3 text-ink placeholder:text-ink/35 focus:border-wine outline-none transition-colors"
+            className="mt-2 w-full bg-cream-soft border border-wine/15 px-4 py-3 text-ink placeholder:text-ink/55 focus:border-wine outline-none transition-colors"
           />
         </label>
       </div>
@@ -405,7 +405,7 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
           </svg>
 
           <p className="display text-2xl mt-5">Drop them here</p>
-          <p className="mt-2 text-sm text-ink/55 max-w-sm mx-auto">
+          <p className="mt-2 text-sm text-ink/70 max-w-sm mx-auto">
             Photos and video, as many as you would like to share.
           </p>
 
@@ -451,7 +451,7 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
                 <div className="flex items-center gap-4">
                   <div className="min-w-0 flex-1">
                     <p className="truncate text-sm">{it.file.name}</p>
-                    <p className="text-sm text-ink/50">{prettyBytes(it.file.size)}</p>
+                    <p className="text-sm text-ink/70">{prettyBytes(it.file.size)}</p>
                   </div>
                   <div className="shrink-0 text-sm tabular-nums">
                     {it.status === 'done' && (
@@ -460,7 +460,7 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
                     {it.status === 'uploading' && (
                       <span className="text-wine">{it.progress}%</span>
                     )}
-                    {it.status === 'queued' && <span className="text-ink/35">waiting</span>}
+                    {it.status === 'queued' && <span className="text-ink/70">waiting</span>}
                     {it.status === 'error' && <span className="text-wine">failed</span>}
                   </div>
                 </div>

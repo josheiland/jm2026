@@ -63,7 +63,7 @@ export default function HappeningNow() {
             >
               {(now ?? next)!.name}
             </p>
-            <p className={`text-sm mt-1 ${urgent ? 'text-cream/75' : 'text-ink/60'}`}>
+            <p className={`text-sm mt-1 ${urgent ? 'text-cream/75' : 'text-ink/70'}`}>
               {(now ?? next)!.time} · {(now ?? next)!.venue}
             </p>
           </div>
@@ -96,7 +96,7 @@ export default function HappeningNow() {
         {now && next && (
           <p
             className={`mt-4 pt-4 border-t text-sm ${
-              urgent ? 'border-cream/20 text-cream/75' : 'border-wine/10 text-ink/55'
+              urgent ? 'border-cream/20 text-cream/75' : 'border-wine/10 text-ink/70'
             }`}
           >
             Next up: <Link href="/schedule" className="link-underline">{next.name}</Link> at{' '}

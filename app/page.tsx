@@ -41,7 +41,7 @@ export default function HomePage() {
             style={{ animationDelay: '160ms' }}
           >
             <p className="eyebrow">Sunday, September 6, 2026</p>
-            <p className="text-ink/60">Hazy Mountain Vineyards, Afton, Virginia</p>
+            <p className="text-ink/70">Hazy Mountain Vineyards, Afton, Virginia</p>
           </div>
 
           <div className="mt-9 fade-up" style={{ animationDelay: '240ms' }}>
@@ -77,8 +77,8 @@ export default function HomePage() {
                       aria-hidden="true"
                     />
                     <div>
-                      <p className={e.kind === 'shuttle' ? 'text-ink/55' : ''}>{e.name}</p>
-                      <p className="text-sm text-ink/45">{e.time}</p>
+                      <p className={e.kind === 'shuttle' ? 'text-ink/70' : ''}>{e.name}</p>
+                      <p className="text-sm text-ink/70">{e.time}</p>
                     </div>
                   </li>
                 ))}
@@ -87,7 +87,7 @@ export default function HomePage() {
           ))}
         </div>
 
-        <p className="mt-14 text-sm text-ink/50">
+        <p className="mt-14 text-sm text-ink/70">
           <Link href="/schedule" className="text-wine link-underline">
             Full schedule, with addresses and what to wear →
           </Link>

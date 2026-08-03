@@ -15,7 +15,7 @@
   --color-cream-soft: #faf6f1;
   --color-wine: #63494a;
   --color-wine-deep: #43302f;
-  --color-wine-soft: #8a6f6d;
+  --color-wine-soft: #7c615f;  /* 4.93:1 on cream; #8a6f6d was 4.02 and failed AA */
   --color-ink: #2b2321;
   --color-blush: #e3cfc5;
   --color-sage: #79876f;

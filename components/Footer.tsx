@@ -16,7 +16,7 @@ export default function Footer() {
                 <span className="amp text-4xl text-blush">&</span>
                 <span className="display text-3xl text-cream">Josh</span>
               </div>
-              <p className="mt-3 text-sm text-cream/70">
+              <p className="mt-3 text-sm text-cream/80">
                 September 6, 2026
                 <br />
                 Hazy Mountain Vineyards · Afton, Virginia

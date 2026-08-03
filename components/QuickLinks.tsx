@@ -50,7 +50,7 @@ export default function QuickLinks({
                   →
                 </span>
               </div>
-              <p className="mt-2.5 text-ink/60">{l.desc}</p>
+              <p className="mt-2.5 text-ink/70">{l.desc}</p>
             </>
           )
           const cls = 'group bg-cream p-7 md:p-8 hover:bg-cream-soft transition-colors fade-up block'

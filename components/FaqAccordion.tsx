@@ -35,7 +35,7 @@ export default function FaqAccordion({ faqs }: { faqs: Faq[] }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search. Try “bus”, “photos”, “what do I wear”"
-          className="w-full bg-cream-soft border border-wine/15 pl-11 pr-4 py-3.5 placeholder:text-ink/35 focus:border-wine outline-none transition-colors"
+          className="w-full bg-cream-soft border border-wine/15 pl-11 pr-4 py-3.5 placeholder:text-ink/55 focus:border-wine outline-none transition-colors"
         />
         <svg
           className="absolute left-4 top-1/2 -translate-y-1/2 text-wine/40 pointer-events-none"
@@ -51,7 +51,7 @@ export default function FaqAccordion({ faqs }: { faqs: Faq[] }) {
       </label>
 
       {filtered.length === 0 && (
-        <p className="mt-10 text-ink/60 max-w-lg">
+        <p className="mt-10 text-ink/70 max-w-lg">
           Nothing matches that. <RichText text="Ask in [the WhatsApp](whatsapp)" /> and one of
           us will see it, probably faster than you expect.
         </p>

@@ -82,12 +82,12 @@ export default function StylesPage() {
 
               <p className="mt-4 text-ink/75">{SAMPLE}</p>
 
-              <p className="mt-4 text-sm text-ink/50">{b.why}</p>
+              <p className="mt-4 text-sm text-ink/70">{b.why}</p>
 
               <div className="mt-6 pt-5 border-t border-wine/10">
                 <p className="eyebrow">Sunday, September 6</p>
                 <p className="display text-xl mt-1.5">The Wedding</p>
-                <p className="text-sm text-ink/55 mt-1">5:00 to 11:00 pm</p>
+                <p className="text-sm text-ink/70 mt-1">5:00 to 11:00 pm</p>
               </div>
 
               <button
@@ -118,13 +118,13 @@ export default function StylesPage() {
                 className={`px-4 py-2.5 text-xs uppercase tracking-[0.16em] border transition-colors ${
                   active.id === b.id
                     ? 'bg-wine text-cream border-wine'
-                    : 'border-wine/20 text-ink/60 hover:text-wine hover:border-wine/50'
+                    : 'border-wine/20 text-ink/70 hover:text-wine hover:border-wine/50'
                 }`}
               >
                 {b.name}
               </button>
             ))}
-            <span className="text-sm text-ink/50 ml-2">Cormorant + {active.name}</span>
+            <span className="text-sm text-ink/70 ml-2">Cormorant + {active.name}</span>
           </div>
         </div>
 
@@ -144,7 +144,7 @@ export default function StylesPage() {
             </div>
             <div className="mt-8 flex flex-col items-center gap-1.5">
               <p className="eyebrow">Sunday, September 6, 2026</p>
-              <p className="text-ink/60">Hazy Mountain Vineyards, Afton, Virginia</p>
+              <p className="text-ink/70">Hazy Mountain Vineyards, Afton, Virginia</p>
             </div>
             <div className="mt-9">
               <Countdown />
@@ -165,7 +165,7 @@ export default function StylesPage() {
                       →
                     </span>
                   </div>
-                  <p className="mt-2.5 text-ink/60">{desc}</p>
+                  <p className="mt-2.5 text-ink/70">{desc}</p>
                 </div>
               ))}
             </div>
@@ -187,8 +187,8 @@ export default function StylesPage() {
                           aria-hidden="true"
                         />
                         <div>
-                          <p className={e.kind === 'shuttle' ? 'text-ink/55' : ''}>{e.name}</p>
-                          <p className="text-sm text-ink/45">{e.time}</p>
+                          <p className={e.kind === 'shuttle' ? 'text-ink/70' : ''}>{e.name}</p>
+                          <p className="text-sm text-ink/70">{e.time}</p>
                         </div>
                       </li>
                     ))}
@@ -217,7 +217,7 @@ export default function StylesPage() {
       </div>
 
       <div className="content py-16 text-center">
-        <p className="text-ink/55 max-w-xl mx-auto">
+        <p className="text-ink/70 max-w-xl mx-auto">
           Tell me if you want a different one and I will swap it. Currently live: Cormorant.
         </p>
       </div>

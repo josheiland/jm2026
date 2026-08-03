@@ -25,7 +25,7 @@ function Shuttle({ event }: { event: WeddingEvent }) {
         <p className="display text-2xl md:text-3xl tabular-nums !text-sage">{event.time}</p>
         <p className="text-ink/80 text-lg">{event.name}</p>
       </div>
-      <p className="mt-1.5 text-ink/60">{event.venue}</p>
+      <p className="mt-1.5 text-ink/70">{event.venue}</p>
       {event.description && (
         <p className="mt-3 text-ink/75 max-w-xl">{event.description}</p>
       )}
@@ -72,7 +72,7 @@ function Major({ event }: { event: WeddingEvent }) {
           <p className="eyebrow">Attire</p>
           <p className="mt-1.5 text-ink/80">
             {event.attire}
-            {event.attireNote && <span className="text-ink/55">. {event.attireNote}</span>}
+            {event.attireNote && <span className="text-ink/70">. {event.attireNote}</span>}
           </p>
         </div>
       )}
@@ -104,7 +104,7 @@ export default function SchedulePage() {
           <section key={day.key} className="pt-16 first:pt-8">
             <div className="flex flex-wrap items-baseline justify-between gap-4 pb-2">
               <h2 className="display text-4xl md:text-5xl">{day.long}</h2>
-              <p className="text-ink/50">Sunset {SUNSET[day.key]}</p>
+              <p className="text-ink/70">Sunset {SUNSET[day.key]}</p>
             </div>
             <div className="rule" />
 

@@ -20,12 +20,22 @@ const jost = Jost({
 })
 
 export const metadata: Metadata = {
+  // Required for the share image to resolve to an absolute URL.
+  metadataBase: new URL('https://eilands2026.vercel.app'),
   title: {
     default: 'Mary & Josh · September 6, 2026',
     template: '%s · Mary & Josh',
   },
   description:
     'Everything you need for the weekend of September 5 to 7, 2026 in Charlottesville, Virginia.',
+  openGraph: {
+    title: 'Mary & Josh · September 6, 2026',
+    description: 'Everything for the weekend in Charlottesville. Schedule, buses, photos.',
+    siteName: 'Mary & Josh',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: { card: 'summary_large_image' },
   // Public URL, but the guest list has no business in a search index.
   robots: { index: false, follow: false },
   appleWebApp: { capable: true, title: 'Mary & Josh', statusBarStyle: 'default' },

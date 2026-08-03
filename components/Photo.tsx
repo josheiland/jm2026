@@ -41,7 +41,7 @@ export default function Photo({
         />
       </div>
       {caption && (
-        <figcaption className="mt-2.5 text-sm text-ink/45 italic">{caption}</figcaption>
+        <figcaption className="mt-2.5 text-sm text-ink/70 italic">{caption}</figcaption>
       )}
     </figure>
   )

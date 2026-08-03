@@ -51,31 +51,52 @@ function queryStatus(url: string, size: number) {
   })
 }
 
-/** Send from `offset` to the end. Resolves done:false if Google wants more. */
-function putFrom(
+/**
+ * Chunk size. Google requires a multiple of 256 KiB for any non-final chunk;
+ * 4 MiB is 16 of them.
+ *
+ * Sending the file in chunks is what makes the progress bar honest. `upload.onprogress`
+ * counts bytes handed to the OS socket buffer, not bytes the server has stored, and a
+ * phone buffers aggressively enough to report 80% while Google holds 15%. Every chunk
+ * ends with Google stating exactly how much it has, so the bar can be driven by that
+ * instead of by the browser's optimism, and an interruption costs at most one chunk.
+ */
+const CHUNK = 4 * 1024 * 1024
+
+/**
+ * Send one chunk. Resolves with how many bytes Google has confirmed it holds, which is
+ * authoritative, rather than with how many we believe we sent.
+ */
+function putChunk(
   url: string,
   file: File,
-  offset: number,
-  onProgress: (frac: number) => void,
+  start: number,
+  end: number,
+  onSent: (bytesInChunk: number) => void,
 ) {
-  return new Promise<{ done: boolean }>((resolve, reject) => {
+  return new Promise<{ done: boolean; committed: number }>((resolve, reject) => {
     const xhr = new XMLHttpRequest()
     xhr.open('PUT', url, true)
     xhr.setRequestHeader('Content-Type', file.type || 'application/octet-stream')
-    if (offset > 0) {
-      xhr.setRequestHeader('Content-Range', `bytes ${offset}-${file.size - 1}/${file.size}`)
-    }
+    xhr.setRequestHeader('Content-Range', `bytes ${start}-${end - 1}/${file.size}`)
     xhr.upload.onprogress = (e) => {
-      if (e.lengthComputable) onProgress((offset + e.loaded) / file.size)
+      if (e.lengthComputable) onSent(e.loaded)
     }
     xhr.onload = () => {
-      if (xhr.status === 200 || xhr.status === 201) return resolve({ done: true })
-      if (xhr.status === 308) return resolve({ done: false })
+      if (xhr.status === 200 || xhr.status === 201) {
+        return resolve({ done: true, committed: file.size })
+      }
+      if (xhr.status === 308) {
+        const range = xhr.getResponseHeader('Range')
+        const last = range ? Number(range.split('-')[1]) : NaN
+        // No Range header means Google kept nothing from this chunk.
+        return resolve({ done: false, committed: Number.isFinite(last) ? last + 1 : start })
+      }
       reject(new Error(`Upload failed (${xhr.status})`))
     }
     xhr.onerror = () => reject(new Error('Connection dropped'))
     xhr.onabort = () => reject(new Error('Upload cancelled'))
-    xhr.send(offset > 0 ? file.slice(offset) : file)
+    xhr.send(file.slice(start, end))
   })
 }
 
@@ -107,8 +128,21 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
       running.current++
       void (async () => {
         update(item.id, { status: 'uploading', progress: 0 })
-        const onProgress = (frac: number) =>
-          update(item.id, { progress: Math.min(100, Math.round(frac * 100)) })
+
+        /**
+         * Progress never goes backwards. Within a chunk the browser's byte count can
+         * still run ahead of the server, so a resume can legitimately correct downward
+         * by up to one chunk. Showing that correction reads as a bug, and holding the
+         * higher number overstates by at most 4 MB, so the bar holds.
+         */
+        let shown = 0
+        const report = (bytes: number) => {
+          const pct = Math.min(100, Math.round((bytes / item.file.size) * 100))
+          if (pct > shown) {
+            shown = pct
+            update(item.id, { progress: pct })
+          }
+        }
 
         // Every filename this file has been offered under. A retry that mints a new
         // session gets a new name, and the copy that actually landed may be under
@@ -186,18 +220,38 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
             return null
           }
 
-          for (let attempt = 0; attempt <= RETRIES && !confirmed; attempt++) {
+          // Retries are counted against consecutive failures, not against chunks: a
+          // long video is many chunks and each successful one is real progress.
+          let strikes = 0
+
+          while (!confirmed && strikes <= RETRIES) {
             try {
-              const { done } = await putFrom(url, item.file, offset, onProgress)
+              const end = Math.min(offset + CHUNK, item.file.size)
+              const { done, committed } = await putChunk(url, item.file, offset, end, (sent) =>
+                report(offset + sent),
+              )
+
               if (done) {
+                report(item.file.size)
                 confirmed = true
                 break
               }
+
+              // Google's own count, which is the only one worth believing.
+              if (committed > offset) {
+                offset = committed
+                report(offset)
+                strikes = 0
+                continue
+              }
+              // It kept nothing from that chunk. Treat as a failed attempt.
+              strikes++
             } catch (err) {
               lastError = err as Error
+              strikes++
             }
 
-            // Reached after a 308 and after any failure. Never resend blind.
+            // Reached after any failure. Never resend blind.
             const status = await reconcile()
             if (status?.state === 'done') {
               confirmed = true
@@ -214,10 +268,11 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
               offset = 0
             } else if (status?.state === 'incomplete') {
               offset = status.offset
+              report(offset)
             }
             // status null: server unreachable. Keep the offset and back off.
 
-            if (attempt < RETRIES) await sleep(Math.min(8000, 800 * 2 ** attempt))
+            if (strikes <= RETRIES) await sleep(Math.min(8000, 800 * 2 ** strikes))
           }
 
           // Nothing is reported to the guest until Drive itself confirms the file is

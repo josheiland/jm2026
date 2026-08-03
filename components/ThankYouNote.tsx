@@ -25,7 +25,7 @@ export default function ThankYouNote() {
                   : undefined
               }
             >
-              {p.replace('{count}', String(data.totalSeated))}
+              {p.replace('{count}', String(data.guestCount))}
             </p>
           ))}
         </div>

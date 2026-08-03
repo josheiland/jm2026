@@ -212,15 +212,3 @@
 @keyframes shimmer {
   100% { transform: translateX(100%); }
 }
-
-/* ---------------------------------------------------------------------------
-   Body-font candidates, previewed at /styles.
-   The heading face is settled (Sauvage, standing in as Tenor Sans), so these
-   swap only --font-body. Every utility already reads from it.
-   --------------------------------------------------------------------------- */
-
-.body-cormorant { --font-body: var(--font-cormorant), Garamond, serif; font-size: 1.25rem; }
-.body-ebgaramond{ --font-body: var(--font-ebgaramond), Georgia, serif;  font-size: 1.1875rem; }
-.body-jost      { --font-body: var(--font-jost), ui-sans-serif, sans-serif; font-size: 1.0625rem; }
-.body-dmsans    { --font-body: var(--font-dmsans), ui-sans-serif, sans-serif; font-size: 1.0625rem; }
-.body-lato      { --font-body: var(--font-lato), ui-sans-serif, sans-serif; font-size: 1.0625rem; }

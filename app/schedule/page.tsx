@@ -121,6 +121,11 @@ export default function SchedulePage() {
         ))}
       </div>
 
+      <p className="content pb-16 text-sm text-ink/70 max-w-xl">
+        Once you have opened this page, it keeps working without signal. Worth loading it
+        before you head out to the vineyard, where there is not much.
+      </p>
+
       <Photo name="vineyard-kiss" sizes="100vw" imgClassName="max-h-[52vh]" />
     </>
   )

@@ -88,12 +88,13 @@
 
   /* Wayfinding and controls stay in the sans: Cormorant at button and nav sizes is
      too delicate to read quickly, which is exactly when people are reading it. */
+  /* `summary` is deliberately absent: the FAQ questions are content, not a control,
+     and pinning them to the UI sans made them smaller than their own answers. */
   button,
   input,
   select,
   textarea,
-  nav a,
-  summary {
+  nav a {
     font-family: var(--font-ui);
     /* The size lift above exists for Cormorant's small x-height. Jost does not have
        that problem, so UI text would come out oversized at the same step. */

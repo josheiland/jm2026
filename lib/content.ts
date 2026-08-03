@@ -16,6 +16,13 @@ export const DAY_OF_CONTACT = {
   phone: '850-212-3055',
 }
 
+/** Anything in the run-up. Josh's mother, and the person who actually knows. */
+export const BEFORE_THE_DAY_CONTACT = {
+  name: 'Virginia',
+  role: 'Mother of the groom',
+  phone: '404-915-9085',
+}
+
 // ---------------------------------------------------------------- Charlottesville
 
 export interface Poi {
@@ -82,32 +89,32 @@ export const FAQS: Faq[] = [
   {
     topic: 'Getting around',
     q: 'Is there a bus to the wedding?',
-    a: 'Yes, and you should take it. Buses load in front of The Draftsman on West Main and all of them leave at 4:15pm on Sunday. Coming home there are two, at 9:30pm and 11:00pm, both back to The Draftsman.',
+    a: 'Yes, and we would love you to take it. Buses load at Stacey Hall on West Main, directly across the street from The Draftsman, and all of them leave at 4:15pm on Sunday. Coming home there are two, at 9:30pm and 11:00pm.',
   },
   {
     topic: 'Getting around',
     q: 'I am not staying at The Draftsman. Can I still get on?',
-    a: 'Please do. Everything on West Main is a few minutes apart. Just be standing in front of The Draftsman before 4:15.',
+    a: 'Please do. Everything on West Main is a few minutes apart. Just be at Stacey Hall, across the street from The Draftsman, before 4:15.',
   },
   {
     topic: 'Getting around',
     q: 'Can I drive myself instead?',
-    a: 'You can, and there is parking at the venue. Just decide that before the wine rather than after it. It is a 35-minute drive back over the mountain.',
+    a: 'Of course, and there is parking at the venue. It is a 25 to 30 minute drive back over the mountain, so it is worth deciding before the wine rather than after it.',
   },
   {
     topic: 'Getting around',
     q: 'Can I get an Uber back from the vineyard?',
-    a: 'Realistically, no. In town rideshare is fine. Out in Afton it thins out to nothing, and standing in a field at 11pm watching an app spin is a bad end to a good night. Take the bus, or drive yourself and plan for it.',
+    a: 'Probably not. In town rideshare is fine, but out in Afton it thins out to almost nothing, and standing in a field at 11pm watching an app spin is a sad end to a good night. The bus is the safer bet, or drive yourself and plan for it.',
   },
   {
     topic: 'The day itself',
     q: 'What time should I actually arrive?',
-    a: 'The ceremony starts at 5:00pm. On the bus you are automatically fine. Driving yourself, aim to be parked by 4:40 so you can walk up and find a seat without rushing.',
+    a: 'The ceremony starts at 5:00pm. On the bus you are automatically fine. Driving yourself, it is about 25 to 30 minutes from town, so aim to be parked by 4:40 and you will have time to walk up and find a seat.',
   },
   {
     topic: 'The day itself',
     q: 'Is the ceremony outside?',
-    a: 'Yes, outdoors at a working vineyard in the Blue Ridge foothills. Early September in Virginia is warm and humid, and the sun goes over the ridge around 7:37pm. Grass beats stilettos, so block heels or heel stoppers are a good idea. Mary will be in stilettos.',
+    a: 'Yes, outdoors at a working vineyard in the Blue Ridge foothills. Early September in Virginia is warm and humid, and the sun goes over the ridge around 7:37pm. Grass beats stilettos, so block heels or heel stoppers are a good idea. But Mary will still be in stilettos.',
   },
   {
     topic: 'The day itself',
@@ -127,27 +134,27 @@ export const FAQS: Faq[] = [
   {
     topic: 'Food & drink',
     q: 'Do I need to eat beforehand?',
-    a: 'No. Every event is a full meal. Buffet dinner at the welcome party from around 6, a plated dinner at the wedding, and bagels on Monday. Come hungry to all three.',
+    a: 'No need. Every event is a full meal: buffet dinner at the welcome party from around 6, a plated dinner at the wedding, and bagels on Monday. Come hungry to all three.',
   },
   {
     topic: 'Food & drink',
     q: 'I have a dietary restriction. Am I okay?',
-    a: 'Yes. There is a vegetarian main, one of the other mains is gluten-free, and the salad is vegan and gluten-free as served. If you have an allergy we should know about, message us in [the WhatsApp](whatsapp) and we will get it to the kitchen.',
+    a: 'Yes. There is a vegetarian main, one of the other mains is gluten-free, and the salad is vegan and gluten-free as served. If you have an allergy or restriction you did not note on your RSVP form, please let us know over text and we will get it to the kitchen.',
   },
   {
     topic: 'Everything else',
     q: 'Where do I put the photos I take?',
-    a: 'On [the photos page](/photos). It takes photos and video, there is no app and no login, and it drops straight into our album. Please use it. One photographer cannot be at every table at once.',
+    a: 'On [the photos page](/photos). It takes photos and video, and everything lands straight in our album. We would love as many as you are willing to share.',
     },
   {
     topic: 'Everything else',
     q: 'Is there a registry?',
-    a: 'There is, [over on Zola](https://www.zola.com/wedding/eilands2026/registry). You being there is the actual thing, but it is there if you want it.',
+    a: 'There is, [over on Zola](https://www.zola.com/wedding/eilands2026/registry). You joining us for our wedding is the greatest gift, but the link is there if you would like it.',
   },
   {
     topic: 'Everything else',
     q: 'Something has gone wrong. Who do I find?',
-    a: 'Not us, we will be busy. Paige coordinates the day from the Hazy Mountain side and her team is on site all Sunday: [850-212-3055](tel:+18502123055). For anything before the day itself, [the WhatsApp](whatsapp) is the fastest way to reach a human.',
+    a: 'Before the weekend, Virginia, Josh’s mum, is the best person to reach: [404-915-9085](tel:+14049159085). On the day itself Paige coordinates everything from the Hazy Mountain side and her team is on site all Sunday: [850-212-3055](tel:+18502123055). [The WhatsApp](whatsapp) works for anything in between.'
   },
 ]
 

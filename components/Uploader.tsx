@@ -337,8 +337,7 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
       <div className="card p-8 md:p-10 text-center">
         <p className="display text-2xl">Nearly ready</p>
         <p className="mt-3 text-ink/65 max-w-md mx-auto">
-          The photo drop is being switched on. It will be live well before the weekend, with
-          nothing for you to install, and no account to make.
+          The photo drop is being switched on. It will be live well before the weekend.
         </p>
       </div>
     )
@@ -407,7 +406,7 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
 
           <p className="display text-2xl mt-5">Drop them here</p>
           <p className="mt-2 text-sm text-ink/55 max-w-sm mx-auto">
-            Photos and video, as many as you like. Live Photos and iPhone HEIC are fine.
+            Photos and video, as many as you would like to share.
           </p>
 
           <button

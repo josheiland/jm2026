@@ -65,11 +65,11 @@ export const EVENTS: WeddingEvent[] = [
     start: `2026-09-06T16:15:00${ET}`,
     end: `2026-09-06T16:50:00${ET}`,
     day: 'sun',
-    venue: 'In front of The Draftsman',
-    address: '1106 West Main Street, Charlottesville, VA 22903',
-    mapQuery: 'The Draftsman Autograph Collection, 1106 West Main St, Charlottesville, VA 22903',
+    venue: 'Stacey Hall',
+    address: '1105 West Main Street, Charlottesville, VA 22903',
+    mapQuery: 'Stacey Hall, 1105 W Main St, Charlottesville, VA 22903',
     description:
-      'Every bus loads in front of The Draftsman and leaves at 4:15. Staying somewhere else on West Main? It is a few minutes’ walk, so come to The Draftsman to board.',
+      'Every bus loads at Stacey Hall, directly across West Main from The Draftsman, and leaves at 4:15. Staying elsewhere on West Main? It is only a few minutes’ walk.',
     heads_up:
       'They all leave at 4:15. Not 4:20, not 4:30. If you are anything like Mary, treat that as 3:45.',
   },
@@ -87,7 +87,7 @@ export const EVENTS: WeddingEvent[] = [
     attire: 'Summer formal',
     attireNote: 'Long dresses and dark suits, mostly.',
     heads_up:
-      'The ceremony is outdoors on a working vineyard, and grass beats stilettos every time. Block heels or heel stoppers will save you. Mary will be in stilettos.',
+      'The ceremony is outdoors on a working vineyard, and grass beats stilettos every time. Block heels or heel stoppers will save you. But Mary will still be in stilettos.',
   },
   {
     slug: 'shuttle-early',
@@ -97,10 +97,10 @@ export const EVENTS: WeddingEvent[] = [
     start: `2026-09-06T21:30:00${ET}`,
     end: `2026-09-06T22:05:00${ET}`,
     day: 'sun',
-    venue: 'Hazy Mountain to The Draftsman',
+    venue: 'Hazy Mountain to West Main',
     address: '240 Hazy Mountain Ln, Afton, VA 22920',
     mapQuery: 'Hazy Mountain Vineyards & Brewery, 240 Hazy Mountain Ln, Afton, VA 22920',
-    description: 'The lame one. Straight back to The Draftsman on West Main.',
+    description: 'The lame one. Straight back to West Main, where you were picked up.',
   },
   {
     slug: 'shuttle-late',
@@ -110,11 +110,11 @@ export const EVENTS: WeddingEvent[] = [
     start: `2026-09-06T23:00:00${ET}`,
     end: `2026-09-06T23:35:00${ET}`,
     day: 'sun',
-    venue: 'Hazy Mountain to The Draftsman',
+    venue: 'Hazy Mountain to West Main',
     address: '240 Hazy Mountain Ln, Afton, VA 22920',
     mapQuery: 'Hazy Mountain Vineyards & Brewery, 240 Hazy Mountain Ln, Afton, VA 22920',
     description:
-      'Leaves when the reception ends and drops at The Draftsman, a short walk from the after party.',
+      'Leaves when the reception ends and drops back on West Main, a short walk from the after party.',
   },
   {
     slug: 'after-party',

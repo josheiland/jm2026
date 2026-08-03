@@ -156,7 +156,7 @@ export default function StylesPage() {
               {[
                 ['See the schedule', 'Every start time, and the bus that leaves without you'],
                 ['Join the WhatsApp', 'Where anything that changes gets posted first'],
-                ['Share photos', 'Straight into our album. No app, no login'],
+                ['Share photos', 'Anything you take over the weekend, straight into our album'],
               ].map(([label, desc]) => (
                 <div key={label} className="bg-cream p-7 md:p-8">
                   <div className="flex items-start justify-between gap-4">

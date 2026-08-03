@@ -71,7 +71,7 @@ export default function FaqAccordion({ faqs }: { faqs: Faq[] }) {
                   open={Boolean(q)}
                 >
                   <summary className="flex items-start justify-between gap-6 py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                    <span className="text-[1.05rem] text-ink/85 group-open:text-wine transition-colors">
+                    <span className="text-xl md:text-2xl text-ink/90 group-open:text-wine transition-colors">
                       {f.q}
                     </span>
                     <span

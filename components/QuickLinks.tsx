@@ -12,7 +12,7 @@ const LINKS: Record<Key, { href: string; label: string; desc: string; external?:
   photos: {
     href: '/photos',
     label: 'Share photos',
-    desc: 'Straight into our album. No app, no login',
+    desc: 'Anything you take over the weekend, straight into our album',
   },
   whatsapp: {
     href: WHATSAPP_INVITE || '/faq',

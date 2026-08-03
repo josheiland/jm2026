@@ -3,6 +3,7 @@ import PageHeader from '@/components/PageHeader'
 import AddToCalendar from '@/components/AddToCalendar'
 import Photo from '@/components/Photo'
 import WholeWeekendButton from '@/components/WholeWeekendButton'
+import RichText from '@/components/RichText'
 import { DAYS, SUNSET, eventsForDay, mapsUrl, type WeddingEvent } from '@/lib/events'
 
 export const metadata: Metadata = {
@@ -26,8 +27,20 @@ function Shuttle({ event }: { event: WeddingEvent }) {
         <p className="text-ink/80 text-lg">{event.name}</p>
       </div>
       <p className="mt-1.5 text-ink/70">{event.venue}</p>
+      {event.showMap && (
+        <a
+          href={mapsUrl(event.mapQuery)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-0.5 text-wine link-underline"
+        >
+          {event.address}
+        </a>
+      )}
       {event.description && (
-        <p className="mt-3 text-ink/75 max-w-xl">{event.description}</p>
+        <p className="mt-3 text-ink/75 max-w-xl">
+          <RichText text={event.description} />
+        </p>
       )}
       {event.heads_up && (
         <p className="mt-4 border-l-2 border-sage/60 pl-4 text-ink/80 max-w-xl">
@@ -59,7 +72,7 @@ function Major({ event }: { event: WeddingEvent }) {
           rel="noopener noreferrer"
           className="inline-block text-wine link-underline"
         >
-          {event.address} ↗
+          {event.address}
         </a>
       </div>
 

@@ -114,7 +114,7 @@ export const FAQS: Faq[] = [
   {
     topic: 'The day itself',
     q: 'Is the ceremony outside?',
-    a: 'Yes, outdoors at a working vineyard in the Blue Ridge foothills. Early September in Virginia is warm and humid, and the sun goes over the ridge around 7:37pm. Grass beats stilettos, so block heels or heel stoppers are a good idea. But Mary will still be in stilettos.',
+    a: 'Yes, outdoors at a working vineyard in the Blue Ridge foothills. The ceremony itself is on gravel rather than grass. Early September in Virginia is warm and humid, and the sun goes over the ridge around 7:37pm, so a light layer for the evening is worth having.',
   },
   {
     topic: 'The day itself',

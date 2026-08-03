@@ -40,7 +40,7 @@ export default function CharlottesvillePage() {
                       rel="noopener noreferrer"
                       className="inline-block mt-1.5 text-sm text-wine link-underline"
                     >
-                      {p.address} ↗
+                      {p.address}
                     </a>
                     <p className="mt-3 text-ink/65 leading-relaxed">{p.desc}</p>
                   </article>

@@ -66,8 +66,6 @@ export default function AddToCalendar({
     }
   }, [open])
 
-  const lead = event.kind === 'ceremony' ? '2 hours' : '1 hour'
-
   // Inline on touch so iOS opens the calendar sheet instead of saving to Files.
   const ics = `/api/ics?e=${event.slug}${touch ? '&inline=1' : ''}`
 
@@ -121,13 +119,6 @@ export default function AddToCalendar({
         )}
       </div>
 
-      {!compact && (
-        <p className="mt-2 text-sm text-ink/70">
-          {touch
-            ? `Opens in your calendar app, with a reminder ${lead} beforehand`
-            : `The download sets a reminder ${lead} beforehand`}
-        </p>
-      )}
     </div>
   )
 }

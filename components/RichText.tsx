@@ -10,16 +10,28 @@ import { WHATSAPP_INVITE } from '@/lib/config'
  * from an environment variable and the copy should not have to know that.
  */
 
-const LINK = /\[([^\]]+)\]\(([^)]+)\)/g
+/** `[text](href)` for links, `~~text~~` for strikethrough. */
+const TOKEN = /\[([^\]]+)\]\(([^)]+)\)|~~([^~]+)~~/g
 
 export default function RichText({ text }: { text: string }) {
   const parts: React.ReactNode[] = []
   let last = 0
   let m: RegExpExecArray | null
-  LINK.lastIndex = 0
+  TOKEN.lastIndex = 0
 
-  while ((m = LINK.exec(text)) !== null) {
+  while ((m = TOKEN.exec(text)) !== null) {
     if (m.index > last) parts.push(text.slice(last, m.index))
+
+    // Strikethrough branch: no href captured.
+    if (m[3] !== undefined) {
+      parts.push(
+        <s key={m.index} className="opacity-55">
+          {m[3]}
+        </s>,
+      )
+      last = m.index + m[0].length
+      continue
+    }
 
     const [, label, rawHref] = m
     const href = rawHref === 'whatsapp' ? WHATSAPP_INVITE : rawHref

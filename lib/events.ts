@@ -26,6 +26,8 @@ export interface WeddingEvent {
   mapQuery: string
   attire?: string
   attireNote?: string
+  /** Show a maps link. True only where a guest has to find the spot. */
+  showMap?: boolean
   description?: string
   /** Rendered as a callout — the things people actually get wrong. */
   heads_up?: string
@@ -54,7 +56,7 @@ export const EVENTS: WeddingEvent[] = [
     attire: 'Elevated casual',
     attireNote: 'Relaxed, polished, and festive.',
     description:
-      'Drop by whenever. Appetizers and drinks from 4, then a full buffet dinner from around 6. This is dinner, so come hungry.',
+      'Drop by whenever. Appetizers and drinks from 4, then a full buffet dinner from around 6.',
     heads_up: 'No bus for this one. The Dairy Market is a walk or a short ride from the West Main hotels.',
   },
   {
@@ -68,6 +70,7 @@ export const EVENTS: WeddingEvent[] = [
     venue: 'Stacey Hall',
     address: '1105 West Main Street, Charlottesville, VA 22903',
     mapQuery: 'Stacey Hall, 1105 W Main St, Charlottesville, VA 22903',
+    showMap: true,
     description:
       'Buses load at Stacey Hall, directly across West Main from The Draftsman, and every one of them leaves at 4:15. Staying elsewhere on West Main? It is only a few minutes’ walk. They drop you back in the same spot at the end of the night.',
     heads_up:
@@ -87,7 +90,7 @@ export const EVENTS: WeddingEvent[] = [
     attire: 'Summer formal',
     attireNote: 'Long dresses and dark suits, mostly.',
     heads_up:
-      'The ceremony is outdoors on a working vineyard, and grass beats stilettos every time. Block heels or heel stoppers will save you. But Mary will still be in stilettos.',
+      'The ceremony is outdoors, and early September in Virginia is warm and humid. It cools off quickly once the sun drops behind the ridge, so a light layer for the evening is worth having.',
   },
   {
     slug: 'shuttle-early',
@@ -100,7 +103,7 @@ export const EVENTS: WeddingEvent[] = [
     venue: 'Hazy Mountain to Stacey Hall',
     address: '240 Hazy Mountain Ln, Afton, VA 22920',
     mapQuery: 'Hazy Mountain Vineyards & Brewery, 240 Hazy Mountain Ln, Afton, VA 22920',
-    description: 'The lame one. Straight back to where the bus picked you up.',
+    description: 'The ~~practical~~ lame one. Straight back to where the bus picked you up.',
   },
   {
     slug: 'shuttle-late',

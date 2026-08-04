@@ -17,7 +17,6 @@ export default function CharlottesvillePage() {
       <PageHeader
         eyebrow="Our Charlottesville"
         title="Things To Do"
-        lede="We spent four years here and have opinions. Not a tourist list. The actual set of places we kept going back to."
       />
 
       <div className="content pb-20">

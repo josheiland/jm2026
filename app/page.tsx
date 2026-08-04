@@ -59,7 +59,7 @@ export default function HomePage() {
           name="hero-dock"
           sizes="100vw"
           priority
-          imgClassName="max-h-[70vh] object-[center_46%]"
+          imgClassName="max-h-[34rem] object-center"
         />
       </div>
 

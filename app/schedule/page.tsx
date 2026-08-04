@@ -139,7 +139,7 @@ export default function SchedulePage() {
         before you head out to the vineyard, where there is not much.
       </p>
 
-      <Photo name="vineyard-kiss" sizes="100vw" imgClassName="max-h-[62vh] object-[center_28%]" />
+      <Photo name="vineyard-kiss" sizes="100vw" imgClassName="max-h-[40rem] object-top" />
     </>
   )
 }

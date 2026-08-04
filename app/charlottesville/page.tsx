@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Our Charlottesville: where we ate, ran, studied and fell in love.',
 }
 
-const CATEGORIES = ['Eat', 'Coffee', 'See', 'Move'] as const
+const CATEGORIES = ['Eat & Drink', 'See', 'Move'] as const
 
 export default function CharlottesvillePage() {
   return (

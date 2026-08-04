@@ -28,6 +28,8 @@ export interface WeddingEvent {
   attireNote?: string
   /** Show a maps link. True only where a guest has to find the spot. */
   showMap?: boolean
+  /** Key into lib/photos.ts, for an event that benefits from a picture or a map. */
+  image?: 'garden-viii-map'
   description?: string
   /** Rendered as a callout — the things people actually get wrong. */
   heads_up?: string
@@ -85,8 +87,8 @@ export const EVENTS: WeddingEvent[] = [
     end: `2026-09-06T23:00:00${ET}`,
     day: 'sun',
     venue: 'Hazy Mountain Vineyards & Brewery',
-    address: '240 Hazy Mountain Ln, Afton, VA 22920',
-    mapQuery: 'Hazy Mountain Vineyards & Brewery, 240 Hazy Mountain Ln, Afton, VA 22920',
+    address: '260 Hazy Mountain Ln, Afton, VA 22920',
+    mapQuery: 'Hazy Mountain Vineyards & Brewery, 260 Hazy Mountain Ln, Afton, VA 22920',
     attire: 'Summer formal',
     attireNote: 'Long dresses and dark suits, mostly.',
     heads_up:
@@ -101,8 +103,8 @@ export const EVENTS: WeddingEvent[] = [
     end: `2026-09-06T22:05:00${ET}`,
     day: 'sun',
     venue: 'Hazy Mountain to Stacey Hall',
-    address: '240 Hazy Mountain Ln, Afton, VA 22920',
-    mapQuery: 'Hazy Mountain Vineyards & Brewery, 240 Hazy Mountain Ln, Afton, VA 22920',
+    address: '260 Hazy Mountain Ln, Afton, VA 22920',
+    mapQuery: 'Hazy Mountain Vineyards & Brewery, 260 Hazy Mountain Ln, Afton, VA 22920',
     description: 'The ~~practical~~ lame one. Straight back to where the bus picked you up.',
   },
   {
@@ -114,8 +116,8 @@ export const EVENTS: WeddingEvent[] = [
     end: `2026-09-06T23:35:00${ET}`,
     day: 'sun',
     venue: 'Hazy Mountain to Stacey Hall',
-    address: '240 Hazy Mountain Ln, Afton, VA 22920',
-    mapQuery: 'Hazy Mountain Vineyards & Brewery, 240 Hazy Mountain Ln, Afton, VA 22920',
+    address: '260 Hazy Mountain Ln, Afton, VA 22920',
+    mapQuery: 'Hazy Mountain Vineyards & Brewery, 260 Hazy Mountain Ln, Afton, VA 22920',
     description:
       'Leaves when the reception ends and drops where it picked you up, a short walk from the after party.',
   },
@@ -141,12 +143,14 @@ export const EVENTS: WeddingEvent[] = [
     start: `2026-09-07T10:00:00${ET}`,
     end: `2026-09-07T12:00:00${ET}`,
     day: 'mon',
-    venue: 'The Lawn',
-    address: '400 Emmet Street South, Charlottesville, VA 22903',
-    mapQuery: 'The Lawn, University of Virginia, Charlottesville, VA 22903',
+    venue: 'Garden VIII, on the Lawn',
+    address: 'Behind Pavilion VIII, East Lawn, University of Virginia',
+    mapQuery: 'Pavilion VIII, University of Virginia, Charlottesville, VA 22903',
+    image: 'garden-viii-map',
     attire: 'Groutfits, sweats, jammies',
     attireNote: 'All the cozies welcome',
-    description: 'Roll out of bed and right onto the Lawn if you like. Breakfast is handled.',
+    description:
+      'Roll out of bed and right onto the Lawn if you like. We are in Garden VIII, the walled garden behind Pavilion VIII on the East Lawn. Breakfast is handled.',
     heads_up: 'Bodo’s, obviously. Josh will be eating a pastrami, egg and muenster on an everything.',
   },
 ]

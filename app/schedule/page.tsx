@@ -90,6 +90,15 @@ function Major({ event }: { event: WeddingEvent }) {
         </div>
       )}
 
+      {event.image && (
+        <Photo
+          name={event.image}
+          sizes="(max-width: 768px) 100vw, 36rem"
+          className="mt-6 max-w-xl"
+          caption="Garden VIII is the walled garden behind Pavilion VIII, on the East Lawn."
+        />
+      )}
+
       {event.heads_up && (
         <p className="mt-5 card px-5 py-4 text-ink/75 max-w-xl">{event.heads_up}</p>
       )}

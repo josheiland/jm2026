@@ -119,7 +119,7 @@ export const FAQS: Faq[] = [
   {
     topic: 'The day itself',
     q: 'What happens after the reception?',
-    a: 'The after party runs 11:30pm to 1:00am back on the Corner, a short walk from where the late bus drops. Then bagels on the Lawn at 10am Monday, in whatever you slept in. Times are on [the schedule](/schedule).',
+    a: 'The after party runs 11:30pm to 1:00am back on the Corner, a short walk from where the late bus drops. Then bagels at 10am Monday in Garden VIII on the Lawn, in whatever you slept in. Times are on [the schedule](/schedule).',
   },
   {
     topic: 'What to wear',
@@ -134,7 +134,7 @@ export const FAQS: Faq[] = [
   {
     topic: 'Food & drink',
     q: 'Do I need to eat beforehand?',
-    a: 'No need. Every event is a full meal: buffet dinner at the welcome party from around 6, a plated dinner at the wedding, and bagels on Monday. Come hungry to all three.',
+    a: 'No need. Every event is a full meal: buffet dinner at the welcome party from around 6, a plated dinner at the wedding, and bagels in Garden VIII on Monday. Come hungry to all three.',
   },
   {
     topic: 'Food & drink',

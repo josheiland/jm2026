@@ -4,7 +4,7 @@ import AddToCalendar from '@/components/AddToCalendar'
 import Photo from '@/components/Photo'
 import WholeWeekendButton from '@/components/WholeWeekendButton'
 import RichText from '@/components/RichText'
-import { DAYS, SUNSET, eventsForDay, mapsUrl, type WeddingEvent } from '@/lib/events'
+import { DAYS, eventsForDay, mapsUrl, type WeddingEvent } from '@/lib/events'
 
 export const metadata: Metadata = {
   title: 'Schedule',
@@ -114,7 +114,6 @@ export default function SchedulePage() {
       <PageHeader
         eyebrow="September 5 to 7, 2026"
         title="The Weekend"
-        lede="Three days in Charlottesville. Come to all of it or some of it. Every event is a full meal, so no need to eat beforehand, and the bus on Sunday is the one thing that will leave without you."
       />
 
       <div className="content pb-8">
@@ -124,9 +123,8 @@ export default function SchedulePage() {
       <div className="content pb-20">
         {DAYS.map((day) => (
           <section key={day.key} className="pt-16 first:pt-8">
-            <div className="flex flex-wrap items-baseline justify-between gap-4 pb-2">
+            <div className="pb-2">
               <h2 className="display text-4xl md:text-5xl">{day.long}</h2>
-              <p className="text-ink/70">Sunset {SUNSET[day.key]}</p>
             </div>
             <div className="rule" />
 
@@ -143,12 +141,8 @@ export default function SchedulePage() {
         ))}
       </div>
 
-      <p className="content pb-16 text-sm text-ink/70 max-w-xl">
-        Once you have opened this page, it keeps working without signal. Worth loading it
-        before you head out to the vineyard, where there is not much.
-      </p>
 
-      <Photo name="vineyard-kiss" sizes="100vw" imgClassName="max-h-[40rem] object-top" />
+      <Photo name="vineyard-kiss" sizes="100vw" imgClassName="max-h-[34rem] object-center" />
     </>
   )
 }

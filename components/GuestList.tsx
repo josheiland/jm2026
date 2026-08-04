@@ -14,7 +14,6 @@ interface Guest {
 interface Group {
   label: string
   blurb: string
-  count: number
   members: Guest[]
 }
 
@@ -88,10 +87,7 @@ export default function GuestList({ groups, guests }: { groups: Group[]; guests:
         <div className="mt-14 space-y-16">
           {groups.map((group) => (
             <section key={group.label}>
-              <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                <h2 className="display text-3xl md:text-4xl">{group.label}</h2>
-                <p className="eyebrow">{group.count} people</p>
-              </div>
+              <h2 className="display text-3xl md:text-4xl">{group.label}</h2>
               {group.blurb && (
                 <p className="mt-2 text-ink/70 max-w-2xl text-pretty [overflow-wrap:anywhere]">
                   {group.blurb}

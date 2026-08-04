@@ -20,7 +20,7 @@ export default function PhotosPage() {
       <PageHeader
         eyebrow="The guest album"
         title="Share Your Photos"
-        lede="Our photographer is extraordinary and can still only be in one place at a time. You will see things she won't. Please send them to us."
+        lede="We can’t wait to relive the weekend from your point of view. Drop any and all photos and videos here. Thank you so big."
       />
 
       <div className="content pb-16">

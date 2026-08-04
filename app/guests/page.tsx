@@ -19,7 +19,6 @@ export default function GuestsPage() {
   const groups = data.groups.map((group) => ({
     label: group.label,
     blurb: group.blurb,
-    count: group.count,
     members: group.members.map(strip),
   }))
 

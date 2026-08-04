@@ -115,11 +115,11 @@ export const EVENTS: WeddingEvent[] = [
     start: `2026-09-06T23:00:00${ET}`,
     end: `2026-09-06T23:35:00${ET}`,
     day: 'sun',
-    venue: 'Hazy Mountain to Mejicali or Stacey Hall',
+    venue: 'Hazy Mountain to Mejicali',
     address: '260 Hazy Mountain Ln, Afton, VA 22920',
     mapQuery: 'Hazy Mountain Vineyards & Brewery, 260 Hazy Mountain Ln, Afton, VA 22920',
     description:
-      'Three buses leave when the reception ends. Two go straight to the after party at Mejicali and one goes back to Stacey Hall, so ask which one you are getting on before you sit down.',
+      'Every bus leaves when the reception ends and goes straight to the after party. The hotels are a five-minute walk from there whenever you have had enough.',
   },
   {
     slug: 'after-party',
@@ -132,8 +132,7 @@ export const EVENTS: WeddingEvent[] = [
     venue: 'Mejicali',
     address: '852 West Main Street, Suite 110, Charlottesville, VA 22903',
     mapQuery: 'Mejicali, 852 W Main St, Charlottesville, VA 22903',
-    description:
-      'Two of the three 11pm buses come straight here from the vineyard, so the easy move is to stay on the one you boarded. It is also a five-minute walk from The Draftsman if you have already gone back to change.',
+    description: 'Five minutes on foot from The Draftsman.',
   },
   {
     slug: 'bagels',
@@ -151,7 +150,6 @@ export const EVENTS: WeddingEvent[] = [
     attireNote: 'All the cozies welcome',
     description:
       'Roll out of bed and right onto the Lawn if you like. We are in Garden VIII, the walled garden behind Pavilion VIII on the East Lawn. Breakfast is handled.',
-    heads_up: 'Bodo’s, obviously. Josh will be eating a pastrami, egg and muenster on an everything.',
   },
 ]
 
@@ -159,8 +157,6 @@ export const eventBySlug = (slug: string) => EVENTS.find((e) => e.slug === slug)
 
 export const eventsForDay = (day: 'sat' | 'sun' | 'mon') => EVENTS.filter((e) => e.day === day)
 
-/** Sunset at the vineyard, for anyone planning golden-hour photos. */
-export const SUNSET = { sat: '7:39 pm', sun: '7:37 pm', mon: '7:35 pm' }
 
 export const mapsUrl = (q: string) =>
   `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`

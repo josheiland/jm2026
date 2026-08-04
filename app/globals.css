@@ -278,6 +278,21 @@
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+/* Solid-silhouette treatments. The bow tie and eye are cut out in paper colour;
+   drawn in ink they disappear into the mass. */
+.pup-sil-fill { fill: var(--pup-ink); }
+.pup-sil-cut { fill: var(--pup-paper); }
+.pup-sil-rule { fill: none; stroke: var(--pup-ink); stroke-width: 1.1; }
+.pup-sil-veil { fill: var(--pup-ink); opacity: 0.16; }
+.pup-sil-veil-edge {
+  fill: none;
+  stroke: var(--pup-ink);
+  stroke-width: 1.2;
+  opacity: 0.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .pup-veil-fold {
   fill: none;
   stroke: var(--pup-ink);

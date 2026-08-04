@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import PupRealistic, { type Pose } from '@/components/PupRealistic'
+import PupSilhouette, { type SilPose } from '@/components/PupSilhouette'
 
 /**
  * Temporary picker so Josh can compare the realistic puppy views where they will
@@ -43,6 +44,51 @@ const OPTIONS: { pose: Pose; name: string; note: string }[] = [
   },
 ]
 
+const SILHOUETTES: { pose: SilPose; name: string; note: string }[] = [
+  {
+    pose: 'silStanding',
+    name: 'Option 7 — standing silhouette',
+    note: 'Solid fill, no interior line. Head carried forward so the ear hangs in clear air, and four legs with real gaps between them. The most legible of the silhouettes and the one I would defend.',
+  },
+  {
+    pose: 'silSitting',
+    name: 'Option 8 — sitting silhouette',
+    note: 'Same treatment, sitting. Compact, but the body mass is doing a lot of work and the head reads heavy.',
+  },
+  {
+    pose: 'silCameo',
+    name: 'Option 9 — cameo',
+    note: 'Head, neck and chest only, cropped on a hairline rule, the way a Victorian intaglio silhouette is. The most stationery-like of the six and the least fussy at small sizes.',
+  },
+  {
+    pose: 'silMedallion',
+    name: 'Option 10 — medallion',
+    note: 'The sitting silhouette inside a double rule, like a wax seal or a monogram. Reads as a mark rather than a picture.',
+  },
+  {
+    pose: 'silLookUp',
+    name: 'Option 11 — looking up',
+    note: 'Head raised, neck extended. The longest, softest line of the set, and it gives the veil more to hang from.',
+  },
+]
+
+function SilPair({ pose, size, dark }: { pose: SilPose; size: number; dark?: boolean }) {
+  return (
+    <div
+      className={`flex items-end gap-6 rounded px-6 py-5 ${
+        dark ? 'bg-wine-deep pup pup-dark' : 'bg-cream pup'
+      }`}
+    >
+      <div style={{ width: size, transform: 'scaleX(-1)' }}>
+        <PupSilhouette pose={pose} role="bride" />
+      </div>
+      <div style={{ width: size }}>
+        <PupSilhouette pose={pose} role="groom" />
+      </div>
+    </div>
+  )
+}
+
 function Pair({ pose, size, dark }: { pose: Pose; size: number; dark?: boolean }) {
   return (
     <div
@@ -82,6 +128,41 @@ export default function PupsPage() {
           </div>
         </section>
       ))}
+
+      <section className="mt-20">
+        <h2 className="display text-3xl">Silhouettes</h2>
+        <p className="mt-3 max-w-2xl text-sm">
+          Solid fill, no interior line. Read my note at the bottom before you pick from these five:
+          I do not think they are all there yet, and there is a better way to get them there.
+        </p>
+        {SILHOUETTES.map((o) => (
+          <div key={o.pose} className="mt-12">
+            <h3 className="display text-2xl">{o.name}</h3>
+            <p className="mt-2 max-w-2xl text-sm">{o.note}</p>
+            <div className="mt-5 flex flex-wrap gap-5">
+              <SilPair pose={o.pose} size={150} />
+              <SilPair pose={o.pose} size={88} />
+              <SilPair pose={o.pose} size={88} dark />
+              <SilPair pose={o.pose} size={62} />
+            </div>
+          </div>
+        ))}
+      </section>
+
+      <section className="mt-20 max-w-2xl">
+        <h2 className="display text-2xl">Where the silhouettes fall short</h2>
+        <p className="mt-3 text-sm">
+          A silhouette has no interior detail, so every error in the outline is the whole drawing.
+          I am placing anatomy by typing coordinates, and after four passes options 8, 10 and 11 still
+          read closer to a poodle or a lamb than to a puppy. Option 7 and option 9 hold up.
+        </p>
+        <p className="mt-3 text-sm">
+          The better route: send me a photo of one of the fosters in profile and I will trace a true
+          silhouette from it. The anatomy comes out right because it is a real dog, it is unmistakably
+          yours rather than generic, and it is the same technique the elegant ones in this idiom use.
+          A public-domain engraving would also work if you would rather not use a photo.
+        </p>
+      </section>
 
       <section className="mt-16">
         <h2 className="display text-2xl">Big, for judging the drawing</h2>

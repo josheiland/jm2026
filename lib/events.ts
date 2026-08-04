@@ -115,11 +115,11 @@ export const EVENTS: WeddingEvent[] = [
     start: `2026-09-06T23:00:00${ET}`,
     end: `2026-09-06T23:35:00${ET}`,
     day: 'sun',
-    venue: 'Hazy Mountain to Stacey Hall',
+    venue: 'Hazy Mountain to Mejicali or Stacey Hall',
     address: '260 Hazy Mountain Ln, Afton, VA 22920',
     mapQuery: 'Hazy Mountain Vineyards & Brewery, 260 Hazy Mountain Ln, Afton, VA 22920',
     description:
-      'Leaves when the reception ends and drops where it picked you up, a short walk from the after party.',
+      'Three buses leave when the reception ends. Two go straight to the after party at Mejicali and one goes back to Stacey Hall, so ask which one you are getting on before you sit down.',
   },
   {
     slug: 'after-party',
@@ -129,11 +129,11 @@ export const EVENTS: WeddingEvent[] = [
     start: `2026-09-06T23:30:00${ET}`,
     end: `2026-09-07T01:00:00${ET}`,
     day: 'sun',
-    venue: 'The Corner',
-    address: 'The Corner, Charlottesville, VA 22903',
-    mapQuery: 'The Corner, Charlottesville, VA 22903',
+    venue: 'Mejicali',
+    address: '852 West Main Street, Suite 110, Charlottesville, VA 22903',
+    mapQuery: 'Mejicali, 852 W Main St, Charlottesville, VA 22903',
     description:
-      'Back on the Corner, exactly where this all started. The late bus drops a short walk away. We will post the specific bar in the group chat once we lock it.',
+      'Two of the three 11pm buses come straight here from the vineyard, so the easy move is to stay on the one you boarded. It is also a five-minute walk from The Draftsman if you have already gone back to change.',
   },
   {
     slug: 'bagels',

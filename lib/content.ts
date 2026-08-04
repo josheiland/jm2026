@@ -89,7 +89,7 @@ export const FAQS: Faq[] = [
   {
     topic: 'Getting around',
     q: 'Is there a bus to the wedding?',
-    a: 'Yes, and we would love you to take it. Buses load at Stacey Hall on West Main, directly across the street from The Draftsman, and all of them leave at 4:15pm on Sunday. Coming home there are two, at 9:30pm and 11:00pm.',
+    a: 'Yes, and we would love you to take it. Buses load at Stacey Hall on West Main, directly across the street from The Draftsman, and all of them leave at 4:15pm on Sunday. Coming home there are two times, 9:30pm and 11:00pm. At 11pm, two of the three buses go straight to the after party at Mejicali and one returns to Stacey Hall, so check which one you are boarding.',
   },
   {
     topic: 'Getting around',
@@ -119,7 +119,7 @@ export const FAQS: Faq[] = [
   {
     topic: 'The day itself',
     q: 'What happens after the reception?',
-    a: 'The after party runs 11:30pm to 1:00am back on the Corner, a short walk from where the late bus drops. Then bagels at 10am Monday in Garden VIII on the Lawn, in whatever you slept in. Times are on [the schedule](/schedule).',
+    a: 'The after party runs 11:30pm to 1:00am at Mejicali on West Main, five minutes on foot from The Draftsman. Two of the three 11pm buses go straight there from the vineyard. Then bagels at 10am Monday in Garden VIII on the Lawn, in whatever you slept in. Times are on [the schedule](/schedule).',
   },
   {
     topic: 'What to wear',

@@ -7,7 +7,9 @@ export default function Footer() {
   return (
     <footer className="relative z-10 mt-24">
       <Ridgeline />
-      <div className="bg-wine-deep text-cream/85">
+      {/* the tag goes on the dark block itself, not on <footer>, whose box
+          starts at the Ridgeline divider up on the cream background */}
+      <div data-pup-dark className="bg-wine-deep text-cream/85">
         <div className="content py-16">
           <div className="grid gap-12 md:grid-cols-[1.2fr_1fr_1fr]">
             <div>

@@ -15,6 +15,7 @@ export default function Photo({
   className = '',
   imgClassName = '',
   caption,
+  dark = false,
 }: {
   name: Key
   sizes?: string
@@ -22,12 +23,14 @@ export default function Photo({
   className?: string
   imgClassName?: string
   caption?: string
+  /** Tag a full-bleed band so the corner puppies invert over it. */
+  dark?: boolean
 }) {
   const p: PhotoData = PHOTOS[name]
 
   return (
     <figure className={className}>
-      <div className="relative overflow-hidden bg-cream-deep">
+      <div className="relative overflow-hidden bg-cream-deep" {...(dark ? { 'data-pup-dark': true } : {})}>
         <Image
           src={p.src}
           alt={p.alt}

@@ -214,61 +214,146 @@
 }
 
 /* ---------------------------------------------------------------------------
-   The corner puppies. They fostered an irresponsible number of these on the
-   Lawn, so a pair of them live in the bottom corners.
+   The corner puppies. Peanuts-adjacent: loose line, oversized head, long
+   floppy ears, and mostly-idle timelines punctuated by something silly.
 
-   Each trick sits on its own wrapper element because two animations on one
-   element fight over `transform`. Timelines are mostly idle with the trick
-   near the end, so the pups are still most of the time and occasionally do
-   something, rather than jittering constantly.
+   Two colours, both swapped together, so the pups invert over a dark backdrop
+   instead of disappearing into it:
+     --pup-ink    strokes and solid bits
+     --pup-paper  the fill that lets the head occlude the body cleanly
 
-   The global prefers-reduced-motion rule freezes all of this, which leaves two
-   puppies sitting politely in the corners. That is a fine outcome.
+   Every trick gets its own wrapper element, because two animations on one
+   element fight over `transform`. Durations are deliberately coprime so the
+   pups drift out of sync with each other over time rather than looping in
+   lockstep.
    --------------------------------------------------------------------------- */
 
-@keyframes pup-bob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-1.5px); }
+.pup {
+  --pup-ink: var(--color-wine-deep);
+  --pup-paper: var(--color-cream);
+  --pup-w: 3;
 }
+/* A hair bolder wherever the pups render small: below 1240px they are the
+   in-flow pair at 62-76px, and a 3-unit stroke in a 120-unit viewBox comes out
+   at about one and a half pixels there. */
+@media (max-width: 1239px) {
+  .pup { --pup-w: 3.5; }
+}
+.pup-dark {
+  --pup-ink: var(--color-cream);
+  --pup-paper: var(--color-wine-deep);
+}
+
+/* No transition on the swap, deliberately. Fill and stroke trade places, so
+   crossfading them runs both through the same mid-tone at the halfway point and
+   the pup flashes as a flat silhouette. Instant is the better frame. */
+.pup-line { fill: none; stroke: var(--pup-ink); stroke-width: var(--pup-w); stroke-linecap: round; stroke-linejoin: round; }
+.pup-shape { fill: var(--pup-paper); stroke: var(--pup-ink); stroke-width: var(--pup-w); stroke-linejoin: round; }
+.pup-solid { fill: var(--pup-ink); }
+/* Relative weights, so bumping --pup-w keeps the drawing in proportion. */
+.pup-line-thin { stroke-width: calc(var(--pup-w) * 0.8); }
+.pup-line-eye { stroke-width: calc(var(--pup-w) * 0.95); }
+
+/* always-on ------------------------------------------------------------- */
+
+@keyframes pup-breathe {
+  0%, 100% { transform: translateY(0) scaleY(1); }
+  50% { transform: translateY(-1px) scaleY(1.02); }
+}
+.pup-breathe { animation: pup-breathe 2.9s ease-in-out infinite; transform-origin: 50% 100%; }
 
 @keyframes pup-wag {
-  0%, 100% { transform: rotate(-13deg); }
-  50% { transform: rotate(16deg); }
+  0%, 100% { transform: rotate(-16deg); }
+  50% { transform: rotate(20deg); }
 }
+.pup-wag { animation: pup-wag 0.42s ease-in-out infinite; transform-origin: 66% 78%; }
 
-/* Nose to the ground, three quick sniffs, back up. */
-@keyframes pup-sniff {
-  0%, 54%, 100% { transform: rotate(0) translateY(0); }
-  59% { transform: rotate(-8deg) translateY(2px); }
-  64% { transform: rotate(4deg) translateY(2.5px); }
-  69% { transform: rotate(-6deg) translateY(2px); }
-  75% { transform: rotate(0) translateY(0); }
+/* Ears swing a beat behind the body, which is most of what sells it. */
+@keyframes pup-ear-l {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(5deg); }
 }
+@keyframes pup-ear-r {
+  0%, 100% { transform: rotate(2deg); }
+  50% { transform: rotate(-5deg); }
+}
+.pup-ear-l { animation: pup-ear-l 2.9s ease-in-out infinite 0.18s; transform-origin: 36% 28%; }
+.pup-ear-r { animation: pup-ear-r 2.9s ease-in-out infinite 0.18s; transform-origin: 64% 28%; }
+
+/* occasional ------------------------------------------------------------ */
+
+/* Nose down, three quick sniffs, back up. */
+@keyframes pup-sniff {
+  0%, 62%, 100% { transform: rotate(0) translateY(0); }
+  67% { transform: rotate(-9deg) translateY(3px); }
+  71% { transform: rotate(5deg) translateY(3.5px); }
+  75% { transform: rotate(-7deg) translateY(3px); }
+  81% { transform: rotate(0) translateY(0); }
+}
+.pup-sniff { animation: pup-sniff 13s ease-in-out infinite; transform-origin: 50% 62%; }
 
 @keyframes pup-hop {
-  0%, 70%, 100% { transform: translateY(0); }
-  77% { transform: translateY(-10px); }
-  83% { transform: translateY(0); }
-  88% { transform: translateY(-5px); }
-  94% { transform: translateY(0); }
+  0%, 66%, 100% { transform: translateY(0); }
+  73% { transform: translateY(-11px); }
+  79% { transform: translateY(0); }
+  85% { transform: translateY(-6px); }
+  91% { transform: translateY(0); }
 }
+.pup-hop { animation: pup-hop 19s cubic-bezier(.3,.7,.4,1) infinite; }
+
+/* The happy dance: weight shifting side to side, ears flying. */
+@keyframes pup-dance {
+  0%, 40%, 100% { transform: rotate(0) translateX(0); }
+  46% { transform: rotate(-9deg) translateX(-3px); }
+  52% { transform: rotate(9deg) translateX(3px); }
+  58% { transform: rotate(-9deg) translateX(-3px); }
+  64% { transform: rotate(8deg) translateX(2px); }
+  70% { transform: rotate(0) translateX(0); }
+}
+.pup-dance { animation: pup-dance 23s ease-in-out infinite; transform-origin: 50% 92%; }
 
 @keyframes pup-flip {
-  0%, 78%, 100% { transform: translateY(0) rotate(0); }
-  85% { transform: translateY(-18px) rotate(-190deg); }
+  0%, 87%, 100% { transform: translateY(0) rotate(0); }
+  89.5% { transform: translateY(-22px) rotate(-170deg); }
   92% { transform: translateY(0) rotate(-360deg); }
+  93.5% { transform: translateY(0) rotate(-360deg) scaleY(0.9); }
+  95% { transform: translateY(0) rotate(-360deg); }
 }
+.pup-flip { animation: pup-flip 31s ease-in-out infinite; transform-origin: 50% 68%; }
 
-/* A short trot toward the middle of the page and back again. */
-@keyframes pup-trot {
-  0%, 58%, 100% { transform: translateX(0); }
-  70%, 82% { transform: translateX(30px); }
-  95% { transform: translateX(0); }
+/* Eyes squeeze shut for the dance, which is timed to match it. */
+@keyframes pup-eyes-open { 0%, 41%, 71%, 100% { opacity: 1; } 45%, 67% { opacity: 0; } }
+@keyframes pup-eyes-glad { 0%, 41%, 71%, 100% { opacity: 0; } 45%, 67% { opacity: 1; } }
+@keyframes pup-blink {
+  0%, 95%, 100% { transform: scaleY(1); }
+  97%, 98% { transform: scaleY(0.2); }
 }
+.pup-eyes-open {
+  animation: pup-eyes-open 23s steps(1, end) infinite, pup-blink 6.7s ease-in-out infinite;
+  transform-origin: 50% 34%;
+}
+.pup-eyes-glad { opacity: 0; animation: pup-eyes-glad 23s steps(1, end) infinite; }
 
-.pup-bob   { animation: pup-bob 2.6s ease-in-out infinite; }
-.pup-wag   { animation: pup-wag 0.5s ease-in-out infinite; transform-origin: 68% 80%; }
-.pup-sniff { animation: pup-sniff 11s ease-in-out infinite; transform-origin: 50% 56%; }
-.pup-hop   { animation: pup-hop 17s ease-in-out infinite; }
-.pup-flip  { animation: pup-flip 29s ease-in-out infinite; transform-origin: 50% 62%; }
-.pup-trot  { animation: pup-trot 23s ease-in-out infinite; }
+/* The classic head tilt. Held, not swept past, or it reads as a twitch. */
+@keyframes pup-tilt {
+  0%, 30%, 100% { transform: rotate(0); }
+  36%, 48% { transform: rotate(-13deg); }
+  56% { transform: rotate(0); }
+}
+.pup-tilt { animation: pup-tilt 17s ease-in-out infinite; transform-origin: 50% 57%; }
+
+/* Motion dashes, timed to the hop. */
+@keyframes pup-dashes {
+  0%, 68%, 100% { opacity: 0; transform: translateY(0); }
+  73% { opacity: 0.75; transform: translateY(3px); }
+  80% { opacity: 0; transform: translateY(7px); }
+}
+.pup-dashes { opacity: 0; animation: pup-dashes 19s ease-out infinite; }
+
+/* One heart, rarely, drifting up and away. */
+@keyframes pup-heart {
+  0%, 88% { opacity: 0; transform: translate(0, 0) scale(0.5); }
+  91% { opacity: 0.9; transform: translate(-2px, -10px) scale(1); }
+  97%, 100% { opacity: 0; transform: translate(-7px, -26px) scale(0.85); }
+}
+.pup-heart { opacity: 0; animation: pup-heart 37s ease-out infinite; transform-origin: 50% 50%; }

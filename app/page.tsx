@@ -57,6 +57,7 @@ export default function HomePage() {
       <div className="relative">
         <Photo
           name="hero-dock"
+          dark
           sizes="100vw"
           priority
           imgClassName="max-h-[36rem] object-center"

@@ -254,6 +254,38 @@
 .pup-line-thin { stroke-width: calc(var(--pup-w) * 0.8); }
 .pup-line-eye { stroke-width: calc(var(--pup-w) * 0.95); }
 
+/* Realistic variant. Its contour is finer than the cartoon's, and interior
+   detail is a fraction of the contour so bumping one keeps the drawing in
+   proportion. Declared after the .pup media query so it wins the cascade. */
+.pup-real { --pup-w: 2.2; }
+@media (max-width: 1239px) {
+  .pup-real { --pup-w: 2.5; }
+}
+.pup-detail {
+  fill: none;
+  stroke: var(--pup-ink);
+  stroke-width: calc(var(--pup-w) * 0.7);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.pup-catchlight { fill: var(--pup-paper); }
+.pup-veil-fill { fill: var(--pup-ink); opacity: 0.085; }
+.pup-veil-edge {
+  fill: none;
+  stroke: var(--pup-ink);
+  stroke-width: calc(var(--pup-w) * 0.62);
+  opacity: 0.42;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.pup-veil-fold {
+  fill: none;
+  stroke: var(--pup-ink);
+  stroke-width: calc(var(--pup-w) * 0.48);
+  opacity: 0.2;
+  stroke-linecap: round;
+}
+
 /* always-on ------------------------------------------------------------- */
 
 @keyframes pup-breathe {

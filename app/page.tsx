@@ -55,7 +55,12 @@ export default function HomePage() {
 
       {/* Full-bleed band. The only landscape frame they have. */}
       <div className="relative">
-        <Photo name="hero-dock" sizes="100vw" priority imgClassName="max-h-[62vh]" />
+        <Photo
+          name="hero-dock"
+          sizes="100vw"
+          priority
+          imgClassName="max-h-[70vh] object-[center_46%]"
+        />
       </div>
 
       <HappeningNow />

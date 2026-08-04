@@ -3,7 +3,9 @@
     "uuid": "6db6ff9a-7a10-4ec0-8656-9783b23399fd",
     "name": "hero-dock",
     "width": 2000,
-    "alt": "Mary and Josh standing together at the end of a wooden dock on a still pond, bare winter treeline behind them"
+    "alt": "Mary and Josh standing together at the end of a wooden dock on a still pond, bare winter treeline behind them",
+    "skip": true,
+    "note": "Replaced with a higher-resolution original supplied directly. Do not re-fetch from Zola."
   },
   {
     "uuid": "ba3ae86c-8dda-48d7-8d81-5eea741e89b6",
@@ -15,7 +17,9 @@
     "uuid": "93e3bd08-1011-45ad-bec5-e9fbb2186d6f",
     "name": "vineyard-kiss",
     "width": 1600,
-    "alt": "Mary and Josh kissing in a vineyard with the Blue Ridge behind them"
+    "alt": "Mary and Josh kissing in a vineyard with the Blue Ridge behind them",
+    "skip": true,
+    "note": "Replaced with a higher-resolution original supplied directly. Do not re-fetch from Zola."
   },
   {
     "uuid": "122c9839-68eb-46d3-a452-19d624528c3a",

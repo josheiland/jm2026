@@ -8,7 +8,21 @@ export const metadata: Metadata = {
   description: 'Everyone coming, and how each of them knows us.',
 }
 
+/**
+ * Seating is a surprise, so table numbers are stripped here rather than hidden in the
+ * component. Anything handed to a client component ends up in the page source, and
+ * "hidden" in the markup is not hidden from a guest who taps View Source.
+ */
+const strip = (g: { name: string; group: string }) => ({ name: g.name, group: g.group })
+
 export default function GuestsPage() {
+  const groups = data.groups.map((group) => ({
+    label: group.label,
+    blurb: group.blurb,
+    count: group.count,
+    members: group.members.map(strip),
+  }))
+
   return (
     <>
       <PageHeader
@@ -18,7 +32,7 @@ export default function GuestsPage() {
       />
 
       <div className="content pb-20">
-        <GuestList groups={data.groups} guests={data.guests} tableCount={data.tableCount} />
+        <GuestList groups={groups} guests={data.guests.map(strip)} />
       </div>
     </>
   )

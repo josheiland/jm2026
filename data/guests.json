@@ -675,9 +675,9 @@
         },
         {
           "name": "Christine Levy",
-          "table": "3",
-          "tableLabel": "Table 3",
-          "tableSort": 3,
+          "table": "10",
+          "tableLabel": "Table 10",
+          "tableSort": 10,
           "group": "Hometown Friends",
           "groupKey": "mary-hs",
           "headTable": false,
@@ -1001,7 +1001,7 @@
           "isCouple": false
         },
         {
-          "name": "Belen Grimaldi",
+          "name": "Belen Gomez Grimaldi",
           "table": "11",
           "tableLabel": "Table 11",
           "tableSort": 11,
@@ -2059,7 +2059,7 @@
       "isCouple": false
     },
     {
-      "name": "Belen Grimaldi",
+      "name": "Belen Gomez Grimaldi",
       "table": "11",
       "tableLabel": "Table 11",
       "tableSort": 11,
@@ -2280,9 +2280,9 @@
     },
     {
       "name": "Christine Levy",
-      "table": "3",
-      "tableLabel": "Table 3",
-      "tableSort": 3,
+      "table": "10",
+      "tableLabel": "Table 10",
+      "tableSort": 10,
       "group": "Hometown Friends",
       "groupKey": "mary-hs",
       "headTable": false,

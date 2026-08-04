@@ -48,8 +48,21 @@ def main():
     spec = json.load(open(os.path.join(ROOT, 'scripts', 'photos.json')))
     os.makedirs(OUT_DIR, exist_ok=True)
 
+    # Start from what is already there, so skipped entries survive a rebuild instead
+    # of being dropped out of the manifest and breaking the build.
     manifest = {}
+    if os.path.exists(MANIFEST):
+        existing = open(MANIFEST).read()
+        if 'export const PHOTOS = ' in existing:
+            body = existing.split('export const PHOTOS = ', 1)[1].rsplit(' as const satisfies', 1)[0]
+            manifest = json.loads(body)
+
     for item in spec:
+        # Some images were supplied directly at a higher resolution than the gallery
+        # holds. Re-fetching would quietly downgrade them.
+        if item.get('skip'):
+            print(f"{item['name']:18s} skipped ({item.get('note', 'local original')})")
+            continue
         url = f"https://images.zola.com/{item['uuid']}?w=2000"
         raw = urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': UA})).read()
         im = Image.open(io.BytesIO(raw)).convert('RGB')

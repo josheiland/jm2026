@@ -212,3 +212,63 @@
 @keyframes shimmer {
   100% { transform: translateX(100%); }
 }
+
+/* ---------------------------------------------------------------------------
+   The corner puppies. They fostered an irresponsible number of these on the
+   Lawn, so a pair of them live in the bottom corners.
+
+   Each trick sits on its own wrapper element because two animations on one
+   element fight over `transform`. Timelines are mostly idle with the trick
+   near the end, so the pups are still most of the time and occasionally do
+   something, rather than jittering constantly.
+
+   The global prefers-reduced-motion rule freezes all of this, which leaves two
+   puppies sitting politely in the corners. That is a fine outcome.
+   --------------------------------------------------------------------------- */
+
+@keyframes pup-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1.5px); }
+}
+
+@keyframes pup-wag {
+  0%, 100% { transform: rotate(-13deg); }
+  50% { transform: rotate(16deg); }
+}
+
+/* Nose to the ground, three quick sniffs, back up. */
+@keyframes pup-sniff {
+  0%, 54%, 100% { transform: rotate(0) translateY(0); }
+  59% { transform: rotate(-8deg) translateY(2px); }
+  64% { transform: rotate(4deg) translateY(2.5px); }
+  69% { transform: rotate(-6deg) translateY(2px); }
+  75% { transform: rotate(0) translateY(0); }
+}
+
+@keyframes pup-hop {
+  0%, 70%, 100% { transform: translateY(0); }
+  77% { transform: translateY(-10px); }
+  83% { transform: translateY(0); }
+  88% { transform: translateY(-5px); }
+  94% { transform: translateY(0); }
+}
+
+@keyframes pup-flip {
+  0%, 78%, 100% { transform: translateY(0) rotate(0); }
+  85% { transform: translateY(-18px) rotate(-190deg); }
+  92% { transform: translateY(0) rotate(-360deg); }
+}
+
+/* A short trot toward the middle of the page and back again. */
+@keyframes pup-trot {
+  0%, 58%, 100% { transform: translateX(0); }
+  70%, 82% { transform: translateX(30px); }
+  95% { transform: translateX(0); }
+}
+
+.pup-bob   { animation: pup-bob 2.6s ease-in-out infinite; }
+.pup-wag   { animation: pup-wag 0.5s ease-in-out infinite; transform-origin: 68% 80%; }
+.pup-sniff { animation: pup-sniff 11s ease-in-out infinite; transform-origin: 50% 56%; }
+.pup-hop   { animation: pup-hop 17s ease-in-out infinite; }
+.pup-flip  { animation: pup-flip 29s ease-in-out infinite; transform-origin: 50% 62%; }
+.pup-trot  { animation: pup-trot 23s ease-in-out infinite; }

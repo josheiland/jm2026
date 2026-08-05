@@ -3,7 +3,6 @@ import { Cormorant_Garamond, Jost } from 'next/font/google'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import ServiceWorker from '@/components/ServiceWorker'
-import Puppies from '@/components/Puppies'
 import './globals.css'
 
 // Headings, body copy and the ampersand, separated by weight.
@@ -63,7 +62,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main" className="relative z-10 flex-1">
           {children}
         </main>
-        <Puppies />
         <Footer />
         <ServiceWorker />
       </body>

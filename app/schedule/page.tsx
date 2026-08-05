@@ -142,7 +142,7 @@ export default function SchedulePage() {
       </div>
 
 
-      <Photo name="vineyard-kiss" dark sizes="100vw" imgClassName="max-h-[34rem] object-center" />
+      <Photo name="vineyard-kiss" sizes="100vw" imgClassName="max-h-[34rem] object-center" />
     </>
   )
 }

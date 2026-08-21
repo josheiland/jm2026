@@ -16,11 +16,12 @@ export default function ThankYouNote() {
         <Photo name="joy-vineyard" sizes="(max-width: 768px) 100vw, 44rem" className="mt-12" />
 
         <div className="mt-12 space-y-6 text-ink/75 leading-[1.85]">
+          <p className="display-sentence text-3xl md:text-4xl">{THANK_YOU.salutation}</p>
           {THANK_YOU.body.map((p, i) => (
             <p
               key={i}
               className={
-                i === 1
+                i === THANK_YOU.pullQuote
                   ? 'display-sentence !text-3xl md:!text-4xl text-center py-4 !text-wine'
                   : undefined
               }

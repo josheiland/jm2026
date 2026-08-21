@@ -1,7 +1,7 @@
 {
   "source": "Google Sheet \"Invite list\" tab",
-  "totalSeated": 180,
-  "guestCount": 178,
+  "totalSeated": 177,
+  "guestCount": 175,
   "headTableCount": 29,
   "tableCount": 18,
   "duplicateNames": [],
@@ -37,18 +37,8 @@
     {
       "label": "Mary's Family",
       "blurb": "Blankemeiers and Ryans. You will hear them before you see them",
-      "count": 35,
+      "count": 30,
       "members": [
-        {
-          "name": "Amanda Ryan",
-          "table": "2",
-          "tableLabel": "Table 2",
-          "tableSort": 2,
-          "group": "Mary's Family",
-          "groupKey": "mary-family",
-          "headTable": false,
-          "isCouple": false
-        },
         {
           "name": "Becky Blankemeier",
           "table": "2",
@@ -180,26 +170,6 @@
           "isCouple": false
         },
         {
-          "name": "Jack Ryan",
-          "table": "2",
-          "tableLabel": "Table 2",
-          "tableSort": 2,
-          "group": "Mary's Family",
-          "groupKey": "mary-family",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Jacqueline Ryan",
-          "table": "2",
-          "tableLabel": "Table 2",
-          "tableSort": 2,
-          "group": "Mary's Family",
-          "groupKey": "mary-family",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
           "name": "John Blankemeier",
           "table": "4",
           "tableLabel": "Table 4",
@@ -260,16 +230,6 @@
           "isCouple": false
         },
         {
-          "name": "Magdalene Ryan",
-          "table": "2",
-          "tableLabel": "Table 2",
-          "tableSort": 2,
-          "group": "Mary's Family",
-          "groupKey": "mary-family",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
           "name": "Mary Davis",
           "table": "1",
           "tableLabel": "Table 1",
@@ -280,20 +240,10 @@
           "isCouple": false
         },
         {
-          "name": "Maverick Ryan",
+          "name": "Maya Davis",
           "table": "2",
           "tableLabel": "Table 2",
           "tableSort": 2,
-          "group": "Mary's Family",
-          "groupKey": "mary-family",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Maya Davis",
-          "table": "4",
-          "tableLabel": "Table 4",
-          "tableSort": 4,
           "group": "Mary's Family",
           "groupKey": "mary-family",
           "headTable": false,
@@ -487,7 +437,7 @@
           "isCouple": false
         },
         {
-          "name": "Haydn Lancaster",
+          "name": "Haydn Patrick",
           "table": "5",
           "tableLabel": "Table 5",
           "tableSort": 5,
@@ -968,10 +918,20 @@
     {
       "label": "UVA",
       "blurb": "Go Hoos",
-      "count": 31,
+      "count": 33,
       "members": [
         {
           "name": "Aaron James",
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
+          "group": "UVA",
+          "groupKey": "uva-mary",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Anmol Goraya",
           "table": "9",
           "tableLabel": "Table 9",
           "tableSort": 9,
@@ -1037,6 +997,16 @@
           "tableSort": 10,
           "group": "UVA",
           "groupKey": "uva-josh",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Charles Snowden",
+          "table": "9",
+          "tableLabel": "Table 9",
+          "tableSort": 9,
+          "group": "UVA",
+          "groupKey": "uva-mary",
           "headTable": false,
           "isCouple": false
         },
@@ -1909,16 +1879,6 @@
       "isCouple": false
     },
     {
-      "name": "Amanda Ryan",
-      "table": "2",
-      "tableLabel": "Table 2",
-      "tableSort": 2,
-      "group": "Mary's Family",
-      "groupKey": "mary-family",
-      "headTable": false,
-      "isCouple": false
-    },
-    {
       "name": "Amy Zhang",
       "table": "12",
       "tableLabel": "Table 12",
@@ -1935,6 +1895,16 @@
       "tableSort": 14,
       "group": "Boston",
       "groupKey": "boston",
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Anmol Goraya",
+      "table": "9",
+      "tableLabel": "Table 9",
+      "tableSort": 9,
+      "group": "UVA",
+      "groupKey": "uva-mary",
       "headTable": false,
       "isCouple": false
     },
@@ -2239,6 +2209,16 @@
       "isCouple": false
     },
     {
+      "name": "Charles Snowden",
+      "table": "9",
+      "tableLabel": "Table 9",
+      "tableSort": 9,
+      "group": "UVA",
+      "groupKey": "uva-mary",
+      "headTable": false,
+      "isCouple": false
+    },
+    {
       "name": "Chase Bahr",
       "table": "3",
       "tableLabel": "Table 3",
@@ -2529,7 +2509,7 @@
       "isCouple": false
     },
     {
-      "name": "Haydn Lancaster",
+      "name": "Haydn Patrick",
       "table": "5",
       "tableLabel": "Table 5",
       "tableSort": 5,
@@ -2600,26 +2580,6 @@
     },
     {
       "name": "Jack Raisch",
-      "table": "2",
-      "tableLabel": "Table 2",
-      "tableSort": 2,
-      "group": "Mary's Family",
-      "groupKey": "mary-family",
-      "headTable": false,
-      "isCouple": false
-    },
-    {
-      "name": "Jack Ryan",
-      "table": "2",
-      "tableLabel": "Table 2",
-      "tableSort": 2,
-      "group": "Mary's Family",
-      "groupKey": "mary-family",
-      "headTable": false,
-      "isCouple": false
-    },
-    {
-      "name": "Jacqueline Ryan",
       "table": "2",
       "tableLabel": "Table 2",
       "tableSort": 2,
@@ -2959,16 +2919,6 @@
       "isCouple": false
     },
     {
-      "name": "Magdalene Ryan",
-      "table": "2",
-      "tableLabel": "Table 2",
-      "tableSort": 2,
-      "group": "Mary's Family",
-      "groupKey": "mary-family",
-      "headTable": false,
-      "isCouple": false
-    },
-    {
       "name": "Manuel Paz",
       "table": "15",
       "tableLabel": "Table 15",
@@ -3039,16 +2989,6 @@
       "isCouple": false
     },
     {
-      "name": "Maverick Ryan",
-      "table": "2",
-      "tableLabel": "Table 2",
-      "tableSort": 2,
-      "group": "Mary's Family",
-      "groupKey": "mary-family",
-      "headTable": false,
-      "isCouple": false
-    },
-    {
       "name": "Max Curlin",
       "table": "15",
       "tableLabel": "Table 15",
@@ -3060,9 +3000,9 @@
     },
     {
       "name": "Maya Davis",
-      "table": "4",
-      "tableLabel": "Table 4",
-      "tableSort": 4,
+      "table": "2",
+      "tableLabel": "Table 2",
+      "tableSort": 2,
       "group": "Mary's Family",
       "groupKey": "mary-family",
       "headTable": false,

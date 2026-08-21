@@ -216,13 +216,17 @@ export const STORY_CLOSER =
 
 export const THANK_YOU = {
   heading: 'Thank you',
+  salutation: 'Bugs,',
   body: [
-    'A wedding is a strange thing to ask of people. We asked you to look at a date eighteen months out, then take days off work, book flights, drive over a mountain, and stand in a field in Virginia in September humidity, all so you could watch us say a few sentences to each other.',
-    'And you said yes. All {count} of you said yes.',
-    'Some of you have known one of us since before we knew each other. Some of you met us at nineteen on a Lawn we have not stopped talking about since. Some of you found us in Boston, or at Stanford, or somewhere in between. Between you, you were there for pretty much all of it.',
-    'We are not going to get enough time with each of you. That is the one guaranteed failure of a wedding and we have made our peace with it. So if we only get ninety seconds with you at the bar, know that we saw you come, and we know what it took to get here.',
-    'Take pictures. Put them on this site. Eat a Bodo’s bagel. Stay for the late bus.',
+    'Can’t believe this weekend is finally here.',
+    'We could not be more excited to celebrate with our favorite humans. Thank you for coming all the way to not-so-easy-to-get-to Charlottesville, from across the country and across the world. It could not mean more to celebrate our love with the people who have shaped and supported us, in the place where our story started.',
+    'From our hometowns, to Cville, Boston, Palo Alto, or somewhere along the way, y’all have been there for pretty much all of it.',
+    'We are so grateful.',
+    'We are not going to get nearly enough time with each of you this weekend, but we can’t wait to soak in the moments we do get.',
+    'Give us a hug. Poke around our old stomping grounds. Cry (happy tears, ofc). Try your first Alani. Stay for the late bus. Dance your heart out. Drink the electrolytes at bagel breakfast. Feel appreciated.. because we appreciate you more than you could possibly know.',
   ],
-  signoff: 'All our love,',
+  /** Index of the line that gets the big centred pull-quote treatment. */
+  pullQuote: 3,
+  signoff: 'Cups overflowing,',
   names: 'Mary & Josh',
 }

@@ -1,13 +1,15 @@
 import Link from 'next/link'
-import Ridgeline from './Ridgeline'
+import { RidgeEdge } from './Ridgeline'
 import WhatsAppButton from './WhatsAppButton'
 import { ZOLA_URL } from '@/lib/content'
 
 export default function Footer() {
   return (
     <footer className="relative z-10 mt-24">
-      <Ridgeline />
-      <div className="bg-wine-deep text-cream/85">
+      {/* Same device as the "Up next" band: the ridge is the top edge of a dark
+          block, not a divider standing on its own. */}
+      <div className="relative bg-wine-deep text-cream/85">
+        <RidgeEdge fill="#43302f" className="-top-[54px] h-[56px] md:-top-[86px] md:h-[88px]" />
         <div className="content py-16">
           <div className="grid gap-12 md:grid-cols-[1.2fr_1fr_1fr]">
             <div>

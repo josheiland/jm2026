@@ -35,25 +35,31 @@ export default function QuickLinks({
   const cols = only.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-3'
 
   return (
-    <section className="content pb-14">
+    <section className="content py-8 md:py-10">
       <div className={`grid gap-px bg-wine/10 ${cols}`}>
         {only.map((key, i) => {
           const l = LINKS[key]
+          /*
+            The arrow sits on the right edge rather than inside the heading: thumbs
+            look for it there, and pulling it out keeps the three headings optically
+            aligned on the left. Rows clear 56px.
+          */
           const inner = (
             <>
-              <div className="flex items-start justify-between gap-4">
-                <h2 className="display text-2xl md:text-[1.75rem] leading-tight">{l.label}</h2>
-                <span
-                  className="text-wine/30 group-hover:text-wine group-hover:translate-x-1 transition-all shrink-0"
-                  aria-hidden="true"
-                >
-                  →
-                </span>
+              <div className="flex-1">
+                <h2 className="display text-[26px] leading-tight md:text-[1.75rem]">{l.label}</h2>
+                <p className="mt-1.5 text-ink/70">{l.desc}</p>
               </div>
-              <p className="mt-2.5 text-ink/70">{l.desc}</p>
+              <span
+                className="shrink-0 text-[20px] leading-none text-wine transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+              >
+                →
+              </span>
             </>
           )
-          const cls = 'group bg-cream p-7 md:p-8 hover:bg-cream-soft transition-colors fade-up block'
+          const cls =
+            'group flex min-h-14 items-center gap-4 bg-cream p-5 transition-colors hover:bg-cream-soft fade-up'
           const style = { animationDelay: `${i * 70}ms` }
 
           return l.external ? (

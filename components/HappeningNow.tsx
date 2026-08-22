@@ -2,12 +2,17 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { RidgeEdge } from './Ridgeline'
 import { EVENTS, mapsUrl, type WeddingEvent } from '@/lib/events'
 
 /**
  * During the weekend itself this is the only thing on the page anybody needs:
  * what is happening right now, and what is next. Silent before Sept 5 so the
  * homepage isn't cluttered for the five weeks of run-up.
+ *
+ * A full-bleed dark band with the ridge as its top edge, rather than a card. The
+ * band and its mountains are one object — this is the only ridgeline on the page,
+ * and the arrow on the right is what stops it reading as a banner.
  */
 export default function HappeningNow() {
   const [state, setState] = useState<{
@@ -42,69 +47,71 @@ export default function HappeningNow() {
   if (!state || (!state.now && !state.next)) return null
 
   const { now, next, minsToNext } = state
+  const event = (now ?? next)!
   const urgent = next?.kind === 'shuttle' && minsToNext <= 90
 
-  return (
-    <div className="content pt-6">
-      <div
-        className={`card p-5 md:p-6 fade-up ${
-          urgent ? '!bg-wine !border-wine text-cream' : ''
-        }`}
-      >
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-4 justify-between">
-          <div>
-            <p className={`eyebrow ${urgent ? '!text-blush' : ''}`}>
-              {now ? 'Happening now' : 'Up next'}
-            </p>
-            <p
-              className={`display text-2xl md:text-3xl mt-1.5 ${
-                urgent ? '!text-cream' : ''
-              }`}
-            >
-              {(now ?? next)!.name}
-            </p>
-            <p className={`text-sm mt-1 ${urgent ? 'text-cream/75' : 'text-ink/70'}`}>
-              {(now ?? next)!.time} · {(now ?? next)!.venue}
-            </p>
-          </div>
+  // On a wine band the old urgent treatment — swap cream for wine — has nowhere
+  // to go, so it inverts instead: cream ground, wine text, cream mountains.
+  const ground = urgent ? 'bg-cream' : 'bg-wine-deep'
+  const ridgeFill = urgent ? '#f5efe8' : '#43302f'
+  const label = urgent ? '!text-wine-soft' : '!text-blush'
+  const heading = urgent ? '!text-wine-deep' : '!text-cream'
+  const secondary = urgent ? 'text-wine' : 'text-blush/85'
 
-          <div className="flex items-center gap-3">
-            {next && !now && (
-              <span
-                className={`text-sm ${urgent ? 'text-blush' : 'text-wine-soft'}`}
-              >
-                {minsToNext < 60
+  const inner = (
+    <>
+      <RidgeEdge fill={ridgeFill} className="-top-[42px] h-[44px] md:-top-[64px] md:h-[66px]" />
+
+      <div className="content relative flex items-center gap-4">
+        <div className="flex-1">
+          <p className={`eyebrow ${label}`}>
+            {now ? 'Happening now' : 'Up next'}
+          </p>
+          <p className={`display ${heading} mt-1.5 text-[27px] md:text-3xl`}>
+            {event.name}
+            <span className={`ml-2.5 text-[0.7em] ${secondary}`}>
+              {now
+                ? event.time
+                : minsToNext < 60
                   ? `in ${minsToNext} min`
                   : `in ${Math.round(minsToNext / 60)} hr`}
-              </span>
-            )}
-            <a
-              href={mapsUrl((now ?? next)!.mapQuery)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`text-sm px-4 py-2 border transition-colors ${
-                urgent
-                  ? 'border-cream/40 text-cream hover:bg-cream hover:text-wine'
-                  : 'border-wine/25 text-wine hover:bg-wine hover:text-cream'
-              }`}
-            >
-              Directions
-            </a>
-          </div>
+            </span>
+          </p>
+          {now && next && (
+            <p className={`mt-1.5 text-sm ${secondary}`}>
+              Next up: {next.name} at {next.time}
+              {next.kind === 'shuttle' && '. Do not miss this bus.'}
+            </p>
+          )}
         </div>
 
-        {now && next && (
-          <p
-            className={`mt-4 pt-4 border-t text-sm ${
-              urgent ? 'border-cream/20 text-cream/75' : 'border-wine/10 text-ink/70'
-            }`}
-          >
-            Next up: <Link href="/schedule" className="link-underline">{next.name}</Link> at{' '}
-            {next.time}
-            {next.kind === 'shuttle' && '. Do not miss this bus.'}
-          </p>
-        )}
+        <span
+          className={`shrink-0 text-[22px] leading-none ${urgent ? 'text-wine-soft' : 'text-blush'}`}
+          aria-hidden="true"
+        >
+          →
+        </span>
       </div>
-    </div>
+    </>
+  )
+
+  const cls = `relative block ${ground} py-5 pb-[18px] fade-up`
+
+  // Mid-event the useful link is the map; otherwise it's the schedule, because
+  // "what's next" is a question about the rest of the day, not one address.
+  return now ? (
+    <a
+      href={mapsUrl(event.mapQuery)}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={cls}
+      aria-label={`Happening now: ${event.name}. Directions.`}
+    >
+      {inner}
+    </a>
+  ) : (
+    <Link href="/schedule" className={cls} aria-label={`Up next: ${event.name}. See the schedule.`}>
+      {inner}
+    </Link>
   )
 }

@@ -383,38 +383,26 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
           if (e.dataTransfer.files.length) addFiles(e.dataTransfer.files)
         }}
         className={`relative border border-dashed transition-colors ${
-          dragging ? 'border-wine bg-blush/25' : 'border-wine/30 bg-cream-soft'
+          dragging ? 'border-wine bg-blush/25' : 'border-wine/45 bg-cream-deep'
         }`}
       >
-        <div className="px-6 py-14 text-center">
-          <svg
-            width="40"
-            height="40"
-            viewBox="0 0 40 40"
-            fill="none"
-            className="mx-auto text-wine/40"
+        <div className="px-5 py-8 text-center">
+          {/* One target, one button. Nothing on this page competes with them. */}
+          <span
+            className="mx-auto flex h-[46px] w-[46px] items-center justify-center border border-wine/40 text-2xl leading-none text-wine"
             aria-hidden="true"
           >
-            <path
-              d="M20 27V9m0 0-7 7m7-7 7 7M6 25v4a4 4 0 0 0 4 4h20a4 4 0 0 0 4-4v-4"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+            +
+          </span>
 
-          <p className="display text-2xl mt-5">Drop them here</p>
-          <p className="mt-2 text-sm text-ink/70 max-w-sm mx-auto">
-            Photos and video, as many as you would like to share.
-          </p>
+          <p className="display mt-4 text-[28px]">Choose photos or video</p>
 
           <button
             type="button"
             onClick={() => inputRef.current?.click()}
-            className="mt-6 bg-wine text-cream px-7 py-3.5 text-sm uppercase tracking-[0.14em] hover:bg-wine-deep transition-colors"
+            className="mt-5 bg-wine-deep px-9 py-[15px] font-ui text-[13px] uppercase tracking-[0.14em] text-cream transition-colors hover:bg-wine"
           >
-            Choose from your phone
+            Add to the album
           </button>
 
           <input
@@ -434,16 +422,17 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
       {/* Progress list */}
       {items.length > 0 && (
         <div className="mt-8">
-          <div className="flex items-baseline justify-between">
-            <p className="eyebrow">
+          <div className="flex items-baseline gap-3 border-l-2 border-wine/35 pl-4">
+            <p className="display text-[30px] leading-none tabular-nums">{done}</p>
+            <p className="text-[19px] leading-[1.5] text-ink/70">
+              of yours are in, and nothing you upload appears publicly
+            </p>
+          </div>
+          {active && (
+            <p className="eyebrow mt-3">
               {done} of {items.length} uploaded
             </p>
-            {!active && done > 0 && (
-              <p className="text-sm text-sage font-medium">
-                {done === 1 ? 'Confirmed in the album' : `All ${done} confirmed in the album`}
-              </p>
-            )}
-          </div>
+          )}
 
           <ul className="mt-4 space-y-2.5">
             {items.map((it) => (
@@ -455,7 +444,7 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
                   </div>
                   <div className="shrink-0 text-sm tabular-nums">
                     {it.status === 'done' && (
-                      <span className="text-sage font-medium">✓ Uploaded</span>
+                      <span className="font-medium text-wine">✓ Uploaded</span>
                     )}
                     {it.status === 'uploading' && (
                       <span className="text-wine">{it.progress}%</span>

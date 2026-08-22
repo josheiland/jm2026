@@ -14,7 +14,7 @@ const WhatsAppMark = () => (
 export default function WhatsAppButton({
   variant = 'primary',
 }: {
-  variant?: 'primary' | 'footer' | 'inline'
+  variant?: 'primary' | 'footer' | 'inline' | 'pill'
 }) {
   if (!WHATSAPP_INVITE) {
     if (variant === 'footer') {
@@ -31,9 +31,11 @@ export default function WhatsAppButton({
   const base = 'inline-flex items-center gap-2.5 transition-colors'
   const styles = {
     primary:
-      'bg-wine text-cream px-6 py-3.5 text-sm uppercase tracking-[0.14em] hover:bg-wine-deep',
+      'bg-wine-deep text-cream px-7 py-[13px] font-ui text-[12px] uppercase tracking-[0.14em] hover:bg-wine',
     footer: 'text-sm text-cream/80 hover:text-cream link-underline',
     inline: 'text-wine hover:text-wine-deep link-underline text-sm',
+    // Secondary next to a solid primary: the same shape, hollow.
+    pill: 'border border-wine/30 text-wine px-6 py-[13px] font-ui text-[12px] uppercase tracking-[0.14em] hover:bg-wine hover:text-cream',
   }[variant]
 
   return (

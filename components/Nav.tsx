@@ -33,6 +33,13 @@ export default function Nav() {
     }
   }, [open])
 
+  /*
+    Every page but home now opens on the wine-deep horizon header, which runs up
+    behind this bar. Wine-on-wine is invisible, so the mark and the burger go cream
+    until the first scroll brings the blurred cream bar back under them.
+  */
+  const overDark = pathname !== '/' && !scrolled && !open
+
   return (
     <>
       <header
@@ -43,11 +50,26 @@ export default function Nav() {
         }`}
       >
       <nav className="content flex items-center justify-between h-16 md:h-20" aria-label="Main">
-        <Link href="/" className="group flex items-baseline gap-1.5 shrink-0" aria-label="Home">
-          <span className="display text-xl md:text-2xl tracking-tight">M</span>
-          <span className="amp text-lg md:text-xl">&amp;</span>
-          <span className="display text-xl md:text-2xl tracking-tight">J</span>
+        <Link
+          href="/"
+          className={`group flex items-baseline gap-1.5 shrink-0 ${overDark ? 'text-cream' : ''}`}
+          aria-label="Home"
+        >
+          <span className={`display text-xl md:text-2xl tracking-tight ${overDark ? '!text-cream' : ''}`}>M</span>
+          <span className={`amp text-lg md:text-xl ${overDark ? '!text-blush' : ''}`}>&amp;</span>
+          <span className={`display text-xl md:text-2xl tracking-tight ${overDark ? '!text-cream' : ''}`}>J</span>
         </Link>
+
+        {/* On mobile the link list is behind the hamburger, so nothing on the first
+            screenful says this is a guide rather than an invitation. This does. */}
+        <span
+          className={`eyebrow lg:hidden !text-[10px] !tracking-[0.2em] !indent-[0.2em] ${
+            overDark ? '!text-blush/85' : ''
+          }`}
+          aria-hidden="true"
+        >
+          Weekend Guide
+        </span>
 
         <ul className="hidden lg:flex items-center gap-8">
           {LINKS.map((l) => {
@@ -58,14 +80,20 @@ export default function Nav() {
                   href={l.href}
                   aria-current={active ? 'page' : undefined}
                   className={`text-[0.85rem] uppercase tracking-[0.14em] transition-colors ${
-                    active ? 'text-wine' : 'text-ink/70 hover:text-wine'
+                    overDark
+                      ? active
+                        ? 'text-cream'
+                        : 'text-blush/80 hover:text-cream'
+                      : active
+                        ? 'text-wine'
+                        : 'text-ink/70 hover:text-wine'
                   }`}
                 >
                   {l.label}
                   <span
-                    className={`block h-px mt-1.5 bg-wine transition-all duration-300 ${
-                      active ? 'w-full' : 'w-0'
-                    }`}
+                    className={`block h-px mt-1.5 transition-all duration-300 ${
+                      overDark ? 'bg-cream' : 'bg-wine'
+                    } ${active ? 'w-full' : 'w-0'}`}
                   />
                 </Link>
               </li>
@@ -76,7 +104,7 @@ export default function Nav() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="lg:hidden -mr-2 p-2 text-wine"
+          className={`lg:hidden -mr-2 p-2 ${overDark ? 'text-cream' : 'text-wine'}`}
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? 'Close menu' : 'Open menu'}

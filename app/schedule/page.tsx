@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import PageHeader from '@/components/PageHeader'
 import AddToCalendar from '@/components/AddToCalendar'
-import Photo from '@/components/Photo'
 import WholeWeekendButton from '@/components/WholeWeekendButton'
 import RichText from '@/components/RichText'
 import { DAYS, eventsForDay, mapsUrl, type WeddingEvent } from '@/lib/events'
@@ -12,98 +11,129 @@ export const metadata: Metadata = {
 }
 
 /**
- * The buses are the only thing all weekend that leaves without you, so this is set
- * close to the size of a main event rather than as small print.
+ * The time column is fixed-width and right-aligned on purpose: every time in the
+ * weekend lands on one edge, so the page scans straight down instead of zig-zagging
+ * around event names of different lengths.
+ */
+function TimeCell({ event, tone }: { event: WeddingEvent; tone: string }) {
+  const [start, end] = event.time.split(' to ')
+  return (
+    <div className="w-[74px] shrink-0 grow-0 basis-[74px] text-right">
+      <p
+        className={`font-ui text-[15px] font-medium leading-snug ${tone}`}
+      >
+        {start}
+      </p>
+      {end && <p className="text-[13px] leading-snug text-ink/55">to {end}</p>}
+    </div>
+  )
+}
+
+/**
+ * The buses are the only thing all weekend that leaves without you. They used to be
+ * green; a warm neutral plus a hollow marker says "different kind of thing" without
+ * putting a second hue in the palette. Filled dot = you are expected, hollow = transport.
  */
 function Shuttle({ event }: { event: WeddingEvent }) {
   return (
-    <li className="relative pl-8 md:pl-10 py-6">
-      <span
-        className="absolute left-0 top-[2.1rem] h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-sage ring-4 ring-cream"
-        aria-hidden="true"
-      />
-      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-        <p className="display text-2xl md:text-3xl tabular-nums !text-sage">{event.time}</p>
-        <p className="text-ink/80 text-lg">{event.name}</p>
-      </div>
-      <p className="mt-1.5 text-ink/70">{event.venue}</p>
-      {event.showMap && (
-        <a
-          href={mapsUrl(event.mapQuery)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block mt-0.5 text-wine link-underline"
-        >
-          {event.address}
-        </a>
-      )}
-      {event.description && (
-        <p className="mt-3 text-ink/75 max-w-xl">
-          <RichText text={event.description} />
-        </p>
-      )}
-      {event.heads_up && (
-        <p className="mt-4 border-l-2 border-sage/60 pl-4 text-ink/80 max-w-xl">
-          {event.heads_up}
-        </p>
-      )}
-      <div className="mt-4">
-        <AddToCalendar event={event} compact />
+    <li className="bg-cream-deep">
+      <div className="flex gap-4 py-4">
+        <TimeCell event={event} tone="text-wine-soft" />
+
+        <div className="relative w-px shrink-0 bg-wine/18">
+          <span
+            className="absolute -left-[3.5px] top-[5px] box-border h-2 w-2 rounded-full border-[1.5px] border-wine-soft bg-cream-deep"
+            aria-hidden="true"
+          />
+        </div>
+
+        <div className="flex-1">
+          <p className="display text-[20px]">{event.name}</p>
+          <p className="mt-0.5 text-[17px] text-ink/68">{event.venue}</p>
+          {event.showMap && (
+            <a
+              href={mapsUrl(event.mapQuery)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-0.5 inline-block text-wine link-underline"
+            >
+              {event.address}
+            </a>
+          )}
+          {event.description && (
+            <p className="mt-2 max-w-xl text-ink/75">
+              <RichText text={event.description} />
+            </p>
+          )}
+          {event.heads_up && (
+            <p className="mt-3 max-w-xl border-l-2 border-wine-soft/60 pl-4 text-ink/80">
+              {event.heads_up}
+            </p>
+          )}
+        </div>
       </div>
     </li>
   )
 }
 
 function Major({ event }: { event: WeddingEvent }) {
+  // The ceremony gets the only size variation in the rail — 10px against 8px.
+  const wedding = event.kind === 'ceremony'
+
   return (
-    <li className="relative pl-8 md:pl-10 py-8">
-      <span
-        className="absolute left-0 top-[2.9rem] h-3 w-3 -translate-x-1/2 rounded-full bg-wine ring-4 ring-cream"
-        aria-hidden="true"
-      />
-      <p className="eyebrow">{event.time}</p>
-      <h3 className="display text-3xl md:text-4xl mt-2">{event.name}</h3>
+    <li>
+      <div className="flex gap-4 py-4 md:py-5">
+        <TimeCell event={event} tone="text-wine-deep" />
 
-      <div className="mt-4 space-y-1">
-        <p className="text-ink/80">{event.venue}</p>
-        <a
-          href={mapsUrl(event.mapQuery)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block text-wine link-underline"
-        >
-          {event.address}
-        </a>
-      </div>
-
-      {event.description && (
-        <p className="mt-5 text-ink/70 max-w-xl leading-relaxed">{event.description}</p>
-      )}
-
-      {event.attire && (
-        <div className="mt-5">
-          <p className="eyebrow">Attire</p>
-          <p className="mt-1.5 text-ink/80">
-            {event.attire}
-            {event.attireNote && <span className="text-ink/70">. {event.attireNote}</span>}
-          </p>
+        <div className="relative w-px shrink-0 bg-wine/18">
+          <span
+            className={`absolute rounded-full bg-wine ${
+              wedding ? '-left-[4.5px] top-[4px] h-2.5 w-2.5' : '-left-[3.5px] top-[5px] h-2 w-2'
+            }`}
+            aria-hidden="true"
+          />
         </div>
-      )}
 
-      {event.image && (
-        <Photo
-          name={event.image}
-          sizes="(max-width: 768px) 100vw, 36rem"
-          className="mt-6 max-w-xl"
-          caption="Garden VIII is the walled garden behind Pavilion VIII, on the East Lawn."
-        />
-      )}
+        <div className="flex-1">
+          <h3 className="display text-[26px] md:text-3xl">{event.name}</h3>
+          <p className="mt-1 text-[18px] text-ink/75">{event.venue}</p>
 
-      {event.heads_up && (
-        <p className="mt-5 card px-5 py-4 text-ink/75 max-w-xl">{event.heads_up}</p>
-      )}
+          {event.attire && (
+            <>
+              <p className="eyebrow mt-2 !text-[12px]">{event.attire}</p>
+              {event.attireNote && (
+                <p className="mt-1 text-[17px] text-ink/65">{event.attireNote}</p>
+              )}
+            </>
+          )}
 
-      <AddToCalendar event={event} />
+          {event.description && (
+            <p className="mt-3 max-w-xl leading-relaxed text-ink/70">{event.description}</p>
+          )}
+
+          {event.heads_up && (
+            <p className="mt-3 max-w-xl border-l-2 border-wine/35 pl-4 text-ink/80">
+              {event.heads_up}
+            </p>
+          )}
+
+          {/*
+            nowrap matters: without it "Add to calendar" breaks over two lines and the
+            two pills stop matching height, which reads as a mistake.
+          */}
+          <div className="mt-3 flex flex-wrap gap-2">
+            <AddToCalendar event={event} compact />
+            <a
+              href={mapsUrl(event.mapQuery)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whitespace-nowrap border border-wine/30 px-4 py-[9px] font-ui text-[12px] uppercase tracking-[0.12em] text-wine transition-colors hover:bg-wine hover:text-cream"
+            >
+              Directions
+            </a>
+          </div>
+        </div>
+      </div>
     </li>
   )
 }
@@ -111,24 +141,18 @@ function Major({ event }: { event: WeddingEvent }) {
 export default function SchedulePage() {
   return (
     <>
-      <PageHeader
-        eyebrow="September 5 to 7, 2026"
-        title="The Weekend"
-      />
+      <PageHeader eyebrow="September 5 to 7, 2026" title="The Weekend" />
 
-      <div className="content pb-8">
+      <div className="content pt-10 pb-2">
         <WholeWeekendButton />
       </div>
 
       <div className="content pb-20">
         {DAYS.map((day) => (
-          <section key={day.key} className="pt-16 first:pt-8">
-            <div className="pb-2">
-              <h2 className="display text-4xl md:text-5xl">{day.long}</h2>
-            </div>
-            <div className="rule" />
+          <section key={day.key} className="pt-10">
+            <h2 className="display text-[30px] md:text-4xl">{day.label}</h2>
 
-            <ol className="mt-6 border-l border-wine/15 ml-1">
+            <ol className="mt-3 divide-y divide-wine/16 border-t border-wine/16">
               {eventsForDay(day.key).map((e) =>
                 e.kind === 'shuttle' ? (
                   <Shuttle key={e.slug} event={e} />
@@ -140,9 +164,6 @@ export default function SchedulePage() {
           </section>
         ))}
       </div>
-
-
-      <Photo name="vineyard-kiss" sizes="100vw" imgClassName="max-h-[34rem] object-center" />
     </>
   )
 }

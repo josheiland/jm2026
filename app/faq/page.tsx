@@ -23,12 +23,12 @@ export default function FaqPage() {
       <div className="content pb-20">
         <FaqAccordion faqs={FAQS} />
 
-        <div className="mt-20 card p-8 md:p-10 text-center">
-          <p className="display text-2xl">Still wondering something?</p>
-          <p className="mt-3 text-ink/65 max-w-md mx-auto">
+        <div className="mt-12 border border-wine/20 px-5 py-5 text-center md:px-8">
+          <p className="display text-[27px]">Still wondering something?</p>
+          <p className="mx-auto mt-2 max-w-md text-[18px] text-ink/70">
             Ask. No question is too small.
           </p>
-          <div className="mt-6 flex justify-center">
+          <div className="mt-5 flex justify-center">
             <WhatsAppButton />
           </div>
         </div>

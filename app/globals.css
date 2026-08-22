@@ -18,6 +18,8 @@
   --color-wine-soft: #7c615f;  /* 4.93:1 on cream; #8a6f6d was 4.02 and failed AA */
   --color-ink: #2b2321;
   --color-blush: #e3cfc5;
+  /* Retired in the Sept refresh: the shuttle rows it existed for now use
+     cream-deep plus a hollow marker, so the palette carries one accent. */
   --color-sage: #79876f;
   --color-gold: #b0895b;
 

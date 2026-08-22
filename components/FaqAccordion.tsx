@@ -28,67 +28,57 @@ export default function FaqAccordion({ faqs }: { faqs: Faq[] }) {
 
   return (
     <div>
-      <label className="relative block max-w-lg">
+      <label className="mt-[18px] flex items-center gap-3 border border-wine/30 px-4 py-3.5">
         <span className="sr-only">Search the FAQs</span>
+        <span className="text-wine-soft" aria-hidden="true">
+          ⌕
+        </span>
         <input
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search. Try “bus”, “photos”, “what do I wear”"
-          className="w-full bg-cream-soft border border-wine/15 pl-11 pr-4 py-3.5 placeholder:text-ink/55 focus:border-wine outline-none transition-colors"
+          placeholder="Try “bus”, “photos”, “what do I wear”"
+          className="w-full bg-transparent font-ui !text-[15px] text-ink placeholder:text-ink/50 outline-none"
         />
-        <svg
-          className="absolute left-4 top-1/2 -translate-y-1/2 text-wine/40 pointer-events-none"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          aria-hidden="true"
-        >
-          <circle cx="7" cy="7" r="5" stroke="currentColor" strokeWidth="1.4" />
-          <path d="m11 11 3.5 3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-        </svg>
       </label>
 
       {filtered.length === 0 && (
-        <p className="mt-10 text-ink/70 max-w-lg">
+        <p className="mt-10 max-w-lg text-ink/70">
           Nothing matches that. <RichText text="Ask in [the WhatsApp](whatsapp)" /> and one of
           us will see it, probably faster than you expect.
         </p>
       )}
 
-      <div className="mt-14 space-y-14">
+      <div className="mt-8">
         {topics.map((group) => (
           <section key={group.topic}>
-            <h2 className="display text-3xl">{group.topic}</h2>
-            <div className="rule mt-4" />
+            <p className="eyebrow mt-6 mb-1.5">{group.topic}</p>
 
-            <div className="mt-2">
+            <div className="border-t border-wine/16">
               {group.items.map((f) => (
+                /*
+                  Only the open answer is filled, so on a fifteen-question page the eye
+                  finds the one you tapped. The fill bleeds the full page width — hence
+                  the negative margin against `.content`'s inline padding.
+                */
                 <details
                   key={f.q}
-                  className="group border-b border-wine/10"
+                  className="group border-b border-wine/16 -mx-6 px-6 open:bg-cream-deep md:-mx-10 md:px-10"
                   open={Boolean(q)}
                 >
-                  <summary className="flex items-start justify-between gap-6 py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                    <span className="text-xl md:text-2xl text-ink/90 group-open:text-wine transition-colors">
-                      {f.q}
-                    </span>
+                  <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-4 [&::-webkit-details-marker]:hidden">
+                    <span className="flex-1 text-[23px] leading-[1.3] text-wine-deep">{f.q}</span>
+                    {/* Plus/minus, not a chevron: these rows are tall enough that a
+                        rotating arrow reads as noise. */}
                     <span
-                      className="mt-1.5 shrink-0 text-wine/50 transition-transform duration-300 group-open:rotate-45"
+                      className="mt-1 shrink-0 text-[18px] leading-none text-wine"
                       aria-hidden="true"
                     >
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                        <path
-                          d="M7 1v12M1 7h12"
-                          stroke="currentColor"
-                          strokeWidth="1.4"
-                          strokeLinecap="round"
-                        />
-                      </svg>
+                      <span className="group-open:hidden">+</span>
+                      <span className="hidden group-open:inline">−</span>
                     </span>
                   </summary>
-                  <p className="pb-6 pr-10 text-ink/70 leading-relaxed max-w-2xl">
+                  <p className="max-w-2xl pb-5 text-[19px] leading-[1.6] text-ink/75">
                     <RichText text={f.a} />
                   </p>
                 </details>

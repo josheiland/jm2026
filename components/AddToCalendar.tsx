@@ -82,9 +82,15 @@ export default function AddToCalendar({
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-haspopup="menu"
-          className="inline-flex items-center gap-2 border border-wine/25 text-wine px-4 py-2.5 text-sm hover:bg-wine hover:text-cream transition-colors"
+          className={`inline-flex items-center gap-2 border border-wine/30 text-wine transition-colors hover:bg-wine hover:text-cream ${
+            compact
+              ? 'whitespace-nowrap px-4 py-[9px] font-ui text-[12px] uppercase tracking-[0.12em]'
+              : 'px-4 py-2.5 text-sm'
+          }`}
         >
-          <CalMark />
+          {/* The pill row is already tight at 402px; in compact the chevron carries
+              the affordance on its own. */}
+          {!compact && <CalMark />}
           Add to calendar
           <span className={`transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true">
             <svg width="9" height="6" viewBox="0 0 9 6" fill="none">

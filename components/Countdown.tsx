@@ -37,41 +37,31 @@ export default function Countdown() {
     )
   }
 
-  // Short labels on phones. "minutes" and "seconds" at 0.24em tracking are what made
-  // the row overflow, not the numerals.
+  // One line, not four cells. The countdown is the last thing in the cream and
+  // has to sit under the names without competing with them for size.
   const units: [string, string, number | null][] = [
     ['days', 'days', left?.days ?? null],
     ['hours', 'hrs', left?.hours ?? null],
     ['minutes', 'min', left?.minutes ?? null],
-    ['seconds', 'sec', left?.seconds ?? null],
   ]
 
   return (
-    <div
-      className="grid grid-cols-4 max-w-xs sm:max-w-md mx-auto"
+    <p
+      className="font-ui text-[12px] font-medium uppercase tracking-[0.18em] text-wine tabular-nums"
       role="timer"
       aria-label="Countdown to the wedding"
     >
-      {units.map(([long, short, value], i) => (
-        <div
-          key={long}
-          className={`text-center px-1 sm:px-2 ${
-            i > 0 ? 'border-l border-wine/12' : ''
-          }`}
-        >
-          <div className="display text-3xl sm:text-4xl md:text-5xl tabular-nums text-wine-deep">
-            {value === null ? (
-              <span className="inline-block w-[1.6ch] h-[0.8em] bg-wine/8 rounded-sm align-middle" />
-            ) : (
-              String(value).padStart(2, '0')
-            )}
-          </div>
-          <div className="eyebrow mt-2 !text-[0.75rem] !tracking-[0.08em] !indent-[0.08em] sm:!text-xs sm:!tracking-[0.2em] sm:!indent-[0.2em]">
-            <span className="sm:hidden">{short}</span>
-            <span className="hidden sm:inline">{long}</span>
-          </div>
-        </div>
-      ))}
-    </div>
+      {left === null ? (
+        <span className="inline-block h-[0.8em] w-[14ch] rounded-sm bg-wine/8 align-middle" />
+      ) : (
+        units.map(([long, short, value], i) => (
+          <span key={long}>
+            {i > 0 && <span aria-hidden="true"> · </span>}
+            {value} <span className="sr-only">{long}</span>
+            <span aria-hidden="true">{short}</span>
+          </span>
+        ))
+      )}
+    </p>
   )
 }

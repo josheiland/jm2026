@@ -49,13 +49,13 @@ export const POIS: Poi[] = [
     name: 'The Local',
     category: 'Eat & Drink',
     address: '824 Hinton Avenue',
-    desc: 'Our first real date, and we both behaved',
+    desc: 'Our first real date. We were on our best behavior.',
   },
   {
     name: 'Luce',
     category: 'Eat & Drink',
     address: '110 2nd Street NW',
-    desc: 'Hole in the wall pasta that got us through 2020',
+    desc: 'Hole-in-the-wall pasta that carried us through 2020.',
   },
   {
     name: 'Roots',
@@ -85,13 +85,13 @@ export const POIS: Poi[] = [
     name: 'The Lawn',
     category: 'See',
     address: '400 Emmet Street South',
-    desc: 'A UNESCO World Heritage Site, and a very good place to sit down',
+    desc: 'A UNESCO World Heritage Site. Also a very good place to sit down.',
   },
   {
     name: 'Engineer’s Way',
     category: 'See',
     address: 'Engineer’s Way',
-    desc: 'Less scenic than it sounds. Systems Engineering is the ugliest building on it, and it was ours.',
+    desc: 'Less scenic than it sounds. Systems Engineering is the ugliest building on it. Naturally, it was ours.',
   },
   {
     name: 'High Energy Physics Building',
@@ -121,7 +121,7 @@ export const POIS: Poi[] = [
     name: 'Ragged Mountain Nature Area',
     category: 'Move',
     address: '1730 Reservoir Road',
-    desc: 'Six miles around a reservoir, which is ambitious for the day before a wedding',
+    desc: 'Six miles around a reservoir. Ambitious behavior for the day before a wedding.',
   },
 ]
 
@@ -157,7 +157,7 @@ export const FAQS: Faq[] = [
   {
     topic: 'The day itself',
     q: 'What time should I actually arrive?',
-    a: 'The ceremony starts at 5:00pm. On the bus you are automatically fine. Driving yourself, it is about 25 to 30 minutes from town, so aim to be parked by 4:40 and you will have time to walk up and find a seat.',
+    a: 'The ceremony starts at 5:00pm. On the bus you are automatically fine. Driving yourself, it is about 25 to 30 minutes from town, so aim to be parked by 4:40 and you will have time to walk up and find a seat. Early enough to relax, late enough that you aren’t helping set up.',
   },
   {
     topic: 'The day itself',
@@ -172,7 +172,7 @@ export const FAQS: Faq[] = [
   {
     topic: 'What to wear',
     q: 'What is the dress code?',
-    a: 'Saturday’s welcome party is elevated casual: relaxed, polished, festive. Sunday is summer formal, which in practice means long dresses and dark suits. Monday is groutfits, sweats and jammies. It is all on [the schedule](/schedule) too.',
+    a: 'Saturday’s welcome party is elevated casual: relaxed, polished, festive. Sunday is summer formal, which in practice means long dresses and dark suits. Monday is groutfits, sweats and jammies. It is all on [the schedule](/schedule) too. We believe in you.',
   },
   {
     topic: 'What to wear',
@@ -182,17 +182,17 @@ export const FAQS: Faq[] = [
   {
     topic: 'Food & drink',
     q: 'Do I need to eat beforehand?',
-    a: 'No need. Every event is a full meal: buffet dinner at the welcome party from around 6, a plated dinner at the wedding, and bagels in Garden VIII on Monday. Come hungry to all three.',
+    a: 'No need. Every event is a full meal: buffet dinner at the welcome party from around 6, a plated dinner at the wedding, and bagels in Garden VIII on Monday. Come hungry. We have taken this responsibility very seriously.',
   },
   {
     topic: 'Food & drink',
-    q: 'I have a dietary restriction. Am I okay?',
+    q: 'I have a dietary restriction. Will there be food I can eat?',
     a: 'Yes. There is a vegetarian main, one of the other mains is gluten-free, and the salad is vegan and gluten-free as served. If you have an allergy or restriction you did not note on your RSVP form, please let us know over text and we will get it to the kitchen.',
   },
   {
     topic: 'Everything else',
     q: 'Where do I put the photos I take?',
-    a: 'On [the photos page](/photos). It takes photos and video, and everything lands straight in our album. We would love as many as you are willing to share.',
+    a: 'On [the photos page](/photos). It takes photos and video, and everything lands straight in our album. Editorial judgment is neither required nor encouraged.',
     },
   {
     topic: 'Everything else',
@@ -202,7 +202,7 @@ export const FAQS: Faq[] = [
   {
     topic: 'Everything else',
     q: 'Something has gone wrong. Who do I find?',
-    a: 'Before the weekend, Virginia, Josh’s mum, is the best person to reach: [404-915-9085](tel:+14049159085). On the day itself Paige coordinates everything from the Hazy Mountain side and her team is on site all Sunday: [850-212-3055](tel:+18502123055). [The WhatsApp](whatsapp) works for anything in between.'
+    a: 'Ideally, someone more qualified than us (and no shot you’re getting through Mary’s do not disturb anyway). Before the weekend, Virginia, Josh’s mom, is the best person to reach: [404-915-9085](tel:+14049159085). On the day itself Paige coordinates everything from the Hazy Mountain side and her team is on site all Sunday: [850-212-3055](tel:+18502123055). [The WhatsApp](whatsapp) works for anything in between.'
   },
 ]
 

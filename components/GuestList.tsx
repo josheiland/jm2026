@@ -36,7 +36,7 @@ export default function GuestList({ groups, guests }: { groups: Group[]; guests:
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Look yourself up"
+          placeholder="Stalk responsibly"
           className="w-full bg-cream-soft border border-wine/15 pl-11 pr-4 py-3.5 text-base text-ink placeholder:text-ink/55 focus:border-wine outline-none transition-colors"
         />
         <svg

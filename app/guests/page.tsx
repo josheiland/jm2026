@@ -27,7 +27,7 @@ export default function GuestsPage() {
       <PageHeader
         eyebrow={`${data.totalSeated} people`}
         title="Who’s Coming"
-        lede="Every person on this list changed the shape of our lives somewhere along the way. Seeing you all in one place is a lot, and we recommend it."
+        lede="Every person on this list shaped our lives somewhere along the way. Now, against all better judgment, we’re putting you in one room"
       />
 
       <div className="content pb-20">

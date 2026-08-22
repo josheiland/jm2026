@@ -47,31 +47,35 @@ export default function Countdown() {
   ]
 
   return (
-    <div
-      className="grid grid-cols-4 max-w-xs sm:max-w-md mx-auto"
-      role="timer"
-      aria-label="Countdown to the wedding"
-    >
-      {units.map(([long, short, value], i) => (
-        <div
-          key={long}
-          className={`text-center px-1 sm:px-2 ${
-            i > 0 ? 'border-l border-wine/12' : ''
-          }`}
-        >
-          <div className="display text-3xl sm:text-4xl md:text-5xl tabular-nums text-wine-deep">
-            {value === null ? (
-              <span className="inline-block w-[1.6ch] h-[0.8em] bg-wine/8 rounded-sm align-middle" />
-            ) : (
-              String(value).padStart(2, '0')
-            )}
+    <>
+      <div
+        className="grid grid-cols-4 max-w-xs sm:max-w-md mx-auto"
+        role="timer"
+        aria-label="Countdown to the wedding"
+      >
+        {units.map(([long, short, value], i) => (
+          <div
+            key={long}
+            className={`text-center px-1 sm:px-2 ${
+              i > 0 ? 'border-l border-wine/12' : ''
+            }`}
+          >
+            <div className="display text-3xl sm:text-4xl md:text-5xl tabular-nums text-wine-deep">
+              {value === null ? (
+                <span className="inline-block w-[1.6ch] h-[0.8em] bg-wine/8 rounded-sm align-middle" />
+              ) : (
+                String(value).padStart(2, '0')
+              )}
+            </div>
+            <div className="eyebrow mt-2 !text-[0.75rem] !tracking-[0.08em] !indent-[0.08em] sm:!text-xs sm:!tracking-[0.2em] sm:!indent-[0.2em]">
+              <span className="sm:hidden">{short}</span>
+              <span className="hidden sm:inline">{long}</span>
+            </div>
           </div>
-          <div className="eyebrow mt-2 !text-[0.75rem] !tracking-[0.08em] !indent-[0.08em] sm:!text-xs sm:!tracking-[0.2em] sm:!indent-[0.2em]">
-            <span className="sm:hidden">{short}</span>
-            <span className="hidden sm:inline">{long}</span>
-          </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+
+      <p className="mt-4 text-center text-sm text-ink/60">not that anyone’s counting</p>
+    </>
   )
 }

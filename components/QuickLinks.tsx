@@ -12,12 +12,12 @@ const LINKS: Record<Key, { href: string; label: string; desc: string; external?:
   photos: {
     href: '/photos',
     label: 'Share photos',
-    desc: 'Anything you take over the weekend, straight into our album',
+    desc: 'The good, the bad, and the ones we may ask you to delete',
   },
   whatsapp: {
     href: WHATSAPP_INVITE || '/faq',
     label: 'Join the WhatsApp',
-    desc: 'Where anything that changes gets posted first',
+    desc: 'Weekend updates, questionable commentary, and anything we forgot to tell you',
     external: Boolean(WHATSAPP_INVITE),
   },
   schedule: {

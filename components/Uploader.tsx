@@ -353,7 +353,7 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
             type="text"
             value={uploader}
             onChange={(e) => setUploader(e.target.value)}
-            placeholder="So we know who to thank"
+            placeholder="So we know who to thank (or blame)"
             autoComplete="name"
             className="mt-2 w-full bg-cream-soft border border-wine/15 px-4 py-3 text-ink placeholder:text-ink/55 focus:border-wine outline-none transition-colors"
           />

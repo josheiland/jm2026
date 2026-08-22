@@ -92,7 +92,7 @@ export const EVENTS: WeddingEvent[] = [
     attire: 'Summer formal',
     attireNote: 'Long dresses and dark suits, mostly.',
     heads_up:
-      'The ceremony is outdoors, and early September in Virginia is warm and humid. It cools off quickly once the sun drops behind the ridge, so a light layer for the evening is worth having.',
+      'The ceremony is outdoors, and early September in Virginia is warm and humid. It cools off quickly once the sun drops behind the ridge, so a light layer for the evening is worth having. We have spoken personally with the weather and feel confident.',
   },
   {
     slug: 'shuttle-early',

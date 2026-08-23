@@ -4,12 +4,11 @@ import WhatsAppButton from './WhatsAppButton'
 import { ZOLA_URL } from '@/lib/content'
 
 export default function Footer() {
-  // The ridgeline's sky is transparent, so the footer carries the beige itself and the
-  // gap above it is padding rather than margin. Same value as the thank-you section
-  // above it on the homepage, so the two read as one continuous band down to the
-  // mountaintops instead of breaking to cream.
+  // The sky behind the ridgeline is --sky, which resolves to whatever band the page
+  // ends on (see globals.css). The gap above it is padding rather than margin so that
+  // colour runs all the way down to the mountaintops instead of breaking to cream.
   return (
-    <footer className="relative z-10 bg-cream-deep/40 pt-24">
+    <footer className="relative z-10 pt-24" style={{ backgroundColor: 'var(--sky)' }}>
       <Ridgeline />
       <div className="bg-wine-deep text-cream/85">
         <div className="content py-16">

@@ -8,7 +8,11 @@ import data from '@/data/guests.json'
  */
 export default function ThankYouNote() {
   return (
-    <section id="thank-you" className="bg-cream-deep/40 py-20 md:py-28 scroll-mt-20">
+    <section
+      id="thank-you"
+      data-sky="band"
+      className="bg-cream-band py-20 md:py-28 scroll-mt-20"
+    >
       <div className="content-narrow">
         <p className="eyebrow text-center">A note from us</p>
         <h2 className="display text-4xl md:text-6xl mt-4 text-center">{THANK_YOU.heading}</h2>

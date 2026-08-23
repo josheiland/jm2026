@@ -13,6 +13,7 @@
   --color-cream: #f5efe8;
   --color-cream-deep: #ece0d4;
   --color-cream-soft: #faf6f1;
+  --color-cream-band: #f1e9e0;  /* cream-deep at 40% over cream, flattened so the footer can match it exactly */
   --color-wine: #63494a;
   --color-wine-deep: #43302f;
   --color-wine-soft: #7c615f;  /* 4.93:1 on cream; #8a6f6d was 4.02 and failed AA */
@@ -60,7 +61,12 @@
     }
   }
 
+  /* The ridgeline is a transparent SVG, so the footer paints the sky behind it. It
+     defaults to the page background, which is what every page ends on. A section that
+     closes a page in some other colour marks itself with data-sky and the footer
+     follows, so the mountains never sit on a seam. */
   body {
+    --sky: var(--color-cream);
     background-color: var(--color-cream);
     color: var(--color-ink);
     font-family: var(--font-body);
@@ -68,6 +74,10 @@
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+  }
+
+  body:has([data-sky='band']) {
+    --sky: var(--color-cream-band);
   }
 
   /* Paper grain. Very low opacity — you should feel it, not see it. */

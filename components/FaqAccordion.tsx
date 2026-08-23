@@ -35,7 +35,7 @@ export default function FaqAccordion({ faqs }: { faqs: Faq[] }) {
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search. Try “Mary said what?”, “bus”, “photos”, “dress code”"
+          placeholder="Search. Try “bus”, “photos”, “dress code”, “Mary said what?”"
           className="w-full bg-cream-soft border border-wine/15 pl-11 pr-4 py-3.5 placeholder:text-ink/55 focus:border-wine outline-none transition-colors"
         />
         <svg

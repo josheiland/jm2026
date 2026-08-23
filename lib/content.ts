@@ -37,7 +37,7 @@ export const POIS: Poi[] = [
     name: 'Bodo’s Bagels',
     category: 'Eat & Drink',
     address: '1609 University Avenue',
-    desc: 'Non-negotiable. Between the two of us, we cover the whole menu',
+    desc: 'Non-negotiable. Between our two orders, we cover the whole menu',
   },
   {
     name: 'Take It Away',
@@ -61,7 +61,7 @@ export const POIS: Poi[] = [
     name: 'Roots',
     category: 'Eat & Drink',
     address: '1329 West Main Street',
-    desc: 'Grain bowls, for atoning after Bodo’s',
+    desc: 'May we recommend the El Jefe bowl with the works?',
   },
   {
     name: 'Al Carbon',
@@ -234,11 +234,12 @@ export const THANK_YOU = {
     'Can’t believe this weekend is finally here.',
     'We could not be more excited to celebrate with our favorite humans. Thank you for coming all the way to not-so-easy-to-get-to Charlottesville, from across the country and across the world. It could not mean more to celebrate our love with the people who have shaped and supported us, in the place where our story started.',
     'From our hometowns, to Cville, Boston, Palo Alto, or somewhere along the way, y’all have been there for pretty much all of it.',
-    'We are so grateful, and the cup’s overflowing',
+    'We are so grateful.',
     'We are not going to get nearly enough time with each of you this weekend, but we can’t wait to soak in the moments we do get.',
     'Give us a hug. Poke around our old stomping grounds. Cry (happy tears, ofc). Try your first Alani. Stay for the late bus. Dance your heart out. Drink the electrolytes at bagel breakfast. Feel appreciated.. because we appreciate you more than you could possibly know.',
   ],
   /** Index of the line that gets the big centred pull-quote treatment. */
   pullQuote: 3,
-  names: 'Mary and Josh',
+  signoff: 'Cups overflowing,',
+  names: 'Mary & Josh',
 }

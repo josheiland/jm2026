@@ -75,7 +75,7 @@ export default function Countdown() {
         ))}
       </div>
 
-      <p className="mt-4 text-center text-sm text-ink/60">not that anyone’s counting</p>
+      <p className="mt-4 text-center text-sm text-ink/60">…not that anyone’s counting :)</p>
     </>
   )
 }

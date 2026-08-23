@@ -22,7 +22,7 @@ export default function ThankYouNote() {
               key={i}
               className={
                 i === THANK_YOU.pullQuote
-                  ? 'display-sentence !text-3xl md:!text-4xl text-center py-4 !text-wine'
+                  ? 'display-sentence !text-3xl md:!text-4xl py-4 !text-wine'
                   : undefined
               }
             >
@@ -31,9 +31,8 @@ export default function ThankYouNote() {
           ))}
         </div>
 
-        <div className="mt-14 text-center">
-          <p className="text-ink/70 italic">{THANK_YOU.signoff}</p>
-          <p className="display text-4xl md:text-5xl mt-3">{THANK_YOU.names}</p>
+        <div className="mt-14">
+          <p className="display text-4xl md:text-5xl">{THANK_YOU.names}</p>
         </div>
       </div>
     </section>

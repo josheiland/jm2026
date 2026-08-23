@@ -43,7 +43,7 @@ function Shuttle({ event }: { event: WeddingEvent }) {
         </p>
       )}
       {event.heads_up && (
-        <p className="mt-4 border-l-2 border-sage/60 pl-4 text-ink/80 max-w-xl">
+        <p className="mt-4 border-l-2 border-sage/60 pl-4 text-ink/75 italic max-w-xl">
           {event.heads_up}
         </p>
       )}
@@ -100,7 +100,7 @@ function Major({ event }: { event: WeddingEvent }) {
       )}
 
       {event.heads_up && (
-        <p className="mt-5 card px-5 py-4 text-ink/75 max-w-xl">{event.heads_up}</p>
+        <p className="mt-5 border-l-2 border-sage/60 pl-4 text-ink/75 italic max-w-xl">{event.heads_up}</p>
       )}
 
       <AddToCalendar event={event} />

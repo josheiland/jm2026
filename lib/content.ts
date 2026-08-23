@@ -37,25 +37,25 @@ export const POIS: Poi[] = [
     name: 'Bodo’s Bagels',
     category: 'Eat & Drink',
     address: '1609 University Avenue',
-    desc: 'Non-negotiable. Josh orders seven ingredients. Mary orders a bagel.',
+    desc: 'Non-negotiable. Between the two of us, we cover the whole menu',
   },
   {
     name: 'Take It Away',
     category: 'Eat & Drink',
     address: '115 Elliewood Avenue',
-    desc: 'Get the special sauce. The sandwich is really just the delivery mechanism.',
+    desc: 'Get the special sauce. The sandwich is really just the delivery mechanism',
   },
   {
     name: 'The Local',
     category: 'Eat & Drink',
     address: '824 Hinton Avenue',
-    desc: 'Our first real date. We were on our best behavior.',
+    desc: 'Our first real date. We were on our best behavior',
   },
   {
     name: 'Luce',
     category: 'Eat & Drink',
     address: '110 2nd Street NW',
-    desc: 'Hole-in-the-wall pasta that carried us through 2020.',
+    desc: 'Hole-in-the-wall pasta that carried us through 2020',
   },
   {
     name: 'Roots',
@@ -85,25 +85,25 @@ export const POIS: Poi[] = [
     name: 'The Lawn',
     category: 'See',
     address: '400 Emmet Street South',
-    desc: 'A UNESCO World Heritage Site. Also a very good place to sit down.',
+    desc: 'A UNESCO World Heritage Site. Also a very good place to sit down',
   },
   {
     name: 'Engineer’s Way',
     category: 'See',
     address: 'Engineer’s Way',
-    desc: 'Less scenic than it sounds. Systems Engineering is the ugliest building on it. Naturally, it was ours.',
+    desc: 'Less scenic than it sounds. Systems Engineering is the ugliest building on it. Naturally, it was ours',
   },
   {
     name: 'High Energy Physics Building',
     category: 'See',
     address: 'McCormick Road, University of Virginia',
-    desc: 'There is a way onto the roof. That is all we are saying.',
+    desc: 'There is a way onto the roof. That is all we are saying',
   },
   {
     name: 'Ragged Mountain Running Shop',
     category: 'Move',
     address: '3 Elliewood Avenue',
-    desc: 'Tell the Lorenzonis we sent you. Run Your City owes them.',
+    desc: 'Tell the Lorenzonis we sent you. Run Your City owes them',
   },
   {
     name: 'Lannigan Field',
@@ -121,7 +121,7 @@ export const POIS: Poi[] = [
     name: 'Ragged Mountain Nature Area',
     category: 'Move',
     address: '1730 Reservoir Road',
-    desc: 'Six miles around a reservoir. Ambitious behavior for the day before a wedding.',
+    desc: 'Six miles around a reservoir. Ambitious behavior for the day before a wedding',
   },
 ]
 
@@ -137,11 +137,11 @@ export const FAQS: Faq[] = [
   {
     topic: 'Getting around',
     q: 'Is there a bus to the wedding?',
-    a: 'Yes, and we would love you to take it. Buses load at Stacey Hall on West Main, directly across the street from The Draftsman, and all of them leave at 4:15pm on Sunday. Coming home there are two times, 9:30pm and 11:00pm. At 11pm, two of the three buses go straight to the after party at Mejicali and one returns to Stacey Hall, so check which one you are boarding.',
+    a: 'Yes, and we would love you to take it. Buses load at Stacey Hall on West Main, directly across the street from The Draftsman, and all of them leave at 4:15pm on Sunday. Coming home there are two times, 9:30pm and 11:00pm. At 11pm all three buses go straight to the after party at Mejicali, and it is a short walk to the hotel from there for those who can’t hang.',
   },
   {
     topic: 'Getting around',
-    q: 'I am not staying at The Draftsman. Can I still get on?',
+    q: 'I am not staying at The Draftsman. Can I still get on the bus?',
     a: 'Please do. Everything on West Main is a few minutes apart. Just be at Stacey Hall, across the street from The Draftsman, before 4:15.',
   },
   {
@@ -152,7 +152,7 @@ export const FAQS: Faq[] = [
   {
     topic: 'Getting around',
     q: 'Can I get an Uber back from the vineyard?',
-    a: 'Probably not. In town rideshare is fine, but out in Afton it thins out to almost nothing, and standing in a field at 11pm watching an app spin is a sad end to a good night. The bus is the safer bet, or drive yourself and plan for it.',
+    a: 'No promises. In town rideshare is fine, but out in Afton it thins out a good bit, and standing in a field at 11pm watching an app spin is a sad end to a good night. The bus is the safer bet, or drive yourself and plan for it.',
   },
   {
     topic: 'The day itself',
@@ -167,12 +167,12 @@ export const FAQS: Faq[] = [
   {
     topic: 'The day itself',
     q: 'What happens after the reception?',
-    a: 'The after party runs 11:30pm to 1:00am at Mejicali on West Main, five minutes on foot from The Draftsman. Two of the three 11pm buses go straight there from the vineyard. Then bagels at 10am Monday in Garden VIII on the Lawn, in whatever you slept in. Times are on [the schedule](/schedule).',
+    a: 'The after party runs 11:30pm to 2:00am at Mejicali on West Main, five minutes on foot from The Draftsman. All three 11pm buses go straight there from the vineyard. Then bagels at 10am Monday in Garden VIII on the Lawn, in whatever you slept in. Times are on [the schedule](/schedule).',
   },
   {
     topic: 'What to wear',
     q: 'What is the dress code?',
-    a: 'Saturday’s welcome party is elevated casual: relaxed, polished, festive. Sunday is summer formal, which in practice means long dresses and dark suits. Monday is groutfits, sweats and jammies. It is all on [the schedule](/schedule) too. We believe in you.',
+    a: 'Saturday’s welcome party is elevated casual. Sunday is summer formal, which in practice means long dresses and dark suits. Monday is groutfits, sweats and jammies. It is all on [the schedule](/schedule) too. We believe in you.',
   },
   {
     topic: 'What to wear',
@@ -206,6 +206,19 @@ export const FAQS: Faq[] = [
   },
 ]
 
+/**
+ * Not in the list. Surfaces only when someone searches for it, which is the whole joke.
+ * Asked for on the Aug 22 call.
+ */
+export const HIDDEN_FAQ: Faq = {
+  topic: 'Everything else',
+  q: 'Mary said what?',
+  a: 'Who knows what it was this time. Always something.',
+}
+
+/** Lowercased substring that reveals HIDDEN_FAQ. */
+export const HIDDEN_FAQ_TRIGGER = 'mary said'
+
 // ---------------------------------------------------------------- closing line
 
 /** Their own words, from the Zola homepage. */
@@ -221,12 +234,11 @@ export const THANK_YOU = {
     'Can’t believe this weekend is finally here.',
     'We could not be more excited to celebrate with our favorite humans. Thank you for coming all the way to not-so-easy-to-get-to Charlottesville, from across the country and across the world. It could not mean more to celebrate our love with the people who have shaped and supported us, in the place where our story started.',
     'From our hometowns, to Cville, Boston, Palo Alto, or somewhere along the way, y’all have been there for pretty much all of it.',
-    'We are so grateful.',
+    'We are so grateful, and the cup’s overflowing',
     'We are not going to get nearly enough time with each of you this weekend, but we can’t wait to soak in the moments we do get.',
     'Give us a hug. Poke around our old stomping grounds. Cry (happy tears, ofc). Try your first Alani. Stay for the late bus. Dance your heart out. Drink the electrolytes at bagel breakfast. Feel appreciated.. because we appreciate you more than you could possibly know.',
   ],
   /** Index of the line that gets the big centred pull-quote treatment. */
   pullQuote: 3,
-  signoff: 'Cups overflowing,',
-  names: 'Mary & Josh',
+  names: 'Mary and Josh',
 }

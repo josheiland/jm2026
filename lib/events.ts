@@ -56,7 +56,6 @@ export const EVENTS: WeddingEvent[] = [
     address: '946 Grady Ave, Suite 101, Charlottesville, VA 22903',
     mapQuery: 'Starr Hill Brewery Downtown, 946 Grady Ave, Charlottesville, VA 22903',
     attire: 'Elevated casual',
-    attireNote: 'Relaxed, polished, and festive.',
     description:
       'Drop by whenever. Appetizers and drinks from 4, then a full buffet dinner from around 6.',
     heads_up: 'No bus for this one. The Dairy Market is a walk or a short ride from the West Main hotels.',
@@ -119,15 +118,15 @@ export const EVENTS: WeddingEvent[] = [
     address: '260 Hazy Mountain Ln, Afton, VA 22920',
     mapQuery: 'Hazy Mountain Vineyards & Brewery, 260 Hazy Mountain Ln, Afton, VA 22920',
     description:
-      'Every bus leaves when the reception ends and goes straight to the after party. The hotels are a five-minute walk from there whenever you have had enough.',
+      'All three buses leave when the reception ends and go straight to the after party. Short walk to the hotel from there, for those who can’t hang.',
   },
   {
     slug: 'after-party',
     name: 'After Party',
     kind: 'party',
-    time: '11:30 pm to 1:00 am',
+    time: '11:30 pm to 2:00 am',
     start: `2026-09-06T23:30:00${ET}`,
-    end: `2026-09-07T01:00:00${ET}`,
+    end: `2026-09-07T02:00:00${ET}`,
     day: 'sun',
     venue: 'Mejicali',
     address: '852 West Main Street, Suite 110, Charlottesville, VA 22903',

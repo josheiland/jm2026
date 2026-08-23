@@ -53,7 +53,7 @@ export default function CharlottesvillePage() {
           <div>
             <p className="eyebrow">If you only do one thing</p>
             <p className="display-sentence text-3xl md:text-4xl mt-3">
-              Walk the Lawn at dusk, then get a bagel in the morning.
+              Walk the Lawn on your way to a morning bagel.
             </p>
             <p className="mt-4 text-ink/65">
               Rooms 45 and 47 were ours for a year, and we fostered an

@@ -2,16 +2,17 @@
 
 import { useMemo, useState } from 'react'
 import RichText from './RichText'
-import type { Faq } from '@/lib/content'
+import { HIDDEN_FAQ, HIDDEN_FAQ_TRIGGER, type Faq } from '@/lib/content'
 
 export default function FaqAccordion({ faqs }: { faqs: Faq[] }) {
   const [query, setQuery] = useState('')
   const q = query.trim().toLowerCase()
 
-  const filtered = useMemo(
-    () => (q ? faqs.filter((f) => (f.q + ' ' + f.a).toLowerCase().includes(q)) : faqs),
-    [q, faqs],
-  )
+  const filtered = useMemo(() => {
+    if (!q) return faqs
+    const hits = faqs.filter((f) => (f.q + ' ' + f.a).toLowerCase().includes(q))
+    return q.includes(HIDDEN_FAQ_TRIGGER) ? [HIDDEN_FAQ, ...hits] : hits
+  }, [q, faqs])
 
   const topics = useMemo(() => {
     const order: Faq['topic'][] = [
@@ -34,7 +35,7 @@ export default function FaqAccordion({ faqs }: { faqs: Faq[] }) {
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search. Try “bus,” “photos,” “what do I wear,” “Mary said what?”"
+          placeholder="Search. Try “Mary said what?”, “bus”, “photos”, “dress code”"
           className="w-full bg-cream-soft border border-wine/15 pl-11 pr-4 py-3.5 placeholder:text-ink/55 focus:border-wine outline-none transition-colors"
         />
         <svg

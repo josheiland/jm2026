@@ -1,7 +1,7 @@
 {
   "source": "Google Sheet \"Invite list\" tab",
-  "totalSeated": 177,
-  "guestCount": 175,
+  "totalSeated": 175,
+  "guestCount": 173,
   "headTableCount": 29,
   "tableCount": 18,
   "duplicateNames": [],
@@ -368,26 +368,6 @@
         },
         {
           "name": "Anna Rodenberg",
-          "table": "5",
-          "tableLabel": "Table 5",
-          "tableSort": 5,
-          "group": "Josh's Family",
-          "groupKey": "josh-family",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Aria Lancaster",
-          "table": "5",
-          "tableLabel": "Table 5",
-          "tableSort": 5,
-          "group": "Josh's Family",
-          "groupKey": "josh-family",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Avery Lancaster",
           "table": "5",
           "tableLabel": "Table 5",
           "tableSort": 5,
@@ -1949,16 +1929,6 @@
       "isCouple": false
     },
     {
-      "name": "Aria Lancaster",
-      "table": "5",
-      "tableLabel": "Table 5",
-      "tableSort": 5,
-      "group": "Josh's Family",
-      "groupKey": "josh-family",
-      "headTable": false,
-      "isCouple": false
-    },
-    {
       "name": "Arjun Athreya",
       "table": "11",
       "tableLabel": "Table 11",
@@ -1985,16 +1955,6 @@
       "tableSort": 12,
       "group": "Stanford & the Bay",
       "groupKey": "sf",
-      "headTable": false,
-      "isCouple": false
-    },
-    {
-      "name": "Avery Lancaster",
-      "table": "5",
-      "tableLabel": "Table 5",
-      "tableSort": 5,
-      "group": "Josh's Family",
-      "groupKey": "josh-family",
       "headTable": false,
       "isCouple": false
     },

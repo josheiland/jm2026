@@ -16,12 +16,19 @@ export const DAY_OF_CONTACT = {
   phone: '850-212-3055',
 }
 
-/** Anything in the run-up. Josh's mother, and the person who actually knows. */
-export const BEFORE_THE_DAY_CONTACT = {
-  name: 'Virginia',
-  role: 'Mother of the groom',
-  phone: '404-915-9085',
-}
+/** Anything in the run-up. Both mothers, and the people who actually know. */
+export const BEFORE_THE_DAY_CONTACTS = [
+  {
+    name: 'Virginia',
+    role: 'Mother of the groom',
+    phone: '404-915-9085',
+  },
+  {
+    name: 'Julie',
+    role: 'Mother of the bride',
+    phone: '708-280-2468',
+  },
+]
 
 // ---------------------------------------------------------------- Charlottesville
 
@@ -202,7 +209,7 @@ export const FAQS: Faq[] = [
   {
     topic: 'Everything else',
     q: 'Something has gone wrong. Who do I find?',
-    a: 'Ideally, someone more qualified than us (and no shot you’re getting through Mary’s do not disturb anyway). Before the weekend, Virginia, Josh’s mom, is the best person to reach: [404-915-9085](tel:+14049159085). On the day itself Paige coordinates everything from the Hazy Mountain side and her team is on site all Sunday: [850-212-3055](tel:+18502123055). [The WhatsApp](whatsapp) works for anything in between.'
+    a: 'Ideally, someone more qualified than us (and no shot you’re getting through Mary’s do not disturb anyway). Before the weekend, either of our moms is the best person to reach: Virginia, Josh’s mom, on [404-915-9085](tel:+14049159085), or Julie, Mary’s mom, on [708-280-2468](tel:+17082802468). On the day itself Paige coordinates everything from the Hazy Mountain side and her team is on site all Sunday: [850-212-3055](tel:+18502123055). [The WhatsApp](whatsapp) works for anything in between.'
   },
 ]
 

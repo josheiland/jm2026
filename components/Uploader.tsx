@@ -61,7 +61,24 @@ function queryStatus(url: string, size: number) {
  * ends with Google stating exactly how much it has, so the bar can be driven by that
  * instead of by the browser's optimism, and an interruption costs at most one chunk.
  */
-const CHUNK = 4 * 1024 * 1024
+const UNIT = 256 * 1024
+
+/**
+ * Chunk size, aimed at roughly eight chunks per file.
+ *
+ * One chunk per file was the whole problem. `upload.onprogress` counts bytes handed to
+ * the OS socket buffer, and a phone swallows a few megabytes instantly, so a photo sent
+ * as a single chunk filled the bar in a second and then sat there for the thirty to
+ * sixty seconds the bytes actually took to cross the network — the only real checkpoint
+ * being Google's final response. Chunking means Google states what it holds eight times
+ * over instead of once, so the bar climbs on facts and the unconfirmed tail is a
+ * fraction of the upload rather than all of it.
+ *
+ * Clamped at both ends: Google requires a multiple of 256 KiB for any non-final chunk,
+ * and a long video should not turn into hundreds of round trips.
+ */
+const chunkFor = (size: number) =>
+  Math.min(8 * 1024 * 1024, Math.max(UNIT, Math.ceil(size / 8 / UNIT) * UNIT))
 
 /**
  * Send one chunk. Resolves with how many bytes Google has confirmed it holds, which is
@@ -151,8 +168,11 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
             shown = pct
             update(item.id, { progress: pct })
           }
-          // Everything is with the OS. Say what is actually being waited on.
-          if (bytes >= item.file.size && !handedOff) {
+        }
+
+        /** The last chunk is in flight. Nothing left to count, so say what we wait on. */
+        const markFinishing = () => {
+          if (!handedOff) {
             handedOff = true
             update(item.id, { status: 'finishing' })
           }
@@ -248,10 +268,18 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
 
           while (!confirmed && strikes <= RETRIES) {
             try {
-              const end = Math.min(offset + CHUNK, item.file.size)
-              const { done, committed } = await putChunk(url, item.file, offset, end, (sent) =>
-                report(offset + sent),
-              )
+              const end = Math.min(offset + chunkFor(item.file.size), item.file.size)
+              const isFinal = end >= item.file.size
+              if (isFinal) markFinishing()
+
+              // Mid-file the socket-buffer estimate is worth showing: it can only run
+              // ahead as far as the next chunk boundary, which Google corrects a moment
+              // later. On the final chunk there is no boundary left to bound it, so it
+              // would race to the top and stall there. Hold at the last confirmed
+              // figure instead, and let the 100 land with the confirmation.
+              const { done, committed } = await putChunk(url, item.file, offset, end, (sent) => {
+                if (!isFinal) report(offset + sent)
+              })
 
               if (done) {
                 confirmed = true
@@ -263,6 +291,13 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
                 offset = committed
                 report(offset)
                 strikes = 0
+                // It has everything but answered 308 rather than 200. Continuing would
+                // send a zero-length chunk, which is a guaranteed 400 and a backoff.
+                if (offset >= item.file.size) {
+                  const status = await reconcile()
+                  if (status?.state === 'done') confirmed = true
+                  break
+                }
                 continue
               }
               // It kept nothing from that chunk. Treat as a failed attempt.

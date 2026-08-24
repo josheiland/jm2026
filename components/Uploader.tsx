@@ -61,24 +61,18 @@ function queryStatus(url: string, size: number) {
  * ends with Google stating exactly how much it has, so the bar can be driven by that
  * instead of by the browser's optimism, and an interruption costs at most one chunk.
  */
-const UNIT = 256 * 1024
-
 /**
- * Chunk size, aimed at roughly eight chunks per file.
+ * Chunk size. Google requires a multiple of 256 KiB for any non-final chunk;
+ * 4 MiB is 16 of them.
  *
- * One chunk per file was the whole problem. `upload.onprogress` counts bytes handed to
- * the OS socket buffer, and a phone swallows a few megabytes instantly, so a photo sent
- * as a single chunk filled the bar in a second and then sat there for the thirty to
- * sixty seconds the bytes actually took to cross the network — the only real checkpoint
- * being Google's final response. Chunking means Google states what it holds eight times
- * over instead of once, so the bar climbs on facts and the unconfirmed tail is a
- * fraction of the upload rather than all of it.
- *
- * Clamped at both ends: Google requires a multiple of 256 KiB for any non-final chunk,
- * and a long video should not turn into hundreds of round trips.
+ * Deliberately coarse. Finer chunks would give the bar more server-confirmed
+ * checkpoints, but each chunk costs a response, and a response is exactly what has been
+ * observed arriving long after Drive already holds the bytes. More chunks would mean
+ * more of those waits, not fewer. Confirmation speed is solved by asking Drive directly
+ * instead — see pollForArrival — which leaves chunking to do only what it is good at:
+ * bounding what an interruption costs.
  */
-const chunkFor = (size: number) =>
-  Math.min(8 * 1024 * 1024, Math.max(UNIT, Math.ceil(size / 8 / UNIT) * UNIT))
+const CHUNK = 4 * 1024 * 1024
 
 /**
  * Send one chunk. Resolves with how many bytes Google has confirmed it holds, which is
@@ -168,9 +162,10 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
             shown = pct
             update(item.id, { progress: pct })
           }
+          if (bytes >= item.file.size) markFinishing()
         }
 
-        /** The last chunk is in flight. Nothing left to count, so say what we wait on. */
+        /** Everything is with the OS. Say what is actually being waited on. */
         const markFinishing = () => {
           if (!handedOff) {
             handedOff = true
@@ -217,23 +212,45 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
          * The authoritative answer. Asks our own server whether the file is in the
          * album, which no amount of client-side network trouble can distort.
          */
+        /** One question, asked of our own server: is it in the album, at full size? */
+        const inAlbum = async () => {
+          if (!names.length) return false
+          try {
+            const res = await fetch('/api/upload/verify', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ names, size: item.file.size }),
+            })
+            if (!res.ok) return false
+            const { found } = (await res.json()) as { found: boolean }
+            return found
+          } catch {
+            return false
+          }
+        }
+
         const verify = async () => {
           if (!names.length) return false
           for (let i = 0; i < 3; i++) {
-            try {
-              const res = await fetch('/api/upload/verify', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ names, size: item.file.size }),
-              })
-              if (res.ok) {
-                const { found } = (await res.json()) as { found: boolean }
-                if (found) return true
-              }
-            } catch {
-              /* fall through to the retry */
-            }
+            if (await inAlbum()) return true
             await sleep(1200 * (i + 1))
+          }
+          return false
+        }
+
+        /**
+         * Drive is normally holding the finished file within a few seconds of the last
+         * byte, but the PUT response can lag a long way behind that, and waiting on it
+         * was what left a completed upload sitting unconfirmed for half a minute. So
+         * once the final chunk is in flight we start asking Drive directly, and take
+         * whichever authoritative answer turns up first. Backs off gently, and stops
+         * the moment the request it is racing settles.
+         */
+        const pollForArrival = async (stop: { now: boolean }) => {
+          for (let wait = 1500; !stop.now; wait = Math.min(4000, wait + 500)) {
+            await sleep(wait)
+            if (stop.now) return false
+            if (await inAlbum()) return true
           }
           return false
         }
@@ -267,19 +284,34 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
           let strikes = 0
 
           while (!confirmed && strikes <= RETRIES) {
+            const stopPoll = { now: false }
             try {
-              const end = Math.min(offset + chunkFor(item.file.size), item.file.size)
+              const end = Math.min(offset + CHUNK, item.file.size)
               const isFinal = end >= item.file.size
-              if (isFinal) markFinishing()
+              const putting = putChunk(url, item.file, offset, end, (sent) =>
+                report(offset + sent),
+              )
 
-              // Mid-file the socket-buffer estimate is worth showing: it can only run
-              // ahead as far as the next chunk boundary, which Google corrects a moment
-              // later. On the final chunk there is no boundary left to bound it, so it
-              // would race to the top and stall there. Hold at the last confirmed
-              // figure instead, and let the 100 land with the confirmation.
-              const { done, committed } = await putChunk(url, item.file, offset, end, (sent) => {
-                if (!isFinal) report(offset + sent)
-              })
+              // The poll can win, in which case this settles with nobody listening.
+              if (isFinal) putting.catch(() => {})
+
+              const outcome: {
+                arrived: boolean
+                chunk: { done: boolean; committed: number } | null
+              } = isFinal
+                ? await Promise.race([
+                    putting.then((chunk) => ({ arrived: false, chunk })),
+                    pollForArrival(stopPoll).then((found) => ({ arrived: found, chunk: null })),
+                  ])
+                : { arrived: false, chunk: await putting }
+
+              // Drive says it has the file. That is the answer we were waiting for.
+              if (outcome.arrived) {
+                confirmed = true
+                break
+              }
+
+              const { done, committed } = outcome.chunk!
 
               if (done) {
                 confirmed = true
@@ -305,6 +337,8 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
             } catch (err) {
               lastError = err as Error
               strikes++
+            } finally {
+              stopPoll.now = true
             }
 
             // Reached after any failure. Never resend blind.

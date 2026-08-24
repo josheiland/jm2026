@@ -209,7 +209,7 @@ export const FAQS: Faq[] = [
   {
     topic: 'Everything else',
     q: 'Something has gone wrong. Who do I find?',
-    a: 'Ideally, someone more qualified than us (and no shot you’re getting through Mary’s do not disturb anyway). Before the weekend, either of our moms is the best person to reach: Virginia, Josh’s mom, on [404-915-9085](tel:+14049159085), or Julie, Mary’s mom, on [708-280-2468](tel:+17082802468). On the day itself Paige coordinates everything from the Hazy Mountain side and her team is on site all Sunday: [850-212-3055](tel:+18502123055). [The WhatsApp](whatsapp) works for anything in between.'
+    a: 'Ideally, someone more qualified than us (and no shot you’re getting through Mary’s do not disturb anyway). Before the wedding day, either of our moms is the best person to reach: Virginia, Josh’s mom, at [404-915-9085](tel:+14049159085), or Julie, Mary’s mom, at [708-280-2468](tel:+17082802468). On the wedding day Paige coordinates everything from the Hazy Mountain side and her team is on site all Sunday: [850-212-3055](tel:+18502123055). [The WhatsApp](whatsapp) works for anything in between.'
   },
 ]
 

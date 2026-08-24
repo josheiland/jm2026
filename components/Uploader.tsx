@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-type Status = 'queued' | 'uploading' | 'done' | 'error'
+type Status = 'queued' | 'uploading' | 'finishing' | 'done' | 'error'
 
 interface Item {
   id: string
@@ -136,11 +136,33 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
          * higher number overstates by at most 4 MB, so the bar holds.
          */
         let shown = 0
+        let handedOff = false
+
+        /**
+         * Held at 99 until Drive confirms. `upload.onprogress` counts bytes given to
+         * the socket, which on a phone reaches the end of the file seconds before the
+         * response comes back, so a bar that could reach 100 on its own would sit
+         * there against a counter still reading zero. 100 is now set in exactly one
+         * place: alongside `status: 'done'`.
+         */
         const report = (bytes: number) => {
-          const pct = Math.min(100, Math.round((bytes / item.file.size) * 100))
+          const pct = Math.min(99, Math.round((bytes / item.file.size) * 100))
           if (pct > shown) {
             shown = pct
             update(item.id, { progress: pct })
+          }
+          // Everything is with the OS. Say what is actually being waited on.
+          if (bytes >= item.file.size && !handedOff) {
+            handedOff = true
+            update(item.id, { status: 'finishing' })
+          }
+        }
+
+        /** Back to uploading: a retry means those bytes are in question again. */
+        const unfinish = () => {
+          if (handedOff) {
+            handedOff = false
+            update(item.id, { status: 'uploading' })
           }
         }
 
@@ -232,7 +254,6 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
               )
 
               if (done) {
-                report(item.file.size)
                 confirmed = true
                 break
               }
@@ -252,6 +273,7 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
             }
 
             // Reached after any failure. Never resend blind.
+            unfinish()
             const status = await reconcile()
             if (status?.state === 'done') {
               confirmed = true
@@ -330,7 +352,9 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
 
   const done = items.filter((i) => i.status === 'done').length
   const failed = items.filter((i) => i.status === 'error')
-  const active = items.some((i) => i.status === 'uploading' || i.status === 'queued')
+  const active = items.some(
+    (i) => i.status === 'uploading' || i.status === 'queued' || i.status === 'finishing',
+  )
 
   if (!enabled) {
     return (
@@ -414,7 +438,7 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
             onClick={() => inputRef.current?.click()}
             className="mt-6 bg-wine text-cream px-7 py-3.5 text-sm uppercase tracking-[0.14em] hover:bg-wine-deep transition-colors"
           >
-            Choose from your phone
+            Choose from your device
           </button>
 
           <input
@@ -460,12 +484,17 @@ export default function Uploader({ enabled }: { enabled: boolean }) {
                     {it.status === 'uploading' && (
                       <span className="text-wine">{it.progress}%</span>
                     )}
+                    {it.status === 'finishing' && (
+                      <span className="text-ink/70">finishing…</span>
+                    )}
                     {it.status === 'queued' && <span className="text-ink/70">waiting</span>}
                     {it.status === 'error' && <span className="text-wine">failed</span>}
                   </div>
                 </div>
 
-                {(it.status === 'uploading' || it.status === 'queued') && (
+                {(it.status === 'uploading' ||
+                  it.status === 'queued' ||
+                  it.status === 'finishing') && (
                   <div className="mt-2.5 h-0.5 bg-wine/10 overflow-hidden">
                     <div
                       className="h-full bg-wine transition-[width] duration-300"

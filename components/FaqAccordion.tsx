@@ -1,12 +1,30 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import RichText from './RichText'
 import { HIDDEN_FAQ, HIDDEN_FAQ_TRIGGER, type Faq } from '@/lib/content'
 
+/**
+ * The last example is the joke, so it is the one that must survive. On a narrow screen
+ * the full list overflows the field and clips from the right, taking "Mary said what?"
+ * with it, so "dress code" is dropped there instead. Resolved after mount, which keeps
+ * the server and first client render in agreement.
+ */
+const PLACEHOLDER_FULL = 'Search. Try “bus”, “photos”, “dress code”, “Mary said what?”'
+const PLACEHOLDER_NARROW = 'Search. Try “bus”, “photos”, “Mary said what?”'
+
 export default function FaqAccordion({ faqs }: { faqs: Faq[] }) {
   const [query, setQuery] = useState('')
+  const [placeholder, setPlaceholder] = useState(PLACEHOLDER_FULL)
   const q = query.trim().toLowerCase()
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 639px)')
+    const apply = () => setPlaceholder(mq.matches ? PLACEHOLDER_NARROW : PLACEHOLDER_FULL)
+    apply()
+    mq.addEventListener('change', apply)
+    return () => mq.removeEventListener('change', apply)
+  }, [])
 
   const filtered = useMemo(() => {
     if (!q) return faqs
@@ -35,7 +53,7 @@ export default function FaqAccordion({ faqs }: { faqs: Faq[] }) {
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search. Try “bus”, “photos”, “dress code”, “Mary said what?”"
+          placeholder={placeholder}
           className="w-full bg-cream-soft border border-wine/15 pl-11 pr-4 py-3.5 placeholder:text-ink/55 focus:border-wine outline-none transition-colors"
         />
         <svg

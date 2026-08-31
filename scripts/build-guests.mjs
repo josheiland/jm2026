@@ -99,6 +99,8 @@ const TYPE_OVERRIDES = {
   'manuel paz': 'Boston friends',
   'cayla weiss': 'Boston friends',
   'catherine irons': 'Boston friends',
+  'pria dua': 'Josh college friends',
+  'lucy henkel': 'Josh college friends',
 }
 
 /**
@@ -173,6 +175,12 @@ for (const r of rows.slice(1)) {
   })
 }
 
+if (problems.length) {
+  console.error(`\n⚠ ${problems.length} row(s) skipped — these people are NOT on the page:\n   ${problems.join('\n   ')}`)
+  console.error('\nAdd them to TYPE_OVERRIDES (or GROUPS) and re-run. Refusing to write a short list.')
+  process.exit(1)
+}
+
 // ---- integrity ----------------------------------------------------------------------
 
 const nameCounts = new Map()
@@ -225,4 +233,3 @@ console.log(
 )
 for (const g of groups) console.log(`  ${String(g.count).padStart(3)}  ${g.label}`)
 if (suspectDuplicates.length) console.log(`\n⚠ unconfirmed duplicate names: ${suspectDuplicates.join(', ')}`)
-if (problems.length) console.log(`\n⚠ ${problems.length} row(s) skipped:\n   ${problems.join('\n   ')}`)

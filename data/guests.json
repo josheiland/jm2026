@@ -2,14 +2,14 @@
   "source": "Google Sheet \"Invite list\" tab",
   "totalSeated": 175,
   "guestCount": 173,
-  "headTableCount": 29,
+  "headTableCount": 30,
   "tableCount": 18,
   "duplicateNames": [],
   "suspectDuplicates": [],
   "groups": [
     {
       "label": "Us",
-      "blurb": "Plot twist",
+      "blurb": "Hi",
       "count": 2,
       "members": [
         {
@@ -344,7 +344,7 @@
     {
       "label": "Josh's Family",
       "blurb": "Eilands and Carrons. Fewer of them, same volume",
-      "count": 22,
+      "count": 20,
       "members": [
         {
           "name": "Anna Carron",
@@ -550,8 +550,8 @@
     },
     {
       "label": "Hometown Friends",
-      "blurb": "Around long enough to own photographs we wish they didn’t",
-      "count": 34,
+      "blurb": "Around long enough to own photographs we would rather they did not",
+      "count": 33,
       "members": [
         {
           "name": "Becky McMinn",
@@ -681,16 +681,6 @@
           "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Kassie Ogbodu",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
-          "group": "Hometown Friends",
-          "groupKey": "mary-hs",
-          "headTable": true,
           "isCouple": false
         },
         {
@@ -897,21 +887,11 @@
     },
     {
       "label": "UVA",
-      "blurb": "Your tour guides for the weekend… Go Hoos",
-      "count": 33,
+      "blurb": "Go Hoos",
+      "count": 34,
       "members": [
         {
           "name": "Aaron James",
-          "table": "9",
-          "tableLabel": "Table 9",
-          "tableSort": 9,
-          "group": "UVA",
-          "groupKey": "uva-mary",
-          "headTable": false,
-          "isCouple": false
-        },
-        {
-          "name": "Anmol Goraya",
           "table": "9",
           "tableLabel": "Table 9",
           "tableSort": 9,
@@ -1071,6 +1051,16 @@
           "isCouple": false
         },
         {
+          "name": "Lucy Henkel",
+          "table": "10",
+          "tableLabel": "Table 10",
+          "tableSort": 10,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
           "name": "Lydia McVeigh",
           "table": "11",
           "tableLabel": "Table 11",
@@ -1155,6 +1145,16 @@
           "table": "11",
           "tableLabel": "Table 11",
           "tableSort": 11,
+          "group": "UVA",
+          "groupKey": "uva-josh",
+          "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Pria Dua",
+          "table": "10",
+          "tableLabel": "Table 10",
+          "tableSort": 10,
           "group": "UVA",
           "groupKey": "uva-josh",
           "headTable": false,
@@ -1509,12 +1509,12 @@
         },
         {
           "name": "Rahim Kanji",
-          "table": "12",
-          "tableLabel": "Table 12",
-          "tableSort": 12,
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
           "group": "Boston",
           "groupKey": "boston",
-          "headTable": false,
+          "headTable": true,
           "isCouple": false
         },
         {
@@ -1529,12 +1529,12 @@
         },
         {
           "name": "Safiya Rajwani",
-          "table": "12",
-          "tableLabel": "Table 12",
-          "tableSort": 12,
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
           "group": "Boston",
           "groupKey": "boston",
-          "headTable": false,
+          "headTable": true,
           "isCouple": false
         },
         {
@@ -1611,7 +1611,7 @@
     },
     {
       "label": "Stanford & the Bay",
-      "blurb": "Our most recent bugs",
+      "blurb": "The current chapter",
       "count": 19,
       "members": [
         {
@@ -1875,16 +1875,6 @@
       "tableSort": 14,
       "group": "Boston",
       "groupKey": "boston",
-      "headTable": false,
-      "isCouple": false
-    },
-    {
-      "name": "Anmol Goraya",
-      "table": "9",
-      "tableLabel": "Table 9",
-      "tableSort": 9,
-      "group": "UVA",
-      "groupKey": "uva-mary",
       "headTable": false,
       "isCouple": false
     },
@@ -2659,16 +2649,6 @@
       "isCouple": false
     },
     {
-      "name": "Kassie Ogbodu",
-      "table": "H",
-      "tableLabel": "Head Table",
-      "tableSort": 0,
-      "group": "Hometown Friends",
-      "groupKey": "mary-hs",
-      "headTable": true,
-      "isCouple": false
-    },
-    {
       "name": "Kate Bondeson",
       "table": "8",
       "tableLabel": "Table 8",
@@ -2825,6 +2805,16 @@
       "tableSort": 16,
       "group": "Stanford & the Bay",
       "groupKey": "stanford",
+      "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Lucy Henkel",
+      "table": "10",
+      "tableLabel": "Table 10",
+      "tableSort": 10,
+      "group": "UVA",
+      "groupKey": "uva-josh",
       "headTable": false,
       "isCouple": false
     },
@@ -3139,6 +3129,16 @@
       "isCouple": false
     },
     {
+      "name": "Pria Dua",
+      "table": "10",
+      "tableLabel": "Table 10",
+      "tableSort": 10,
+      "group": "UVA",
+      "groupKey": "uva-josh",
+      "headTable": false,
+      "isCouple": false
+    },
+    {
       "name": "Priyanka Vijay",
       "table": "H",
       "tableLabel": "Head Table",
@@ -3160,12 +3160,12 @@
     },
     {
       "name": "Rahim Kanji",
-      "table": "12",
-      "tableLabel": "Table 12",
-      "tableSort": 12,
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
       "group": "Boston",
       "groupKey": "boston",
-      "headTable": false,
+      "headTable": true,
       "isCouple": false
     },
     {
@@ -3210,12 +3210,12 @@
     },
     {
       "name": "Safiya Rajwani",
-      "table": "12",
-      "tableLabel": "Table 12",
-      "tableSort": 12,
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
       "group": "Boston",
       "groupKey": "boston",
-      "headTable": false,
+      "headTable": true,
       "isCouple": false
     },
     {

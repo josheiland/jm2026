@@ -123,6 +123,22 @@ const KNOWN_DISTINCT = new Set([
 const HEAD = 'H'
 const NOT_ATTENDING = '--'
 
+/**
+ * People the sheet marks not attending ("--") whom we are deliberately still seating.
+ * A held chair costs a chair; a missing one costs a guest standing at a full room, so
+ * an unconfirmed no stays on the list until somebody actually confirms it.
+ *
+ * These contradict the sheet on purpose, which is the exact drift the sheet-as-source
+ * rewrite existed to kill — so they are loud, not silent. Every run names the holds it
+ * applied, and a hold whose row has since been given a real table is reported as stale
+ * so it cannot outlive the doubt that created it.
+ */
+const STILL_SEATED = {
+  // Head table. Nobody has been able to confirm either way; Josh's call on 2026-08-31
+  // was to hold the seat.
+  'kassie ogbodu': HEAD,
+}
+
 // ---- fetch --------------------------------------------------------------------------
 
 const res = await fetch(SOURCE)
@@ -145,15 +161,26 @@ if (iTable < 0 || iName < 0 || iType < 0) {
 // ---- build --------------------------------------------------------------------------
 
 const problems = []
+const heldSeats = []
+const staleHolds = []
 const guests = []
 
 for (const r of rows.slice(1)) {
-  const table = (r[iTable] ?? '').trim()
+  const sheetTable = (r[iTable] ?? '').trim()
   const rawName = (r[iName] ?? '').trim()
-  const name = NAME_OVERRIDES[`${rawName}|${table}`] ?? rawName
+  const name = NAME_OVERRIDES[`${rawName}|${sheetTable}`] ?? rawName
   const type = (r[iType] ?? '').trim()
 
+  const held = name ? STILL_SEATED[norm(name)] : undefined
+  if (held && sheetTable && sheetTable !== NOT_ATTENDING) {
+    staleHolds.push(`${name} — the sheet now says table ${sheetTable}, so the hold can go`)
+  }
+  const table = held && sheetTable === NOT_ATTENDING ? held : sheetTable
+
   if (!name || !table || table === NOT_ATTENDING) continue
+  if (held && sheetTable === NOT_ATTENDING) {
+    heldSeats.push(`${name} at ${held === HEAD ? 'the head table' : `table ${held}`}`)
+  }
 
   const effectiveType = TYPE_OVERRIDES[norm(name)] ?? type
   const group = byMatch.get(effectiveType)
@@ -233,3 +260,5 @@ console.log(
 )
 for (const g of groups) console.log(`  ${String(g.count).padStart(3)}  ${g.label}`)
 if (suspectDuplicates.length) console.log(`\n⚠ unconfirmed duplicate names: ${suspectDuplicates.join(', ')}`)
+if (heldSeats.length) console.log(`\nheld against the sheet's "--": ${heldSeats.join(', ')}`)
+if (staleHolds.length) console.log(`\n⚠ stale hold(s) in STILL_SEATED:\n   ${staleHolds.join('\n   ')}`)

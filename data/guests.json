@@ -1,8 +1,8 @@
 {
   "source": "Google Sheet \"Invite list\" tab",
-  "totalSeated": 175,
-  "guestCount": 173,
-  "headTableCount": 30,
+  "totalSeated": 176,
+  "guestCount": 174,
+  "headTableCount": 31,
   "tableCount": 18,
   "duplicateNames": [],
   "suspectDuplicates": [],
@@ -551,7 +551,7 @@
     {
       "label": "Hometown Friends",
       "blurb": "Around long enough to own photographs we would rather they did not",
-      "count": 33,
+      "count": 34,
       "members": [
         {
           "name": "Becky McMinn",
@@ -681,6 +681,16 @@
           "group": "Hometown Friends",
           "groupKey": "family-friends",
           "headTable": false,
+          "isCouple": false
+        },
+        {
+          "name": "Kassie Ogbodu",
+          "table": "H",
+          "tableLabel": "Head Table",
+          "tableSort": 0,
+          "group": "Hometown Friends",
+          "groupKey": "mary-hs",
+          "headTable": true,
           "isCouple": false
         },
         {
@@ -2646,6 +2656,16 @@
       "group": "Stanford & the Bay",
       "groupKey": "stanford",
       "headTable": false,
+      "isCouple": false
+    },
+    {
+      "name": "Kassie Ogbodu",
+      "table": "H",
+      "tableLabel": "Head Table",
+      "tableSort": 0,
+      "group": "Hometown Friends",
+      "groupKey": "mary-hs",
+      "headTable": true,
       "isCouple": false
     },
     {

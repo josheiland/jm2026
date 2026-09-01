@@ -2,7 +2,7 @@
   "source": "Google Sheet \"Invite list\" tab",
   "totalSeated": 176,
   "guestCount": 174,
-  "headTableCount": 31,
+  "headTableCount": 30,
   "tableCount": 18,
   "duplicateNames": [],
   "suspectDuplicates": [],
@@ -685,12 +685,12 @@
         },
         {
           "name": "Kassie Ogbodu",
-          "table": "H",
-          "tableLabel": "Head Table",
-          "tableSort": 0,
+          "table": "15",
+          "tableLabel": "Table 15",
+          "tableSort": 15,
           "group": "Hometown Friends",
           "groupKey": "mary-hs",
-          "headTable": true,
+          "headTable": false,
           "isCouple": false
         },
         {
@@ -2660,12 +2660,12 @@
     },
     {
       "name": "Kassie Ogbodu",
-      "table": "H",
-      "tableLabel": "Head Table",
-      "tableSort": 0,
+      "table": "15",
+      "tableLabel": "Table 15",
+      "tableSort": 15,
       "group": "Hometown Friends",
       "groupKey": "mary-hs",
-      "headTable": true,
+      "headTable": false,
       "isCouple": false
     },
     {
